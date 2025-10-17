@@ -8,7 +8,11 @@ standardized entry point for accessing the raw user data.
 import pandas as pd
 from pathlib import Path
 import logging
-from src.core.config import settings
+import sys
+
+# Add 'src' to the Python path to find the config module
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from core.config import settings
 
 # Configure logging
 logging.basicConfig(level=settings.LOG_LEVEL, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -45,7 +49,7 @@ class DataLoader:
 
             # --- Data Cleaning and Preprocessing ---
 
-            # Rename columns for consistency (e.g., remove spaces, use snake_case)
+            # Rename columns for consistency
             df.columns = [
                 'position', 'const', 'created', 'modified', 'description', 'title',
                 'original_title', 'url', 'title_type', 'imdb_rating',
@@ -66,24 +70,17 @@ class DataLoader:
             # Ensure 'const' (IMDb ID) is always a string
             df['const'] = df['const'].astype(str)
 
-            # Split genres into a list of strings
+            # Split genres into a list of strings, handling potential nulls
             df['genres'] = df['genres'].str.split(', ').fillna("").apply(list)
             
-            # Drop the 'Description' column if it's all null, as it often is
+            # Drop the 'Description' column if it's empty
             if 'description' in df.columns and df['description'].isnull().all():
                 df = df.drop(columns=['description'])
 
 
-            logger.info(f"✅ Watchlist loaded successfully. Found {len(df)} movies.")
+            logger.info(f"✅ Watchlist loaded successfully. Found {len(df)} items.")
             return df
 
         except Exception as e:
             logger.error(f"Failed to load or process watchlist file: {e}")
             raise
-
-# Example of how to use this module:
-# if __name__ == '__main__':
-#     loader = DataLoader()
-#     my_watchlist_df = loader.load_watchlist()
-#     print(my_watchlist_df.head())
-#     print(my_watchlist_df.info())
