@@ -28,6 +28,9 @@ from src.core.config import settings
 from src.core.data_loader import DataLoader
 from src.enrichment.tmdb_client import TMDbClient
 
+# --- FIX: Ensure directories exist BEFORE setting up logging ---
+settings.ensure_directories()
+
 # --- Logging Configuration ---
 logging.basicConfig(
     level=settings.LOG_LEVEL,
@@ -46,7 +49,7 @@ class TMDbEnricher:
         self.client = TMDbClient()
         self.output_file = settings.PROCESSED_DATA_DIR / "01_tmdb_enriched_movies.csv"
 
-    def run(self, force: bool = False, limit: Optional[int] = None):
+    def run(self, force: bool = False, limit: int = None):
         """
         Executes the full enrichment workflow.
 
@@ -54,8 +57,6 @@ class TMDbEnricher:
             force (bool): If True, re-processes all movies.
             limit (int, optional): The maximum number of movies to process.
         """
-        settings.ensure_directories()
-        
         # Load source data
         source_df = self._load_source_data()
 
@@ -121,7 +122,7 @@ class TMDbEnricher:
         enriched_ids = set(dest_df['const'].unique())
         return source_df[~source_df['const'].isin(enriched_ids)]
 
-    def _process_movie(self, movie_row: pd.Series) -> Dict:
+    def _process_movie(self, movie_row: pd.Series) -> dict:
         """Fetches and processes data for a single movie."""
         imdb_id = movie_row['const']
         
