@@ -1,0 +1,12 @@
+# Environment
+.env
+__pycache__/
+*.pyc
+
+# Data - never commit large raw or processed data files
+data/raw/*.gz
+data/processed/*.db
+data/processed/*.csv
+
+# Notebook checkpoints
+.ipynb_checkpoints/
