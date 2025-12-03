@@ -33,7 +33,7 @@ for directory in [OUTPUT_DIR, VISUALIZATIONS_DIR, REPORTS_DIR, EXPORTS_DIR]:
     directory.mkdir(parents=True, exist_ok=True)
 
 # Source file paths
-WATCHED_CSV = PROCESSED_DATA_DIR / "WatchedDec.csv"
+WATCHED_CSV = RAW_DATA_DIR / "Watched-Dec.csv"  # Fixed: correct filename with hyphen, in raw dir
 TMDB_ENRICHED = PROCESSED_DATA_DIR / "01_tmdb_enriched_media.csv"
 OMDB_ENRICHED = PROCESSED_DATA_DIR / "02_omdb_enriched_media.csv"
 DDD_ENRICHED = PROCESSED_DATA_DIR / "03_ddd_enriched_media.csv"
@@ -50,6 +50,7 @@ IMDB_RATINGS = CACHE_DIR / "ratings.parquet"
 
 # Output file paths
 MASTER_DATA = PROCESSED_DATA_DIR / "master_cinema_data.csv"
+WATCHED_ONLY_DATA = PROCESSED_DATA_DIR / "watched_movies_master.csv"  # For analysis
 VALIDATION_REPORT = REPORTS_DIR / "data_validation_report.txt"
 
 # ============================================================================
