@@ -1,8 +1,8 @@
 """
 CineScope TMDb Enrichment Script
 
-This script takes the clean watchlist, finds each movie OR TV series on TMDb,
-fetches detailed information, and saves the result to a new file.
+This script takes the master media list (from all sources), finds each movie 
+OR TV series on TMDb, fetches detailed information, and saves the result.
 
 The script is designed to be resumable. If interrupted, it will load the
 partially enriched file and continue where it left off.
@@ -25,7 +25,6 @@ from typing import Dict
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
 
 from src.core.config import settings
-from src.core.data_loader import DataLoader
 from src.enrichment.tmdb_client import TMDbClient
 
 settings.ensure_directories()
@@ -45,6 +44,7 @@ class TMDbEnricher:
 
     def __init__(self):
         self.client = TMDbClient()
+        self.input_file = settings.PROCESSED_DATA_DIR / "master_media_list.csv"
         self.output_file = settings.PROCESSED_DATA_DIR / "01_tmdb_enriched_media.csv"
 
     def run(self, force: bool = False, limit: int = None):
@@ -58,10 +58,12 @@ class TMDbEnricher:
 
         if items_to_process.empty:
             logger.info("✅ All media are already enriched with TMDb data.")
+            logger.info(f"Total enriched items: {len(dest_df)}")
             logger.info(f"Find the data at: {self.output_file}")
             return
 
         logger.info(f"Found {len(items_to_process)} items (movies/TV) to enrich with TMDb data.")
+        logger.info(f"Already enriched: {len(dest_df) - len(items_to_process)} items")
         
         enriched_data = []
         with tqdm(total=len(items_to_process), desc="Enriching with TMDb") as pbar:
@@ -83,12 +85,20 @@ class TMDbEnricher:
         logger.info("="*60)
         logger.info("✅ TMDb Enrichment Complete!")
         logger.info(f"Processed {len(enriched_data)} new items.")
+        logger.info(f"Total enriched items: {len(dest_df) + len(enriched_data)}")
         logger.info(f"Enriched data saved to: {self.output_file}")
         logger.info("="*60)
 
     def _load_source_data(self) -> pd.DataFrame:
-        loader = DataLoader()
-        return loader.load_watchlist()
+        """Load the master media list from all sources."""
+        if not self.input_file.exists():
+            logger.error(f"Master media list not found: {self.input_file}")
+            logger.error("Please run 'python scripts/00_create_master_list.py' first.")
+            sys.exit(1)
+        
+        df = pd.read_csv(self.input_file, low_memory=False)
+        logger.info(f"Loaded {len(df)} items from master media list")
+        return df
 
     def _load_or_initialize_dest_df(self, force: bool) -> pd.DataFrame:
         if self.output_file.exists() and not force:
@@ -178,7 +188,6 @@ class TMDbEnricher:
 
         result['tmdb_genres'] = [g['name'] for g in details.get('genres', [])]
         result['tmdb_production_companies'] = [c['name'] for c in details.get('production_companies', [])]
-        # --- THIS IS THE LINE THAT IS NOW FIXED ---
         result['tmdb_production_countries'] = details.get('origin_country', [])
         result['tmdb_spoken_languages'] = [l['english_name'] for l in details.get('spoken_languages', [])]
         result['tmdb_keywords'] = [k['name'] for k in details.get('keywords', {}).get('results', [])]
@@ -188,14 +197,12 @@ class TMDbEnricher:
     def _save_checkpoint(self, dest_df, new_data):
         """Saves a checkpoint of the currently enriched data."""
         if new_data:
-            # Combine the already existing data with the newly fetched chunk
-            temp_df = pd.concat([dest_df, pd.DataFrame(new_data).set_index(dest_df.columns[0], drop=False)], ignore_index=True)
-            # Remove duplicates just in case, keeping the last entry
+            temp_df = pd.concat([dest_df, pd.DataFrame(new_data)], ignore_index=True)
             temp_df = temp_df.drop_duplicates(subset=['const'], keep='last')
             temp_df.to_csv(self.output_file, index=False)
 
 def main():
-    parser = argparse.ArgumentParser(description="Enrich media from your watchlist with TMDb data.")
+    parser = argparse.ArgumentParser(description="Enrich media from master list with TMDb data.")
     parser.add_argument('--force', action='store_true', help="Re-enrich all media.")
     parser.add_argument('--limit', type=int, help="Limit the number of media items to process.")
     args = parser.parse_args()

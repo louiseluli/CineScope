@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>CineScope — Research UI</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="data:," />
+
+    <!-- Basic theme variables for quick tweaks -->
+    <style>
+      :root {
+        --bg: #0b1020;
+        --panel: #121a33;
+        --muted: #8ea0c2;
+        --text: #f3f6ff;
+        --accent: #8b5cf6;
+        --accent2: #10b981;
+        --danger: #ef4444;
+        --chip: #1b2547;
+        --border: rgba(255, 255, 255, 0.08);
+        --shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+        --radius: 16px;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #0b1020 0%, #0b1226 100%);
+        color: var(--text);
+        font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+      header {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        box-shadow: var(--shadow);
+      }
+      h1 {
+        font-size: 20px;
+        margin: 0;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+      }
+      .meta {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 18px;
+      }
+      @media (max-width: 980px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .card .card-title {
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border);
+        font-size: 13px;
+        letter-spacing: 0.4px;
+        color: #c9d6ff;
+        text-transform: uppercase;
+      }
+      .card .card-body {
+        padding: 14px 16px;
+      }
+
+      .search-tabs {
+        display: flex;
+        gap: 8px;
+        padding: 12px;
+      }
+      .tab {
+        padding: 8px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        cursor: pointer;
+        background: var(--chip);
+        color: #cfe0ff;
+        font-weight: 600;
+      }
+      .tab.active {
+        background: linear-gradient(
+          135deg,
+          rgba(139, 92, 246, 0.2),
+          rgba(16, 185, 129, 0.2)
+        );
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+      .input-row {
+        display: flex;
+        gap: 10px;
+      }
+      .input-row input {
+        flex: 1;
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: #0e1530;
+        color: var(--text);
+      }
+      .btn {
+        padding: 10px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--chip);
+        color: #dfe8ff;
+        cursor: pointer;
+        font-weight: 700;
+      }
+      .btn.accent {
+        background: linear-gradient(
+          135deg,
+          rgba(139, 92, 246, 0.25),
+          rgba(16, 185, 129, 0.25)
+        );
+      }
+      .toolbar {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      select {
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: #0e1530;
+        color: var(--text);
+      }
+
+      .chips {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .chip {
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: var(--chip);
+        border: 1px solid var(--border);
+        color: #cfe0ff;
+        font-size: 12px;
+      }
+
+      .results {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+      @media (max-width: 980px) {
+        .results {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .item {
+        display: flex;
+        gap: 12px;
+        padding: 12px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: #0f1a3a;
+      }
+      .item .meta {
+        font-size: 12px;
+      }
+      .item .title {
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .pill {
+        display: inline-block;
+        margin-left: 8px;
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: rgba(139, 92, 246, 0.2);
+        color: #d9caff;
+        border: 1px solid rgba(139, 92, 246, 0.35);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      @media (max-width: 980px) {
+        .split {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .stat {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #0e1530;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 6px 10px;
+      }
+      .stat b {
+        font-size: 13px;
+      }
+
+      .footer {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 12px;
+        text-align: center;
+      }
+      .warn {
+        color: var(--danger);
+      }
+      .empty {
+        color: var(--muted);
+        padding: 18px;
+        text-align: center;
+      }
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 12px;
+      }
+      .kbd {
+        padding: 2px 6px;
+        border-radius: 6px;
+        background: #131d3a;
+        border: 1px solid var(--border);
+        font-family: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>CineScope — Research UI</h1>
+            <div class="meta" id="metaLine">loading metadata…</div>
+          </div>
+        </div>
+        <div class="row" id="quickStats">
+          <!-- filled by JS -->
+        </div>
+      </header>
+
+      <div class="grid">
+        <!-- Left: Search controls -->
+        <aside class="card">
+          <div class="card-title">Search & Filters</div>
+          <div class="card-body">
+            <div class="search-tabs" role="tablist" aria-label="Search type">
+              <button
+                class="tab active"
+                id="tab-movies"
+                data-tab="movies"
+                aria-selected="true"
+              >
+                Movies
+              </button>
+              <button
+                class="tab"
+                id="tab-people"
+                data-tab="people"
+                aria-selected="false"
+              >
+                People
+              </button>
+            </div>
+
+            <div class="input-row" style="margin-bottom: 10px">
+              <input
+                id="searchInput"
+                type="search"
+                placeholder="Search by title or name…"
+                autocomplete="off"
+              />
+              <button class="btn accent" id="searchBtn">Search</button>
+            </div>
+
+            <div class="toolbar" id="filtersMovies" aria-label="Movie filters">
+              <select id="genreSelect" aria-label="Genre">
+                <option value="">Genre</option>
+              </select>
+              <select id="yearMinSelect" aria-label="Year from">
+                <option value="">Year from</option>
+              </select>
+              <select id="yearMaxSelect" aria-label="Year to">
+                <option value="">Year to</option>
+              </select>
+              <select id="langSelect" aria-label="Original language">
+                <option value="">Language</option>
+              </select>
+              <select id="watchedSelect" aria-label="Watched?">
+                <option value="">Watched?</option>
+                <option value="true">Watched</option>
+                <option value="false">Not watched</option>
+              </select>
+              <select id="sortSelect" aria-label="Sort by">
+                <option value="rating">Sort: Rating</option>
+                <option value="votes">Sort: Votes</option>
+                <option value="year">Sort: Year</option>
+                <option value="title">Sort: Title</option>
+              </select>
+              <button class="btn" id="applyFiltersBtn" title="Apply filters">
+                Apply
+              </button>
+            </div>
+
+            <div
+              class="toolbar"
+              id="filtersPeople"
+              style="display: none"
+              aria-label="People sorting"
+            >
+              <select id="sortPeopleSelect" aria-label="Sort people">
+                <option value="relevance">Sort: Relevance</option>
+                <option value="credits">Sort: Credits</option>
+                <option value="birthYear">Sort: Birth year</option>
+              </select>
+              <button class="btn" id="applyPeopleBtn">Apply</button>
+            </div>
+
+            <hr
+              style="border-color: var(--border); opacity: 0.4; margin: 14px 0"
+            />
+
+            <div class="row">
+              <button
+                class="btn"
+                id="reloadWatchedBtn"
+                title="Reload your CSV without restarting the server"
+              >
+                Reload Watched
+              </button>
+              <button
+                class="btn"
+                id="viewMetaBtn"
+                title="Show backend meta/cache info"
+              >
+                Meta
+              </button>
+            </div>
+            <div class="meta mono" id="adminMsg" style="margin-top: 8px"></div>
+          </div>
+        </aside>
+
+        <!-- Right: Results & Details -->
+        <main class="card">
+          <div class="card-title">Results</div>
+          <div class="card-body">
+            <div id="chips" class="chips" aria-live="polite"></div>
+
+            <div id="results" class="results" aria-live="polite">
+              <div class="empty">
+                Use the search box or apply filters to see results.
+              </div>
+            </div>
+
+            <div class="row" id="pager" style="margin-top: 12px; display: none">
+              <button class="btn" id="prevPageBtn">
+                <span class="kbd">←</span> Prev
+              </button>
+              <div class="chip" id="pageInfo">Page 1/1</div>
+              <button class="btn" id="nextPageBtn">
+                Next <span class="kbd">→</span>
+              </button>
+            </div>
+
+            <hr
+              style="border-color: var(--border); opacity: 0.4; margin: 16px 0"
+            />
+
+            <div class="split">
+              <section class="card">
+                <div class="card-title">Selection — Details</div>
+                <div class="card-body" id="detailsPane">
+                  <div class="empty">
+                    Click a movie or person to see details.
+                  </div>
+                </div>
+              </section>
+              <section class="card">
+                <div class="card-title">Analytics</div>
+                <div class="card-body" id="analyticsPane">
+                  <div class="empty">
+                    Similar titles, collaborators, roles & top genres will
+                    appear here.
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <div class="footer">
+        <span
+          >IMDb data © IMDb. Used under the IMDb Non-Commercial Datasets
+          license.</span
+        >
+        <span class="mono"> • Mode is fetched from <code>/meta</code></span>
+      </div>
+    </div>
+
+    <!-- App logic -->
+    <script src="/app.js" defer></script>
+    <script>
+      // very small inline boot sentinel so you see *something* even if app.js fails
+      window.addEventListener("DOMContentLoaded", () => {
+        const metaLine = document.getElementById("metaLine");
+        metaLine.textContent = "Connecting…";
+        fetch("/meta")
+          .then(r => r.json())
+          .then(m => {
+            metaLine.textContent = `Titles: ${m.counts.titles} • People: ${
+              m.counts.people
+            } • Watched: ${m.counts.watched} • Mode: ${
+              m.mode || "watched-only"
+            }`;
+          })
+          .catch(
+            () =>
+              (metaLine.innerHTML =
+                '<span class="warn">Failed to load /meta</span>')
+          );
+      });
+    </script>
+  </body>
+</html>
