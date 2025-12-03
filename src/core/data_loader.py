@@ -15,8 +15,9 @@ warnings.filterwarnings('ignore')
 
 # Import configuration
 import sys
-sys.path.append(str(Path(__file__).parent.parent))
-from core.config import (
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+from src.core.config import (
     WATCHED_CSV, TMDB_ENRICHED, OMDB_ENRICHED, DDD_ENRICHED,
     CAST_ENRICHED, WIKIDATA_ENRICHED, MASTER_DATA, VALIDATION_REPORT,
     MISSING_VALUES, DATE_FORMAT, log_message, PROCESSED_DATA_DIR
