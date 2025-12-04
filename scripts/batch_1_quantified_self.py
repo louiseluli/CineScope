@@ -1,12 +1,24 @@
 """
 CineScope - Batch 1: Quantified Self Analysis
 =============================================
-Comprehensive analysis of YOUR watched movies with 8 professional visualizations.
+Comprehensive analysis of my watched movies with 8 professional visualizations.
 
-Focus: Rating patterns, temporal viewing, runtime preferences
+Focus: Rating patterns, genre preferences, director favorites, discovery profile
 All based on IMDB/TMDB ratings (public consensus), not personal ratings
 
-Generates 8 PNG files at 300 DPI.
+Generates:
+- 8 PNG files at 300 DPI
+- 1 interactive HTML file (Rating vs Runtime with hover details)
+
+Visualizations:
+1. Rating Distribution (IMDB vs TMDB comparison)
+2. Decade × Genre Heatmap (where my taste sits in film-history space)
+3. Director Leaderboard (top 20 directors by count + quality)
+4. Genre Distribution (breakdown of preferences)
+5. Runtime Sweet Spot (preferred film lengths)
+6. Interactive Rating vs Runtime (HTML with hover details)
+7. Decade Distribution (which decades you watch most)
+8. Popularity vs Rating (hidden gems vs popular hits)
 """
 
 import pandas as pd
@@ -46,7 +58,7 @@ class QuantifiedSelfAnalysis:
         """Load watched movies dataset."""
         log_message("=" * 80)
         log_message("BATCH 1: Quantified Self Analysis")
-        log_message("Loading YOUR watched movies...")
+        log_message("Loading my watched movies...")
         log_message("=" * 80)
         
         self.df = pd.read_csv(WATCHED_ONLY_DATA)
@@ -87,7 +99,7 @@ class QuantifiedSelfAnalysis:
         
         ax1.set_xlabel('IMDB Rating', fontsize=14, fontweight='bold')
         ax1.set_ylabel('Number of Films', fontsize=14, fontweight='bold')
-        ax1.set_title('IMDB Rating Distribution\nYour Watched Films', 
+        ax1.set_title('IMDB Rating Distribution\nMy Watched Films', 
                      fontsize=16, fontweight='bold', pad=20)
         ax1.legend(fontsize=12)
         ax1.grid(True, alpha=0.3)
@@ -110,7 +122,7 @@ class QuantifiedSelfAnalysis:
                 
                 ax2.set_xlabel('TMDB Rating', fontsize=14, fontweight='bold')
                 ax2.set_ylabel('Number of Films', fontsize=14, fontweight='bold')
-                ax2.set_title('TMDB Rating Distribution\nYour Watched Films',
+                ax2.set_title('TMDB Rating Distribution\nMy Watched Films',
                              fontsize=16, fontweight='bold', pad=20)
                 ax2.legend(fontsize=12)
                 ax2.grid(True, alpha=0.3)
@@ -121,146 +133,173 @@ class QuantifiedSelfAnalysis:
         
         return self
     
-    def viz_2_rating_matrix_heatmap(self):
-        """Viz 2: Rating Matrix Heatmap - consensus analysis."""
-        log_message("📊 Creating Visualization 2: Rating Matrix Heatmap")
+    def viz_2_decade_genre_heatmap(self):
+        """Viz 2: Decade × Genre Heatmap - where my taste sits in film-history space."""
+        log_message("📊 Creating Visualization 2: Decade × Genre Heatmap")
         
-        # Create rating bins
-        df_subset = self.df[['imdb_rating']].dropna()
+        # Get top 10 genres
+        genre_exploded = explode_genres(self.df)
+        top_genres = genre_exploded['genre'].value_counts().head(10).index.tolist()
         
-        # Bin IMDB ratings
-        df_subset['imdb_bin'] = pd.cut(df_subset['imdb_rating'], 
-                                        bins=range(1, 12), 
-                                        labels=range(1, 11))
+        # Filter to films with decade and top genres
+        df_filtered = genre_exploded[
+            (genre_exploded['decade'].notna()) & 
+            (genre_exploded['genre'].isin(top_genres))
+        ].copy()
         
-        # Count frequency
-        rating_matrix = df_subset.groupby('imdb_bin').size().reindex(range(1, 11), fill_value=0)
+        # Create pivot table
+        heatmap_data = df_filtered.groupby(['decade', 'genre']).size().unstack(fill_value=0)
         
-        # Create heatmap data
-        matrix_data = rating_matrix.values.reshape(2, 5)
+        # Sort by decade
+        heatmap_data = heatmap_data.sort_index()
         
-        fig, ax = plt.subplots(figsize=(14, 8))
+        # Reorder columns by total count
+        col_order = heatmap_data.sum().sort_values(ascending=False).index
+        heatmap_data = heatmap_data[col_order]
         
-        sns.heatmap(matrix_data, annot=True, fmt='d', cmap='YlOrRd',
+        fig, ax = plt.subplots(figsize=(16, 10))
+        
+        sns.heatmap(heatmap_data, annot=True, fmt='d', cmap='YlOrRd',
                    cbar_kws={'label': 'Number of Films'},
-                   xticklabels=[f'{i}-{i+1}' for i in range(1, 11, 2)],
-                   yticklabels=['Lower Ratings', 'Higher Ratings'],
-                   linewidths=2, linecolor='white',
+                   linewidths=1, linecolor='white',
                    ax=ax)
         
-        ax.set_title('IMDB Rating Distribution Heatmap\nHow the World Rates Your Watched Films',
+        # Format decade labels
+        yticklabels = [f"{int(d)}s" if not pd.isna(d) else '' for d in heatmap_data.index]
+        ax.set_yticklabels(yticklabels, rotation=0)
+        
+        ax.set_title('Decade × Genre Heatmap\nWhere My Taste Sits in Film-History Space',
                     fontsize=16, fontweight='bold', pad=20)
-        ax.set_xlabel('Rating Range', fontsize=14, fontweight='bold')
-        ax.set_ylabel('Quality Tier', fontsize=14, fontweight='bold')
+        ax.set_xlabel('Genre', fontsize=14, fontweight='bold')
+        ax.set_ylabel('Decade', fontsize=14, fontweight='bold')
         
         plt.tight_layout()
-        filepath = save_figure(fig, '02_rating_matrix_heatmap.png', batch_number=1)
+        filepath = save_figure(fig, '02_decade_genre_heatmap.png', batch_number=1)
         plt.close()
         
         return self
     
-    def viz_3_temporal_viewing_timeline(self):
-        """Viz 3: Temporal Viewing Timeline - when you watched films."""
-        log_message("📊 Creating Visualization 3: Temporal Viewing Timeline")
-        
-        if 'date_rated' not in self.df.columns:
-            log_message("⚠️ No date_rated column - skipping temporal analysis", level="WARNING")
+    def viz_3_director_leaderboard(self):
+        log_message("📊 Creating Visualization 3: Director Leaderboard")
+
+        # Use normalized parsing → list[str] of director names
+        from src.core.helpers import parse_directors
+        df = self.df.copy()
+
+        # Build directors list and explode
+        df["directors_list"] = df["directors"].apply(lambda x: parse_directors(x) if pd.notna(x) else [])
+        if df["directors_list"].map(len).sum() == 0:
+            # Graceful fallback if we truly have no director data
+            fig, ax = plt.subplots(figsize=(16, 10))
+            ax.text(0.5, 0.5, "No director names available.", ha="center", va="center", fontsize=16)
+            ax.axis("off")
+            ax.set_title("Most Watched Directors")
+            save_figure(fig, '03_director_leaderboard.png', batch_number=1)
+            plt.close()
             return self
-        
-        # Filter to films with dates
-        df_dated = self.df[self.df['date_rated'].notna()].copy()
-        
-        if len(df_dated) == 0:
-            log_message("⚠️ No films with dates - skipping", level="WARNING")
-            return self
-        
-        # Group by month
-        df_dated['year_month'] = df_dated['date_rated'].dt.to_period('M')
-        monthly_counts = df_dated.groupby('year_month').size()
-        
-        # Convert back to datetime for plotting
-        monthly_counts.index = monthly_counts.index.to_timestamp()
-        
-        fig, ax = plt.subplots(figsize=(18, 8))
-        
-        ax.plot(monthly_counts.index, monthly_counts.values, 
-               color=RATING_COLORS['imdb'], linewidth=2, marker='o', markersize=4)
-        
-        # Add 3-month moving average
-        ma = monthly_counts.rolling(window=3, center=True).mean()
-        ax.plot(ma.index, ma.values, color='red', linewidth=3, 
-               linestyle='--', label='3-Month Moving Avg', alpha=0.7)
-        
-        ax.set_xlabel('Date', fontsize=14, fontweight='bold')
-        ax.set_ylabel('Films Watched', fontsize=14, fontweight='bold')
-        ax.set_title('Your Viewing Timeline\nMovies Watched Over Time',
-                    fontsize=16, fontweight='bold', pad=20)
-        ax.legend(fontsize=12)
-        ax.grid(True, alpha=0.3)
-        
-        # Rotate x-axis labels
-        plt.xticks(rotation=45, ha='right')
-        
+
+        expl = df[["const", "imdb_rating", "directors_list"]].explode("directors_list").dropna(subset=["directors_list"])
+        expl["director"] = (expl["directors_list"]
+                            .astype(str)
+                            .str.replace(r"\s*\|\s*nm\d{7,}\b", "", regex=True)  # strip " | nm########"
+                            .str.replace(r"\bnm\d{7,}\b", "", regex=True)       # strip stray IDs
+                            .str.replace(r"\s+", " ", regex=True)
+                            .str.strip())
+
+        # Aggregate by UNIQUE films per director
+        agg = (expl.groupby("director")
+                    .agg(Films=("const", "nunique"),
+                        Avg_Rating=("imdb_rating", "mean"))
+                    .reset_index())
+
+        # Remove empties and duplicates after cleaning
+        agg = agg[agg["director"].astype(str).str.len() > 0]
+
+        # Sort and take top 20 by film count (break ties by rating)
+        top = agg.sort_values(["Films", "Avg_Rating"], ascending=[False, False]).head(20)
+
+        # Plot — names only, no IDs
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(22, 10))
+        ax1.barh(top["director"][::-1], top["Films"][::-1], color="#8cd3c3", edgecolor="black")
+        for y, v in enumerate(top["Films"][::-1]):
+            ax1.text(v + 0.3, y, f"{int(v)}", va="center", fontsize=10)
+        ax1.set_title("Most Watched Directors\nMy Top 20 by Film Count", fontweight="bold")
+        ax1.set_xlabel("Number of Films")
+
+        # Quality panel: keep same directors, order by rating descending for readability
+        top_q = top.sort_values("Avg_Rating", ascending=False)
+        ax2.barh(top_q["director"][::-1], top_q["Avg_Rating"][::-1], color="#f6a5a0", edgecolor="black")
+        for y, r in enumerate(top_q["Avg_Rating"][::-1]):
+            ax2.text(r + 0.05, y, f"{r:.2f}", va="center", fontsize=10)
+        ax2.set_title("Director Quality\nAverage Rating (Min 3 Films)", fontweight="bold")
+        ax2.set_xlabel("Average IMDB Rating")
+
         plt.tight_layout()
-        filepath = save_figure(fig, '03_temporal_viewing_timeline.png', batch_number=1)
+        save_figure(fig, '03_director_leaderboard.png', batch_number=1)
         plt.close()
-        
         return self
+
     
-    def viz_4_cine_calendar_heatmap(self):
-        """Viz 4: Cine-Calendar Heatmap - GitHub-style viewing pattern."""
-        log_message("📊 Creating Visualization 4: Cine-Calendar Heatmap")
+    def viz_4_genre_distribution(self):
+        """Viz 4: Genre Distribution - breakdown of my genre preferences."""
+        log_message("📊 Creating Visualization 4: Genre Distribution")
         
-        if 'date_rated' not in self.df.columns:
-            log_message("⚠️ No date_rated column - skipping", level="WARNING")
-            return self
+        # Explode genres
+        genre_exploded = explode_genres(self.df)
+        genre_counts = genre_exploded['genre'].value_counts().head(15)
         
-        df_dated = self.df[self.df['date_rated'].notna()].copy()
+        # Calculate percentages
+        total_genre_instances = genre_counts.sum()
+        genre_pct = (genre_counts / total_genre_instances * 100).round(1)
         
-        if len(df_dated) == 0:
-            log_message("⚠️ No dated films - skipping", level="WARNING")
-            return self
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
         
-        # Count by date
-        daily_counts = df_dated.groupby(df_dated['date_rated'].dt.date).size()
+        # Left: Bar chart with counts
+        bars = ax1.barh(range(len(genre_counts)), genre_counts.values,
+                       edgecolor='black', linewidth=1.5, alpha=0.8)
         
-        # Create a date range
-        date_range = pd.date_range(start=daily_counts.index.min(), 
-                                   end=daily_counts.index.max(), freq='D')
+        # Color bars by genre using genre colors from config
+        from src.core.config import GENRE_COLORS
+        for i, (bar, genre) in enumerate(zip(bars, genre_counts.index)):
+            color = GENRE_COLORS.get(genre, '#95a5a6')
+            bar.set_color(color)
         
-        # Reindex to include all dates
-        daily_counts = daily_counts.reindex(date_range, fill_value=0)
+        ax1.set_yticks(range(len(genre_counts)))
+        ax1.set_yticklabels(genre_counts.index)
+        ax1.invert_yaxis()
+        ax1.set_xlabel('Number of Films', fontsize=14, fontweight='bold')
+        ax1.set_title('Top 15 Genres by Film Count\nMy Genre Preferences',
+                     fontsize=16, fontweight='bold', pad=20)
+        ax1.grid(True, alpha=0.3, axis='x')
         
-        # Limit to last 365 days for visualization
-        if len(daily_counts) > 365:
-            daily_counts = daily_counts.tail(365)
+        # Add count and percentage labels
+        for i, (count, pct) in enumerate(zip(genre_counts.values, genre_pct.values)):
+            ax1.text(count, i, f'  {int(count)} ({pct}%)', 
+                    va='center', fontsize=10, fontweight='bold')
         
-        # Create calendar matrix (7 rows for days of week, columns for weeks)
-        daily_counts.index = pd.to_datetime(daily_counts.index)
-        daily_counts_df = pd.DataFrame({
-            'count': daily_counts.values,
-            'day_of_week': daily_counts.index.dayofweek,
-            'week': ((daily_counts.index - daily_counts.index[0]).days // 7)
-        })
+        # Right: Pie chart for top 8
+        top_8 = genre_counts.head(8)
+        other = genre_counts[8:].sum()
         
-        # Pivot for heatmap
-        cal_matrix = daily_counts_df.pivot(index='day_of_week', 
-                                           columns='week', 
-                                           values='count').fillna(0)
+        pie_data = list(top_8.values) + [other]
+        pie_labels = list(top_8.index) + ['Other']
         
-        fig, ax = plt.subplots(figsize=(20, 6))
+        colors_pie = [GENRE_COLORS.get(g, '#95a5a6') for g in top_8.index] + ['#bdc3c7']
         
-        sns.heatmap(cal_matrix, cmap='YlGnBu', cbar_kws={'label': 'Films Watched'},
-                   yticklabels=['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                   linewidths=0.5, linecolor='lightgray', ax=ax)
+        wedges, texts, autotexts = ax2.pie(pie_data, labels=pie_labels, autopct='%1.1f%%',
+                                            colors=colors_pie, startangle=90,
+                                            textprops={'fontsize': 11, 'fontweight': 'bold'})
         
-        ax.set_title('Your Viewing Calendar (Last 365 Days)\nGitHub-Style Activity Map',
-                    fontsize=16, fontweight='bold', pad=20)
-        ax.set_xlabel('Week', fontsize=14, fontweight='bold')
-        ax.set_ylabel('Day of Week', fontsize=14, fontweight='bold')
+        # Make percentage text white
+        for autotext in autotexts:
+            autotext.set_color('white')
+            autotext.set_fontsize(10)
+        
+        ax2.set_title('Genre Distribution (Top 8)\nProportional View',
+                     fontsize=16, fontweight='bold', pad=20)
         
         plt.tight_layout()
-        filepath = save_figure(fig, '04_cine_calendar_heatmap.png', batch_number=1)
+        filepath = save_figure(fig, '04_genre_distribution.png', batch_number=1)
         plt.close()
         
         return self
@@ -290,7 +329,7 @@ class QuantifiedSelfAnalysis:
                color=RATING_COLORS['imdb'], edgecolor='black', linewidth=1.5, alpha=0.7)
         ax1.set_xlabel('Runtime', fontsize=14, fontweight='bold')
         ax1.set_ylabel('Number of Films', fontsize=14, fontweight='bold')
-        ax1.set_title('Films by Runtime Length\nYour Viewing Distribution',
+        ax1.set_title('Films by Runtime Length\nMy Viewing Distribution',
                      fontsize=16, fontweight='bold', pad=20)
         ax1.grid(True, alpha=0.3, axis='y')
         plt.setp(ax1.xaxis.get_majorticklabels(), rotation=45, ha='right')
@@ -312,18 +351,18 @@ class QuantifiedSelfAnalysis:
         
         return self
     
-    def viz_6_rating_vs_runtime_scatter(self):
-        """Viz 6: Rating vs Runtime Scatter - correlation analysis."""
-        log_message("📊 Creating Visualization 6: Rating vs Runtime Scatter")
+    def viz_6_interactive_rating_vs_runtime(self):
+        """Viz 6: Interactive Rating vs Runtime - hover to see movie details (HTML)."""
+        log_message("📊 Creating Visualization 6: Interactive Rating vs Runtime (HTML)")
         
         df_scatter = self.df[
             (self.df['runtime_mins'].notna()) & 
             (self.df['imdb_rating'].notna())
         ].copy()
         
+        # Create static version first
         fig, ax = plt.subplots(figsize=(14, 10))
         
-        # Scatter plot
         scatter = ax.scatter(df_scatter['runtime_mins'], 
                            df_scatter['imdb_rating'],
                            c=df_scatter['decade'], 
@@ -333,7 +372,6 @@ class QuantifiedSelfAnalysis:
                            edgecolors='black',
                            linewidth=0.5)
         
-        # Add colorbar
         cbar = plt.colorbar(scatter, ax=ax)
         cbar.set_label('Decade', fontsize=12, fontweight='bold')
         
@@ -345,7 +383,7 @@ class QuantifiedSelfAnalysis:
         
         ax.set_xlabel('Runtime (minutes)', fontsize=14, fontweight='bold')
         ax.set_ylabel('IMDB Rating', fontsize=14, fontweight='bold')
-        ax.set_title('Runtime vs Rating\nDoes Movie Length Correlate with Quality?',
+        ax.set_title('Runtime vs Rating\n(See HTML version for interactive hover)',
                     fontsize=16, fontweight='bold', pad=20)
         ax.legend(fontsize=12)
         ax.grid(True, alpha=0.3)
@@ -353,6 +391,114 @@ class QuantifiedSelfAnalysis:
         plt.tight_layout()
         filepath = save_figure(fig, '06_rating_vs_runtime_scatter.png', batch_number=1)
         plt.close()
+        
+        # Create interactive HTML version
+        log_message("  Creating interactive HTML version...")
+        
+        html_content = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Rating vs Runtime</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: 'DejaVu Sans', Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        #plotDiv {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎬 Interactive Rating vs Runtime Analysis</h1>
+    <p style="text-align: center; color: #666;">Hover over points to see movie details</p>
+    <div id="plotDiv"></div>
+    <script>
+"""
+        
+        # Prepare data for plotly
+        hover_texts = []
+        for idx, row in df_scatter.iterrows():
+            text = f"<b>{row['display_title']}</b><br>"
+            text += f"Year: {int(row['year']) if not pd.isna(row['year']) else 'N/A'}<br>"
+            text += f"Runtime: {int(row['runtime_mins'])} min<br>"
+            text += f"IMDB Rating: {row['imdb_rating']:.1f}<br>"
+            if pd.notna(row.get('directors')):
+                text += f"Director: {str(row['directors'])[:50]}<br>"
+            if pd.notna(row.get('genres')):
+                text += f"Genres: {str(row['genres'])[:60]}"
+            hover_texts.append(text)
+        
+        # Create JavaScript data
+        html_content += f"""
+        var data = [{{
+            x: {df_scatter['runtime_mins'].tolist()},
+            y: {df_scatter['imdb_rating'].tolist()},
+            mode: 'markers',
+            type: 'scatter',
+            text: {hover_texts},
+            hovertemplate: '%{{text}}<extra></extra>',
+            marker: {{
+                size: 8,
+                color: {df_scatter['decade'].fillna(2000).tolist()},
+                colorscale: 'Viridis',
+                showscale: true,
+                colorbar: {{
+                    title: 'Decade'
+                }},
+                line: {{
+                    color: 'black',
+                    width: 0.5
+                }}
+            }}
+        }}];
+        
+        var layout = {{
+            title: {{
+                text: 'Rating vs Runtime: Hover to Discover Films',
+                font: {{ size: 20, family: 'DejaVu Sans, Arial' }}
+            }},
+            xaxis: {{
+                title: 'Runtime (minutes)',
+                gridcolor: '#e0e0e0'
+            }},
+            yaxis: {{
+                title: 'IMDB Rating',
+                gridcolor: '#e0e0e0'
+            }},
+            hovermode: 'closest',
+            plot_bgcolor: '#fafafa',
+            paper_bgcolor: 'white'
+        }};
+        
+        var config = {{
+            responsive: true,
+            displayModeBar: true,
+            displaylogo: false
+        }};
+        
+        Plotly.newPlot('plotDiv', data, layout, config);
+    </script>
+</body>
+</html>
+"""
+        
+        # Save HTML file
+        html_path = self.batch_dir / '06_rating_vs_runtime_interactive.html'
+        with open(html_path, 'w', encoding='utf-8') as f:
+            f.write(html_content)
+        
+        log_message(f"  ✅ Interactive HTML saved: {html_path.name}")
         
         return self
     
@@ -382,7 +528,7 @@ class QuantifiedSelfAnalysis:
         
         ax1.set_xlabel('Decade', fontsize=14, fontweight='bold')
         ax1.set_ylabel('Number of Films', fontsize=14, fontweight='bold')
-        ax1.set_title('Films Watched by Decade\nYour Cinema Timeline',
+        ax1.set_title('Films Watched by Decade\nMy Cinema Timeline',
                      fontsize=16, fontweight='bold', pad=20)
         ax1.grid(True, alpha=0.3, axis='y')
         
@@ -409,57 +555,84 @@ class QuantifiedSelfAnalysis:
         
         return self
     
-    def viz_8_era_analysis(self):
-        """Viz 8: Era Analysis - cinema periods you prefer."""
-        log_message("📊 Creating Visualization 8: Era Analysis")
+    def viz_8_popularity_vs_rating(self):
+        """Viz 8: Popularity vs Rating - are you drawn to hits or hidden gems?"""
+        log_message("📊 Creating Visualization 8: Popularity vs Rating (Hidden Gems)")
         
-        df_era = self.df[self.df['era'].notna()].copy()
+        # Use num_votes as popularity metric
+        df_pop = self.df[
+            (self.df['num_votes'].notna()) & 
+            (self.df['imdb_rating'].notna())
+        ].copy()
         
-        # Define era order
-        era_order = [
-            'Silent Era (pre-1927)',
-            'Pre-Code (1927-1934)',
-            'Golden Age (1935-1959)',
-            'New Hollywood (1960-1979)',
-            'Blockbuster Era (1980-1999)',
-            'Digital Age (2000-2009)',
-            'Modern (2010-2019)',
-            'Current (2020+)'
-        ]
+        # Define quadrants
+        median_votes = df_pop['num_votes'].median()
+        median_rating = df_pop['imdb_rating'].median()
         
-        era_stats = df_era.groupby('era').agg({
-            'const': 'count',
-            'imdb_rating': 'mean'
-        }).reset_index()
-        era_stats.columns = ['Era', 'Count', 'Avg_Rating']
+        # Categorize films
+        def categorize_film(row):
+            if row['num_votes'] > median_votes and row['imdb_rating'] > median_rating:
+                return 'Popular Hits'
+            elif row['num_votes'] <= median_votes and row['imdb_rating'] > median_rating:
+                return 'Hidden Gems'
+            elif row['num_votes'] > median_votes and row['imdb_rating'] <= median_rating:
+                return 'Popular but Mediocre'
+            else:
+                return 'Obscure & Low-Rated'
         
-        # Sort by era order
-        era_stats['Era'] = pd.Categorical(era_stats['Era'], categories=era_order, ordered=True)
-        era_stats = era_stats.sort_values('Era')
+        df_pop['category'] = df_pop.apply(categorize_film, axis=1)
         
-        fig, ax = plt.subplots(figsize=(16, 10))
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 10))
         
-        # Horizontal bar chart
-        bars = ax.barh(era_stats['Era'], era_stats['Count'],
-                      edgecolor='black', linewidth=1.5, alpha=0.7)
+        # Left: Scatter plot
+        colors = {
+            'Popular Hits': '#27ae60',
+            'Hidden Gems': '#f39c12',
+            'Popular but Mediocre': '#e74c3c',
+            'Obscure & Low-Rated': '#95a5a6'
+        }
         
-        # Color by count
-        colors = plt.cm.plasma(era_stats['Count'] / era_stats['Count'].max())
-        for bar, color in zip(bars, colors):
-            bar.set_color(color)
+        for category in colors.keys():
+            df_cat = df_pop[df_pop['category'] == category]
+            ax1.scatter(df_cat['num_votes'], df_cat['imdb_rating'],
+                       label=category, alpha=0.6, s=50, c=colors[category],
+                       edgecolors='black', linewidth=0.5)
         
-        ax.set_xlabel('Number of Films', fontsize=14, fontweight='bold')
-        ax.set_ylabel('Cinema Era', fontsize=14, fontweight='bold')
-        ax.set_title('Films Watched by Cinema Era\nYour Journey Through Film History',
-                    fontsize=16, fontweight='bold', pad=20)
-        ax.grid(True, alpha=0.3, axis='x')
+        # Add median lines
+        ax1.axvline(median_votes, color='red', linestyle='--', linewidth=2, alpha=0.5)
+        ax1.axhline(median_rating, color='red', linestyle='--', linewidth=2, alpha=0.5)
         
-        # Add value labels
-        for i, (era, count) in enumerate(zip(era_stats['Era'], era_stats['Count'])):
-            ax.text(count, i, f'  {count}', va='center', fontsize=11, fontweight='bold')
+        ax1.set_xscale('log')
+        ax1.set_xlabel('Number of Votes (Popularity)', fontsize=14, fontweight='bold')
+        ax1.set_ylabel('IMDB Rating', fontsize=14, fontweight='bold')
+        ax1.set_title('Popularity vs Rating\nAre You Drawn to Hits or Hidden Gems?',
+                     fontsize=16, fontweight='bold', pad=20)
+        ax1.legend(fontsize=11, loc='best')
+        ax1.grid(True, alpha=0.3)
+        
+        # Right: Category breakdown
+        category_counts = df_pop['category'].value_counts()
+        category_pcts = (category_counts / len(df_pop) * 100).round(1)
+        
+        bars = ax2.barh(range(len(category_counts)), category_counts.values,
+                       color=[colors[cat] for cat in category_counts.index],
+                       edgecolor='black', linewidth=1.5, alpha=0.7)
+        
+        ax2.set_yticks(range(len(category_counts)))
+        ax2.set_yticklabels(category_counts.index)
+        ax2.invert_yaxis()
+        ax2.set_xlabel('Number of Films', fontsize=14, fontweight='bold')
+        ax2.set_title('My Film Discovery Profile\nWhat Type of Films Do I Watch?',
+                     fontsize=16, fontweight='bold', pad=20)
+        ax2.grid(True, alpha=0.3, axis='x')
+        
+        # Add labels
+        for i, (count, pct) in enumerate(zip(category_counts.values, category_pcts.values)):
+            ax2.text(count, i, f'  {int(count)} ({pct}%)', 
+                    va='center', fontsize=11, fontweight='bold')
         
         plt.tight_layout()
-        filepath = save_figure(fig, '08_era_analysis.png', batch_number=1)
+        filepath = save_figure(fig, '08_popularity_vs_rating.png', batch_number=1)
         plt.close()
         
         return self
@@ -504,7 +677,7 @@ def main():
     """Main execution."""
     print("\n" + "🎨" * 40)
     print("\n" + " " * 15 + "BATCH 1: QUANTIFIED SELF ANALYSIS")
-    print(" " * 10 + "Analyzing YOUR Watched Movies with 8 Visualizations")
+    print(" " * 10 + "Analyzing my Watched Movies with 8 Visualizations")
     print("\n" + "🎨" * 40 + "\n")
     
     try:
@@ -513,20 +686,21 @@ def main():
         
         # Generate all 8 visualizations
         analysis.viz_1_rating_distribution()
-        analysis.viz_2_rating_matrix_heatmap()
-        analysis.viz_3_temporal_viewing_timeline()
-        analysis.viz_4_cine_calendar_heatmap()
+        analysis.viz_2_decade_genre_heatmap()
+        analysis.viz_3_director_leaderboard()
+        analysis.viz_4_genre_distribution()
         analysis.viz_5_runtime_sweet_spot()
-        analysis.viz_6_rating_vs_runtime_scatter()
+        analysis.viz_6_interactive_rating_vs_runtime()
         analysis.viz_7_decade_distribution()
-        analysis.viz_8_era_analysis()
+        analysis.viz_8_popularity_vs_rating()
         
         # Generate summary
         analysis.generate_summary_report()
         
         print("\n" + "✨" * 40)
-        print("\n" + " " * 10 + "BATCH 1 COMPLETE - 8 VISUALIZATIONS CREATED!")
-        print(" " * 15 + "Check analysis_outputs/visualizations/batch_1/")
+        print("\n" + " " * 8 + "BATCH 1 COMPLETE - 8 VISUALIZATIONS CREATED!")
+        print(" " * 10 + "(8 PNG files + 1 interactive HTML)")
+        print(" " * 12 + "Check analysis_outputs/visualizations/batch_1/")
         print("\n" + "✨" * 40 + "\n")
         
         return 0
