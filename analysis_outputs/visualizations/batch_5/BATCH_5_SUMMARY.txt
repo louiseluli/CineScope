@@ -1,0 +1,48 @@
+
+================================================================================
+BATCH 5: GENRE DEEP DIVE - SUMMARY
+================================================================================
+
+📊 QUESTIONS ANSWERED:
+
+Q141: #1 Genre: Drama (1310 films)
+
+Q142-143: Top 5 genres:
+  10. Drama: 1310 films (avg 6.70★)
+  5. Comedy: 1184 films (avg 6.33★)
+  34. Romance: 927 films (avg 6.44★)
+  55. Thriller: 492 films (avg 6.35★)
+  20. Horror: 448 films (avg 6.13★)
+
+Q143: Pure vs Hybrid:
+  • Pure genre: 189 films (8.3%)
+  • Hybrid (multi-genre): 2088 films (91.7%)
+
+Q142: Top 5 genre combinations:
+  • Comedy + Romance: 279 films
+  • Comedy + Drama + Romance: 235 films
+  • Drama + Romance: 94 films
+  • Comedy + Drama: 68 films
+  • Action + Crime + Thriller: 51 films
+
+📈 KEY INSIGHTS:
+
+1. Total unique genres: 76
+2. Average genres per film: 3.1
+3. Most consistent quality: Comedy
+4. Longest average runtime: Drama (106min)
+5. Hybrid dominance: 91.7% of films mix multiple genres
+
+🎬 VISUALIZATIONS CREATED:
+
+1. 01_genre_distribution.png - Top 15 genres
+2. 02_genre_quality_runtime.png - Quality & runtime comparison
+3. 03_genre_evolution.png - Evolution over decades
+4. 04_pure_vs_hybrid.png - Pure vs hybrid analysis
+5. 05_genre_combinations.png - Top 20 combinations
+6. 06_genre_decade_heatmap.png - Genre-decade heatmap
+7. 07_genre_rating_distribution.png - Rating distributions
+8. 08_genre_explorer_interactive.html - Interactive dashboard
+
+✅ Batch 5 Complete!
+================================================================================

@@ -4,10 +4,10 @@
 data_loader.py (watched-only, low-RAM)
 ------------------------------------------------
 Loads IMDb (from Parquet cache if present) and ONLY the titles
-in your Watched CSV, plus their linked people (cast/crew/directors/writers).
+in my Watched CSV, plus their linked people (cast/crew/directors/writers).
 
-Why: avoids OOM ("zsh: killed") on large IMDb corpora while giving you
-everything you need to research YOUR watched films quickly.
+Why: avoids OOM ("zsh: killed") on large IMDb corpora while giving me
+everything I need to research my watched films quickly.
 
 Switch to full-corpus mode by setting env:
     CINESCOPE_FULL=1

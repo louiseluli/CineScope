@@ -1,0 +1,501 @@
+actor_a,actor_b,co_appearances
+Feng Lu,Sheng Chiang,10
+Feng Lu,Phillip Chung-Fung Kwok,9
+Phillip Chung-Fung Kwok,Sheng Chiang,9
+Chien Sun,Phillip Chung-Fung Kwok,7
+Lung-Wei Wang,Phillip Chung-Fung Kwok,6
+Chien Sun,Feng Lu,6
+Chien Sun,Sheng Chiang,6
+Feng Lu,Meng Lo,6
+Meng Lo,Sheng Chiang,6
+Keanu Reeves,Laurence Fishburne,6
+Katharine Hepburn,Spencer Tracy,5
+Lung-Wei Wang,Sheng Fu,5
+Feng Lu,Lung-Wei Wang,5
+Lung-Wei Wang,Sheng Chiang,5
+Chien Sun,Lung-Wei Wang,5
+Chien Sun,Meng Lo,5
+Meng Lo,Phillip Chung-Fung Kwok,5
+Feng Lu,Li Wang,5
+Li Wang,Sheng Chiang,5
+Billy Burke,Kristen Stewart,5
+Billy Burke,Robert Pattinson,5
+Billy Burke,Taylor Lautner,5
+Kristen Stewart,Robert Pattinson,5
+Kristen Stewart,Taylor Lautner,5
+Robert Pattinson,Taylor Lautner,5
+Charles Chaplin,Henry Bergman,4
+Bette Davis,Humphrey Bogart,4
+Kuan-Chun Chi,Sheng Fu,4
+Chia-Hui Liu,Lily Li,4
+Lung-Wei Wang,Meng Lo,4
+Feng Lu,Siu-Ho Chin,4
+Li Wang,Siu-Ho Chin,4
+Sheng Chiang,Siu-Ho Chin,4
+Hou Hsiao,Kara Ying Hung Wai,4
+Kara Ying Hung Wai,Lung-Wei Wang,4
+Li Wang,Phillip Chung-Fung Kwok,4
+Judi Dench,Maggie Smith,4
+Adam Sandler,Allen Covert,4
+Andy Richter,Cedric The Entertainer,4
+Al Ernest Garcia,Charles Chaplin,3
+Carole Lombard,Fred MacMurray,3
+Carole Lombard,Sig Ruman,3
+Fred MacMurray,Porter Hall,3
+Cary Grant,Katharine Hepburn,3
+Felix Bressart,Sig Ruman,3
+Barton MacLane,Humphrey Bogart,3
+Humphrey Bogart,Sydney Greenstreet,3
+Humphrey Bogart,Lauren Bacall,3
+Doris Day,Rock Hudson,3
+Doris Day,Tony Randall,3
+Rock Hudson,Tony Randall,3
+David Frankham,Vincent Price,3
+Peter Lorre,Vincent Price,3
+Hilary Heath,Vincent Price,3
+Bruce Lee,Nora Miao,3
+Diane Keaton,Woody Allen,3
+Kuan-Chun Chi,Lung-Wei Wang,3
+Chia-Hui Liu,Liu Chia-Yung,3
+Chia-Hui Liu,Yue Wong,3
+Hung Tsai,Sheng Fu,3
+Phillip Chung-Fung Kwok,Sheng Fu,3
+Chia-Hui Liu,Lo Lieh,3
+Chien Sun,Dick Wei,3
+Chien Sun,Pai Wei,3
+Dick Wei,Feng Lu,3
+Dick Wei,Lung-Wei Wang,3
+Dick Wei,Meng Lo,3
+Dick Wei,Pai Wei,3
+Dick Wei,Phillip Chung-Fung Kwok,3
+Dick Wei,Sheng Chiang,3
+Feng Lu,Pai Wei,3
+Lung-Wei Wang,Pai Wei,3
+Meng Lo,Pai Wei,3
+Pai Wei,Phillip Chung-Fung Kwok,3
+Pai Wei,Sheng Chiang,3
+Kara Ying Hung Wai,Sheng Fu,3
+Feng Lu,Han-Kuang Chen,3
+Han-Kuang Chen,Li Wang,3
+Han-Kuang Chen,Sheng Chiang,3
+Chia-Liang Liu,Hou Hsiao,3
+Hou Hsiao,Lung-Wei Wang,3
+Kara Ying Hung Wai,Kwok-Keung Chan,3
+Chia-Hui Liu,Hou Hsiao,3
+Chia-Hui Liu,Kara Ying Hung Wai,3
+Chia-Hui Liu,Lung-Wei Wang,3
+Phillip Chung-Fung Kwok,Siu-Ho Chin,3
+Richard Crenna,Sylvester Stallone,3
+Kwok-Keung Chan,Sheng Fu,3
+Arnold Schwarzenegger,Earl Boen,3
+Christopher Lloyd,Lea Thompson,3
+Aidan Quinn,Liam Neeson,3
+Hector Elizondo,Julia Roberts,3
+Emma Thompson,Hugh Grant,3
+Adam Sandler,Steve Buscemi,3
+Peter Stormare,Steve Buscemi,3
+Courteney Cox,David Arquette,3
+Courteney Cox,Neve Campbell,3
+Courteney Cox,Roger Jackson,3
+David Arquette,Neve Campbell,3
+David Arquette,Roger Jackson,3
+Neve Campbell,Roger Jackson,3
+Jeremy Piven,John Cusack,3
+Joan Cusack,John Cusack,3
+Tommy Lee Jones,Will Smith,3
+Carrie-Anne Moss,Hugo Weaving,3
+Carrie-Anne Moss,Keanu Reeves,3
+Carrie-Anne Moss,Laurence Fishburne,3
+Hugo Weaving,Keanu Reeves,3
+Hugo Weaving,Laurence Fishburne,3
+Alyson Hannigan,Jason Biggs,3
+Emily Perkins,Katharine Isabelle,3
+Brad Pitt,George Clooney,3
+Anne Hathaway,Hector Elizondo,3
+John Corbett,Nia Vardalos,3
+Chris Evans,Scarlett Johansson,3
+Brendan Fletcher,Katharine Isabelle,3
+Adam Sandler,Maya Rudolph,3
+Andy Richter,Ben Stiller,3
+Andy Richter,Chris Rock,3
+Andy Richter,David Schwimmer,3
+Andy Richter,Jada Pinkett Smith,3
+Andy Richter,Sacha Baron Cohen,3
+Ben Stiller,Cedric The Entertainer,3
+Ben Stiller,Chris Rock,3
+Ben Stiller,David Schwimmer,3
+Ben Stiller,Jada Pinkett Smith,3
+Ben Stiller,Sacha Baron Cohen,3
+Cedric The Entertainer,Chris Rock,3
+Cedric The Entertainer,David Schwimmer,3
+Cedric The Entertainer,Jada Pinkett Smith,3
+Cedric The Entertainer,Sacha Baron Cohen,3
+Chris Rock,David Schwimmer,3
+Chris Rock,Jada Pinkett Smith,3
+Chris Rock,Sacha Baron Cohen,3
+David Schwimmer,Jada Pinkett Smith,3
+David Schwimmer,Sacha Baron Cohen,3
+Jada Pinkett Smith,Sacha Baron Cohen,3
+Craig T. Nelson,Diane Keaton,3
+Justin Long,Vince Vaughn,3
+Jon Favreau,Vince Vaughn,3
+Patrick Wilson,Ty Simpkins,3
+Bradley Cooper,Justin Bartha,3
+Charlize Theron,Eddie Marsan,3
+Jason Bateman,Jennifer Aniston,3
+Jason Bateman,Jon Favreau,3
+J.K. Simmons,Jason Bateman,3
+Adam Sandler,Kevin James,3
+Robert Downey Jr.,Scarlett Johansson,3
+Bradley Cooper,Ken Jeong,3
+Alice Krige,Ben Lamb,3
+Alice Krige,Honor Kneafsey,3
+Alice Krige,Rose McIver,3
+Alice Krige,Sarah Douglas,3
+Alice Krige,Theo Devaney,3
+Ben Lamb,Honor Kneafsey,3
+Ben Lamb,Rose McIver,3
+Ben Lamb,Sarah Douglas,3
+Ben Lamb,Theo Devaney,3
+Honor Kneafsey,Rose McIver,3
+Honor Kneafsey,Sarah Douglas,3
+Honor Kneafsey,Theo Devaney,3
+Rose McIver,Sarah Douglas,3
+Rose McIver,Theo Devaney,3
+Sarah Douglas,Theo Devaney,3
+Ian McShane,Keanu Reeves,3
+Ian McShane,Lance Reddick,3
+Ian McShane,Laurence Fishburne,3
+Keanu Reeves,Lance Reddick,3
+Lance Reddick,Laurence Fishburne,3
+Craig T. Nelson,Mary Steenburgen,3
+Anna Cathcart,Emilija Baranac,3
+Anna Cathcart,Janel Parrish,3
+Anna Cathcart,Lana Condor,3
+Anna Cathcart,Madeleine Arthur,3
+Anna Cathcart,Noah Centineo,3
+Anna Cathcart,Trezzo Mahoro,3
+Emilija Baranac,Janel Parrish,3
+Emilija Baranac,Lana Condor,3
+Emilija Baranac,Madeleine Arthur,3
+Emilija Baranac,Noah Centineo,3
+Emilija Baranac,Trezzo Mahoro,3
+Janel Parrish,Lana Condor,3
+Janel Parrish,Madeleine Arthur,3
+Janel Parrish,Noah Centineo,3
+Janel Parrish,Trezzo Mahoro,3
+Lana Condor,Madeleine Arthur,3
+Lana Condor,Noah Centineo,3
+Lana Condor,Trezzo Mahoro,3
+Madeleine Arthur,Noah Centineo,3
+Madeleine Arthur,Trezzo Mahoro,3
+Noah Centineo,Trezzo Mahoro,3
+Billy Burke,Justin Chon,3
+Billy Burke,Michael Welch,3
+Justin Chon,Kristen Stewart,3
+Justin Chon,Michael Welch,3
+Justin Chon,Robert Pattinson,3
+Justin Chon,Taylor Lautner,3
+Kristen Stewart,Michael Welch,3
+Michael Welch,Robert Pattinson,3
+Michael Welch,Taylor Lautner,3
+Andrew Bachelor,Robbie Amell,3
+Bella Thorne,Robbie Amell,3
+Mark Fleischmann,Nick Sagar,3
+Mark Fleischmann,Sam Palladio,3
+Mark Fleischmann,Suanne Braun,3
+Mark Fleischmann,Vanessa Hudgens,3
+Nick Sagar,Sam Palladio,3
+Nick Sagar,Suanne Braun,3
+Nick Sagar,Vanessa Hudgens,3
+Sam Palladio,Suanne Braun,3
+Sam Palladio,Vanessa Hudgens,3
+Suanne Braun,Vanessa Hudgens,3
+Lena Endre,Michael Nyqvist,3
+Lena Endre,Noomi Rapace,3
+Michael Nyqvist,Noomi Rapace,3
+Arnold Schwarzenegger,Sylvester Stallone,3
+Ashley Greene,Billy Burke,3
+Ashley Greene,Kristen Stewart,3
+Ashley Greene,Robert Pattinson,3
+Ashley Greene,Taylor Lautner,3
+Dolph Lundgren,Jason Statham,3
+Dolph Lundgren,Jet Li,3
+Dolph Lundgren,Randy Couture,3
+Dolph Lundgren,Sylvester Stallone,3
+Jason Statham,Jet Li,3
+Jason Statham,Randy Couture,3
+Jason Statham,Sylvester Stallone,3
+Jet Li,Randy Couture,3
+Jet Li,Sylvester Stallone,3
+Randy Couture,Sylvester Stallone,3
+Billy Burke,Jackson Rathbone,3
+Jackson Rathbone,Kristen Stewart,3
+Jackson Rathbone,Robert Pattinson,3
+Jackson Rathbone,Taylor Lautner,3
+Michael Caine,Morgan Freeman,3
+Laz Alonso,Paula Patton,3
+Patrick Wilson,Vera Farmiga,3
+Charles Chaplin,Chester Conklin,2
+Charles Chaplin,Mack Swain,2
+Mildred Harris,Wilbur Higby,2
+Ossi Oswalda,Victor Janson,2
+Hermann Thimig,Marga Köhler,2
+Hermann Thimig,Victor Janson,2
+Marga Köhler,Victor Janson,2
+Albert Austin,Charles Chaplin,2
+Albert Austin,Henry Bergman,2
+Al Ernest Garcia,Henry Bergman,2
+Al Ernest Garcia,Tiny Sandford,2
+Charles Chaplin,Tiny Sandford,2
+Henry Bergman,Tiny Sandford,2
+Carole Lombard,Irving Bacon,2
+Marian Marsh,Warren William,2
+Al Ernest Garcia,Hank Mann,2
+Charles Chaplin,Hank Mann,2
+Boris Karloff,Colin Clive,2
+Carole Lombard,William Powell,2
+Cary Grant,Rita La Roy,2
+Gene Morgan,Herbert Marshall,2
+Cary Grant,Randolph Scott,2
+Greta Garbo,Lionel Barrymore,2
+Allen Jenkins,Bette Davis,2
+Allen Jenkins,Humphrey Bogart,2
+Joan Blondell,Warren William,2
+Edward Everett Horton,Miriam Hopkins,2
+Edward Everett Horton,Franklin Pangborn,2
+Edward Everett Horton,Gary Cooper,2
+Franklin Pangborn,Gary Cooper,2
+Ruth Donnelly,Wallace Ford,2
+Ruth Donnelly,Warren William,2
+Wallace Ford,Warren William,2
+E.E. Clive,Una O'Connor,2
+Ned Sparks,Warren William,2
+Ferike Boros,Ginger Rogers,2
+Bela Lugosi,Boris Karloff,2
+Alan Hale,Claudette Colbert,2
+Roscoe Karns,Walter Connolly,2
+George Curzon,Nova Pilbeam,2
+Paula Wessely,Walter Janssen,2
+Myrna Loy,William Powell,2
+Carole Lombard,Edgar Kennedy,2
+Carole Lombard,John Barrymore,2
+Carole Lombard,Walter Connolly,2
+Edgar Kennedy,John Barrymore,2
+Carole Lombard,Ralph Bellamy,2
+Jean Arthur,Lionel Stander,2
+Carole Lombard,Richard Carle,2
+Charles Chaplin,Paulette Goddard,2
+Carole Lombard,Mischa Auer,2
+Carole Lombard,Porter Hall,2
+Cary Grant,Irene Dunne,2
+Cary Grant,Ralph Bellamy,2
+Jaroslav Prucha,Ladislav Bohác,2
+Jaroslav Prucha,Zdenek Stepánek,2
+Ladislav Bohác,Zdenek Stepánek,2
+Laura Hope Crews,Robert Taylor,2
+Franklin Pangborn,William Demarest,2
+Bette Davis,John Litel,2
+Irene Dunne,Scotty Beckett,2
+Basil Radford,Mary Clare,2
+Laurence Olivier,Merle Oberon,2
+Cary Grant,Edward Everett Horton,2
+Cary Grant,Henry Daniell,2
+Henry Daniell,Katharine Hepburn,2
+Bette Davis,George Brent,2
+Henry Travers,Humphrey Bogart,2
+Edwin Maxwell,Felix Bressart,2
+Cary Grant,Jean Arthur,2
+Greer Garson,Reginald Owen,2
+Greer Garson,Robert Taylor,2
+Basil Rathbone,Boris Karloff,2
+Lucile Watson,Mary Boland,2
+Cecil Kellaway,Miles Mander,2
+Charles Trowbridge,Vincent Price,2
+Greer Garson,Mary Boland,2
+Joan Fontaine,Nigel Bruce,2
+Arthur Kennedy,Humphrey Bogart,2
+Barton MacLane,Jerome Cowan,2
+Humphrey Bogart,Jerome Cowan,2
+Eric Blore,Robert Greig,2
+Eric Blore,William Demarest,2
+Robert Greig,William Demarest,2
+Patricia Collinge,Teresa Wright,2
+Humphrey Bogart,Mary Astor,2
+Humphrey Bogart,Peter Lorre,2
+Mary Astor,Sydney Greenstreet,2
+Peter Lorre,Sydney Greenstreet,2
+Carole Lombard,Charles Halton,2
+Joel McCrea,Robert Warwick,2
+Porter Hall,William Demarest,2
+Robert Greig,Robert Warwick,2
+Robert Greig,Veronica Lake,2
+Robert Warwick,Veronica Lake,2
+Cary Grant,Leo G. Carroll,2
+Claude Rains,Ingrid Bergman,2
+Claude Rains,Paul Henreid,2
+Jane Randolph,Kent Smith,2
+Jane Randolph,Simone Simon,2
+Kent Smith,Simone Simon,2
+Bette Davis,Claude Rains,2
+Bruce Bennett,Humphrey Bogart,2
+Ingrid Bergman,Joseph Cotten,2
+Dan Seymour,Humphrey Bogart,2
+Dan Seymour,Lauren Bacall,2
+Humphrey Bogart,Marcel Dalio,2
+Donald Curtis,Norman Lloyd,2
+Gloria Grahame,James Stewart,2
+Bette Davis,David Brian,2
+Gary Merrill,George Sanders,2
+Charles Bronson,Vincent Price,2
+Mari Aldon,Rossano Brazzi,2
+Grace Kelly,John Williams,2
+Audrey Hepburn,Marcel Dalio,2
+Audrey Hepburn,William Holden,2
+Aldo Silvani,Giulietta Masina,2
+Kim Novak,Raymond Bailey,2
+Dennis Hopper,James Dean,2
+Dennis Hopper,Sal Mineo,2
+James Dean,Sal Mineo,2
+Cary Grant,Jessie Royce Landis,2
+Charlton Heston,Edward G. Robinson,2
+Charlton Heston,Martha Scott,2
+Audrey Hepburn,Jean Del Val,2
+Audrey Hepburn,John McGiver,2
+James Stewart,Kim Novak,2
+Elisha Cook Jr.,Vincent Price,2
+Artur Mlodnicki,Zbigniew Cybulski,2
+Cary Grant,Dick Sargent,2
+Brett Halsey,Vincent Price,2
+Jack Lemmon,Joan Shawlee,2
+David Frankham,Wally Campo,2
+Vincent Price,Wally Campo,2
+Gunnar Björnstrand,Max von Sydow,2
+Basil Rathbone,Joyce Jameson,2
+Basil Rathbone,Peter Lorre,2
+Basil Rathbone,Vincent Price,2
+Debra Paget,Vincent Price,2
+Joyce Jameson,Peter Lorre,2
+Joyce Jameson,Vincent Price,2
+Audrey Hepburn,Jacques Marin,2
+Boris Karloff,Peter Lorre,2
+Boris Karloff,Vincent Price,2
+Hazel Court,Vincent Price,2
+Gunnar Björnstrand,Liv Ullmann,2
+Hilary Heath,Rupert Davies,2
+Rupert Davies,Vincent Price,2
+Carl Rigg,Hilary Heath,2
+Carl Rigg,Sally Geeson,2
+Carl Rigg,Vincent Price,2
+Christopher Lee,Vincent Price,2
+Hilary Heath,Sally Geeson,2
+Sally Geeson,Vincent Price,2
+Hugh Griffith,Vincent Price,2
+Terry-Thomas,Vincent Price,2
+Bruce Lee,James Tien,2
+Bruce Lee,Maria Yi,2
+Bruce Lee,Shan Chin,2
+Bruce Lee,Tony Liu,2
+Bruce Lee,Ying-Chieh Han,2
+James Tien,Maria Yi,2
+James Tien,Nora Miao,2
+James Tien,Shan Chin,2
+James Tien,Ying-Chieh Han,2
+Maria Yi,Nora Miao,2
+Maria Yi,Shan Chin,2
+Maria Yi,Ying-Chieh Han,2
+Nora Miao,Shan Chin,2
+Nora Miao,Tony Liu,2
+Nora Miao,Ying-Chieh Han,2
+Shan Chin,Ying-Chieh Han,2
+Peter Cushing,Vincent Price,2
+Bruce Lee,Robert Wall,2
+Diane Keaton,Tony Roberts,2
+Tony Roberts,Woody Allen,2
+Pam Grier,Sid Haig,2
+Ruben Moreno,Sid Haig,2
+Charles Bronson,Vincent Gardenia,2
+David Chiang,Kuan-Chun Chi,2
+David Chiang,Lung Ti,2
+David Chiang,Lung-Wei Wang,2
+David Chiang,Sheng Fu,2
+Ka-Yan Leung,Kuan-Chun Chi,2
+Ka-Yan Leung,Lung-Wei Wang,2
+Ka-Yan Leung,Sheng Fu,2
+Kuan-Chun Chi,Lung Ti,2
+Lung Ti,Lung-Wei Wang,2
+Lung Ti,Sheng Fu,2
+Sheng Fu,Ti Lu,2
+Aleksandr Belyavskiy,Aleksandr Shirvindt,2
+Aleksandr Belyavskiy,Andrey Myagkov,2
+Aleksandr Belyavskiy,Barbara Brylska,2
+Aleksandr Belyavskiy,Valentina Talyzina,2
+Aleksandr Belyavskiy,Yuriy Yakovlev,2
+Aleksandr Shirvindt,Andrey Myagkov,2
+Aleksandr Shirvindt,Barbara Brylska,2
+Aleksandr Shirvindt,Valentina Talyzina,2
+Aleksandr Shirvindt,Yuriy Yakovlev,2
+Andrey Myagkov,Barbara Brylska,2
+Andrey Myagkov,Liya Akhedzhakova,2
+Andrey Myagkov,Valentina Talyzina,2
+Andrey Myagkov,Yuriy Yakovlev,2
+Barbara Brylska,Valentina Talyzina,2
+Barbara Brylska,Yuriy Yakovlev,2
+Valentina Talyzina,Yuriy Yakovlev,2
+Chen Kuan-Tai,Chia-Hui Liu,2
+Chen Kuan-Tai,Kang-Yeh Cheng,2
+Chen Kuan-Tai,Lily Li,2
+Chen Kuan-Tai,Tao Chiang,2
+Chen Kuan-Tai,Yue Wong,2
+Chia-Hui Liu,Chia-Liang Liu,2
+Chia-Hui Liu,Kang-Yeh Cheng,2
+Chia-Hui Liu,Tao Chiang,2
+Chia-Liang Liu,Lily Li,2
+Chia-Liang Liu,Liu Chia-Yung,2
+Kang-Yeh Cheng,Lily Li,2
+Kang-Yeh Cheng,Tao Chiang,2
+Kang-Yeh Cheng,Yue Wong,2
+Lily Li,Tao Chiang,2
+Lily Li,Yue Wong,2
+Liu Chia-Yung,Yue Wong,2
+Tao Chiang,Yue Wong,2
+Hung Tsai,Lung-Wei Wang,2
+Joe Spinell,Sylvester Stallone,2
+Feng Lu,Hsi Chang,2
+Hsi Chang,Phillip Chung-Fung Kwok,2
+Hsi Chang,Sheng Chiang,2
+Lo Lieh,Yue Wong,2
+Hung Tsai,Phillip Chung-Fung Kwok,2
+Chien Sun,Tai-Ping Yu,2
+Feng Lu,Tai-Ping Yu,2
+Lung-Wei Wang,Miao Ching,2
+Lung-Wei Wang,Tai-Ping Yu,2
+Meng Lo,Tai-Ping Yu,2
+Phillip Chung-Fung Kwok,Tai-Ping Yu,2
+Sheng Chiang,Tai-Ping Yu,2
+Bruce Dern,Jane Fonda,2
+Ku Feng,Phillip Chung-Fung Kwok,2
+Feng Lu,Shen Chan,2
+Phillip Chung-Fung Kwok,Shen Chan,2
+Shen Chan,Sheng Chiang,2
+Chia-Hui Liu,Lun Hua,2
+Chia-Hui Liu,Szu-Chia Chen,2
+Lun Hua,Szu-Chia Chen,2
+Chi-Shan Chen,Feng Lu,2
+Chi-Shan Chen,Han-Kuang Chen,2
+Chi-Shan Chen,Li Wang,2
+Chi-Shan Chen,Meng Lo,2
+Chi-Shan Chen,Sheng Chiang,2
+Chi-Shan Chen,Siu-Ho Chin,2
+Han-Kuang Chen,Meng Lo,2
+Han-Kuang Chen,Siu-Ho Chin,2
+Li Wang,Meng Lo,2
+Meng Lo,Siu-Ho Chin,2
+John Hurt,Tom Skerritt,2
+Diane Keaton,Meryl Streep,2
+Dabney Coleman,Dolly Parton,2
+Dabney Coleman,Lily Tomlin,2
+Dolly Parton,Lily Tomlin,2
+Chia-Liang Liu,Kara Ying Hung Wai,2
+Chia-Liang Liu,Kwok-Keung Chan,2
+Hou Hsiao,Kwok-Keung Chan,2

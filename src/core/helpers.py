@@ -20,30 +20,300 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from src.core.config import GENRE_SEPARATOR, MISSING_VALUES, log_message
 
 
-# ============================================================================
-# GENRE & METADATA PARSING
-# ============================================================================
+# --- GENRE NORMALIZATION HELPERS ---------------------------------------------
 
-def parse_genres(genre_string):
+def _coerce_to_list(x):
     """
-    Parse genre string into a clean list of genres.
-    
-    Args:
-        genre_string: String with comma-separated genres
-        
-    Returns:
-        List of genre strings
+    Robustly coerce a 'genres' cell to a Python list of raw tokens.
+    Accepts:
+      - Python repr strings: "['Comedy', 'Romance']"
+      - JSON arrays: '["Comedy","Romance"]'
+      - Comma/semicolon-separated strings: "Comedy, Romance; Drama"
+      - Already-a-list objects
+    Returns a list of strings (possibly dirty), or [] if empty.
     """
-    if pd.isna(genre_string) or genre_string in MISSING_VALUES:
+    import ast
+    import json
+
+    if x is None or (isinstance(x, float) and pd.isna(x)):  # noqa: F821 (pd imported in module)
         return []
-    
-    # Split by comma and clean
-    genres = [g.strip() for g in str(genre_string).split(GENRE_SEPARATOR)]
-    
-    # Remove empty strings and standardize
-    genres = [g for g in genres if g and g not in MISSING_VALUES]
-    
-    return genres
+    if isinstance(x, list):
+        return [str(t) for t in x]
+
+    s = str(x).strip()
+    if not s or s.lower() in {"nan", "none", "null"}:
+        return []
+
+    # Try literal_eval (Python list repr)
+    if (s.startswith("[") and s.endswith("]")) or (s.startswith("(") and s.endswith(")")):
+        try:
+            val = ast.literal_eval(s)
+            if isinstance(val, (list, tuple)):
+                return [str(t) for t in val]
+        except Exception:
+            pass
+
+    # Try JSON
+    if s.startswith("[") and s.endswith("]"):
+        try:
+            val = json.loads(s)
+            if isinstance(val, list):
+                return [str(t) for t in val]
+        except Exception:
+            pass
+
+    # Fallback: split on commas / semicolons / pipes
+    parts = []
+    for sep in ["|", ";", ","]:
+        if sep in s:
+            parts = [p for p in s.replace("|", ",").replace(";", ",").split(",")]
+            break
+    if not parts:
+        parts = [s]
+
+    # Strip wrapping quotes and brackets that slipped through
+    cleaned = []
+    for p in parts:
+        p = p.strip().strip('"').strip("'")
+        p = p.replace("['", "").replace("']", "").replace('["', '').replace('"]', '')
+        cleaned.append(p)
+    return cleaned
+
+
+def normalize_genre_name(name: str) -> str:
+    """
+    Normalize a single genre label:
+      - strip spaces/quotes/brackets
+      - casefold → title case (with a few acronyms fixed)
+      - unify common aliases ("Sci Fi" → "Sci-Fi", "Film-Noir" → "Noir", etc.)
+    """
+    if not name:
+        return ""
+    g = str(name).strip().strip('"').strip("'")
+
+    # Canonicalize separators/hyphens
+    g = g.replace("‐", "-").replace("–", "-").replace("—", "-")
+
+    # Lower for alias matching
+    low = g.lower()
+
+    # Alias map (expand as needed)
+    aliases = {
+        "sci fi": "Sci-Fi",
+        "sci-fi": "Sci-Fi",
+        "scifi": "Sci-Fi",
+        "science fiction": "Sci-Fi",
+        "film-noir": "Noir",
+        "noir": "Noir",
+        "tv movie": "TV Movie",
+        "tv-movie": "TV Movie",
+        "biography": "Biography",
+        "rom-com": "Romance",
+        "romcom": "Romance",
+        "kids": "Family",
+        "children": "Family",
+    }
+    if low in aliases:
+        return aliases[low]
+
+    # Title case default
+    g = g.title()
+
+    # Preserve acronyms and common caps
+    fixes = {
+        "Sci-Fi": "Sci-Fi",     # use non-breaking hyphen variant for consistency
+        "Imdb": "IMDb",
+        "Tv Movie": "TV Movie",
+        "Usa": "USA",
+    }
+    return fixes.get(g, g)
+
+
+def parse_genres(x):
+    """
+    Robustly parse a 'genres' field into a clean, de-duplicated list of genre names.
+
+    Accepts:
+      - list/tuple of strings,
+      - comma/pipe/semicolon/slash-separated strings,
+      - list-like strings (e.g., "['Comedy', 'Romance']" or '["Drama","Crime"]').
+
+    Normalizes:
+      - strips brackets/quotes and odd punctuation,
+      - splits on , | ; /,
+      - trims whitespace, collapses inner spaces,
+      - Title-cases consistently,
+      - de-duplicates while preserving original order,
+      - maps common synonyms (e.g., "Science Fiction" → "Sci-Fi", "TV Movie" casing).
+
+    Returns: list[str]
+    """
+    import re
+
+    if x is None or (isinstance(x, float) and str(x) == "nan"):
+        return []
+
+    # If already a list/tuple, coerce to flat string list first
+    if isinstance(x, (list, tuple)):
+        parts = [str(v) for v in x if v is not None and str(v).strip()]
+    else:
+        s = str(x)
+
+        # Remove outer list-like wrappers: ["..."], ['...']
+        # and any stray quotes around the whole string
+        s = s.strip()
+        if s.startswith("[") and s.endswith("]"):
+            s = s[1:-1]
+
+        # Replace common joiners in list-like strings: "', '", '", "'
+        s = s.replace("', '", ", ").replace('", "', ", ")
+
+        # Strip leading/trailing quotes that sometimes remain
+        s = re.sub(r"^[\"']+|[\"']+$", "", s)
+
+        # Split on commas, pipes, semicolons, or slashes
+        parts = re.split(r"[,\|;/]", s)
+
+    # Clean each token
+    cleaned = []
+    seen = set()
+    for p in parts:
+        t = str(p).strip()
+        if not t:
+            continue
+
+        # Remove any leftover quotes/brackets
+        t = t.strip(" '\"\t\n\r[]()")
+
+        # Normalize inner whitespace
+        t = re.sub(r"\s+", " ", t)
+
+        # Title-case with some exceptions
+        t_norm = t.title()
+
+        # Common synonym / casing fixes
+        replacements = {
+            "Science Fiction": "Sci-Fi",
+            "Sci Fi": "Sci-Fi",
+            "Tv Movie": "TV Movie",
+            "Film Noir": "Film-Noir",   # IMDb style
+            "Bio-Graphy": "Biography",  # occasional weirdness
+        }
+        t_norm = replacements.get(t_norm, t_norm)
+
+        # Final guard: drop any empty result
+        if not t_norm or t_norm.lower() in {"na", "n/a", "none", "null"}:
+            continue
+
+        # De-duplicate preserving order
+        key = t_norm.lower()
+        if key not in seen:
+            seen.add(key)
+            cleaned.append(t_norm)
+
+    return cleaned
+
+
+
+def explode_genres(
+    df,
+    genres_col: str = "genres",
+    id_col: str = "const",
+    keep_cols: list[str] | None = None,
+):
+    """
+    Explode a dataframe so each (film, genre) becomes one row.
+
+    - Uses the robust parse_genres() above (fixes ['Comedy'] / stray quotes).
+    - De-duplicates genres *per film*.
+    - Preserves common analysis columns if present.
+
+    Parameters
+    ----------
+    df : pd.DataFrame
+    genres_col : str
+        Column containing genres (string, list-like, or messy list-in-string).
+    id_col : str
+        Identifier column for the title (defaults to 'const').
+    keep_cols : list[str] | None
+        Additional columns to keep in the exploded frame.
+        If None, we keep a sensible default set when available:
+        ['const', 'imdb_rating', 'runtime_mins', 'year', 'decade'].
+
+    Returns
+    -------
+    pd.DataFrame with columns:
+        - id_col (e.g., 'const')
+        - 'genre'
+        - plus any available keep columns
+    """
+    import pandas as pd
+
+    if keep_cols is None:
+        default_candidates = ["imdb_rating", "runtime_mins", "year", "decade"]
+        keep_cols = [c for c in default_candidates if c in df.columns]
+
+    base_cols = []
+    if id_col in df.columns:
+        base_cols.append(id_col)
+    if genres_col in df.columns and genres_col not in base_cols:
+        base_cols.append(genres_col)
+
+    # Also carry the keep_cols if they exist
+    cols_to_use = base_cols + [c for c in keep_cols if c in df.columns]
+
+    if not set(base_cols).issubset(df.columns):
+        # Fall back gracefully if the genres column doesn't exist
+        # Return empty frame with expected columns
+        out_cols = ([id_col] if id_col in df.columns else []) + ["genre"] + keep_cols
+        return pd.DataFrame(columns=out_cols)
+
+    rows = []
+    for _, row in df[cols_to_use].iterrows():
+        genres = parse_genres(row.get(genres_col))
+        if not genres:
+            continue
+
+        # ensure per-film unique genres
+        seen = set()
+        for g in genres:
+            key = g.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+
+            new_row = {id_col: row[id_col], "genre": g}
+            for c in keep_cols:
+                if c in row.index:
+                    new_row[c] = row[c]
+            rows.append(new_row)
+
+    exploded = pd.DataFrame(rows)
+
+    # Optional: keep a stable sort (genre alpha then id)
+    if not exploded.empty:
+        sort_cols = ["genre"]
+        if id_col in exploded.columns:
+            sort_cols.append(id_col)
+        exploded = exploded.sort_values(sort_cols).reset_index(drop=True)
+
+    return exploded
+
+
+def _normalize_list_str(s: str) -> str:
+    """
+    Utility to quickly strip brackets/quotes from a list-like string.
+    Not used outside helpers; safe to keep internal.
+    """
+    import re
+    if s is None:
+        return ""
+    s = str(s).strip()
+    if s.startswith("[") and s.endswith("]"):
+        s = s[1:-1]
+    s = s.replace("', '", ", ").replace('", "', ", ")
+    s = re.sub(r"^[\"']+|[\"']+$", "", s)
+    return s
 
 
 def parse_directors(director_string):
@@ -106,30 +376,6 @@ def parse_keywords(keyword_string):
     keywords = [k.lower() for k in keywords if k and k not in MISSING_VALUES]
     
     return keywords
-
-
-def explode_genres(df, genre_column='genres'):
-    """
-    Explode genres into separate rows for genre analysis.
-    
-    Args:
-        df: DataFrame with genre column
-        genre_column: Name of the genre column
-        
-    Returns:
-        DataFrame with one row per genre per movie
-    """
-    df_copy = df.copy()
-    df_copy['genre_list'] = df_copy[genre_column].apply(parse_genres)
-    
-    # Explode the list into separate rows
-    exploded = df_copy.explode('genre_list')
-    exploded = exploded[exploded['genre_list'].notna()]
-    exploded = exploded[exploded['genre_list'] != '']
-    
-    exploded = exploded.rename(columns={'genre_list': 'genre'})
-    
-    return exploded
 
 
 def get_primary_genre(genre_string):

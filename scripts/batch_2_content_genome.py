@@ -1336,6 +1336,58 @@ class ContentGenomeAnalysis:
         return self
 
     # -------------------- Summary --------------------
+    def export_canonical_actors_table(self):
+        """Export canonical actor-film pairs table for use by other batches."""
+        log_message("\n📦 Exporting canonical actors table for downstream batches...")
+        
+        if self.actors_df.empty:
+            log_message("⚠️ Actors table empty; skipping export.", level="WARNING")
+            return self
+        
+        # Build canonical format: actor_id, actor_name, gender, film_id, film_year, rating, genres
+        canonical = self.actors_df.copy()
+        
+        # Rename nconst → actor_id, actor → actor_name
+        canonical = canonical.rename(columns={
+            "nconst": "actor_id",
+            "actor": "actor_name",
+            "const": "film_id"
+        })
+        
+        # Merge with film metadata
+        film_meta = self.df[["const", "imdb_rating", "year", "genres"]].copy()
+        film_meta = film_meta.rename(columns={
+            "const": "film_id",
+            "imdb_rating": "rating",
+            "year": "film_year"
+        })
+        
+        canonical = canonical.merge(film_meta, on="film_id", how="left")
+        
+        # Select canonical columns in order
+        canonical = canonical[[
+            "actor_id", "actor_name", "gender",
+            "film_id", "film_year", "rating", "genres"
+        ]].drop_duplicates(subset=["actor_id", "film_id"]).reset_index(drop=True)
+        
+        # Sort for deterministic ordering
+        canonical = canonical.sort_values(
+            by=["actor_id", "film_year", "film_id"]
+        ).reset_index(drop=True)
+        
+        # Export to parquet for flexibility
+        cache_dir = project_root / "data" / "processed"
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        
+        out_path = cache_dir / "actors_master.parquet"
+        canonical.to_parquet(out_path, index=False)
+        
+        log_message(f"✅ Exported canonical actors table: {out_path}")
+        log_message(f"   Rows: {len(canonical):,} | Unique actors: {canonical['actor_id'].nunique():,}")
+        log_message(f"   Columns: {', '.join(canonical.columns)}")
+        
+        return self
+
     def generate_summary_report(self):
         log_message("\n" + "=" * 80)
         log_message("BATCH 2 ANALYSIS SUMMARY")
@@ -1376,7 +1428,7 @@ def main():
     print("\n" + "🎨" * 40 + "\n")
 
     analysis = ContentGenomeAnalysis()
-    analysis.load_data().validate_pipeline()
+    analysis.load_data().validate_pipeline().export_canonical_actors_table()
 
     (analysis
         .viz_1_top_actors_leaderboard()

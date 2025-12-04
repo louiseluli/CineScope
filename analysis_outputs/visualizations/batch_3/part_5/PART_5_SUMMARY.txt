@@ -1,0 +1,70 @@
+
+================================================================================
+BATCH 3 PARTS 4 & 5: AGE/ERA/CAREER & CHARACTER ANALYSIS - SUMMARY
+================================================================================
+
+PART 4: AGE, ERA & CAREER EVOLUTION (Q31-40)
+─────────────────────────────────────────────
+
+Q31-32: Actor age at discovery:
+  • Average age at first film: 37.4 years
+  • Youngest discovered: -35 years
+  • Oldest discovered: 122 years
+
+Q33-36: Generation distribution:
+  • Modern Era: 15311 actors
+  • Blockbuster Era: 7062 actors
+  • Golden Age: 3008 actors
+  • New Hollywood: 2000 actors
+  • Silent Era: 414 actors
+
+Q37-40: Career longevity leaders:
+  3592. Harrison Ford: 96 years (12 films)
+  6613. Frances O'Connor: 84 years (4 films)
+  3776. Robert Taylor: 82 years (6 films)
+  8424. Mark Strong: 82 years (5 films)
+  8698. Jack Duffy: 80 years (2 films)
+
+
+PART 5: CHARACTER TYPES & VERSATILITY (Q41-50)
+───────────────────────────────────────────────
+
+Q41-44: Actor type classification:
+  • Emerging/Niche: 27621 actors (99.4%)
+  • Character Actor: 140 actors (0.5%)
+  • Leading Star: 26 actors (0.1%)
+  • Genre Specialist: 8 actors (0.0%)
+
+Q45-47: Most genre-versatile actors:
+  5845. Jason Lee: 22 genres across 10 films
+  2. Morgan Freeman: 21 genres across 21 films
+  755. Drew Barrymore: 20 genres across 14 films
+  1124. Sandra Bullock: 20 genres across 19 films
+  359. Samuel L. Jackson: 19 genres across 14 films
+
+
+📈 COMBINED KEY INSIGHTS:
+
+1. Total actors analyzed: 27795
+2. Dominant generation: Modern Era
+3. Most common actor type: Emerging/Niche
+4. Average career span: 2.6 years
+5. Average genre versatility: 3.6 genres
+
+🎬 VISUALIZATIONS CREATED:
+
+PART 4 (Age/Era/Career):
+22. viz_22_age_distribution.png - Age analysis at discovery
+23. viz_23_career_evolution.png - Timeline for top 10 actors
+24. viz_24_generation_cohorts.png - Generation analysis (3 panels)
+25. viz_25_career_peak_decades.png - Peak decade heatmap
+26. viz_26_longevity_analysis.png - Career span leaders
+
+PART 5 (Character/Versatility):
+27. viz_27_actor_type_classification.png - Type distribution
+28. viz_28_genre_crossing.png - Genre-crossing heatmap
+29. viz_29_acting_range.png - Versatility spectrum
+30. viz_30_ensemble_vs_solo.png - Collaboration analysis
+31. viz_31_interactive_character_explorer.html - 4-panel dashboard
+
+================================================================================

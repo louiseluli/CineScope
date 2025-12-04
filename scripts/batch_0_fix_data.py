@@ -116,69 +116,178 @@ class DataCleaner:
         return self
     
     def fix_director_names(self):
-        """Attempt to fix director names showing as IMDB IDs."""
+        """
+        Normalize person-name fields so plots show clean names (no IMDb IDs).
+        - Strips patterns like " | nm0000033"
+        - Splits on commas/pipes and removes any lone nm######## tokens
+        - De-dups and rejoins with ", "
+        Applies to 'directors' and also prepares 'directors_clean' (keeps original intact if already clean).
+        """
         log_message("\n" + "=" * 80)
-        log_message("Checking Director Names...")
+        log_message("Normalizing person names (removing IMDb IDs)...")
         log_message("=" * 80)
-        
+
         if 'directors' not in self.df.columns:
             log_message("⚠️ No directors column found", level="WARNING")
             return self
-        
-        # Count directors that are IMDB IDs (format: nm#######)
-        imdb_id_pattern = r'^nm\d{7,}$'
-        
-        # Check for IMDB IDs in director field
-        has_imdb_ids = self.df['directors'].astype(str).str.match(imdb_id_pattern)
-        imdb_id_count = has_imdb_ids.sum()
-        
-        if imdb_id_count > 0:
-            log_message(f"⚠️ Found {imdb_id_count} films with IMDB IDs instead of names")
-            log_message("Note: These need to be looked up from IMDB name database")
-            
-            # Try to load IMDB names cache
-            names_cache = PROCESSED_DATA_DIR / "imdb_cache" / "names.parquet"
-            
-            if names_cache.exists():
-                log_message(f"Loading IMDB names database...")
-                try:
-                    import pyarrow.parquet as pq
-                    names_df = pd.read_parquet(names_cache)
-                    
-                    # Create a mapping
-                    name_mapping = dict(zip(names_df['nconst'], names_df['primaryName']))
-                    
-                    # Replace IMDB IDs with names where possible
-                    def replace_id_with_name(director_str):
-                        if pd.isna(director_str):
-                            return director_str
-                        
-                        director_str = str(director_str)
-                        
-                        # Check if it's an IMDB ID
-                        if director_str.startswith('nm') and director_str[2:].isdigit():
-                            return name_mapping.get(director_str, director_str)
-                        
-                        return director_str
-                    
-                    self.df['directors'] = self.df['directors'].apply(replace_id_with_name)
-                    
-                    # Count remaining IMDB IDs
-                    still_has_ids = self.df['directors'].astype(str).str.match(imdb_id_pattern)
-                    remaining = still_has_ids.sum()
-                    
-                    log_message(f"✅ Replaced {imdb_id_count - remaining} IMDB IDs with names")
-                    if remaining > 0:
-                        log_message(f"⚠️ {remaining} IDs could not be resolved", level="WARNING")
-                    
-                except Exception as e:
-                    log_message(f"⚠️ Could not load names database: {e}", level="WARNING")
-            else:
-                log_message("⚠️ IMDB names cache not found - cannot resolve IDs", level="WARNING")
-        else:
-            log_message("✅ All director names look good (no IMDB IDs)")
-        
+
+        import re
+        id_token = re.compile(r'\bnm\d{7,}\b')
+        pipe_id_suffix = re.compile(r'\s*\|\s*nm\d{7,}\b')   # e.g., "Billy Wilder | nm0000697"
+
+        def clean_people_field(val: str) -> str:
+            if pd.isna(val):
+                return val
+            s = str(val)
+
+            # 1) Remove trailing " | nm########" fragments
+            s = pipe_id_suffix.sub("", s)
+
+            # 2) Split on common delimiters (commas or pipes)
+            parts = re.split(r'[|,]', s)
+            cleaned = []
+            for p in parts:
+                token = p.strip()
+                if not token:
+                    continue
+                # drop tokens that are only ids
+                if id_token.fullmatch(token):
+                    continue
+                # also remove any embedded ids inside the token
+                token = id_token.sub("", token).strip()
+                if token:
+                    cleaned.append(token)
+
+            # 3) De-duplicate while preserving order
+            seen = set()
+            uniq = []
+            for c in cleaned:
+                if c not in seen:
+                    seen.add(c)
+                    uniq.append(c)
+
+            return ", ".join(uniq) if uniq else None
+
+        before_samples = self.df['directors'].head(5).tolist()
+        self.df['directors_clean'] = self.df['directors'].apply(clean_people_field)
+
+        # If 'directors' is messy (contains nm ids or pipes), overwrite with clean
+        def looks_dirty(x: str) -> bool:
+            if pd.isna(x):
+                return False
+            s = str(x)
+            return bool(id_token.search(s) or '|' in s)
+
+        dirty_mask = self.df['directors'].astype(str).apply(looks_dirty)
+        self.df.loc[dirty_mask, 'directors'] = self.df.loc[dirty_mask, 'directors_clean']
+
+        after_samples = self.df['directors'].head(5).tolist()
+
+        log_message("Sample directors BEFORE:")
+        for i, s in enumerate(before_samples, 1):
+            log_message(f"  {i}. {s}")
+        log_message("\nSample directors AFTER:")
+        for i, s in enumerate(after_samples, 1):
+            log_message(f"  {i}. {s}")
+
+        log_message("✅ Person-name normalization complete")
         return self
+
+    def ensure_cast_columns(self):
+        """
+        Ensure standard cast columns exist so Batch 2 never says 'No cast detected'.
+        Creates:
+        - cast_list: list[str] of actor names
+        - cast_display: comma-joined names for quick plotting
+        Sources checked in priority order:
+        ['cast_list', 'actors', 'cast', 'tmdb_cast_names', 'cast_names', 'principal_cast']
+        Accepts either CSV-like strings or JSON-like lists.
+        """
+        log_message("\n" + "=" * 80)
+        log_message("Ensuring cast columns are present...")
+        log_message("=" * 80)
+
+        import ast
+
+        candidate_cols = [
+            'cast_list',
+            'actors',
+            'cast',
+            'tmdb_cast_names',
+            'cast_names',
+            'principal_cast'
+        ]
+
+        # Pick the first existing column
+        src = None
+        for c in candidate_cols:
+            if c in self.df.columns and self.df[c].notna().any():
+                src = c
+                break
+
+        if src is None:
+            log_message("⚠️ No cast-like columns found; creating empty placeholders", level="WARNING")
+            self.df['cast_list'] = [[] for _ in range(len(self.df))]
+            self.df['cast_display'] = ""
+            return self
+
+        def parse_names(val):
+            if pd.isna(val):
+                return []
+            s = str(val).strip()
+            # Already a python/list-like string?
+            if (s.startswith('[') and s.endswith(']')) or (s.startswith('(') and s.endswith(')')):
+                try:
+                    parsed = ast.literal_eval(s)
+                    # flatten entries to strings
+                    out = []
+                    for item in parsed if isinstance(parsed, (list, tuple)) else [parsed]:
+                        if pd.isna(item):
+                            continue
+                        out.append(str(item).strip())
+                    return [x for x in out if x]
+                except Exception:
+                    pass
+            # Fallback: split on commas or pipes
+            parts = [p.strip() for p in re.split(r'[|,]', s)]
+            return [p for p in parts if p]
+
+        import re
+        names_series = self.df[src].apply(parse_names)
+
+        # Remove any nm######## tokens that slipped in
+        id_token = re.compile(r'\bnm\d{7,}\b')
+        def drop_ids(name_list):
+            cleaned = []
+            for n in name_list:
+                if not n:
+                    continue
+                if id_token.fullmatch(n):
+                    continue
+                n2 = id_token.sub("", n).strip()
+                if n2:
+                    cleaned.append(n2)
+            # de-dupe preserving order
+            seen = set()
+            uniq = []
+            for c in cleaned:
+                if c not in seen:
+                    seen.add(c)
+                    uniq.append(c)
+            return uniq
+
+        names_series = names_series.apply(drop_ids)
+
+        self.df['cast_list'] = names_series
+        self.df['cast_display'] = self.df['cast_list'].apply(lambda xs: ", ".join(xs[:10]))
+
+        log_message(f"✅ Cast columns created from '{src}'")
+        log_message("Sample cast rows:")
+        for i in range(min(3, len(self.df))):
+            log_message(f"  {i+1}. {self.df.iloc[i].get('cast_display', '')}")
+
+        return self
+
     
     def handle_missing_data(self):
         """Handle missing titles and years."""
@@ -238,7 +347,7 @@ class DataCleaner:
         return self
     
     def validate_cleaned_data(self):
-        """Validate the cleaned dataset."""
+        """Validate the cleaned dataset (post-fixes)."""
         log_message("\n" + "=" * 80)
         log_message("Validating Cleaned Data...")
         log_message("=" * 80)
@@ -253,8 +362,12 @@ class DataCleaner:
         log_message(f"  Films with titles: {self.df['title'].notna().sum():,}")
         log_message(f"  Films with years: {self.df['year'].notna().sum():,}")
         log_message(f"  Films with genres: {self.df['genres'].notna().sum():,}")
-        log_message(f"  Films with directors: {self.df['directors'].notna().sum():,}")
-        
+        if 'directors' in self.df.columns:
+            log_message(f"  Films with directors: {self.df['directors'].notna().sum():,}")
+        if 'cast_list' in self.df.columns:
+            has_cast = self.df['cast_list'].apply(lambda x: isinstance(x, list) and len(x) > 0).sum()
+            log_message(f"  Films with cast_list: {has_cast:,}")
+
         # Show genre distribution
         from src.core.helpers import explode_genres
         genre_exploded = explode_genres(self.df)
@@ -263,8 +376,16 @@ class DataCleaner:
         log_message(f"\nTop 10 Genres (cleaned):")
         for i, (genre, count) in enumerate(top_genres.items(), 1):
             log_message(f"  {i:2d}. {genre:20s} - {count:4d} films")
-        
+
+        # Quick peek at names hygiene
+        if 'directors' in self.df.columns:
+            sample_directors = self.df['directors'].dropna().astype(str).head(5).tolist()
+            log_message("\nSample cleaned directors:")
+            for i, d in enumerate(sample_directors, 1):
+                log_message(f"  {i}. {d}")
+
         return self
+
     
     def save_cleaned_data(self):
         """Save the cleaned dataset."""
@@ -316,6 +437,7 @@ def main():
         cleaner.remove_duplicates()
         cleaner.fix_genre_parsing()
         cleaner.fix_director_names()
+        cleaner.ensure_cast_columns() 
         cleaner.handle_missing_data()
         cleaner.validate_cleaned_data()
         cleaner.save_cleaned_data()

@@ -1,17 +1,25 @@
 """
-CineScope OMDb Enrichment Script
+CineScope OMDb Enrichment Script (Step 2)
 
-This is the second enrichment script. It reads the TMDb-enriched data,
-fetches supplementary information from OMDb (like Metascore, Rotten Tomatoes
-ratings, awards), and saves it to a new file.
+Fetches supplementary metadata from OMDb for my watched movies and TV shows.
 
-This script is designed to respect OMDb's 1,000 daily API call limit. It
-tracks daily usage and will pause itself, ready to be resumed the next day.
+This enrichment adds ONLY OMDb-specific columns:
+- omdb_title, omdb_rated, omdb_released, omdb_plot
+- omdb_language, omdb_country, omdb_awards
+- omdb_metascore (critic scores)
+- omdb_imdb_rating, omdb_imdb_votes (alternative IMDb data)
+- omdb_box_office, omdb_dvd_release, omdb_production_co
+- omdb_rating_imdb, omdb_rating_rotten_tomatoes, omdb_rating_metacritic
+
+Respects OMDb's 1,000 daily API call limit. Tracks usage and resumes the next day.
+
+Reads from: 01_tmdb_enriched_media.csv
+Outputs: 02_omdb_enriched_media.csv (OMDb columns ONLY, not accumulated)
 
 Usage:
     python scripts/enrich/02_enrich_omdb.py
-    python scripts/enrich/02_enrich_omdb.py --force  (to re-enrich all items)
-    python scripts/enrich/02_enrich_omdb.py --limit 50 (to process only 50 items)
+    python scripts/enrich/02_enrich_omdb.py --force  (re-enrich all items)
+    python scripts/enrich/02_enrich_omdb.py --limit 50 (test on 50 items)
 """
 import sys
 import pandas as pd
@@ -22,7 +30,7 @@ import argparse
 import time
 import json
 from datetime import datetime
-from typing import Dict
+from typing import Dict, Optional
 
 # Add 'src' to the Python path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
@@ -41,6 +49,7 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
 
 class OMDbEnricher:
     """Orchestrates the OMDb enrichment process with daily limit handling."""
@@ -106,10 +115,13 @@ class OMDbEnricher:
                 finally:
                     pbar.update(1)
         
-        # Save results
+        # Save results by merging with existing data
         if enriched_data:
             new_data_df = pd.DataFrame(enriched_data)
+            # Merge new OMDb data with existing data
             final_df = pd.concat([dest_df, new_data_df], ignore_index=True)
+            # Remove duplicates by const, keeping the newest (last) record
+            final_df = final_df.drop_duplicates(subset=['const'], keep='last')
             final_df.to_csv(self.output_file, index=False)
             # Update the list of enriched IDs in the status
             self.status["enriched_ids"].extend(new_data_df['const'].tolist())
@@ -120,7 +132,7 @@ class OMDbEnricher:
         logger.info("✅ OMDb Enrichment Run Complete!")
         logger.info(f"Processed {len(enriched_data)} new items in this run.")
         logger.info(f"OMDb API calls today: {self.status['calls_today']}/{self.DAILY_LIMIT}")
-        logger.info(f"Enriched data saved to: {self.output_file}")
+        logger.info(f"Enriched OMDb data saved to: {self.output_file}")
         logger.info("="*60)
 
 
@@ -133,12 +145,12 @@ class OMDbEnricher:
 
     def _load_or_initialize_dest_df(self, force: bool) -> pd.DataFrame:
         if self.output_file.exists() and not force:
-            logger.info(f"Resuming from existing file: {self.output_file}")
+            logger.info(f"Resuming from existing OMDb enrichment file: {self.output_file}")
             return pd.read_csv(self.output_file, low_memory=False)
         
-        logger.info("Starting new OMDb enrichment. Using TMDb file as base.")
-        # If starting fresh, the destination is the same as the source initially
-        return self._load_source_data()
+        logger.info("Starting new OMDb enrichment. Initializing with 'const' column only.")
+        # Start fresh with only 'const' column - OMDb will add its own columns
+        return pd.DataFrame(columns=['const'])
 
     def _get_items_to_process(self, source_df: pd.DataFrame, dest_df: pd.DataFrame) -> pd.DataFrame:
         # A movie needs processing if it doesn't have the 'omdb_title' column
@@ -150,17 +162,17 @@ class OMDbEnricher:
         return source_df[~source_df['const'].isin(processed_ids)]
 
     def _process_item(self, item_row: pd.Series) -> Dict:
-        """Fetches and parses OMDb data for a single item."""
+        """Fetches and parses OMDb data for a single item. Returns ONLY OMDb columns + const."""
         imdb_id = item_row['const']
         details = self.client.get_details_by_imdb_id(imdb_id)
         
-        # Start with the original data from the input row
-        result = item_row.to_dict()
+        # Start with just the const ID
+        result = {'const': imdb_id}
 
         if not details:
-            return result # Return original data if not found
+            return result  # Return just const if not found
 
-        # --- Add new, OMDb-specific fields ---
+        # Add ONLY OMDb-specific columns (not accumulated from input)
         result['omdb_title'] = details.get('Title')
         result['omdb_rated'] = details.get('Rated')
         result['omdb_released'] = details.get('Released')

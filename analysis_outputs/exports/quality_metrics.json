@@ -1,0 +1,13 @@
+{
+  "total_films": 3920,
+  "rated_films": 9.0,
+  "avg_your_rating": 8.0,
+  "avg_imdb_rating": 6.232374476987447,
+  "total_runtime_hours": 6249.283333333334,
+  "total_runtime_days": 260.38680555555555,
+  "unique_directors": 2892,
+  "unique_genres": 25,
+  "year_span": "1910-2025",
+  "earliest_film": "Ansigttyven I",
+  "latest_film": "The Old Guard 2"
+}

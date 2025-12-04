@@ -1,0 +1,47 @@
+
+================================================================================
+BATCH 4: DIRECTORS & WRITERS DEEP DIVE - SUMMARY
+================================================================================
+
+📊 QUESTIONS ANSWERED:
+
+Q51: Most-watched director: Alfred Hitchcock (31 films)
+
+Q52: Unique directors: 1473
+
+Q53: Top 5 directors by film count:
+  49. Alfred Hitchcock: 31 films (avg 7.38)
+  391. Ernst Lubitsch: 10 films (avg 7.35)
+  434. Garry Marshall: 10 films (avg 6.15)
+  457. George Cukor: 10 films (avg 7.45)
+  133. Billy Wilder: 9 films (avg 7.88)
+
+Q61: Top 5 director-actor collaborations:
+
+Q81-82: Top 5 writers:
+  • nm0393250: 15 films
+  • nm0000230: 11 films
+  • nm0000590: 11 films
+  • nm0838289: 9 films
+  • nm0558577: 8 films
+
+📈 KEY INSIGHTS:
+
+1. Total unique directors: 1473
+2. Total unique writers: 2386
+3. Average films per director: 1.6
+4. Most versatile director: (see genre versatility visualization)
+5. Strongest collaboration: N/A
+
+🎬 VISUALIZATIONS CREATED:
+
+1. 01_director_leaderboard.png - Top 20 directors
+2. 02_director_quality.png - Highest-rated directors
+3. 03_director_actor_collaborations.png - Top partnerships
+4. 04_director_evolution.png - Directors per decade
+5. 05_director_genre_versatility.png - Genre diversity
+6. 06_writer_leaderboard.png - Top 20 writers
+7. 07_director_dashboard_interactive.html - Interactive dashboard
+
+✅ Batch 4 Complete!
+================================================================================

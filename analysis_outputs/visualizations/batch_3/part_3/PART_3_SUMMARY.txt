@@ -1,0 +1,63 @@
+
+================================================================================
+BATCH 3 PART 3: ACTOR COMPARISONS & QUALITY ANALYSIS - SUMMARY
+================================================================================
+
+📊 QUESTIONS ANSWERED:
+
+Q21: Do you prefer male or female performers?
+  • Male appearances: 23,901 (62.7%)
+  • Female appearances: 14,203 (37.3%)
+  • Preference: Male by 25.5%
+
+Q22: Classic vs Modern actors:
+  • Classic (Pre-1960): 3422 actors
+  • Golden Age (1960-1979): 2000 actors
+  • Modern (1980-1999): 7062 actors
+  • Contemporary (2000+): 15311 actors
+
+Q23-24: Actors in highest/lowest-rated films:
+  Top 3 in highest-rated:
+    491. Cary Grant: 7 top-10% films (avg 7.90)
+    553. Charlie Chaplin: 7 top-10% films (avg 8.26)
+    1659. James Stewart: 7 top-10% films (avg 8.13)
+
+Q26: Actors with highest average ratings (min 5 films):
+  10388. Henry Bergman: 8.28 (5 films, σ=0.20)
+  4332. Charlie Chaplin: 8.00 (8 films, σ=0.75)
+  10396. Henry Fonda: 8.00 (5 films, σ=0.72)
+  10025. Hank Mann: 7.90 (6 films, σ=0.88)
+  16103. Leonardo DiCaprio: 7.88 (6 films, σ=0.69)
+
+Q27: Most genre-versatile actors:
+  1. Vincent Price: 19 genres across 31 films
+  2. Arnold Schwarzenegger: 19 genres across 25 films
+  3. Jean-Claude Van Damme: 17 genres across 24 films
+  8. Bruce Willis: 17 genres across 22 films
+  7. Bess Flowers: 16 genres across 22 films
+
+Q30: Recently discovered actors (2020+):
+  1015. Frank Grillo: 7 films since 2020 (avg 5.24)
+  1957. Lucy Hale: 4 films since 2020 (avg 5.78)
+  1895. Liam Neeson: 4 films since 2020 (avg 5.75)
+  2729. Ruby Rose: 4 films since 2020 (avg 4.10)
+  2350. Nia Long: 4 films since 2020 (avg 5.88)
+
+📈 KEY INSIGHTS:
+
+1. Gender representation: Male-dominant collection
+2. Era preference: Contemporary (2000+)
+3. Quality correlation: Male actors average 6.53 vs 6.40
+4. Most versatile: Vincent Price (19 genres)
+5. Highest quality: Henry Bergman (8.28 avg)
+
+🎬 VISUALIZATIONS CREATED:
+
+16. viz_16_gender_preference.png - Gender analysis with 4 perspectives
+17. viz_17_classic_vs_modern.png - Actor era distribution
+18. viz_18_actors_in_top_films.png - Frequent high-quality performers
+19. viz_19_rating_leaderboard.png - Top 25 by average rating
+20. viz_20_genre_versatility.png - Versatility scatter plot
+21. viz_21_interactive_quality_dashboard.html - Interactive 4-panel dashboard
+
+================================================================================

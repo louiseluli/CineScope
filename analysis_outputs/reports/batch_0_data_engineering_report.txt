@@ -1,0 +1,101 @@
+====================================================================================================
+                              CINESCOPE DATA ENGINEERING REPORT
+                                   Batch 0: Foundation Setup
+====================================================================================================
+
+Generated: 2025-12-03 20:02:52
+Base Directory: /Users/louisesfer/Documents/Programming/CineScope
+Master Dataset: /Users/louisesfer/Documents/Programming/CineScope/data/processed/master_cinema_data.csv
+
+====================================================================================================
+DATA SUMMARY
+====================================================================================================
+
+Total Films: 3,920
+Rated Films: 9
+Year Span: 1910-2025
+Earliest Film: Ansigttyven I
+Latest Film: The Old Guard 2
+
+Total Watch Time:
+  - 6249 hours
+  - 260.4 days
+  - 37.2 weeks
+
+Unique Directors: 2,892
+Unique Genres: 25
+
+====================================================================================================
+QUALITY CHECKS
+====================================================================================================
+
+missing_columns: []
+invalid_imdb_ids: 0
+year_range: (1910.0, 2025.0)
+invalid_imdb_ratings: 0
+invalid_your_ratings: 0
+rated_count: 16
+duplicates: 2275
+missing_title: 25
+missing_year: 25
+missing_genres: 0
+invalid_runtimes: 0
+
+====================================================================================================
+STATISTICS SUMMARY
+====================================================================================================
+
+Average My Rating: 8.00
+Average IMDB Rating: 6.23
+
+Top 10 Genres by Count:
+   1. Drama                - 1935 films
+   2. Comedy               - 1551 films
+   3. Romance              - 1247 films
+   4. Thriller             -  946 films
+   5. Horror               -  787 films
+   6. Crime                -  605 films
+   7. Action               -  582 films
+   8. Mystery              -  510 films
+   9. Sci-Fi               -  320 films
+  10. Fantasy              -  308 films
+
+====================================================================================================
+TOP DIRECTORS
+====================================================================================================
+
+   1. Alfred Hitchcock | nm0000033             -  23 films
+   2. nm0107788                                -  11 films
+   3. Chia-Liang Liu | nm0514906               -   9 films
+   4. Alfred Hitchcock                         -   8 films
+   5. George Cukor                             -   8 films
+   6. William Wyler                            -   8 films
+   7. Billy Wilder                             -   8 films
+   8. nm0000339                                -   8 films
+   9. nm0151653                                -   8 films
+  10. nm0001425                                -   8 films
+  11. Garry Marshall                           -   8 films
+  12. Ernst Lubitsch | nm0523932               -   7 films
+  13. nm0523932                                -   7 films
+  14. Charles Chaplin                          -   7 films
+  15. Roger Corman | nm0000339                 -   7 films
+  16. nm0001238                                -   7 films
+  17. Cheh Chang | nm0151653                   -   7 films
+  18. nm0210811                                -   7 films
+  19. Ivan Reitman                             -   7 films
+  20. nm0878338                                -   6 films
+
+====================================================================================================
+RECOMMENDATIONS FOR ANALYSIS
+====================================================================================================
+
+Based on my data, I recommend focusing on:
+
+1. Drama deep dive - my most-watched genre
+2. Alfred Hitchcock | nm0000033 filmography analysis - my most-watched director
+3. 2000s cinema - my dominant decade
+
+4. Rating deviation analysis - identify my contrarian picks
+5. Temporal viewing patterns - understand my watching habits
+6. Actor collaboration networks - discover my favorite ensembles
+

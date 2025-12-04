@@ -42,7 +42,7 @@ def main():
     
     if corrections.empty:
         print("\n✅ No IMDb ID corrections needed!")
-        print("\nYour collection has verified IDs, but some movies may not exist")
+        print("\nMy collection has verified IDs, but some movies may not exist")
         print("in external databases (TMDb, OMDb). This is normal for rare/old films.")
         return
     

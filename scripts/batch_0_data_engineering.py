@@ -37,6 +37,36 @@ from src.core.helpers import (
     explode_genres, get_top_performers, calculate_total_watch_time
 )
 
+def _collapse_duplicates_by_const(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Ensure exactly one row per IMDb ID (`const`).
+    - Numeric cols -> first non-null
+    - Non-numeric cols -> ' | ' join of unique non-null strings
+    """
+    if df.empty or "const" not in df.columns:
+        return df
+
+    df = df.copy()
+    df["const"] = df["const"].astype(str)
+
+    if not df["const"].duplicated().any():
+        return df
+
+    import numpy as np
+    agg = {"const": "first"}
+    for col in df.columns:
+        if col == "const":
+            continue
+        if pd.api.types.is_numeric_dtype(df[col]):
+            agg[col] = lambda s: s.dropna().iloc[0] if s.dropna().size else np.nan
+        else:
+            agg[col] = lambda s: " | ".join(sorted(set([str(x).strip()
+                                                        for x in s.dropna().astype(str)
+                                                        if str(x).strip()]))) or np.nan
+
+    collapsed = df.groupby("const", as_index=False).agg(agg)
+    return collapsed
+
 
 class DataEngineeringPipeline:
     """Complete data engineering pipeline for CineScope analysis."""
@@ -96,20 +126,39 @@ class DataEngineeringPipeline:
             raise ValueError("Configuration validation failed. Please check paths.")
         
         print("✅ Configuration validated\n")
-    
+
     def step_2_load_and_merge(self):
-        """Step 2: Load all sources and merge."""
+        """Step 2: Load all sources and merge (and enforce 1 row per const)."""
         print("\n" + "=" * 80)
         print("STEP 2: Loading and Merging Data Sources")
         print("=" * 80 + "\n")
-        
+
         self.loader = DataLoader()
         self.loader.load_all_sources()
         self.loader.merge_data_sources()
-        
-        self.master_df = self.loader.get_master_data()
-        
+
+        df = self.loader.get_master_data()
+
+        # --- NEW: ensure exactly 1 row per const ---------------------------------
+        if 'const' not in df.columns:
+            raise ValueError("Merged master is missing the 'const' column.")
+
+        pre = len(df)
+        dup_count = df['const'].duplicated().sum()
+        if dup_count:
+            print(f"[INFO] De-duplicating master: {dup_count} duplicate IMDB IDs")
+            # Prefer the most complete row: keep the row with most non-null fields
+            df['__nnz__'] = df.notna().sum(axis=1)
+            df = (df.sort_values(['const','__nnz__'], ascending=[True, False])
+                    .drop_duplicates(subset='const', keep='first')
+                    .drop(columns='__nnz__'))
+            print(f"[INFO] Master rows {pre} -> {len(df)} after de-duplication")
+        # --------------------------------------------------------------------------
+
+        self.master_df = df
         print(f"\n✅ Master dataset created: {len(self.master_df)} films\n")
+
+
     
     def step_3_validate_quality(self):
         """Step 3: Validate data quality."""
@@ -251,7 +300,7 @@ class DataEngineeringPipeline:
         print(f"   Unique Genres: {self.quality_metrics['unique_genres']}")
         
         if self.quality_metrics['avg_your_rating']:
-            print(f"   Your Avg Rating: {self.quality_metrics['avg_your_rating']:.2f}")
+            print(f"   My Avg Rating: {self.quality_metrics['avg_your_rating']:.2f}")
         if self.quality_metrics['avg_imdb_rating']:
             print(f"   IMDB Avg Rating: {self.quality_metrics['avg_imdb_rating']:.2f}")
         
@@ -398,7 +447,7 @@ class DataEngineeringPipeline:
         
         # Ratings
         if self.quality_metrics['avg_your_rating']:
-            f.write(f"Average Your Rating: {self.quality_metrics['avg_your_rating']:.2f}\n")
+            f.write(f"Average My Rating: {self.quality_metrics['avg_your_rating']:.2f}\n")
         if self.quality_metrics['avg_imdb_rating']:
             f.write(f"Average IMDB Rating: {self.quality_metrics['avg_imdb_rating']:.2f}\n")
         
@@ -428,23 +477,23 @@ class DataEngineeringPipeline:
         f.write("RECOMMENDATIONS FOR ANALYSIS\n")
         f.write("=" * 100 + "\n\n")
         
-        f.write("Based on your data, we recommend focusing on:\n\n")
+        f.write("Based on my data, I recommend focusing on:\n\n")
         
         # Top genre
         top_genre = self.genre_stats.index[0]
-        f.write(f"1. {top_genre} deep dive - your most-watched genre\n")
+        f.write(f"1. {top_genre} deep dive - my most-watched genre\n")
         
         # Top director
         top_director = self.director_stats.iloc[0]['name']
-        f.write(f"2. {top_director} filmography analysis - your most-watched director\n")
+        f.write(f"2. {top_director} filmography analysis - my most-watched director\n")
         
         # Decade with most films
         top_decade = self.decade_stats['count'].idxmax()
-        f.write(f"3. {int(top_decade)}s cinema - your dominant decade\n")
+        f.write(f"3. {int(top_decade)}s cinema - my dominant decade\n")
         
-        f.write("\n4. Rating deviation analysis - identify your contrarian picks\n")
-        f.write("5. Temporal viewing patterns - understand your watching habits\n")
-        f.write("6. Actor collaboration networks - discover your favorite ensembles\n\n")
+        f.write("\n4. Rating deviation analysis - identify my contrarian picks\n")
+        f.write("5. Temporal viewing patterns - understand my watching habits\n")
+        f.write("6. Actor collaboration networks - discover my favorite ensembles\n\n")
 
 
 # ============================================================================

@@ -1,11 +1,27 @@
 """
-CineScope Wikidata Enrichment Script
+CineScope Wikidata Enrichment Script (Step 5)
 
-This script enriches movies with comprehensive data from Wikidata, the free
-knowledge base. It provides additional metadata like awards, box office data,
-filming locations, and more detailed crew information.
+Enriches my movies and TV shows with comprehensive data from Wikidata,
+the free and collaborative knowledge base. Provides additional metadata like
+awards, box office data, filming locations, and detailed crew information.
+
+This enrichment adds ONLY Wikidata-specific columns:
+- wd_qid (Wikidata ID)
+- wd_label, wd_description
+- wd_imdb_id
+- wd_awards (formatted list of awards)
+- wd_box_office, wd_budget
+- wd_filming_locations
+- wd_production_countries
+- wd_distributors
+- wd_music_composer, wd_cinematographer
+- wd_genres_from_wikidata
+- wd_first_aired (for TV shows)
 
 Wikidata is queried using SPARQL and matches are made primarily via IMDb ID.
+
+Reads from: 04_cast_enriched_media.csv
+Outputs: 05_wikidata_enriched_media.csv (Wikidata columns ONLY, not accumulated)
 
 Usage:
     python scripts/enrich/05_enrich_wikidata.py
@@ -40,7 +56,7 @@ logger = logging.getLogger(__name__)
 
 
 class WikidataEnricher:
-    """Orchestrates the Wikidata enrichment process."""
+    """Orchestrates my Wikidata enrichment process."""
     
     def __init__(self):
         self.client = WikidataClient()
@@ -48,7 +64,7 @@ class WikidataEnricher:
         self.output_file = settings.PROCESSED_DATA_DIR / "05_wikidata_enriched_media.csv"
     
     def run(self, force: bool = False, limit: int = None):
-        """Execute the full enrichment workflow."""
+        """Execute my full Wikidata enrichment workflow."""
         source_df = self._load_source_data()
         dest_df = self._load_or_initialize_dest_df(force)
         items_to_process = self._get_items_to_process(source_df, dest_df)
@@ -57,7 +73,7 @@ class WikidataEnricher:
             items_to_process = items_to_process.head(limit)
         
         if items_to_process.empty:
-            logger.info("✅ All media already enriched with Wikidata.")
+            logger.info("✅ All my media already enriched with Wikidata.")
             return
         
         logger.info(f"Found {len(items_to_process)} items to enrich with Wikidata.")
@@ -86,8 +102,8 @@ class WikidataEnricher:
         
         logger.info("="*60)
         logger.info("✅ Wikidata Enrichment Complete!")
-        logger.info(f"Processed {len(enriched_data)} items.")
-        logger.info(f"Output: {self.output_file}")
+        logger.info(f"Processed {len(enriched_data)} items in this run.")
+        logger.info(f"My enriched Wikidata saved to: {self.output_file}")
         logger.info("="*60)
         logger.info("ℹ️  Wikidata is maintained by volunteers.")
         logger.info("Consider supporting: https://donate.wikimedia.org/")
@@ -103,10 +119,10 @@ class WikidataEnricher:
     def _load_or_initialize_dest_df(self, force: bool) -> pd.DataFrame:
         """Load existing Wikidata-enriched data or start fresh."""
         if self.output_file.exists() and not force:
-            logger.info(f"Resuming from: {self.output_file}")
+            logger.info(f"Resuming from my Wikidata enrichment: {self.output_file}")
             return pd.read_csv(self.output_file, low_memory=False)
-        logger.info("Starting new Wikidata enrichment.")
-        return pd.DataFrame()
+        logger.info("Starting new Wikidata enrichment. Initializing with 'const' column only.")
+        return pd.DataFrame(columns=['const'])
     
     def _get_items_to_process(self, source_df: pd.DataFrame, dest_df: pd.DataFrame) -> pd.DataFrame:
         """Determine which items need Wikidata enrichment."""
@@ -116,14 +132,17 @@ class WikidataEnricher:
         return source_df[~source_df['const'].astype(str).isin(enriched_ids)]
     
     def _process_item(self, item_row: pd.Series) -> Dict:
-        """Process Wikidata enrichment for a single movie/show."""
+        """Process Wikidata enrichment for a single movie/show. Returns ONLY Wikidata columns + const."""
         imdb_id = item_row['const']
-        result = item_row.to_dict()
+        
+        # Start with just the const ID
+        result = {'const': imdb_id}
         
         # Get comprehensive Wikidata info using IMDb ID
         wd_data = self.client.get_movie_details(imdb_id)
         
         if wd_data:
+            # Add only Wikidata-specific columns (not accumulated)
             result.update(wd_data)
             logger.debug(f"✓ Wikidata: {wd_data.get('wd_label', 'Unknown')}")
         else:

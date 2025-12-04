@@ -9,6 +9,21 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Load environment variables from .env file manually
+def _load_env():
+    """Load .env file into environment variables."""
+    env_file = Path(__file__).resolve().parent.parent.parent / ".env"
+    if env_file.exists():
+        with open(env_file, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    if '=' in line:
+                        key, value = line.split('=', 1)
+                        os.environ[key.strip()] = value.strip()
+
+_load_env()
+
 # ============================================================================
 # PROJECT PATHS
 # ============================================================================
@@ -32,6 +47,10 @@ EXPORTS_DIR = OUTPUT_DIR / "exports"
 for directory in [OUTPUT_DIR, VISUALIZATIONS_DIR, REPORTS_DIR, EXPORTS_DIR]:
     directory.mkdir(parents=True, exist_ok=True)
 
+# ============================================================================
+# FILE PATHS
+# ============================================================================
+
 # Source file paths
 WATCHED_CSV = RAW_DATA_DIR / "Watched-Dec.csv"  # Fixed: correct filename with hyphen, in raw dir
 TMDB_ENRICHED = PROCESSED_DATA_DIR / "01_tmdb_enriched_media.csv"
@@ -41,17 +60,84 @@ CAST_ENRICHED = PROCESSED_DATA_DIR / "04_cast_enriched_media.csv"
 WIKIDATA_ENRICHED = PROCESSED_DATA_DIR / "05_wikidata_enriched_media.csv"
 GROUND_TRUTH = RAW_DATA_DIR / "ground_truth_validated.csv"
 
+# Output file paths
+MASTER_DATA = PROCESSED_DATA_DIR / "master_cinema_data.csv"
+WATCHED_ONLY_DATA = PROCESSED_DATA_DIR / "watched_movies_master.csv"  # For analysis
+VALIDATION_REPORT = REPORTS_DIR / "data_validation_report.txt"
+
+# ============================================================================
+# SETTINGS CLASS (for enrichment scripts compatibility)
+# ============================================================================
+
+class Settings:
+    """Settings object for enrichment scripts."""
+    
+    # Paths
+    BASE_DIR = BASE_DIR
+    RAW_DATA_DIR = RAW_DATA_DIR
+    PROCESSED_DATA_DIR = PROCESSED_DATA_DIR
+    DATA_DIR = DATA_DIR
+    OUTPUT_DIR = OUTPUT_DIR
+    VISUALIZATIONS_DIR = VISUALIZATIONS_DIR
+    EXPORTS_DIR = EXPORTS_DIR
+    REPORTS_DIR = REPORTS_DIR
+    
+    # API Keys (set via environment variables)
+    TMDB_API_KEY = os.getenv('TMDB_API_KEY', '')
+    TMDB_READ_TOKEN = os.getenv('TMDB_READ_TOKEN', '')
+    OMDB_API_KEY = os.getenv('OMDB_API_KEY', '')
+    DDD_API_KEY = os.getenv('DDD_API_KEY', '')
+    
+    # Rate limiting
+    TMDB_RATE_LIMIT = 40  # requests per 10 seconds
+    OMDB_RATE_LIMIT = 100  # requests per day (free tier)
+    RATE_LIMIT_DELAY = 0.25  # seconds between API calls
+    
+    # Batch sizes
+    BATCH_SIZE = 50
+    
+    # Timeouts
+    REQUEST_TIMEOUT = 30  # seconds
+    
+    # Logging
+    LOG_LEVEL = 'INFO'
+    LOG_FILE = REPORTS_DIR / 'cinescope.log'
+    
+    # File paths
+    WATCHED_CSV = WATCHED_CSV
+    TMDB_ENRICHED = TMDB_ENRICHED
+    OMDB_ENRICHED = OMDB_ENRICHED
+    DDD_ENRICHED = DDD_ENRICHED
+    CAST_ENRICHED = CAST_ENRICHED
+    WIKIDATA_ENRICHED = WIKIDATA_ENRICHED
+    GROUND_TRUTH = GROUND_TRUTH
+    MASTER_DATA = MASTER_DATA
+    WATCHED_ONLY_DATA = WATCHED_ONLY_DATA
+    
+    # Cache directory
+    CACHE_DIR = PROCESSED_DATA_DIR / "imdb_cache"
+    
+    @staticmethod
+    def ensure_directories():
+        """Create necessary directories if they don't exist."""
+        for dir_path in [RAW_DATA_DIR, PROCESSED_DATA_DIR, OUTPUT_DIR, 
+                         VISUALIZATIONS_DIR, EXPORTS_DIR, REPORTS_DIR]:
+            dir_path.mkdir(parents=True, exist_ok=True)
+
+# Create settings instance
+settings = Settings()
+
+# ============================================================================
+# IMDB CACHE FILES
+# ============================================================================
+
 # IMDB cache files
+CACHE_DIR = PROCESSED_DATA_DIR / "imdb_cache"
 IMDB_BASICS = CACHE_DIR / "basics.parquet"
 IMDB_NAMES = CACHE_DIR / "names.parquet"
 IMDB_PRINCIPALS = CACHE_DIR / "principals.parquet"
 IMDB_CREW = CACHE_DIR / "crew.parquet"
 IMDB_RATINGS = CACHE_DIR / "ratings.parquet"
-
-# Output file paths
-MASTER_DATA = PROCESSED_DATA_DIR / "master_cinema_data.csv"
-WATCHED_ONLY_DATA = PROCESSED_DATA_DIR / "watched_movies_master.csv"  # For analysis
-VALIDATION_REPORT = REPORTS_DIR / "data_validation_report.txt"
 
 # ============================================================================
 # COLOR SCHEMES

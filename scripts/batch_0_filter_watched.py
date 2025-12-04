@@ -34,19 +34,42 @@ class WatchedFilter:
         log_message("=" * 80)
         log_message("Loading Datasets...")
         log_message("=" * 80)
-        
+
         # Load master (cleaned) dataset
         log_message("Loading master dataset...")
         self.master_df = pd.read_csv(MASTER_DATA)
-        log_message(f"  Master: {len(self.master_df):,} films")
-        
+        # Make absolutely sure it's unique by const
+        if "const" not in self.master_df.columns:
+            raise ValueError("MASTER_DATA missing 'const' column.")
+        pre = len(self.master_df)
+        dups = self.master_df["const"].duplicated().sum()
+        if dups:
+            from scripts.batch_0_data_engineering import _collapse_duplicates_by_const
+            self.master_df = _collapse_duplicates_by_const(self.master_df)
+            log_message(f"  Master had {dups} duplicate consts; collapsed {pre} -> {len(self.master_df)}")
+        else:
+            log_message(f"  Master: {len(self.master_df):,} films")
+
         # Load Watched-Dec.csv (ground truth)
         watched_path = RAW_DATA_DIR / "Watched-Dec.csv"
         log_message(f"\nLoading watched list: {watched_path.name}")
         self.watched_df = pd.read_csv(watched_path)
+
+        # Normalize the ID column & ensure uniqueness
+        if "Const" in self.watched_df.columns:
+            self.watched_df = self.watched_df.rename(columns={"Const": "const"})
+        if "const" not in self.watched_df.columns:
+            raise ValueError("Cannot find IMDB ID column in Watched-Dec.csv")
+
+        self.watched_df["const"] = self.watched_df["const"].astype(str).str.strip()
+        dup_w = self.watched_df["const"].duplicated().sum()
+        if dup_w:
+            self.watched_df = self.watched_df.drop_duplicates(subset=["const"], keep="first")
+            log_message(f"  Watched list had {dup_w} duplicate ids; now {len(self.watched_df)} unique")
+
         log_message(f"  Watched: {len(self.watched_df):,} films")
-        
         return self
+
     
     def filter_to_watched(self):
         """Filter master dataset to only watched movies."""
@@ -83,63 +106,44 @@ class WatchedFilter:
         return self
     
     def add_watched_metadata(self):
-        """Add metadata from watched list (like date rated, position)."""
+        """Add metadata from watched list (date rated, position, etc.)."""
         log_message("\n" + "=" * 80)
         log_message("Adding Watched Metadata...")
         log_message("=" * 80)
-        
-        # Prepare watched dataframe
+
         watched_meta = self.watched_df.copy()
-        
-        # Normalize column names
-        if 'Const' in watched_meta.columns:
-            watched_meta = watched_meta.rename(columns={'Const': 'const'})
-        
-        # Select relevant columns from watched list
-        watched_cols = ['const', 'Position', 'Created', 'Modified', 'Date Rated', 'Your Rating']
-        
-        # Rename to match master format
+
+        # Keep only columns we can map; normalize names
         rename_map = {
-            'Position': 'watched_position',
-            'Created': 'watched_created',
-            'Modified': 'watched_modified',
-            'Date Rated': 'date_rated',
-            'Your Rating': 'your_rating'
+            "Position": "watched_position",
+            "Created": "watched_created",
+            "Modified": "watched_modified",
+            "Date Rated": "date_rated",
+            "Your Rating": "your_rating",
         }
-        
-        # Only keep columns that exist
-        existing_cols = [c for c in watched_cols if c in watched_meta.columns]
-        watched_meta = watched_meta[existing_cols].copy()
-        
-        # Rename columns
-        for old, new in rename_map.items():
-            if old in watched_meta.columns:
-                watched_meta = watched_meta.rename(columns={old: new})
-        
-        # Merge with filtered dataset
-        # Drop existing date_rated/your_rating from master if they exist
-        cols_to_drop = [c for c in ['date_rated', 'your_rating', 'watched_position', 
-                                     'watched_created', 'watched_modified'] 
-                       if c in self.filtered_df.columns]
-        if cols_to_drop:
-            self.filtered_df = self.filtered_df.drop(columns=cols_to_drop)
-        
-        # Merge
-        self.filtered_df = self.filtered_df.merge(
-            watched_meta,
-            on='const',
-            how='left'
-        )
-        
-        log_message(f"✅ Added watched metadata")
-        
+        keep = ["const"] + [c for c in rename_map if c in watched_meta.columns]
+        watched_meta = watched_meta[keep].rename(columns=rename_map)
+
+        # Ensure one row per const in metadata to prevent row multiplication on merge
+        watched_meta = watched_meta.drop_duplicates(subset=["const"], keep="first")
+
+        # Drop any pre-existing cols before merging
+        drop_cols = [c for c in ["date_rated", "your_rating",
+                                "watched_position", "watched_created", "watched_modified"]
+                    if c in self.filtered_df.columns]
+        if drop_cols:
+            self.filtered_df = self.filtered_df.drop(columns=drop_cols)
+
+        self.filtered_df = self.filtered_df.merge(watched_meta, on="const", how="left")
+
         # Convert dates
-        date_cols = ['date_rated', 'watched_created', 'watched_modified']
-        for col in date_cols:
+        for col in ["date_rated", "watched_created", "watched_modified"]:
             if col in self.filtered_df.columns:
-                self.filtered_df[col] = pd.to_datetime(self.filtered_df[col], errors='coerce')
-        
+                self.filtered_df[col] = pd.to_datetime(self.filtered_df[col], errors="coerce")
+
+        log_message(f"✅ Added watched metadata")
         return self
+
     
     def recalculate_stats(self):
         """Recalculate statistics for watched-only dataset."""
@@ -199,9 +203,9 @@ class WatchedFilter:
         
         if 'your_rating' in df.columns:
             rated_count = df['your_rating'].notna().sum()
-            log_message(f"Films You Rated: {rated_count} ({rated_count/len(df)*100:.1f}%)")
+            log_message(f"Films I Rated: {rated_count} ({rated_count/len(df)*100:.1f}%)")
             if rated_count > 0:
-                log_message(f"Your Avg Rating: {df['your_rating'].mean():.2f}")
+                log_message(f"My Avg Rating: {df['your_rating'].mean():.2f}")
         
         # Genre breakdown
         from src.core.helpers import explode_genres
@@ -256,11 +260,11 @@ def main():
         
         print("\n" + "✨" * 40)
         print("\n" + " " * 10 + "WATCHED-ONLY DATASET CREATED!")
-        print(" " * 5 + "Ready for analysis on YOUR watched films")
+        print(" " * 5 + "Ready for analysis on my watched films")
         print("\n" + "✨" * 40 + "\n")
         
         print("📊 Next: Run Batch 1 to create visualizations!")
-        print("    All analysis will be on YOUR watched films only.\n")
+        print("    All analysis will be on my watched films only.\n")
         
         return 0
         

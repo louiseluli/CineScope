@@ -1,0 +1,5461 @@
+const,nconst,writer
+tt0003565,nm0902961,Franz von Schoenthan
+tt0004457,nm0000875,L. Frank Baum
+tt0004707,nm0215874,Hampton Del Ruth
+tt0004707,nm0404327,Craig Hutchinson
+tt0004707,nm0784407,Mack Sennett
+tt0004707,nm1100197,A. Baldwin Sloane
+tt0004707,nm0808086,Edgar Smith
+tt0004825,nm0205244,Owen Davis
+tt0004825,nm0869665,Maurice Tourneur
+tt0005179,nm0921684,Edward Noyes Wescott
+tt0005179,nm0245385,Allan Dwan
+tt0005214,nm0703446,Herbert Quick
+tt0005214,nm0127511,Christy Cabanne
+tt0006826,nm0000428,D.W. Griffith
+tt0007047,nm0169665,Octavus Roy Cohen
+tt0007047,nm0256221,John Emerson
+tt0007047,nm0317476,J.U. Giesy
+tt0007047,nm0002616,Anita Loos
+tt0007873,nm0256221,John Emerson
+tt0007873,nm0001196,Douglas Fairbanks
+tt0007873,nm0002616,Anita Loos
+tt0008443,nm0309557,Eleanor Gates
+tt0008443,nm0547966,Frances Marion
+tt0008827,nm0547966,Frances Marion
+tt0008827,nm0542371,Belle K. Maniates
+tt0009026,nm0617202,Fred Myton
+tt0009026,nm0927032,Margaret Widdemer
+tt0009062,nm0523932,Ernst Lubitsch
+tt0009475,nm0361986,Cyril Harcourt
+tt0009475,nm0448013,Edith M. Kennedy
+tt0009546,nm0321652,Ottar Gladvedt
+tt0010219,nm0265023,James B. Fagan
+tt0010219,nm0940820,Walter Woods
+tt0010281,nm0473134,Hanns Kräly
+tt0010281,nm0523932,Ernst Lubitsch
+tt0010323,nm0562346,Carl Mayer
+tt0010323,nm0417917,Hans Janowitz
+tt0010600,nm0006782,E.T.A. Hoffmann
+tt0010600,nm0473134,Hanns Kräly
+tt0010600,nm0523932,Ernst Lubitsch
+tt0010600,nm0932559,A.E. Willner
+tt0011960,nm0473134,Hanns Kräly
+tt0011960,nm0523932,Ernst Lubitsch
+tt0012349,nm0000122,Charles Chaplin
+tt0013442,nm0831290,Bram Stoker
+tt0013442,nm0301961,Henrik Galeen
+tt0015634,nm0584778,Oscar Micheaux
+tt0015864,nm0000122,Charles Chaplin
+tt0016439,nm0240534,Gerald C. Duffy
+tt0016439,nm0766850,John Monk Saunders
+tt0016822,nm0503777,Mervyn LeRoy
+tt0016822,nm0341185,Frank Griffin
+tt0016822,nm0547938,George Marion Jr.
+tt0016822,nm0175902,William M. Conselman
+tt0016822,nm0687566,Charles Plumb
+tt0018033,nm0323325,Elinor Glyn
+tt0018033,nm0521002,Hope Loring
+tt0018033,nm0510024,Louis D. Lighton
+tt0018033,nm0547938,George Marion Jr.
+tt0018773,nm0000122,Charles Chaplin
+tt0019788,nm0007973,George Abbott
+tt0019788,nm0108697,Ann Preston Bridgers
+tt0019788,nm0340599,John Grey
+tt0019788,nm0573865,Allen McNeil
+tt0019788,nm0853130,Sam Taylor
+tt0019850,nm0532561,Gustav Machatý
+tt0019850,nm0628709,Vítezslav Nezval
+tt0020152,nm0361882,Carl Harbaugh
+tt0020152,nm0595655,Jefferson Moffitt
+tt0020152,nm0907279,John A. Waldron
+tt0020475,nm0127060,Margarete Böhme
+tt0020475,nm0503025,Rudolf Leonhardt
+tt0021647,nm0283780,Ladislas Fodor
+tt0021647,nm0413711,Joseph Jackson
+tt0021647,nm0291047,Paul Frank
+tt0021749,nm0000122,Charles Chaplin
+tt0021749,nm0139714,Harry Carr
+tt0021749,nm0188357,Harry Crocker
+tt0021884,nm0049721,John L. Balderston
+tt0021884,nm0791217,Mary Shelley
+tt0021884,nm0916811,Peggy Webling
+tt0021884,nm0287124,Garrett Fort
+tt0021884,nm0267020,Francis Edward Faragoh
+tt0021884,nm0770337,Richard Schayer
+tt0021884,nm0282984,Robert Florey
+tt0021884,nm0751246,John Russell
+tt0022119,nm0542534,Herman J. Mankiewicz
+tt0022268,nm0151310,Harry Chandlee
+tt0022268,nm0161428,Douglas W. Churchill
+tt0022268,nm0728307,Robert Riskin
+tt0022268,nm0842485,Jo Swerling
+tt0022517,nm0426515,Agnes Christine Johnston
+tt0022517,nm0206802,Frank Mitchell Dazey
+tt0022517,nm0448981,Charles Kenyon
+tt0022698,nm0299154,Jules Furthman
+tt0022698,nm0491076,S.K. Lauren
+tt0022698,nm0903049,Josef von Sternberg
+tt0022867,nm0394750,Robert Horky
+tt0022867,nm0394746,Frantisek Horký
+tt0022867,nm0462949,Jacques A. Koerpel
+tt0022867,nm0532561,Gustav Machatý
+tt0022913,nm0730317,Clarence Aaron 'Tod' Robbins
+tt0022913,nm0325135,Willis Goldbeck
+tt0022913,nm0330390,Leon Gordon
+tt0022913,nm0090213,Al Boasberg
+tt0022913,nm0531269,Charles MacArthur
+tt0022913,nm0941138,Edgar Allan Woolf
+tt0023028,nm0589316,Seton I. Miller
+tt0023028,nm0522674,Josephine Lovett
+tt0023028,nm0545309,Joseph Moncure March
+tt0023028,nm0272646,Harvey Fergusson
+tt0023196,nm0322227,Benjamin Glazer
+tt0023196,nm0083532,Leo Birinsky
+tt0023196,nm0026639,Doris Anderson
+tt0023196,nm0256298,Gilbert Emery
+tt0023328,nm0393420,Jindrich Honzl
+tt0023328,nm0903667,George Voskovec
+tt0023328,nm0921276,Jan Werich
+tt0023385,nm0116693,Katharine Brush
+tt0023385,nm0002616,Anita Loos
+tt0023385,nm0270765,Felix E. Feist
+tt0023385,nm0280234,F. Scott Fitzgerald
+tt0023385,nm0580648,Bess Meredyth
+tt0023385,nm0837989,C. Gardner Sullivan
+tt0023590,nm0399203,Lucien Hubbard
+tt0023590,nm0321891,Kubec Glasmon
+tt0023590,nm0109148,John Bright
+tt0023622,nm0710723,Samson Raphaelson
+tt0023622,nm0428177,Grover Jones
+tt0023622,nm0015801,Aladár László
+tt0023658,nm0095313,Sigrid Boo
+tt0023658,nm0147800,Sölve Cederstrand
+tt0023658,nm0406591,Tancred Ibsen
+tt0023658,nm0596410,Gustaf Molander
+tt0023658,nm0828436,Gösta Stevens
+tt0023940,nm0002021,Noël Coward
+tt0023940,nm0372942,Ben Hecht
+tt0023940,nm0388755,Samuel Hoffenstein
+tt0023986,nm0696190,Robert Presnell Sr.
+tt0023986,nm0091200,David Boehm
+tt0024075,nm0354117,George Haight
+tt0024075,nm0778818,Allan Scott
+tt0024075,nm0548993,Ben Markson
+tt0024184,nm0920229,H.G. Wells
+tt0024184,nm0792670,R.C. Sherriff
+tt0024184,nm0002545,Preston Sturges
+tt0024184,nm0943804,Philip Wylie
+tt0024240,nm0728307,Robert Riskin
+tt0024240,nm0750357,Damon Runyon
+tt0024484,nm0359748,H.W. Hanemann
+tt0024484,nm0591791,Sam Mintz
+tt0024484,nm0874497,Glenn Tryon
+tt0024484,nm0920279,John Wells
+tt0024617,nm0308177,Oliver H.P. Garrett
+tt0024617,nm0001203,William Faulkner
+tt0024617,nm0914362,Maurine Dallas Watkins
+tt0024736,nm0778306,Reinhold Schünzel
+tt0024894,nm0000590,Edgar Allan Poe
+tt0024894,nm0750537,Peter Ruric
+tt0024894,nm0880618,Edgar G. Ulmer
+tt0024894,nm0453311,Tom Kilpatrick
+tt0024906,nm0336339,Ralph Graves
+tt0025004,nm0241416,Alexandre Dumas
+tt0025004,nm0242897,Philip Dunne
+tt0025004,nm0869371,Dan Totheroh
+tt0025004,nm0498174,Rowland V. Lee
+tt0025004,nm0857710,Harvey F. Thew
+tt0025037,nm0027173,Maxwell Anderson
+tt0025037,nm0499628,Gladys Lehman
+tt0025037,nm0143281,Alberto Casella
+tt0025037,nm0274923,Walter Ferris
+tt0025301,nm0403595,Fannie Hurst
+tt0025301,nm0403398,William Hurlbut
+tt0025301,nm0002545,Preston Sturges
+tt0025301,nm0242850,Finley Peter Dunne
+tt0025301,nm0274923,Walter Ferris
+tt0025301,nm0318341,Bianca Gilchrist
+tt0025301,nm0373511,Victor Heerman
+tt0025301,nm0556945,Sarah Y. Mason
+tt0025301,nm0650338,Samuel Ornitz
+tt0025301,nm0725017,Arthur Richman
+tt0025316,nm0728307,Robert Riskin
+tt0025316,nm0011343,Samuel Hopkins Adams
+tt0025452,nm0071657,Charles Bennett
+tt0025452,nm0943922,D.B. Wyndham-Lewis
+tt0025452,nm0339326,Edwin Greenwood
+tt0025452,nm0712653,A.R. Rawlinson
+tt0025452,nm0930539,Emlyn Williams
+tt0025478,nm0286924,Willi Forst
+tt0025478,nm0281556,Walter Reisch
+tt0025878,nm0352443,Albert Hackett
+tt0025878,nm0329304,Frances Goodrich
+tt0025878,nm0358591,Dashiell Hammett
+tt0025880,nm0002545,Preston Sturges
+tt0025880,nm0664022,Frank Partos
+tt0025880,nm0375500,Sam Hellman
+tt0025880,nm0562372,Edwin Justus Mayer
+tt0025880,nm0445502,Clarence Budington Kelland
+tt0025919,nm0589619,Charles Bruce Millholland
+tt0025919,nm0372942,Ben Hecht
+tt0025919,nm0531269,Charles MacArthur
+tt0025919,nm0002545,Preston Sturges
+tt0025919,nm0288706,Gene Fowler
+tt0026029,nm0117955,John Buchan
+tt0026029,nm0071657,Charles Bennett
+tt0026029,nm0067308,Ian Hay
+tt0026071,nm0866243,Lev Tolstoy
+tt0026071,nm0199304,Clemence Dane
+tt0026071,nm0826554,Salka Viertel
+tt0026071,nm0067103,S.N. Behrman
+tt0026138,nm0791217,Mary Shelley
+tt0026138,nm0403398,William Hurlbut
+tt0026138,nm0049721,John L. Balderston
+tt0026138,nm0076653,Josef Berne
+tt0026138,nm0088662,Lawrence G. Blochman
+tt0026138,nm0282984,Robert Florey
+tt0026138,nm0531878,Philip MacDonald
+tt0026138,nm0715723,Tom Reed
+tt0026138,nm0792670,R.C. Sherriff
+tt0026138,nm1073460,Edmund Pearson
+tt0026138,nm2191908,Morton Covan
+tt0026316,nm0281556,Walter Reisch
+tt0026406,nm0449095,Eric Keown
+tt0026406,nm0792845,Robert E. Sherwood
+tt0026406,nm0449698,Geoffrey Kerr
+tt0026452,nm0469915,Norman Krasna
+tt0026452,nm0493071,Vincent Lawrence
+tt0026452,nm0276252,Herbert Fields
+tt0026452,nm0217568,Viña Delmar
+tt0026452,nm0132180,Alan Campbell
+tt0026452,nm0456646,Jack Kirkland
+tt0026452,nm0662213,Dorothy Parker
+tt0026452,nm0664022,Frank Partos
+tt0026519,nm0337914,Howard J. Green
+tt0026519,nm0700717,Gertrude Purcell
+tt0026519,nm0378540,F. Hugh Herbert
+tt0027521,nm0287124,Garrett Fort
+tt0027521,nm0256880,Guy Endore
+tt0027521,nm0002233,Erich von Stroheim
+tt0027521,nm0115218,Tod Browning
+tt0027521,nm0581388,Abraham Merritt
+tt0027521,nm0770337,Richard Schayer
+tt0027884,nm0914362,Maurine Dallas Watkins
+tt0027884,nm0736911,Howard Emmett Rogers
+tt0027884,nm0649183,George Oppenheimer
+tt0027884,nm0838395,Wallace Sullivan
+tt0027908,nm0276252,Herbert Fields
+tt0027908,nm0049903,Faith Baldwin
+tt0027908,nm0700717,Gertrude Purcell
+tt0027908,nm0002545,Preston Sturges
+tt0027908,nm0083125,Claude Binyon
+tt0027908,nm0167065,Harry Clork
+tt0027908,nm0388755,Samuel Hoffenstein
+tt0027908,nm0540147,Doris Malloy
+tt0027977,nm0000122,Charles Chaplin
+tt0027996,nm0728307,Robert Riskin
+tt0027996,nm0445502,Clarence Budington Kelland
+tt0028010,nm0753452,Morrie Ryskind
+tt0028010,nm0368719,Eric Hatch
+tt0028010,nm0015399,Zoe Akins
+tt0028010,nm0478441,Gregory La Cava
+tt0028010,nm0696190,Robert Presnell Sr.
+tt0028096,nm0448981,Charles Kenyon
+tt0028096,nm0202681,Delmer Daves
+tt0028096,nm0792845,Robert E. Sherwood
+tt0028138,nm0216755,Walter DeLeon
+tt0028138,nm0552289,Francis Martin
+tt0028138,nm0366942,Don Hartman
+tt0028138,nm0124918,Frank Butler
+tt0028138,nm0531878,Philip MacDonald
+tt0028138,nm0737310,Louis Lucien Rogger
+tt0028138,nm0083125,Claude Binyon
+tt0028138,nm0697362,J.B. Priestley
+tt0028212,nm0175676,Joseph Conrad
+tt0028212,nm0071657,Charles Bennett
+tt0028212,nm0067308,Ian Hay
+tt0028212,nm0801026,Helen Simpson
+tt0028212,nm0256532,E.V.H. Emmett
+tt0028358,nm0920229,H.G. Wells
+tt0028597,nm0217568,Viña Delmar
+tt0028597,nm0725017,Arthur Richman
+tt0028597,nm0118227,Sidney Buchman
+tt0028632,nm0135015,Karel Capek
+tt0028632,nm0351947,Hugo Haas
+tt0028683,nm0015399,Zoe Akins
+tt0028683,nm0547966,Frances Marion
+tt0028683,nm0385264,James Hilton
+tt0028683,nm0241414,Alexandre Dumas fils
+tt0028683,nm0460130,Isabelle Kloucowski
+tt0028683,nm0933133,Carey Wilson
+tt0028816,nm0002545,Preston Sturges
+tt0028816,nm0143837,Vera Caspary
+tt0029217,nm0744035,Robert Rossen
+tt0029217,nm0277874,Abem Finkel
+tt0029217,nm0589316,Seton I. Miller
+tt0029284,nm0818415,Bella Spewack
+tt0029284,nm0818416,Sam Spewack
+tt0029284,nm0564970,Leo McCarey
+tt0029284,nm0437717,Garson Kanin
+tt0029284,nm0565609,John McClain
+tt0029284,nm0855139,Alfred Lord Tennyson
+tt0029322,nm0372942,Ben Hecht
+tt0029322,nm0834077,James Street
+tt0029322,nm0006388,David O. Selznick
+tt0029322,nm0308604,Robert Carson
+tt0029322,nm0366454,Moss Hart
+tt0029322,nm0397608,Sidney Howard
+tt0029322,nm0442151,George S. Kaufman
+tt0029322,nm0488057,Ring Lardner Jr.
+tt0029322,nm0649183,George Oppenheimer
+tt0029322,nm0775977,Budd Schulberg
+tt0029322,nm0920074,William A. Wellman
+tt0029695,nm0083125,Claude Binyon
+tt0029695,nm0894579,Louis Verneuil
+tt0029695,nm0077278,Georges Berr
+tt0029811,nm0856758,Josephine Tey
+tt0029811,nm0071657,Charles Bennett
+tt0029811,nm0339326,Edwin Greenwood
+tt0029811,nm0035613,Anthony Armstrong
+tt0029811,nm0767902,Gerald Savory
+tt0029929,nm0102818,Charles Brackett
+tt0029929,nm0000697,Billy Wilder
+tt0029929,nm0767878,Alfred Savoir
+tt0029929,nm0028602,Charlton Andrews
+tt0029947,nm0629580,Dudley Nichols
+tt0029947,nm0928444,Hagar Wilde
+tt0030063,nm0083742,Lajos Biró
+tt0030063,nm0198202,Ian Dalrymple
+tt0030063,nm0934497,Arthur Wimperis
+tt0030063,nm0906774,Gilbert Wakefield
+tt0030063,nm0792845,Robert E. Sherwood
+tt0030145,nm0276252,Herbert Fields
+tt0030145,nm0276284,Joseph Fields
+tt0030145,nm0106505,Irving Brecher
+tt0030145,nm0358071,Nancy Hamilton
+tt0030145,nm0796007,James L. Shute
+tt0030145,nm0143525,Rosemary Casey
+tt0030145,nm0258493,Julius J. Epstein
+tt0030145,nm0280223,Edith Fitzgerald
+tt0030145,nm0744035,Robert Rossen
+tt0030241,nm0829330,Donald Ogden Stewart
+tt0030241,nm0118227,Sidney Buchman
+tt0030241,nm0058129,Philip Barry
+tt0030287,nm0728002,Clements Ripley
+tt0030287,nm0277874,Abem Finkel
+tt0030287,nm0001379,John Huston
+tt0030287,nm0205244,Owen Davis
+tt0030287,nm0118758,Robert Buckner
+tt0030287,nm0248994,Louis F. Edelman
+tt0030341,nm0924781,Ethel Lina White
+tt0030341,nm0319148,Sidney Gilliat
+tt0030341,nm0490950,Frank Launder
+tt0031067,nm0469915,Norman Krasna
+tt0031067,nm0413519,Felix Jackson
+tt0031067,nm0437717,Garson Kanin
+tt0031210,nm0732452,Casey Robinson
+tt0031210,nm0108108,George Emerson Brewer Jr.
+tt0031210,nm0088602,Bertram Bloch
+tt0031215,nm0037734,Art Arthur
+tt0031215,nm0361837,Robert Harari
+tt0031215,nm0853042,Rex Taylor
+tt0031215,nm0375500,Sam Hellman
+tt0031359,nm0358096,Patrick Hamilton
+tt0031359,nm0712653,A.R. Rawlinson
+tt0031359,nm0092658,Bridget Boland
+tt0031381,nm0593565,Margaret Mitchell
+tt0031381,nm0397608,Sidney Howard
+tt0031381,nm0308177,Oliver H.P. Garrett
+tt0031381,nm0372942,Ben Hecht
+tt0031381,nm0842485,Jo Swerling
+tt0031381,nm0886668,John Van Druten
+tt0031385,nm0792670,R.C. Sherriff
+tt0031385,nm0921995,Claudine West
+tt0031385,nm0556178,Eric Maschwitz
+tt0031385,nm0385264,James Hilton
+tt0031477,nm0792553,Richard Sherman
+tt0031477,nm0108024,Bessie Breuer
+tt0031505,nm0238898,Daphne Du Maurier
+tt0031505,nm0319148,Sidney Gilliat
+tt0031505,nm0365661,Joan Harrison
+tt0031505,nm0697362,J.B. Priestley
+tt0031593,nm0202681,Delmer Daves
+tt0031593,nm0829330,Donald Ogden Stewart
+tt0031593,nm0186118,Mildred Cram
+tt0031593,nm0564970,Leo McCarey
+tt0031593,nm0067103,S.N. Behrman
+tt0031725,nm0102818,Charles Brackett
+tt0031725,nm0000697,Billy Wilder
+tt0031725,nm0281556,Walter Reisch
+tt0031725,nm0501872,Melchior Lengyel
+tt0031762,nm0299154,Jules Furthman
+tt0031762,nm0001328,Howard Hawks
+tt0031762,nm0341178,Eleanore Griffin
+tt0031762,nm0710299,William Rankin
+tt0031845,nm0285578,Corey Ford
+tt0031845,nm0572851,Norman Z. McLeod
+tt0031885,nm0719756,Jean Renoir
+tt0031885,nm0002569,Carl Koch
+tt0031885,nm0064559,Beaumarchais
+tt0031951,nm0791217,Mary Shelley
+tt0031951,nm0178459,Wyllis Cooper
+tt0032138,nm0486538,Noel Langley
+tt0032138,nm0753249,Florence Ryerson
+tt0032138,nm0941138,Edgar Allan Woolf
+tt0032138,nm0000875,L. Frank Baum
+tt0032138,nm0002030,George Cukor
+tt0032138,nm0006085,Arthur Freed
+tt0032138,nm0106505,Irving Brecher
+tt0032138,nm0134284,William H. Cannon
+tt0032138,nm0276252,Herbert Fields
+tt0032138,nm0355095,Jack Haley
+tt0032138,nm0361971,E.Y. Harburg
+tt0032138,nm0388755,Samuel Hoffenstein
+tt0032138,nm0481618,Bert Lahr
+tt0032138,nm0536941,John Lee Mahin
+tt0032138,nm0542534,Herman J. Mankiewicz
+tt0032138,nm0591774,Jack Mintz
+tt0032138,nm0621790,Ogden Nash
+tt0032138,nm0685265,Robert Pirosh
+tt0032138,nm0780833,George Seaton
+tt0032138,nm0799015,Sid Silvers
+tt0032138,nm0861703,Richard Thorpe
+tt0032138,nm0896542,King Vidor
+tt0032143,nm0524403,Clare Boothe Luce
+tt0032143,nm0002616,Anita Loos
+tt0032143,nm0613848,Jane Murfin
+tt0032143,nm0280234,F. Scott Fitzgerald
+tt0032143,nm0829330,Donald Ogden Stewart
+tt0032145,nm0531269,Charles MacArthur
+tt0032145,nm0372942,Ben Hecht
+tt0032145,nm0111577,Emily Brontë
+tt0032145,nm0001379,John Huston
+tt0032349,nm0372942,Ben Hecht
+tt0032349,nm0496468,Charles Lederer
+tt0032349,nm0281556,Walter Reisch
+tt0032349,nm0542534,Herman J. Mankiewicz
+tt0032349,nm0718106,Gottfried Reinhardt
+tt0032484,nm0071657,Charles Bennett
+tt0032484,nm0365661,Joan Harrison
+tt0032484,nm0385264,James Hilton
+tt0032484,nm0070361,Robert Benchley
+tt0032484,nm0372942,Ben Hecht
+tt0032484,nm0537363,Richard Maibaum
+tt0032553,nm0000122,Charles Chaplin
+tt0032599,nm0496468,Charles Lederer
+tt0032599,nm0372942,Ben Hecht
+tt0032599,nm0531269,Charles MacArthur
+tt0032599,nm0753452,Morrie Ryskind
+tt0032610,nm0170660,Lester Cole
+tt0032610,nm0338770,Harold Greene
+tt0032610,nm0370426,Nathaniel Hawthorne
+tt0032904,nm0829330,Donald Ogden Stewart
+tt0032904,nm0058129,Philip Barry
+tt0032904,nm0759029,Waldo Salt
+tt0032943,nm0404717,Aldous Huxley
+tt0032943,nm0613848,Jane Murfin
+tt0032943,nm0000807,Jane Austen
+tt0032943,nm0422017,Helen Jerome
+tt0032943,nm0373511,Victor Heerman
+tt0032943,nm0556945,Sarah Y. Mason
+tt0032943,nm0805756,Tess Slesinger
+tt0032943,nm0886668,John Van Druten
+tt0032976,nm0238898,Daphne Du Maurier
+tt0032976,nm0792845,Robert E. Sherwood
+tt0032976,nm0365661,Joan Harrison
+tt0032976,nm0531878,Philip MacDonald
+tt0032976,nm0389580,Michael Hogan
+tt0033045,nm0710723,Samson Raphaelson
+tt0033045,nm0529450,Miklós László
+tt0033045,nm0372942,Ben Hecht
+tt0033190,nm0810158,Thorne Smith
+tt0033190,nm0636793,Mickell Novack
+tt0033190,nm0318428,Berne Giler
+tt0033190,nm0565609,John McClain
+tt0033190,nm0416861,Rian James
+tt0033373,nm0102818,Charles Brackett
+tt0033373,nm0000697,Billy Wilder
+tt0033373,nm0598572,Thomas Monroe
+tt0033432,nm0247252,Kenneth Earl
+tt0033432,nm0615842,M.M. Musselman
+tt0033432,nm0258493,Julius J. Epstein
+tt0033596,nm0649183,George Oppenheimer
+tt0033596,nm0367060,Edmund L. Hartmann
+tt0033596,nm0621790,Ogden Nash
+tt0033717,nm0001379,John Huston
+tt0033717,nm0122446,W.R. Burnett
+tt0033804,nm0388743,Monckton Hoffe
+tt0033804,nm0002545,Preston Sturges
+tt0033836,nm0375484,Lillian Hellman
+tt0033836,nm0462111,Arthur Kober
+tt0033836,nm0662213,Dorothy Parker
+tt0033836,nm0132180,Alan Campbell
+tt0033870,nm0001379,John Huston
+tt0033870,nm0358591,Dashiell Hammett
+tt0033922,nm0469915,Norman Krasna
+tt0034240,nm0002545,Preston Sturges
+tt0034248,nm0710723,Samson Raphaelson
+tt0034248,nm0365661,Joan Harrison
+tt0034248,nm0720904,Alma Reville
+tt0034248,nm0075324,Anthony Berkeley
+tt0034386,nm0491076,S.K. Lauren
+tt0034386,nm0002616,Anita Loos
+tt0034386,nm0189405,Rachel Crothers
+tt0034386,nm0330390,Leon Gordon
+tt0034386,nm0576046,John Meehan
+tt0034428,nm0531335,Richard Macaulay
+tt0034428,nm0308604,Robert Carson
+tt0034583,nm16909158,Philip G. Epstein
+tt0034583,nm0258493,Julius J. Epstein
+tt0034583,nm0462321,Howard Koch
+tt0034583,nm0122417,Murray Burnett
+tt0034583,nm0019706,Joan Alison
+tt0034583,nm0732452,Casey Robinson
+tt0034587,nm0090840,DeWitt Bodeen
+tt0034881,nm0685265,Robert Pirosh
+tt0034881,nm0175091,Marc Connelly
+tt0034881,nm0810158,Thorne Smith
+tt0034881,nm0559370,Norman Matson
+tt0034881,nm0163229,René Clair
+tt0034881,nm0726542,André Rigaud
+tt0034881,nm0874308,Dalton Trumbo
+tt0035140,nm0732452,Casey Robinson
+tt0035140,nm0698989,Olive Higgins Prouty
+tt0035169,nm0002545,Preston Sturges
+tt0035169,nm0290926,Ernst Laemmle
+tt0035279,nm0896830,Peter Viertel
+tt0035279,nm0365661,Joan Harrison
+tt0035279,nm0662213,Dorothy Parker
+tt0035279,nm0000033,Alfred Hitchcock
+tt0035417,nm0789758,Irwin Shaw
+tt0035417,nm0118227,Sidney Buchman
+tt0035417,nm0886861,Dale Van Every
+tt0035417,nm0363563,Sidney Harmon
+tt0035423,nm0737216,Steven Rogers
+tt0035423,nm0003506,James Mangold
+tt0035446,nm0501872,Melchior Lengyel
+tt0035446,nm0562372,Edwin Justus Mayer
+tt0035446,nm0523932,Ernst Lubitsch
+tt0035567,nm0488057,Ring Lardner Jr.
+tt0035567,nm0437720,Michael Kanin
+tt0035567,nm0536941,John Lee Mahin
+tt0036172,nm0751417,Robert Russell
+tt0036172,nm0743407,Frank Ross
+tt0036172,nm0283133,Richard Flournoy
+tt0036172,nm0287931,Lewis R. Foster
+tt0036172,nm0437717,Garson Kanin
+tt0036260,nm0774441,Bernard C. Schoenfeld
+tt0036260,nm0941280,Cornell Woolrich
+tt0036323,nm0493251,John Howard Lawson
+tt0036323,nm0466113,Zoltan Korda
+tt0036323,nm0641199,James O'Hanlon
+tt0036323,nm0531878,Philip MacDonald
+tt0036323,nm0118227,Sidney Buchman
+tt0036342,nm0928642,Thornton Wilder
+tt0036342,nm0072639,Sally Benson
+tt0036342,nm0720904,Alma Reville
+tt0036342,nm0568060,Gordon McDonell
+tt0036391,nm0413531,Frederick J. Jackson
+tt0036391,nm0462752,Ted Koehler
+tt0036391,nm0469196,H.S. Kraft
+tt0036391,nm0395839,Jerry Horwin
+tt0036391,nm0733085,Seymour Robinson
+tt0036554,nm0649183,George Oppenheimer
+tt0036554,nm0496468,Charles Lederer
+tt0036554,nm0818700,Leonard Spigelgass
+tt0036554,nm0206487,Lillian Day
+tt0036554,nm0287430,Jan Fortune
+tt0036613,nm0258493,Julius J. Epstein
+tt0036613,nm0450279,Joseph Kesselring
+tt0036733,nm0090840,DeWitt Bodeen
+tt0036775,nm0000697,Billy Wilder
+tt0036775,nm0151452,Raymond Chandler
+tt0036775,nm0128906,James M. Cain
+tt0036855,nm0886668,John Van Druten
+tt0036855,nm0281556,Walter Reisch
+tt0036855,nm0049721,John L. Balderston
+tt0036855,nm0358096,Patrick Hamilton
+tt0037008,nm0143837,Vera Caspary
+tt0037008,nm0237225,Jay Dratler
+tt0037008,nm0388755,Samuel Hoffenstein
+tt0037008,nm0718101,Elizabeth Reinhardt
+tt0037008,nm0488057,Ring Lardner Jr.
+tt0037077,nm0002545,Preston Sturges
+tt0037094,nm0258493,Julius J. Epstein
+tt0037094,nm0901896,Elizabeth von Arnim
+tt0037382,nm0002133,Ernest Hemingway
+tt0037382,nm0299154,Jules Furthman
+tt0037382,nm0001203,William Faulkner
+tt0037382,nm0010850,Cleve F. Adams
+tt0037382,nm0150462,Whitman Chambers
+tt0037453,nm0500020,Fritz Leiber Jr.
+tt0037453,nm0201405,Scott Darling
+tt0037453,nm0918709,Brenda Weisberg
+tt0037558,nm0002021,Noël Coward
+tt0037558,nm0369743,Anthony Havelock-Allan
+tt0037558,nm0000180,David Lean
+tt0037558,nm0623768,Ronald Neame
+tt0037870,nm0102694,Blanche Brace
+tt0037870,nm0779059,DeVallon Scott
+tt0037870,nm0295134,Alan Friedman
+tt0037884,nm0413352,Charles R. Jackson
+tt0037884,nm0102818,Charles Brackett
+tt0037884,nm0000697,Billy Wilder
+tt0038109,nm0372942,Ben Hecht
+tt0038109,nm1301541,John Palmer
+tt0038109,nm0761573,Hilary St George Saunders
+tt0038109,nm0534191,Angus MacPhail
+tt0038109,nm0739676,May E. Romm
+tt0038355,nm0001203,William Faulkner
+tt0038355,nm0102824,Leigh Brackett
+tt0038355,nm0299154,Jules Furthman
+tt0038355,nm0151452,Raymond Chandler
+tt0038559,nm0254154,E.A. Ellington
+tt0038559,nm0252100,Jo Eisinger
+tt0038559,nm0663763,Marion Parsonnet
+tt0038559,nm0372942,Ben Hecht
+tt0038650,nm0329304,Frances Goodrich
+tt0038650,nm0352443,Albert Hackett
+tt0038650,nm0001008,Frank Capra
+tt0038650,nm0842485,Jo Swerling
+tt0038650,nm0827821,Philip Van Doren Stern
+tt0038650,nm0933858,Michael Wilson
+tt0038787,nm0372942,Ben Hecht
+tt0038787,nm0000033,Alfred Hitchcock
+tt0038787,nm0285218,John Taintor Foote
+tt0038787,nm0644048,Clifford Odets
+tt0038937,nm0512702,Eugene Ling
+tt0038937,nm0218626,Albert DeMond
+tt0038937,nm0075344,Martin Berkeley
+tt0039169,nm0791084,Sidney Sheldon
+tt0039312,nm0731387,Marguerite Roberts
+tt0039312,nm0015399,Zoe Akins
+tt0039312,nm0732452,Casey Robinson
+tt0039312,nm0291016,Leonhard Frank
+tt0039416,nm0387740,Laura Z. Hobson
+tt0039416,nm0366454,Moss Hart
+tt0039416,nm0001415,Elia Kazan
+tt0040498,nm0525067,William Ludwig
+tt0040498,nm0750822,Harry Ruskin
+tt0040498,nm0934497,Arthur Wimperis
+tt0040498,nm0442456,Gina Kaus
+tt0040498,nm0388743,Monckton Hoffe
+tt0040498,nm0789100,Margery Sharp
+tt0040506,nm0112218,Richard Brooks
+tt0040506,nm0001379,John Huston
+tt0040506,nm0027173,Maxwell Anderson
+tt0040522,nm0953790,Cesare Zavattini
+tt0040522,nm0059030,Luigi Bartolini
+tt0040522,nm0080755,Oreste Biancoli
+tt0040522,nm0147599,Suso Cecchi D'Amico
+tt0040522,nm0001120,Vittorio De Sica
+tt0040522,nm0290000,Adolfo Franci
+tt0040522,nm0315657,Gherardo Gherardi
+tt0040522,nm0346291,Gerardo Guerrieri
+tt0040536,nm0462321,Howard Koch
+tt0040536,nm0959003,Stefan Zweig
+tt0040536,nm0649097,Max Ophüls
+tt0040725,nm0026153,Hans Christian Andersen
+tt0040725,nm0696247,Emeric Pressburger
+tt0040725,nm0935773,Keith Winter
+tt0040725,nm0003836,Michael Powell
+tt0040746,nm0002025,Hume Cronyn
+tt0040746,nm0358096,Patrick Hamilton
+tt0040746,nm0491306,Arthur Laurents
+tt0040746,nm0372942,Ben Hecht
+tt0040897,nm0001379,John Huston
+tt0040897,nm0871252,B. Traven
+tt0041090,nm0002106,Ruth Gordon
+tt0041090,nm0437717,Garson Kanin
+tt0041172,nm0168829,Lenore J. Coffee
+tt0041172,nm0257745,Stuart Engstrand
+tt0041587,nm0143837,Vera Caspary
+tt0041587,nm0459255,John Klempner
+tt0041587,nm0000581,Joseph L. Mankiewicz
+tt0041672,nm0258493,Julius J. Epstein
+tt0041672,nm0758409,J.D. Salinger
+tt0041776,nm0010063,Rodney Ackland
+tt0041776,nm0102392,Arthur Boys
+tt0041776,nm0701090,Alexander Pushkin
+tt0041959,nm0001294,Graham Greene
+tt0041959,nm0000080,Orson Welles
+tt0041959,nm0466099,Alexander Korda
+tt0041959,nm0715346,Carol Reed
+tt0042004,nm0173303,John Colton
+tt0042004,nm0511626,Margaret Linden
+tt0042004,nm0801026,Helen Simpson
+tt0042004,nm0002025,Hume Cronyn
+tt0042004,nm0108833,James Bridie
+tt0042004,nm0001811,Peter Ustinov
+tt0042004,nm0100884,Joseph Shearing
+tt0042192,nm0000581,Joseph L. Mankiewicz
+tt0042192,nm0650581,Mary Orr
+tt0042325,nm0414989,Hans Jacoby
+tt0042325,nm0103627,Frederick Brady
+tt0042546,nm0153808,Mary Chase
+tt0042546,nm0110958,Oscar Brodney
+tt0042546,nm0175333,Myles Connolly
+tt0042593,nm0813584,Andrew Solt
+tt0042593,nm0636002,Edmund H. North
+tt0042593,nm0400568,Dorothy B. Hughes
+tt0042792,nm0000581,Joseph L. Mankiewicz
+tt0042792,nm0760488,Lesser Samuels
+tt0042792,nm0948634,Philip Yordan
+tt0042994,nm0177336,Whitfield Cook
+tt0042994,nm0720904,Alma Reville
+tt0042994,nm0421862,Selwyn Jepson
+tt0042994,nm0108833,James Bridie
+tt0042994,nm0532030,Ranald MacDougall
+tt0043014,nm0102818,Charles Brackett
+tt0043014,nm0000697,Billy Wilder
+tt0043014,nm0551261,D.M. Marshman Jr.
+tt0043265,nm0286163,C.S. Forester
+tt0043265,nm0012938,James Agee
+tt0043265,nm0001379,John Huston
+tt0043265,nm0171924,John Collier
+tt0043265,nm0896830,Peter Viertel
+tt0043456,nm0636002,Edmund H. North
+tt0043456,nm0060915,Harry Bates
+tt0043686,nm0102030,François Boyer
+tt0043686,nm0042179,Jean Aurenche
+tt0043686,nm0098204,Pierre Bost
+tt0043686,nm0167496,René Clément
+tt0043728,nm0818700,Leonard Spigelgass
+tt0043728,nm0876562,Karl Tunberg
+tt0043728,nm0519556,Frederick Lonsdale
+tt0043792,nm0102818,Charles Brackett
+tt0043792,nm0281556,Walter Reisch
+tt0043792,nm0106764,Richard L. Breen
+tt0043792,nm0242518,Caesar Dunn
+tt0044079,nm0151452,Raymond Chandler
+tt0044079,nm0650262,Czenzi Ormonde
+tt0044079,nm0177336,Whitfield Cook
+tt0044079,nm0383604,Patricia Highsmith
+tt0044079,nm0372942,Ben Hecht
+tt0044486,nm0237439,Theodore Dreiser
+tt0044486,nm0324537,Ruth Goetz
+tt0044486,nm0324499,Augustus Goetz
+tt0044672,nm0290931,Fredric M. Frank
+tt0044672,nm0528530,Barré Lyndon
+tt0044672,nm0820693,Theodore St. John
+tt0044672,nm0147119,Frank Cavett
+tt0044672,nm0307471,Jack Gariss
+tt0044837,nm0000122,Charles Chaplin
+tt0044941,nm0175333,Myles Connolly
+tt0044941,nm0536941,John Lee Mahin
+tt0044941,nm0564970,Leo McCarey
+tt0045012,nm0002106,Ruth Gordon
+tt0045012,nm0437717,Garson Kanin
+tt0045073,nm0049721,John L. Balderston
+tt0045073,nm0892044,Anthony Veiller
+tt0045073,nm0387501,John Hoare
+tt0045152,nm0173679,Betty Comden
+tt0045152,nm0337582,Adolph Green
+tt0045546,nm0605215,Lou Morheim
+tt0045546,nm0293750,Fred Freiberger
+tt0045546,nm0001969,Ray Bradbury
+tt0045546,nm0416393,Daniel James
+tt0045546,nm0522123,Eugène Lourié
+tt0045546,nm0809731,Robert Smith
+tt0045888,nm0928108,Crane Wilbur
+tt0045888,nm0067676,Charles Belden
+tt0045920,nm0261400,Harry Essex
+tt0045920,nm0001969,Ray Bradbury
+tt0046026,nm0802561,Curt Siodmak
+tt0046026,nm0868974,Ivan Tors
+tt0046186,nm0713523,William Raynor
+tt0046186,nm0928611,Myles Wilder
+tt0046250,nm0874308,Dalton Trumbo
+tt0046250,nm0402848,Ian McLellan Hunter
+tt0046250,nm0226538,John Dighton
+tt0046754,nm0000581,Joseph L. Mankiewicz
+tt0046828,nm0358564,Oscar Hammerstein II
+tt0046828,nm0459067,Harry Kleiner
+tt0046828,nm0617737,Prosper Mérimée
+tt0046911,nm0092267,Pierre Boileau
+tt0046911,nm0092268,Thomas Narcejac
+tt0046911,nm0167241,Henri-Georges Clouzot
+tt0046911,nm0167242,Jérôme Géronimi
+tt0046911,nm0557510,René Masson
+tt0046911,nm0340190,Frédéric Grendel
+tt0046912,nm0461425,Frederick Knott
+tt0047200,nm0928108,Crane Wilbur
+tt0047396,nm0371088,John Michael Hayes
+tt0047396,nm0941280,Cornell Woolrich
+tt0047437,nm0000697,Billy Wilder
+tt0047437,nm0853138,Samuel A. Taylor
+tt0047437,nm0499626,Ernest Lehman
+tt0047528,nm0000019,Federico Fellini
+tt0047528,nm0684083,Tullio Pinelli
+tt0047528,nm0280919,Ennio Flaiano
+tt0047580,nm0665875,John Patrick
+tt0047580,nm0781186,John H. Secondari
+tt0047679,nm0259838,Chester Erskine
+tt0047679,nm0425913,Nunnally Johnson
+tt0047811,nm0272128,Peggy Thompson
+tt0047811,nm0497209,Edna L. Lee
+tt0047811,nm0497374,Harry Lee
+tt0047960,nm0802561,Curt Siodmak
+tt0047985,nm0371092,Joseph Hayes
+tt0047985,nm0237225,Jay Dratler
+tt0048491,nm0850168,Daniel Taradash
+tt0048491,nm0408718,William Inge
+tt0048545,nm0827856,Stewart Stern
+tt0048545,nm0795730,Irving Shulman
+tt0048545,nm0712947,Nicholas Ray
+tt0048673,nm0491306,Arthur Laurents
+tt0048673,nm0060914,H.E. Bates
+tt0048673,nm0000180,David Lean
+tt0048673,nm0829330,Donald Ogden Stewart
+tt0048728,nm0371088,John Michael Hayes
+tt0048728,nm0230196,David Dodge
+tt0048728,nm0178785,Alec Coppel
+tt0048750,nm0371088,John Michael Hayes
+tt0048750,nm0832723,Jack Trevor Story
+tt0048801,nm0404062,Albert Husson
+tt0048801,nm0532030,Ranald MacDougall
+tt0048947,nm0491306,Arthur Laurents
+tt0048947,nm0561067,Marcelle Maurette
+tt0048947,nm0093397,Guy Bolton
+tt0048991,nm0276869,Tom Filer
+tt0049261,nm0272209,Edna Ferber
+tt0049261,nm0347451,Fred Guiol
+tt0049261,nm0595573,Ivan Moffat
+tt0049366,nm0537784,Daniel Mainwaring
+tt0049366,nm0278277,Jack Finney
+tt0049366,nm0172628,Richard Collins
+tt0049408,nm0499626,Ernest Lehman
+tt0049408,nm0358564,Oscar Hammerstein II
+tt0049408,nm0484933,Margaret Landon
+tt0049470,nm0371088,John Michael Hayes
+tt0049470,nm0071657,Charles Bennett
+tt0049470,nm0943922,D.B. Wyndham-Lewis
+tt0049470,nm0534191,Angus MacPhail
+tt0049833,nm0933335,Dorothy Clarke Wilson
+tt0049833,nm0408933,J.H. Ingraham
+tt0049833,nm0816161,A.E. Southon
+tt0049833,nm0533418,Æneas MacKenzie
+tt0049833,nm0489679,Jesse Lasky Jr.
+tt0049833,nm0307471,Jack Gariss
+tt0049833,nm0290931,Fredric M. Frank
+tt0050083,nm0741627,Reginald Rose
+tt0050105,nm0202681,Delmer Daves
+tt0050105,nm0564970,Leo McCarey
+tt0050105,nm0186118,Mildred Cram
+tt0050105,nm0829330,Donald Ogden Stewart
+tt0050306,nm0920216,George Wells
+tt0050306,nm0741423,Helen Rose
+tt0050307,nm0258290,Phoebe Ephron
+tt0050307,nm0258288,Henry Ephron
+tt0050307,nm0545455,William Marchant
+tt0050419,nm0314826,Leonard Gershe
+tt0050539,nm0558577,Richard Matheson
+tt0050539,nm0671766,Richard Alan Simmons
+tt0050658,nm0000697,Billy Wilder
+tt0050658,nm0224634,I.A.L. Diamond
+tt0050658,nm0029370,Claude Anet
+tt0050783,nm0000019,Federico Fellini
+tt0050783,nm0280919,Ennio Flaiano
+tt0050783,nm0684083,Tullio Pinelli
+tt0050783,nm0001596,Pier Paolo Pasolini
+tt0050783,nm0740021,Brunello Rondi
+tt0050815,nm0455510,Dorothy Kingsley
+tt0050815,nm0641274,John O'Hara
+tt0050861,nm0711905,Terence Rattigan
+tt0051207,nm0027173,Maxwell Anderson
+tt0051207,nm0534191,Angus MacPhail
+tt0051380,nm0360221,Mark Hanna
+tt0051406,nm0850168,Daniel Taradash
+tt0051406,nm0886668,John Van Druten
+tt0051622,nm0165412,James Clavell
+tt0051622,nm0486228,George Langelaan
+tt0051744,nm0925380,Robb White
+tt0051756,nm0900134,Louis Vittes
+tt0051913,nm0928642,Thornton Wilder
+tt0051913,nm0371088,John Michael Hayes
+tt0051948,nm0241949,David Duncan
+tt0052063,nm0387176,Marek Hlasko
+tt0052063,nm0367860,Wojciech Has
+tt0052080,nm0029156,Jerzy Andrzejewski
+tt0052080,nm0906667,Andrzej Wajda
+tt0052357,nm0178785,Alec Coppel
+tt0052357,nm0853138,Samuel A. Taylor
+tt0052357,nm0092267,Pierre Boileau
+tt0052357,nm0092268,Thomas Narcejac
+tt0052357,nm0027173,Maxwell Anderson
+tt0052618,nm0908753,Lew Wallace
+tt0052618,nm0876562,Karl Tunberg
+tt0052618,nm0000683,Gore Vidal
+tt0052618,nm0027173,Maxwell Anderson
+tt0052618,nm0067103,S.N. Behrman
+tt0052618,nm0296737,Christopher Fry
+tt0052820,nm0359034,Orville H. Hampton
+tt0052918,nm0341178,Eleanore Griffin
+tt0052918,nm0778818,Allan Scott
+tt0052918,nm0403595,Fannie Hurst
+tt0053125,nm0499626,Ernest Lehman
+tt0053131,nm0027355,Robert Anderson
+tt0053131,nm0401520,Kathryn Hulme
+tt0053143,nm0788630,Stanley Shapiro
+tt0053143,nm0725009,Maurice Richlin
+tt0053143,nm0455126,Paul King
+tt0053143,nm0831972,Joseph Stone
+tt0053172,nm0788630,Stanley Shapiro
+tt0053172,nm0725009,Maurice Richlin
+tt0053172,nm0745866,Russell Rouse
+tt0053172,nm0338707,Clarence Greene
+tt0053198,nm0000076,François Truffaut
+tt0053198,nm0610115,Marcel Moussy
+tt0053219,nm0076618,Edward Bernds
+tt0053219,nm0486228,George Langelaan
+tt0053291,nm0000697,Billy Wilder
+tt0053291,nm0224634,I.A.L. Diamond
+tt0053291,nm0858329,Robert Thoeren
+tt0053291,nm0517615,Michael Logan
+tt0053363,nm0925380,Robb White
+tt0053459,nm0715118,Jean Redon
+tt0053459,nm0092267,Pierre Boileau
+tt0053459,nm0092268,Thomas Narcejac
+tt0053459,nm0767110,Claude Sautet
+tt0053459,nm0309039,Pierre Gascar
+tt0053472,nm0001031,Claude Chabrol
+tt0053472,nm0000419,Jean-Luc Godard
+tt0053472,nm0000076,François Truffaut
+tt0053604,nm0000697,Billy Wilder
+tt0053604,nm0224634,I.A.L. Diamond
+tt0053925,nm0000590,Edgar Allan Poe
+tt0053925,nm0558577,Richard Matheson
+tt0054020,nm0241949,David Duncan
+tt0054020,nm0686089,Ben Pivar
+tt0054020,nm0742843,Francis Rosenwald
+tt0054067,nm0208086,Ennio De Concini
+tt0054067,nm0004531,Mario Serandrei
+tt0054067,nm0324690,Nikolay Gogol
+tt0054067,nm0383318,George Higgins
+tt0054067,nm0000878,Mario Bava
+tt0054067,nm0181753,Marcello Coscia
+tt0054067,nm0210796,Dino De Palma
+tt0054215,nm0825010,Joseph Stefano
+tt0054215,nm0088645,Robert Bloch
+tt0054443,nm0798103,Stirling Silliphant
+tt0054443,nm0727211,Wolf Rilla
+tt0054443,nm0455785,Ronald Kinnoch
+tt0054443,nm0943909,John Wyndham
+tt0054698,nm0001986,Truman Capote
+tt0054698,nm0043480,George Axelrod
+tt0054743,nm0375484,Lillian Hellman
+tt0054743,nm0371088,John Michael Hayes
+tt0055100,nm0788630,Stanley Shapiro
+tt0055100,nm0377417,Paul Henning
+tt0055152,nm0558577,Richard Matheson
+tt0055152,nm0894523,Jules Verne
+tt0055256,nm0000697,Billy Wilder
+tt0055256,nm0224634,I.A.L. Diamond
+tt0055256,nm0597175,Ferenc Molnár
+tt0055304,nm0558577,Richard Matheson
+tt0055304,nm0000590,Edgar Allan Poe
+tt0055312,nm0437900,Hal Kanter
+tt0055312,nm0876223,Harry Tugend
+tt0055312,nm0728307,Robert Riskin
+tt0055312,nm0750357,Damon Runyon
+tt0055312,nm0134211,Jimmy Cannon
+tt0055499,nm0000005,Ingmar Bergman
+tt0055830,nm0166647,John Clifford
+tt0055830,nm0367547,Herk Harvey
+tt0056196,nm0642156,Eugene O'Neill
+tt0056277,nm0385573,Anthony Hinds
+tt0056277,nm0363813,Barbara S. Harper
+tt0056277,nm0861343,Russell Thorndike
+tt0056315,nm0002759,Ernesto Gastaldi
+tt0056552,nm0558577,Richard Matheson
+tt0056552,nm0000590,Edgar Allan Poe
+tt0056575,nm0788630,Stanley Shapiro
+tt0056575,nm0597578,Nate Monaster
+tt0056592,nm0497369,Harper Lee
+tt0056592,nm0285210,Horton Foote
+tt0056884,nm0006445,Éric Rohmer
+tt0056923,nm0832099,Peter Stone
+tt0056923,nm0066939,Marc Behm
+tt0056943,nm0558577,Richard Matheson
+tt0056993,nm0560943,Guy de Maupassant
+tt0056993,nm0448839,Robert E. Kent
+tt0057012,nm0000040,Stanley Kubrick
+tt0057012,nm0816143,Terry Southern
+tt0057012,nm0313570,Peter George
+tt0057128,nm0064579,Charles Beaumont
+tt0057128,nm0000590,Edgar Allan Poe
+tt0057128,nm0522454,H.P. Lovecraft
+tt0057128,nm0000338,Francis Ford Coppola
+tt0057129,nm0317254,Nelson Gidding
+tt0057129,nm0414047,Shirley Jackson
+tt0057196,nm0105052,Kazimierz Brandys
+tt0057358,nm0000005,Ingmar Bergman
+tt0057443,nm0208086,Ennio De Concini
+tt0057443,nm0179281,Sergio Corbucci
+tt0057443,nm0211373,Eliana de Sabata
+tt0057443,nm0346310,Mino Guerrini
+tt0057443,nm0698779,Francesco Prosperi
+tt0057443,nm0000878,Mario Bava
+tt0057449,nm0000590,Edgar Allan Poe
+tt0057449,nm0558577,Richard Matheson
+tt0057608,nm0370426,Nathaniel Hawthorne
+tt0057608,nm0448839,Robert E. Kent
+tt0058154,nm0043480,George Axelrod
+tt0058154,nm0475823,Harry Kurnitz
+tt0058329,nm0334357,Winston Graham
+tt0058329,nm0696319,Jay Presson Allen
+tt0058333,nm0064579,Charles Beaumont
+tt0058333,nm0132790,R. Wright Campbell
+tt0058333,nm0000590,Edgar Allan Poe
+tt0058385,nm0503585,Alan Jay Lerner
+tt0058385,nm0789737,George Bernard Shaw
+tt0058453,nm0245213,Julien Duvivier
+tt0058453,nm0419986,Henri Jeanson
+tt0058453,nm0043480,George Axelrod
+tt0058571,nm0258493,Julius J. Epstein
+tt0058571,nm0053049,Norman Barasch
+tt0058571,nm0601009,Carroll Moore
+tt0058700,nm0558577,Richard Matheson
+tt0058700,nm0500067,William F. Leicester
+tt0058700,nm1856964,Furio M. Monetti
+tt0058700,nm0706575,Ubaldo Ragona
+tt0058997,nm0607876,John Mortimer
+tt0058997,nm0607890,Penelope Mortimer
+tt0058997,nm0595217,Marryam Modell
+tt0058997,nm0505615,Ira Levin
+tt0059079,nm0002254,King Hu
+tt0059079,nm0788243,Shan-Hsi Ting
+tt0059113,nm0664985,Boris Pasternak
+tt0059113,nm0004122,Robert Bolt
+tt0059742,nm0403346,Georg Hurdalek
+tt0059742,nm0512231,Howard Lindsay
+tt0059742,nm0189496,Russel Crouse
+tt0059742,nm0499626,Ernest Lehman
+tt0059742,nm0903125,Maria von Trapp
+tt0059821,nm0000590,Edgar Allan Poe
+tt0059821,nm0001801,Robert Towne
+tt0059821,nm0562577,Paul Mayersberg
+tt0059895,nm0071657,Charles Bennett
+tt0059895,nm0382384,Louis M. Heyward
+tt0059895,nm0000590,Edgar Allan Poe
+tt0059895,nm0924256,David Whitaker
+tt0059895,nm0522454,H.P. Lovecraft
+tt0060522,nm0103488,George Bradshaw
+tt0060522,nm0475823,Harry Kurnitz
+tt0060584,nm0301145,Leonid Gaidai
+tt0060584,nm0467548,Yakov Kostyukovskiy
+tt0060584,nm0806099,Moris Slobodskoy
+tt0060827,nm0000005,Ingmar Bergman
+tt0061107,nm0600972,Brian Moore
+tt0061107,nm0356227,Willis Hall
+tt0061107,nm0913961,Keith Waterhouse
+tt0061184,nm0499626,Ernest Lehman
+tt0061184,nm0016361,Edward Albee
+tt0061597,nm0151653,Cheh Chang
+tt0061597,nm0393250,Kuang Ni
+tt0061722,nm0932229,Calder Willingham
+tt0061722,nm0377750,Buck Henry
+tt0061722,nm0916047,Charles Webb
+tt0061735,nm0741740,William Rose
+tt0061955,nm0941280,Cornell Woolrich
+tt0061955,nm0000076,François Truffaut
+tt0061955,nm0723827,Jean-Louis Richard
+tt0062376,nm0104075,E.R. Braithwaite
+tt0062376,nm0165412,James Clavell
+tt0062467,nm0461425,Frederick Knott
+tt0062467,nm0140588,Robert Carrington
+tt0062467,nm0358568,Jane-Howard Hammerstein
+tt0062767,nm0291035,Melvin Frank
+tt0062767,nm0629428,Denis Norden
+tt0062767,nm0445766,Sheldon Keller
+tt0062985,nm0015899,Robert Alan Aurthur
+tt0062985,nm0001627,Sidney Poitier
+tt0063227,nm0063953,James Goldman
+tt0063285,nm0048984,Tom Baker
+tt0063285,nm0716262,Michael Reeves
+tt0063285,nm0382384,Louis M. Heyward
+tt0063285,nm0060236,Ronald Bassett
+tt0063285,nm0000590,Edgar Allan Poe
+tt0063291,nm0221517,Edmundo Desnoes
+tt0063291,nm0349425,Tomás Gutiérrez Alea
+tt0063350,nm0751652,John A. Russo
+tt0063350,nm0001681,George A. Romero
+tt0063442,nm0933858,Michael Wilson
+tt0063442,nm0785245,Rod Serling
+tt0063442,nm0099541,Pierre Boulle
+tt0063442,nm0445934,John T. Kelley
+tt0063522,nm0505615,Ira Levin
+tt0063522,nm0000591,Roman Polanski
+tt0063790,nm0628633,Henry Ney
+tt0064116,nm0006872,Sergio Donati
+tt0064116,nm0001466,Sergio Leone
+tt0064116,nm0000783,Dario Argento
+tt0064116,nm0000934,Bernardo Bertolucci
+tt0064116,nm0461658,Mickey Knox
+tt0064117,nm0123242,Abe Burrows
+tt0064117,nm0054667,Pierre Barillet
+tt0064117,nm0344899,Jean-Pierre Grédy
+tt0064117,nm0224634,I.A.L. Diamond
+tt0064276,nm0001228,Peter Fonda
+tt0064276,nm0000454,Dennis Hopper
+tt0064276,nm0816143,Terry Southern
+tt0064747,nm0000590,Edgar Allan Poe
+tt0064747,nm0403126,Lawrence Huntington
+tt0064747,nm0926924,Christopher Wicking
+tt0064747,nm0716262,Michael Reeves
+tt0065112,nm0881979,Leon Uris
+tt0065112,nm0853138,Samuel A. Taylor
+tt0065597,nm0446909,Tim Kelly
+tt0065597,nm0926924,Christopher Wicking
+tt0066740,nm0926365,James Whiton
+tt0066740,nm0326338,William Goldstein
+tt0066819,nm0540816,Albert Maltz
+tt0066819,nm0436894,Irene Kamp
+tt0066819,nm0191580,Thomas Cullinan
+tt0066819,nm0871333,Claude Traverse
+tt0066921,nm0000040,Stanley Kubrick
+tt0066921,nm0121256,Anthony Burgess
+tt0067093,nm0017833,Sholom Aleichem
+tt0067093,nm0674135,Arnold Perl
+tt0067093,nm0825524,Joseph Stein
+tt0067185,nm0383359,Colin Higgins
+tt0067824,nm0516344,Wei Lo
+tt0067866,nm0423524,Alejandro Jodorowsky
+tt0067992,nm0001094,Roald Dahl
+tt0067992,nm0442099,Robert Kaufman
+tt0067992,nm0783544,David Seltzer
+tt0068503,nm0297523,Robert Fuest
+tt0068503,nm0088161,Robert Blees
+tt0068503,nm0926365,James Whiton
+tt0068503,nm0326338,William Goldstein
+tt0068611,nm0478383,Arthur La Bern
+tt0068611,nm0787289,Anthony Shaffer
+tt0068744,nm0158402,Kang-Chien Chiu
+tt0068767,nm0516344,Wei Lo
+tt0068935,nm0000045,Bruce Lee
+tt0069097,nm0000095,Woody Allen
+tt0069281,nm0787289,Anthony Shaffer
+tt0069704,nm0000184,George Lucas
+tt0069704,nm0441718,Gloria Katz
+tt0069704,nm0404754,Willard Huyck
+tt0069897,nm0384335,Jack Hill
+tt0069897,nm0000427,Pam Grier
+tt0070034,nm0021363,Michael Allin
+tt0070034,nm0000045,Bruce Lee
+tt0070557,nm0054402,Stanislaw Bareja
+tt0070557,nm0270204,Jacek Fedorowicz
+tt0070723,nm0338591,Stanley R. Greenberg
+tt0070723,nm0365621,Harry Harrison
+tt0070735,nm0911486,David S. Ward
+tt0070791,nm0340478,Anthony Greville-Bell
+tt0070791,nm0542970,Stanley Mann
+tt0070791,nm0463385,John Kohn
+tt0070791,nm0000636,William Shakespeare
+tt0070917,nm0787289,Anthony Shaffer
+tt0070917,nm0684432,David Pinner
+tt0071402,nm0307257,Brian Garfield
+tt0071402,nm0562606,Wendell Mayes
+tt0071402,nm0933449,Gerald Wilson
+tt0071402,nm0935382,Michael Winner
+tt0071517,nm0384335,Jack Hill
+tt0071517,nm0791007,David Sheldon
+tt0071524,nm0372942,Ben Hecht
+tt0071524,nm0531269,Charles MacArthur
+tt0071524,nm0000697,Billy Wilder
+tt0071524,nm0224634,I.A.L. Diamond
+tt0071691,nm0001348,Werner Herzog
+tt0071691,nm0913708,Jakob Wassermann
+tt0072417,nm0001023,John Cassavetes
+tt0072824,nm0140987,Sidney Carroll
+tt0072824,nm0241416,Alexandre Dumas
+tt0072824,nm2668921,Fred A. Wyler
+tt0072991,nm0393250,Kuang Ni
+tt0073121,nm0151653,Cheh Chang
+tt0073121,nm0393250,Kuang Ni
+tt0073179,nm0103932,Emil Braginskiy
+tt0073179,nm0752922,Eldar Ryazanov
+tt0073195,nm0001940,Peter Benchley
+tt0073195,nm0331956,Carl Gottlieb
+tt0074300,nm0393250,Kuang Ni
+tt0074513,nm0151653,Cheh Chang
+tt0074513,nm0393250,Kuang Ni
+tt0075147,nm0063953,James Goldman
+tt0075148,nm0000230,Sylvester Stallone
+tt0075163,nm0208086,Ennio De Concini
+tt0075163,nm0299313,Maria Pia Fusco
+tt0075163,nm0000972,Tinto Brass
+tt0075163,nm0898696,Louise Vincent
+tt0075163,nm0170189,Antonio Colantuoni
+tt0075163,nm0635008,Peter Norden
+tt0075202,nm0151653,Cheh Chang
+tt0075202,nm0393250,Kuang Ni
+tt0075314,nm0001707,Paul Schrader
+tt0075686,nm0000095,Woody Allen
+tt0075686,nm0108613,Marshall Brickman
+tt0075704,nm0208342,Frank De Felitta
+tt0075902,nm0778448,Aleksander Scibor-Rylski
+tt0075930,nm0169540,Larry Cohen
+tt0076054,nm0734742,Mary Rodgers
+tt0076095,nm0800319,Neil Simon
+tt0076168,nm0393250,Kuang Ni
+tt0076727,nm0103932,Emil Braginskiy
+tt0076727,nm0752922,Eldar Ryazanov
+tt0076759,nm0000184,George Lucas
+tt0076786,nm0000783,Dario Argento
+tt0076786,nm0630453,Daria Nicolodi
+tt0076786,nm0211063,Thomas De Quincey
+tt0076797,nm0151653,Cheh Chang
+tt0076797,nm0393250,Kuang Ni
+tt0076797,nm0399074,James Wong
+tt0077292,nm0151653,Cheh Chang
+tt0077292,nm0393250,Kuang Ni
+tt0077294,nm0001382,Peter Hyams
+tt0077362,nm0759029,Waldo Salt
+tt0077362,nm0002717,Robert C. Jones
+tt0077362,nm0235683,Nancy Dowd
+tt0077362,nm0943382,Rudy Wurlitzer
+tt0077559,nm0393250,Kuang Ni
+tt0077559,nm0151653,Cheh Chang
+tt0077711,nm0000005,Ingmar Bergman
+tt0077713,nm0953392,Meir Zarchi
+tt0077973,nm0151653,Cheh Chang
+tt0077973,nm0393250,Kuang Ni
+tt0078087,nm0733015,Richard Robinson
+tt0078087,nm0000626,John Sayles
+tt0078111,nm0686895,Polly Platt
+tt0078111,nm0001501,Louis Malle
+tt0078243,nm0393250,Kuang Ni
+tt0078249,nm0149222,Louis Cha
+tt0078249,nm0393250,Kuang Ni
+tt0078428,nm0151653,Cheh Chang
+tt0078428,nm0393250,Kuang Ni
+tt0078444,nm0005196,Paul Mazursky
+tt0078672,nm0000807,Jane Austen
+tt0078672,nm0919720,Fay Weldon
+tt0078748,nm0639321,Dan O'Bannon
+tt0078748,nm0795953,Ronald Shusett
+tt0078935,nm0166405,Gianfranco Clerici
+tt0078935,nm0824216,Giorgio Stegani
+tt0079261,nm0706551,Gerome Ragni
+tt0079261,nm0705735,James Rado
+tt0079261,nm0919876,Michael Weller
+tt0079372,nm0151653,Cheh Chang
+tt0079372,nm0393250,Kuang Ni
+tt0079417,nm0180011,Avery Corman
+tt0079417,nm0000914,Robert Benton
+tt0079417,nm0000658,Meryl Streep
+tt0079417,nm14477172,Jay Christian
+tt0079470,nm0001037,Graham Chapman
+tt0079470,nm0000092,John Cleese
+tt0079470,nm0000416,Terry Gilliam
+tt0079470,nm0001385,Eric Idle
+tt0079470,nm0001402,Terry Jones
+tt0079470,nm0001589,Michael Palin
+tt0079522,nm0000095,Woody Allen
+tt0079522,nm0108613,Marshall Brickman
+tt0080040,nm0227187,David Schmoeller
+tt0080040,nm0140836,J. Larry Carroll
+tt0080172,nm0393250,Kuang Ni
+tt0080319,nm0720334,Patricia Resnick
+tt0080319,nm0383359,Colin Higgins
+tt0080354,nm0000626,John Sayles
+tt0080354,nm0673772,Frank Ray Perilli
+tt0080391,nm0226976,Costa Dillon
+tt0080391,nm0207357,John De Bello
+tt0080391,nm0668699,J. Stephen Peace
+tt0080453,nm0821070,Henry De Vere Stacpoole
+tt0080453,nm0829343,Douglas Day Stewart
+tt0080474,nm0725379,W.D. Richter
+tt0080474,nm0743232,Arthur A. Ross
+tt0080474,nm0615467,Thomas O. Murton
+tt0080474,nm0404880,Joe Hyams
+tt0080474,nm0706182,Bob Rafelson
+tt0080482,nm0225935,Carlos Diegues
+tt0080482,nm0785477,Leopoldo Serran
+tt0080516,nm0403028,Russell Hunter
+tt0080516,nm0337008,William Gray
+tt0080516,nm0534701,Diana Maddox
+tt0080569,nm0001243,William Friedkin
+tt0080569,nm1558002,Gerald Walker
+tt0080678,nm0212246,Christopher De Vore
+tt0080678,nm0075015,Eric Bergren
+tt0080678,nm0000186,David Lynch
+tt0080678,nm0872375,Frederick Treves
+tt0080678,nm0598744,Ashley Montagu
+tt0080717,nm2038357,Tai-Heng Li
+tt0080717,nm0514906,Chia-Liang Liu
+tt0080743,nm0151653,Cheh Chang
+tt0080743,nm0393250,Kuang Ni
+tt0080905,nm3270858,Tien Huang
+tt0081404,nm0151653,Cheh Chang
+tt0081404,nm0393250,Kuang Ni
+tt0081494,nm0393250,Kuang Ni
+tt0081505,nm0000175,Stephen King
+tt0081505,nm0000040,Stanley Kubrick
+tt0081505,nm0424956,Diane Johnson
+tt0081534,nm0558577,Richard Matheson
+tt0082153,nm0151653,Cheh Chang
+tt0082153,nm0393250,Kuang Ni
+tt0082174,nm0151653,Cheh Chang
+tt0082174,nm0393250,Kuang Ni
+tt0082174,nm8232233,Yu-Kun Shi
+tt0082198,nm0397574,Robert E. Howard
+tt0082198,nm0587518,John Milius
+tt0082198,nm0000231,Oliver Stone
+tt0082198,nm0838598,Edward Summer
+tt0082250,nm0257168,David Engelbach
+tt0082250,nm0307257,Brian Garfield
+tt0082250,nm0935382,Michael Winner
+tt0082498,nm0768369,John C.W. Saxton
+tt0082498,nm0423401,Peter Jobin
+tt0082498,nm0003403,Timothy Bond
+tt0082498,nm0063583,John Beaird
+tt0082817,nm0787072,David Shaber
+tt0082817,nm0843128,Paul Sylbert
+tt0083624,nm0376963,Frank Henenlotter
+tt0083658,nm0266684,Hampton Fancher
+tt0083658,nm0672459,David Webb Peoples
+tt0083658,nm0001140,Philip K. Dick
+tt0083866,nm0558953,Melissa Mathison
+tt0083907,nm0000600,Sam Raimi
+tt0083929,nm0001081,Cameron Crowe
+tt0083944,nm0606251,David Morrell
+tt0083944,nm0468997,Michael Kozoll
+tt0083944,nm0755266,William Sackheim
+tt0083944,nm0000230,Sylvester Stallone
+tt0084310,nm0939147,Jing Wong
+tt0084503,nm0914166,Roger Waters
+tt0084516,nm0000229,Steven Spielberg
+tt0084516,nm0334457,Michael Grais
+tt0084516,nm0896131,Mark Victor
+tt0084522,nm0163706,Bob Clark
+tt0084548,nm0003794,Ryszard Bugajski
+tt0084548,nm0245913,Janusz Dymek
+tt0084658,nm0062136,Thomas Baum
+tt0084671,nm2038357,Tai-Heng Li
+tt0084671,nm0514906,Chia-Liang Liu
+tt0084787,nm0484111,Bill Lancaster
+tt0084787,nm0132168,John W. Campbell Jr.
+tt0084805,nm0570190,Don McGuire
+tt0084805,nm0312205,Larry Gelbart
+tt0084805,nm0772003,Murray Schisgal
+tt0084805,nm0001469,Barry Levinson
+tt0084805,nm0307561,Robert Garland
+tt0084805,nm0442099,Robert Kaufman
+tt0084805,nm0561938,Elaine May
+tt0085253,nm0748021,Bruce Rubin
+tt0085333,nm0000175,Stephen King
+tt0085333,nm0680250,Bill Phillips
+tt0085382,nm0000175,Stephen King
+tt0085382,nm0241795,Don Carlos Dunaway
+tt0085382,nm0193009,Barbara Turner
+tt0085693,nm0035830,Michael Armstrong
+tt0085693,nm0081788,Earl Derr Biggers
+tt0085693,nm0169125,George M. Cohan
+tt0086058,nm0524924,Robert Ludlum
+tt0086058,nm2091974,Ian Masters
+tt0086058,nm0788991,Alan Sharp
+tt0086320,nm0385349,Robert Hiltzik
+tt0086465,nm0365390,Timothy Harris
+tt0086465,nm0918339,Herschel Weingrod
+tt0086606,nm0514906,Chia-Liang Liu
+tt0086606,nm0393250,Kuang Ni
+tt0086960,nm0677943,Daniel Petrie Jr.
+tt0086960,nm0045301,Danilo Bach
+tt0087001,nm0923932,Paul Wheeler
+tt0087050,nm0000175,Stephen King
+tt0087050,nm0326070,George Goldsmith
+tt0087262,nm0000175,Stephen King
+tt0087262,nm0542970,Stanley Mann
+tt0087332,nm0000101,Dan Aykroyd
+tt0087332,nm0000601,Harold Ramis
+tt0087363,nm0001060,Chris Columbus
+tt0087843,nm0340580,Harry Grey
+tt0087843,nm0073053,Leonardo Benvenuti
+tt0087843,nm0207401,Piero De Bernardi
+tt0087843,nm0575804,Enrico Medioli
+tt0087843,nm0033490,Franco Arcalli
+tt0087843,nm0274853,Franco Ferrini
+tt0087843,nm0001466,Sergio Leone
+tt0087843,nm0436757,Stuart Kaminsky
+tt0087843,nm0002759,Ernesto Gastaldi
+tt0088000,nm0582481,Tim Metcalfe
+tt0088000,nm0854185,Miguel Tejada-Flores
+tt0088000,nm0951599,Steve Zacharias
+tt0088000,nm0119542,Jeff Buhai
+tt0088117,nm0128858,Paul Caimi
+tt0088117,nm0382652,Michael Hickey
+tt0088128,nm0000455,John Hughes
+tt0088247,nm0000116,James Cameron
+tt0088247,nm0005036,Gale Anne Hurd
+tt0088247,nm0936537,William Wisher
+tt0088763,nm0000709,Robert Zemeckis
+tt0088763,nm0301826,Bob Gale
+tt0088847,nm0000455,John Hughes
+tt0088850,nm0567346,George Barr McCutcheon
+tt0088850,nm0918339,Herschel Weingrod
+tt0088850,nm0365390,Timothy Harris
+tt0088944,nm0517188,Jeph Loeb
+tt0088944,nm0918861,Matthew Weisman
+tt0088944,nm0211823,Steven E. de Souza
+tt0088993,nm0001681,George A. Romero
+tt0089003,nm0415979,Don Jakoby
+tt0089003,nm0307257,Brian Garfield
+tt0089029,nm0514906,Chia-Liang Liu
+tt0089218,nm0001060,Chris Columbus
+tt0089218,nm0000229,Steven Spielberg
+tt0089457,nm0451689,Edward Khmara
+tt0089457,nm0859241,Michael Thomas
+tt0089457,nm0542539,Tom Mankiewicz
+tt0089457,nm0672459,David Webb Peoples
+tt0089461,nm0893207,Louis Venosta
+tt0089730,nm0898001,Dimitri Villard
+tt0089730,nm0385653,David Hines
+tt0089730,nm0369492,Jeffrey Hause
+tt0089730,nm0731271,Jonathan Roberts
+tt0089755,nm0227598,Karen Blixen
+tt0089755,nm0862189,Judith Thurman
+tt0089755,nm1429643,Errol Trzebinski
+tt0089755,nm0525104,Kurt Luedtke
+tt0089853,nm0000095,Woody Allen
+tt0089880,nm0606251,David Morrell
+tt0089880,nm0418883,Kevin Jarre
+tt0089880,nm0000230,Sylvester Stallone
+tt0089880,nm0000116,James Cameron
+tt0089893,nm0397574,Robert E. Howard
+tt0089893,nm0264088,Clive Exton
+tt0089893,nm0292129,George MacDonald Fraser
+tt0089893,nm0859471,Roy Thomas
+tt0089893,nm0934817,Barry Windsor-Smith
+tt0089981,nm0467942,Jim Kouf
+tt0089981,nm0339264,David Greenwalt
+tt0090057,nm0121425,Ann Burgund
+tt0090057,nm0233409,Thomas Doran
+tt0090057,nm1282971,Frank M. Farel
+tt0090057,nm1285609,Brendan Faulkner
+tt0090094,nm0169540,Larry Cohen
+tt0090142,nm0517188,Jeph Loeb
+tt0090142,nm0918861,Matthew Weisman
+tt0090190,nm0442207,Lloyd Kaufman
+tt0090190,nm0728766,Joe Ritter
+tt0090190,nm0855988,Gay Partington Terry
+tt0090190,nm0835376,Stuart Strutin
+tt0090305,nm0000455,John Hughes
+tt0090305,nm0271167,Al Feldstein
+tt0090305,nm0301362,William M. Gaines
+tt0090756,nm0000186,David Lynch
+tt0090768,nm0145309,Nick Castle
+tt0090859,nm0331514,Paula Gosling
+tt0090859,nm0000230,Sylvester Stallone
+tt0091042,nm0000455,John Hughes
+tt0091069,nm0211193,Everett De Roche
+tt0091069,nm0520431,Gabrielle Lord
+tt0091188,nm0001188,Nora Ephron
+tt0091203,nm0927074,Gregory Widen
+tt0091203,nm0069282,Peter Bellwood
+tt0091203,nm0272511,Larry Ferguson
+tt0091209,nm0714599,Eric Red
+tt0091306,nm0291905,David Franzoni
+tt0091306,nm0796124,Charles Shyer
+tt0091306,nm0583600,Nancy Meyers
+tt0091306,nm0859977,Chris Thompson
+tt0091306,nm0211823,Steven E. de Souza
+tt0091530,nm0004122,Robert Bolt
+tt0091544,nm0197088,Bob Dahlin
+tt0091544,nm0074990,Peter L. Bergquist
+tt0091630,nm0215269,Fred Dekker
+tt0091763,nm0000231,Oliver Stone
+tt0091790,nm0000455,John Hughes
+tt0091828,nm0898812,Luciano Vincenzoni
+tt0091828,nm0006872,Sergio Donati
+tt0091828,nm0222904,Gary DeVore
+tt0091828,nm0923319,Norman Wexler
+tt0091867,nm0286950,E.M. Forster
+tt0091867,nm0695609,Ruth Prawer Jhabvala
+tt0091949,nm0934093,S.S. Wilson
+tt0091949,nm0534681,Brent Maddock
+tt0091949,nm0850695,Jay Tarses
+tt0092005,nm0000175,Stephen King
+tt0092005,nm0317279,Raynold Gideon
+tt0092005,nm0262595,Bruce A. Evans
+tt0092605,nm0583600,Nancy Meyers
+tt0092605,nm0796124,Charles Shyer
+tt0092666,nm0490958,Dale Launer
+tt0092666,nm0001175,Blake Edwards
+tt0092666,nm0228908,Leslie Dixon
+tt0092666,nm0248901,Michael Alan Eddy
+tt0092666,nm0740568,Tom Ropelewski
+tt0092675,nm0504802,Sheldon Lettich
+tt0092675,nm0181731,Christopher Cosby
+tt0092675,nm0295305,Mel Friedman
+tt0092675,nm0245235,Frank Dux
+tt0092710,nm0088747,Lawrence Block
+tt0092710,nm0517188,Jeph Loeb
+tt0092710,nm0918861,Matthew Weisman
+tt0092710,nm0933505,Hugh Wilson
+tt0092718,nm0842464,Michael Swerdlick
+tt0092906,nm0619547,Ed Naha
+tt0093177,nm0000850,Clive Barker
+tt0093191,nm0000694,Wim Wenders
+tt0093191,nm0359563,Peter Handke
+tt0093191,nm0718637,Richard Reitinger
+tt0093191,nm0252065,Bernard Eisenschitz
+tt0093437,nm0278969,Jan Fischer
+tt0093437,nm0421894,James Jeremias
+tt0093437,nm0090151,Jeffrey Boam
+tt0093565,nm0788234,John Patrick Shanley
+tt0093649,nm0650276,Alan Ormsby
+tt0093649,nm0568588,Seth McEvoy
+tt0093677,nm0000783,Dario Argento
+tt0093677,nm0274853,Franco Ferrini
+tt0093773,nm0859029,Jim Thomas
+tt0093773,nm0859049,John Thomas
+tt0093779,nm0001279,William Goldman
+tt0093870,nm0627159,Edward Neumeier
+tt0093870,nm0591160,Michael Miner
+tt0093894,nm0000175,Stephen King
+tt0093894,nm0211823,Steven E. de Souza
+tt0094006,nm0000455,John Hughes
+tt0094137,nm0785684,Coline Serreau
+tt0094137,nm0650561,James Orr
+tt0094137,nm0189979,Jim Cruickshank
+tt0094293,nm0329180,Michael Patrick Goodman
+tt0094293,nm0846532,Brian Taggert
+tt0094293,nm0792446,Gary Sherman
+tt0094625,nm0960028,Katsuhiro Ôtomo
+tt0094625,nm0368051,Izô Hashimoto
+tt0094721,nm0568313,Michael McDowell
+tt0094721,nm0933733,Larry Wilson
+tt0094721,nm0803730,Warren Skaaren
+tt0094737,nm0002657,Gary Ross
+tt0094737,nm0818576,Anne Spielberg
+tt0094793,nm0376963,Frank Henenlotter
+tt0094862,nm0238841,Don Mancini
+tt0094862,nm0480843,John Lafia
+tt0094862,nm0276169,Tom Holland
+tt0094898,nm0000552,Eddie Murphy
+tt0094898,nm0790775,David Sheffield
+tt0094898,nm0087904,Barry W. Blaustein
+tt0094963,nm0277807,Harry Julian Fink
+tt0094963,nm0277849,Rita M. Fink
+tt0094963,nm0788975,Steve Sharon
+tt0094963,nm0669243,Durk Pearson
+tt0094963,nm0787688,Sandy Shaw
+tt0094964,nm0000343,David Cronenberg
+tt0094964,nm0811138,Norman Snider
+tt0094964,nm0939562,Bari Wood
+tt0094964,nm0311316,Jack Geasland
+tt0095016,nm0861636,Roderick Thorp
+tt0095016,nm0835732,Jeb Stuart
+tt0095016,nm0211823,Steven E. de Souza
+tt0095294,nm0040643,Peter Atkins
+tt0095294,nm0000850,Clive Barker
+tt0095444,nm0158006,Charles Chiodo
+tt0095444,nm0158014,Stephen Chiodo
+tt0095444,nm0158008,Edward Chiodo
+tt0095583,nm0169540,Larry Cohen
+tt0095593,nm0835299,Barry Strugatz
+tt0095593,nm0122787,Mark R. Burns
+tt0095765,nm0868153,Giuseppe Tornatore
+tt0095765,nm0660031,Vanna Paoli
+tt0095925,nm0433179,Ed Justin
+tt0095925,nm0136737,Mark Patrick Carducci
+tt0095925,nm0935644,Stan Winston
+tt0095925,nm0918376,Richard Weinman
+tt0095925,nm0313927,Gary Gerani
+tt0095956,nm0606251,David Morrell
+tt0095956,nm0000230,Sylvester Stallone
+tt0095956,nm0504802,Sheldon Lettich
+tt0095963,nm0001353,Walter Hill
+tt0095963,nm0459067,Harry Kleiner
+tt0095963,nm0448392,Troy Kennedy Martin
+tt0096101,nm0934093,S.S. Wilson
+tt0096101,nm0534681,Brent Maddock
+tt0096194,nm0130640,Antônio Calmon
+tt0096194,nm0671877,Anna Penido
+tt0096194,nm0814408,David Sonnenschein
+tt0096320,nm0204030,William Davies
+tt0096320,nm0651758,William Osborne
+tt0096320,nm0365390,Timothy Harris
+tt0096320,nm0918339,Herschel Weingrod
+tt0096332,nm0475081,Milan Kundera
+tt0096332,nm0140643,Jean-Claude Carrière
+tt0096332,nm0442241,Philip Kaufman
+tt0096463,nm0905458,Kevin Wade
+tt0096523,nm0684509,Claude Pinoteau
+tt0096523,nm0860019,Danièle Thompson
+tt0096794,nm0069547,Jerry Belson
+tt0096794,nm0874308,Dalton Trumbo
+tt0096794,nm0107288,Frederick Hazlitt Brennan
+tt0096794,nm0819546,Chandler Sprague
+tt0096794,nm0091200,David Boehm
+tt0096874,nm0000709,Robert Zemeckis
+tt0096874,nm0301826,Bob Gale
+tt0096945,nm0440383,Ryôzô Kasahara
+tt0096945,nm0138706,Charles Robert Carner
+tt0097138,nm0089502,Albert Pyun
+tt0097165,nm0776114,Tom Schulman
+tt0097239,nm0880261,Alfred Uhry
+tt0097428,nm0000101,Dan Aykroyd
+tt0097428,nm0000601,Harold Ramis
+tt0097499,nm0000636,William Shakespeare
+tt0097499,nm0000110,Kenneth Branagh
+tt0097523,nm0002340,Stuart Gordon
+tt0097523,nm0951206,Brian Yuzna
+tt0097523,nm0619547,Ed Naha
+tt0097523,nm0776114,Tom Schulman
+tt0097659,nm0228262,Mark DiSalle
+tt0097659,nm0000241,Jean-Claude Van Damme
+tt0097659,nm0115486,Glenn A. Bruce
+tt0097722,nm0771512,Michael Schiffer
+tt0097770,nm0809700,Richard Smith
+tt0097770,nm0835732,Jeb Stuart
+tt0097770,nm0742132,Henry Rosenbaum
+tt0097778,nm0002132,Amy Heckerling
+tt0097790,nm0771494,Robin Schiff
+tt0097790,nm0740568,Tom Ropelewski
+tt0097790,nm0228908,Leslie Dixon
+tt0097937,nm0174934,Shane Connaughton
+tt0097937,nm0006487,Jim Sheridan
+tt0097937,nm0113272,Christy Brown
+tt0098084,nm0000175,Stephen King
+tt0098143,nm0023929,Charles Band
+tt0098143,nm0355790,Kenneth J. Hall
+tt0098143,nm0227187,David Schmoeller
+tt0098143,nm0136592,J.S. Cardone
+tt0098213,nm0601619,Michael Moore
+tt0098258,nm0001081,Cameron Crowe
+tt0098354,nm0445319,Zeph E. Daniel
+tt0098354,nm0296779,Rick Fry
+tt0098439,nm0271098,Randy Feldman
+tt0098635,nm0001188,Nora Ephron
+tt0098800,nm0097273,Andy Borowitz
+tt0098800,nm0097275,Susan Borowitz
+tt0098800,nm0575656,Benny Medina
+tt0098800,nm0689385,Jeff Pollack
+tt0098800,nm0742792,Lisa Rosenthal
+tt0098800,nm0800111,David Steven Simon
+tt0098800,nm0931638,Samm-Art Williams
+tt0098800,nm0712904,Leslie Ray
+tt0098800,nm0958412,David Zuckerman
+tt0098800,nm0724839,Bennie R. Richburg Jr.
+tt0098800,nm0306584,Cheryl Gard
+tt0098800,nm0781508,Efrem Seeger
+tt0098800,nm0935680,Bryan Winter
+tt0098800,nm0931223,Maiya Williams
+tt0098800,nm0331212,Eddie Gorodetsky
+tt0098800,nm0348765,Barry Gurstein
+tt0098800,nm0685735,David Pitlik
+tt0098800,nm0811942,Mike Soccio
+tt0098800,nm0969183,Shannon Gaughan
+tt0098800,nm0381161,Winifred Hervey
+tt0098800,nm0099618,Bill Boulware
+tt0098800,nm0588375,Gary H. Miller
+tt0098800,nm0548715,Adam Markowitz
+tt0098800,nm0972395,Rob Edwards
+tt0098800,nm1447614,Sandy Frank
+tt0098800,nm0788420,Devon Shepard
+tt0098800,nm0968998,Tom Devanney
+tt0098800,nm0534983,Joel Madison
+tt0098800,nm3169834,Michael Fry
+tt0098800,nm0972444,K. Snyder
+tt0098800,nm0009178,Gayle Abrams
+tt0098800,nm0021175,Andrea Allen-Wiley
+tt0098800,nm0725983,John Ridley
+tt0098800,nm0115572,Robert Bruce
+tt0098800,nm0850696,Matt Tarses
+tt0098800,nm0101337,John Bowman
+tt0098800,nm0122497,Ed Burnham
+tt0098800,nm6303953,William Missouri Downs
+tt0098800,nm0969171,Marcus Jamal Gaines
+tt0098800,nm0628074,Elaine Newman
+tt0098800,nm0095504,Eunetta T. Boone
+tt0098800,nm0970005,P. Karen Raper
+tt0098800,nm0743514,Jerry Ross
+tt0098800,nm0970542,Linda M. Yearwood
+tt0098800,nm0544622,Myles Avery Mapp
+tt0098800,nm1155839,Casey Maxwell Clair
+tt0098800,nm0000226,Will Smith
+tt0098800,nm0972381,Harrison Boyd
+tt0098800,nm0395923,Rich Hosek
+tt0098800,nm0463176,Jenji Kohan
+tt0098800,nm0748860,Arnold Rudnick
+tt0098800,nm0026694,Ernest 'Tron' Anderson
+tt0098800,nm0122084,Ron Burla
+tt0098800,nm0189137,Dan Cross
+tt0098800,nm0235925,Leilani Downer
+tt0098800,nm0308194,Roger Garrett
+tt0098800,nm0326247,Josh Goldstein
+tt0098800,nm0376429,Felicia D. Henderson
+tt0098800,nm0389668,David Hoge
+tt0098800,nm0780160,Mort Scrivner
+tt0098800,nm2372419,Kandace Yvette Williams
+tt0098800,nm0932831,Larry Wilmore
+tt0098800,nm0969899,Mary Beth Pemberton
+tt0098800,nm0872621,George Tricker
+tt0098800,nm0911865,Tanya Ward
+tt0098800,nm0943535,David Wyatt
+tt0098966,nm0785684,Coline Serreau
+tt0098966,nm0663490,Sara Parriott
+tt0098966,nm0569210,Josann McGibbon
+tt0098966,nm0676361,Charlie Peters
+tt0099253,nm0238841,Don Mancini
+tt0099329,nm0000691,John Waters
+tt0099385,nm0275286,David S. Goyer
+tt0099409,nm0371092,Joseph Hayes
+tt0099409,nm0465199,Lawrence Konner
+tt0099409,nm0742797,Mark Rosenthal
+tt0099487,nm0000318,Tim Burton
+tt0099487,nm0003031,Caroline Thompson
+tt0099595,nm0486689,Roy Langsdon
+tt0099595,nm0686869,John Platt
+tt0099595,nm0324875,Menahem Golan
+tt0099653,nm0748022,Bruce Joel Rubin
+tt0099699,nm0001837,Peter Weir
+tt0099700,nm0351919,Charles S. Haas
+tt0099700,nm0001060,Chris Columbus
+tt0099763,nm0278626,Richard Fire
+tt0099763,nm0573796,John McNaughton
+tt0099785,nm0000455,John Hughes
+tt0099826,nm0695112,Timothy Prager
+tt0099826,nm0224008,Madeline Di Maggio
+tt0099826,nm0908807,Pamela Wallace
+tt0099864,nm0000175,Stephen King
+tt0099864,nm0908890,Tommy Lee Wallace
+tt0099864,nm0169548,Lawrence D. Cohen
+tt0099938,nm0758010,Murray Salem
+tt0099938,nm0918339,Herschel Weingrod
+tt0099938,nm0365390,Timothy Harris
+tt0099969,nm0797854,Joel Silberg
+tt0099969,nm0719131,Sheldon Renan
+tt0100029,nm0913027,Stefani Warren
+tt0100029,nm0000241,Jean-Claude Van Damme
+tt0100029,nm0504802,Sheldon Lettich
+tt0100050,nm0002132,Amy Heckerling
+tt0100050,nm0411477,Neal Israel
+tt0100070,nm0227728,Carlos Alberto Diniz
+tt0100070,nm0350844,Luís Carlos Góes
+tt0100070,nm0871244,Patricya Travassos
+tt0100070,nm0943405,Yoya Wursch
+tt0100157,nm0000175,Stephen King
+tt0100157,nm0001279,William Goldman
+tt0100240,nm0003369,Karin Howard
+tt0100240,nm0256779,Michael Ende
+tt0100395,nm0000402,Carrie Fisher
+tt0100405,nm0493369,J.F. Lawton
+tt0100419,nm0018735,Scott Alexander
+tt0100419,nm0438989,Larry Karaszewski
+tt0100438,nm0023929,Charles Band
+tt0100438,nm0655029,David Pabian
+tt0100438,nm0227187,David Schmoeller
+tt0100502,nm0627159,Edward Neumeier
+tt0100502,nm0591160,Michael Miner
+tt0100502,nm0588340,Frank Miller
+tt0100502,nm0338396,Walon Green
+tt0100680,nm0054966,Pat Barker
+tt0100680,nm0290809,Harriet Frank Jr.
+tt0100680,nm0712419,Irving Ravetch
+tt0100802,nm0001140,Philip K. Dick
+tt0100802,nm0795953,Ronald Shusett
+tt0100802,nm0639321,Dan O'Bannon
+tt0100802,nm0693956,Jon Povill
+tt0100802,nm0325778,Gary Goldman
+tt0100814,nm0934093,S.S. Wilson
+tt0100814,nm0534681,Brent Maddock
+tt0100814,nm0881038,Ron Underwood
+tt0100935,nm0317510,Barry Gifford
+tt0100935,nm0000186,David Lynch
+tt0101272,nm0011623,Charles Addams
+tt0101272,nm0003031,Caroline Thompson
+tt0101272,nm0933733,Larry Wilson
+tt0101309,nm0020397,Curt Allen
+tt0101455,nm0833164,Jim Strain
+tt0101492,nm0092267,Pierre Boileau
+tt0101492,nm0092268,Thomas Narcejac
+tt0101492,nm0380977,Patricia Herskovic
+tt0101492,nm0852675,Joyce Taylor
+tt0101492,nm0714599,Eric Red
+tt0101492,nm0811138,Norman Snider
+tt0101764,nm0504802,Sheldon Lettich
+tt0101764,nm0000241,Jean-Claude Van Damme
+tt0101764,nm0576228,Steve Meerson
+tt0101764,nm0471298,Peter Krikes
+tt0101862,nm0329304,Frances Goodrich
+tt0101862,nm0352443,Albert Hackett
+tt0101862,nm0583600,Nancy Meyers
+tt0101862,nm0796124,Charles Shyer
+tt0101912,nm0573645,Terrence McNally
+tt0102103,nm0449576,Sarah Kernochan
+tt0102266,nm0000948,Shane Black
+tt0102266,nm0382855,Greg Hicks
+tt0102492,nm0253214,Laurice Elehwany
+tt0102494,nm0001814,Gus Van Sant
+tt0102494,nm0000636,William Shakespeare
+tt0102590,nm0549369,Malia Scotch Marmo
+tt0102690,nm0809405,Mitchell Smith
+tt0102690,nm0650276,Alan Ormsby
+tt0102719,nm0018735,Scott Alexander
+tt0102719,nm0438989,Larry Karaszewski
+tt0102728,nm0023929,Charles Band
+tt0102728,nm0003676,C. Courtney Joyner
+tt0102728,nm0227187,David Schmoeller
+tt0102926,nm0365383,Thomas Harris
+tt0102926,nm0848217,Ted Tally
+tt0103064,nm0000116,James Cameron
+tt0103064,nm0936537,William Wisher
+tt0103074,nm0451884,Callie Khouri
+tt0103239,nm0587999,Broderick Miller
+tt0103241,nm0765091,Alvin Sargent
+tt0103241,nm0957205,Laura Ziskin
+tt0103241,nm0776114,Tom Schulman
+tt0103247,nm0518711,Jack London
+tt0103247,nm0742236,Jeanne Rosenberg
+tt0103247,nm0857904,Nick Thiel
+tt0103247,nm0266409,David Fallon
+tt0103262,nm0931285,Matt Williams
+tt0103262,nm0766020,Oley Sassone
+tt0103776,nm0004170,Bob Kane
+tt0103776,nm0914058,Daniel Waters
+tt0103776,nm0358334,Sam Hamm
+tt0103786,nm0000455,John Hughes
+tt0103786,nm0427468,Amy Holden Jones
+tt0103859,nm0087904,Barry W. Blaustein
+tt0103859,nm0790775,David Sheffield
+tt0103859,nm0000552,Eddie Murphy
+tt0103873,nm0801728,Stephen Sinclair
+tt0103873,nm0909638,Fran Walsh
+tt0103873,nm0001392,Peter Jackson
+tt0103919,nm0000850,Clive Barker
+tt0103919,nm0741262,Bernard Rose
+tt0103956,nm0238841,Don Mancini
+tt0104070,nm0233026,Martin Donovan
+tt0104070,nm0462895,David Koepp
+tt0104231,nm0231190,Bob Dolman
+tt0104231,nm0000165,Ron Howard
+tt0104389,nm0798646,Amanda Silver
+tt0104409,nm0040643,Peter Atkins
+tt0104409,nm0709752,Tony Randel
+tt0104409,nm0000850,Clive Barker
+tt0104431,nm0000455,John Hughes
+tt0104437,nm0002340,Stuart Gordon
+tt0104437,nm0951206,Brian Yuzna
+tt0104437,nm0619547,Ed Naha
+tt0104437,nm0329340,Garry Goodrow
+tt0104437,nm0248054,Thom Eberhardt
+tt0104437,nm0253004,Peter Elbling
+tt0104454,nm0286950,E.M. Forster
+tt0104454,nm0695609,Ruth Prawer Jhabvala
+tt0104670,nm0120790,Curtis Burch
+tt0104822,nm0104631,Richard Brandes
+tt0105108,nm0636387,Frank Norwood
+tt0105128,nm0653693,Richard Outten
+tt0105130,nm0748852,Rita Rudner
+tt0105130,nm0074918,Martin Bergman
+tt0105217,nm0000361,Brian De Palma
+tt0105236,nm0000233,Quentin Tarantino
+tt0105236,nm0000812,Roger Avary
+tt0105415,nm0001081,Cameron Crowe
+tt0105417,nm0397411,Paul Rudnick
+tt0105428,nm0000175,Stephen King
+tt0105459,nm0860155,Gary Scott Thompson
+tt0105695,nm0672459,David Webb Peoples
+tt0105698,nm0745330,Richard Rothstein
+tt0105698,nm0500609,Christopher Leitch
+tt0105698,nm0002041,Dean Devlin
+tt0106222,nm0281258,Graham Flashner
+tt0106222,nm0314643,Ed Gernon
+tt0106222,nm2446740,Tess Gerritsen
+tt0106375,nm0000455,John Hughes
+tt0106375,nm0427468,Amy Holden Jones
+tt0106375,nm0089676,Len Blum
+tt0106400,nm0377417,Paul Henning
+tt0106400,nm0465199,Lawrence Konner
+tt0106400,nm0742797,Mark Rosenthal
+tt0106400,nm0279576,Jim Fisher
+tt0106400,nm0820852,Jim Staahl
+tt0106426,nm0511886,Stewart Lindh
+tt0106426,nm0918324,Solomon Weingarten
+tt0106426,nm0137368,John Carlen
+tt0106557,nm0441623,A L Katz
+tt0106557,nm0012155,Gilbert Adler
+tt0106557,nm0000175,Stephen King
+tt0106582,nm0519026,John Long
+tt0106582,nm0289833,Michael France
+tt0106582,nm0000230,Sylvester Stallone
+tt0106627,nm0788454,Alan Shapiro
+tt0106677,nm0000500,Richard Linklater
+tt0106697,nm0006997,Peter M. Lenkov
+tt0106697,nm0719427,Robert Reneau
+tt0106697,nm0914058,Daniel Waters
+tt0106701,nm0450477,Hank Ketcham
+tt0106701,nm0000455,John Hughes
+tt0106856,nm0808076,Ebbe Roe Smith
+tt0106977,nm0835732,Jeb Stuart
+tt0106977,nm0878638,David Twohy
+tt0106977,nm0400403,Roy Huggins
+tt0107034,nm0568605,Ian McEwan
+tt0107048,nm0748035,Danny Rubin
+tt0107048,nm0000601,Harold Ramis
+tt0107076,nm0679326,Chuck Pfarrer
+tt0107151,nm0021196,Isabel Allende
+tt0107151,nm0000806,Bille August
+tt0107207,nm0174840,Gerry Conlon
+tt0107207,nm0313623,Terry George
+tt0107207,nm0006487,Jim Sheridan
+tt0107362,nm0672015,Zak Penn
+tt0107362,nm0498963,Adam Leff
+tt0107362,nm0000948,Shane Black
+tt0107362,nm0036714,David Arnott
+tt0107387,nm0428751,Mark Jones
+tt0107478,nm0105033,Marcia Brandwynne
+tt0107478,nm0771486,Nadine Schiff
+tt0107478,nm0805965,Holly Goldberg Sloan
+tt0107614,nm0277590,Anne Fine
+tt0107614,nm0802020,Randi Mayem Singer
+tt0107614,nm0228908,Leslie Dixon
+tt0107664,nm0295165,Brent Friedman
+tt0107664,nm0304521,Christophe Gans
+tt0107664,nm0411872,Kazunori Itô
+tt0107664,nm0522454,H.P. Lovecraft
+tt0107664,nm0951206,Brian Yuzna
+tt0107711,nm0000390,Joe Eszterhas
+tt0107711,nm0549658,Richard Marquand
+tt0107711,nm0092018,Leslie Bohem
+tt0107711,nm0271098,Randy Feldman
+tt0107798,nm0001300,John Grisham
+tt0107798,nm0001587,Alan J. Pakula
+tt0107818,nm0638913,Ron Nyswaner
+tt0107899,nm0378071,Todd Henschell
+tt0107899,nm0139871,Steven E. Carr
+tt0107899,nm0240551,Jo Duffy
+tt0107899,nm0007439,Doug Aarniokoski
+tt0107899,nm0668501,Keith Payson
+tt0107978,nm0627159,Edward Neumeier
+tt0107978,nm0591160,Michael Miner
+tt0107978,nm0588340,Frank Miller
+tt0107978,nm0215269,Fred Dekker
+tt0108149,nm0345359,John Guare
+tt0108160,nm0033578,Jeff Arch
+tt0108160,nm0001188,Nora Ephron
+tt0108160,nm0911486,David S. Ward
+tt0108174,nm0289219,Robbie Fox
+tt0108255,nm0071970,Parker Bennett
+tt0108255,nm0750344,Terry Runte
+tt0108255,nm0004412,Ed Solomon
+tt0108473,nm0469104,Tim Krabbé
+tt0108473,nm0333804,Todd Graff
+tt0108550,nm0373282,Peter Hedges
+tt0109040,nm0077062,Jack Bernstein
+tt0109040,nm0001723,Tom Shadyac
+tt0109040,nm0000120,Jim Carrey
+tt0109068,nm0929186,Rich Wilkes
+tt0109280,nm0453388,Chi Kim
+tt0109280,nm0578128,Greg Mellott
+tt0109287,nm0811414,Blake Snyder
+tt0109287,nm0139655,Colby Carr
+tt0109415,nm0505262,Dode B. Levenson
+tt0109415,nm0000175,Stephen King
+tt0109415,nm0338557,Matt Greenberg
+tt0109445,nm0003620,Kevin Smith
+tt0109484,nm0625458,Jessie Nelson
+tt0109579,nm0233557,Ariel Dorfman
+tt0109579,nm0947913,Rafael Yglesias
+tt0109686,nm0268380,Peter Farrelly
+tt0109686,nm0947395,Bennett Yellin
+tt0109686,nm0125803,Bobby Farrelly
+tt0109707,nm0340674,Rudolph Grey
+tt0109707,nm0018735,Scott Alexander
+tt0109707,nm0438989,Larry Karaszewski
+tt0109830,nm0343165,Winston Groom
+tt0109830,nm0744839,Eric Roth
+tt0109831,nm0193485,Richard Curtis
+tt0109890,nm0860292,Jim Thompson
+tt0109890,nm0001353,Walter Hill
+tt0109890,nm0427468,Amy Holden Jones
+tt0110093,nm0583600,Nancy Meyers
+tt0110093,nm0796124,Charles Shyer
+tt0110216,nm0905458,Kevin Wade
+tt0110216,nm0175620,Chris Conrad
+tt0110357,nm0575293,Irene Mecchi
+tt0110357,nm0731271,Jonathan Roberts
+tt0110357,nm0941314,Linda Woolverton
+tt0110357,nm0560329,Burny Mattinson
+tt0110357,nm0424556,Barry Johnson
+tt0110357,nm0177170,Lorna Cook
+tt0110357,nm0258059,Thom Enriquez
+tt0110357,nm0309128,Andy Gaskill
+tt0110357,nm0873779,Gary Trousdale
+tt0110357,nm0135296,Jim Capobianco
+tt0110357,nm0363125,Kevin Harkey
+tt0110357,nm0460146,Jorgen Klubien
+tt0110357,nm0761498,Chris Sanders
+tt0110357,nm0004552,Tom Sito
+tt0110357,nm0500858,Larry Leker
+tt0110357,nm0710020,Joe Ranft
+tt0110357,nm0538588,Rick Maki
+tt0110357,nm0326814,Ed Gombert
+tt0110357,nm0322368,Francis Glebas
+tt0110357,nm0442483,Mark Kausler
+tt0110357,nm0020599,J.T. Allen
+tt0110357,nm0780117,George Scribner
+tt0110357,nm0854185,Miguel Tejada-Flores
+tt0110357,nm0873092,Jenny Tripp
+tt0110357,nm0879318,Bob Tzudiker
+tt0110357,nm0901038,Christopher Vogler
+tt0110357,nm0936374,Kirk Wise
+tt0110357,nm0925276,Noni White
+tt0110357,nm0152312,Brenda Chapman
+tt0110366,nm0790715,Penelope Spheeris
+tt0110366,nm0938774,Robert Wolterstorff
+tt0110366,nm0779592,Mike Scott
+tt0110366,nm0345488,Paul Guay
+tt0110366,nm0563397,Stephen Mazur
+tt0110391,nm0186118,Mildred Cram
+tt0110391,nm0564970,Leo McCarey
+tt0110391,nm0202681,Delmer Daves
+tt0110391,nm0829330,Donald Ogden Stewart
+tt0110391,nm0001801,Robert Towne
+tt0110391,nm0000886,Warren Beatty
+tt0110413,nm0000108,Luc Besson
+tt0110475,nm0266430,Michael Fallon
+tt0110475,nm0894156,Mark Verheiden
+tt0110475,nm0108273,Mike Werb
+tt0110598,nm0389591,P.J. Hogan
+tt0110604,nm0909026,Anthony Waller
+tt0110737,nm0236884,Diane Drake
+tt0110877,nm0805073,Antonio Skármeta
+tt0110877,nm0769249,Furio Scarpelli
+tt0110877,nm0769250,Giacomo Scarpelli
+tt0110877,nm0667657,Anna Pavignano
+tt0110877,nm0705535,Michael Radford
+tt0110877,nm0873385,Massimo Troisi
+tt0110916,nm0139871,Steven E. Carr
+tt0110916,nm0240551,Jo Duffy
+tt0110916,nm0378071,Todd Henschell
+tt0110916,nm0007439,Doug Aarniokoski
+tt0110916,nm0668501,Keith Payson
+tt0110989,nm0866063,Neil Tolkin
+tt0110989,nm0662678,Tom S. Parker
+tt0110989,nm0421084,Jim Jennewein
+tt0111082,nm0000343,David Cronenberg
+tt0111082,nm0203039,Pierre David
+tt0111082,nm1255730,George Saunders
+tt0111082,nm0117139,John Bryant
+tt0111161,nm0000175,Stephen King
+tt0111161,nm0001104,Frank Darabont
+tt0111255,nm0794326,John Shirley
+tt0111255,nm0785311,Alexandra Seros
+tt0111257,nm0003662,Graham Yost
+tt0111301,nm0211823,Steven E. de Souza
+tt0111323,nm0077171,Eric Bernt
+tt0111418,nm0281598,Andrew Fleming
+tt0111438,nm0894156,Mark Verheiden
+tt0111438,nm0724700,Mike Richardson
+tt0111503,nm0000116,James Cameron
+tt0111503,nm0956022,Claude Zidi
+tt0111503,nm0584770,Simon Michaël
+tt0111503,nm0436687,Didier Kaminka
+tt0111507,nm0001425,Krzysztof Kieslowski
+tt0111507,nm0682830,Krzysztof Piesiewicz
+tt0111507,nm0002140,Agnieszka Holland
+tt0111507,nm0954072,Edward Zebrowski
+tt0111507,nm0460058,Edward Klosinski
+tt0111507,nm0489995,Marcin Latallo
+tt0112130,nm0000807,Jane Austen
+tt0112130,nm0203577,Andrew Davies
+tt0112281,nm0077062,Jack Bernstein
+tt0112281,nm0644203,Steve Oedekerk
+tt0112346,nm0815070,Aaron Sorkin
+tt0112401,nm0905152,Lilly Wachowski
+tt0112401,nm0905154,Lana Wachowski
+tt0112401,nm0001338,Brian Helgeland
+tt0112471,nm0000500,Richard Linklater
+tt0112471,nm0471811,Kim Krizan
+tt0112625,nm0712444,Rand Ravich
+tt0112625,nm0472600,Mark Kruger
+tt0112625,nm0000850,Clive Barker
+tt0112642,nm0649866,Joseph Oriolo
+tt0112642,nm0832300,Sherri Stoner
+tt0112642,nm0646818,Deanna Oliver
+tt0112697,nm0002132,Amy Heckerling
+tt0112792,nm0425676,LouAnne Johnson
+tt0112792,nm0060103,Ron Bass
+tt0113089,nm0378562,James Herbert
+tt0113089,nm0137363,Carlo Carlei
+tt0113089,nm0140572,James Carrington
+tt0113117,nm0111845,Adam Brooks
+tt0113243,nm0604360,Rafael Moreu
+tt0113321,nm0705331,Chris Radant
+tt0113321,nm0725379,W.D. Richter
+tt0113376,nm0229694,David Dobkin
+tt0113376,nm0205758,Sven Davison
+tt0113448,nm0003201,Tim Sullivan
+tt0113492,nm0905957,John Wagner
+tt0113492,nm0264338,Carlos Ezquerra
+tt0113492,nm0006894,Michael De Luca
+tt0113492,nm0936537,William Wisher
+tt0113492,nm0211823,Steven E. de Souza
+tt0113497,nm0378144,Jonathan Hensleigh
+tt0113497,nm0852430,Greg Taylor
+tt0113497,nm0833164,Jim Strain
+tt0113497,nm0885575,Chris Van Allsburg
+tt0113749,nm0003620,Kevin Smith
+tt0113855,nm0095460,Ed Boon
+tt0113855,nm0864880,John Tobias
+tt0113855,nm0238256,Kevin Droney
+tt0113862,nm0242059,Patrick Sheane Duncan
+tt0113936,nm0474955,Roger Kumble
+tt0113936,nm0454783,I. Marlene King
+tt0113986,nm0105317,Patrick Braoudé
+tt0113986,nm0001060,Chris Columbus
+tt0114134,nm0794839,Sei Shonagon
+tt0114134,nm0000425,Peter Greenaway
+tt0114188,nm0018735,Scott Alexander
+tt0114188,nm0438989,Larry Karaszewski
+tt0114188,nm0330195,Michael Hitchcock
+tt0114319,nm0853138,Samuel A. Taylor
+tt0114319,nm0000697,Billy Wilder
+tt0114319,nm0499626,Ernest Lehman
+tt0114319,nm0070660,Barbara Benedek
+tt0114319,nm0713128,David Rayfiel
+tt0114369,nm0001825,Andrew Kevin Walker
+tt0114388,nm0000807,Jane Austen
+tt0114388,nm0000668,Emma Thompson
+tt0114508,nm0271022,Dennis Feldman
+tt0114576,nm0049945,Karen Elise Baldwin
+tt0114576,nm0704164,Gene Quintano
+tt0114720,nm0534681,Brent Maddock
+tt0114720,nm0934093,S.S. Wilson
+tt0114720,nm0881038,Ron Underwood
+tt0114814,nm0003160,Christopher McQuarrie
+tt0114857,nm0077171,Eric Bernt
+tt0114906,nm0001754,Todd Solondz
+tt0114924,nm0838015,Daniel G. Sullivan
+tt0114924,nm0495863,Fred Lebow
+tt0115644,nm0325533,Michael Goldenberg
+tt0115678,nm0001804,Stanley Tucci
+tt0115678,nm0873579,Joseph Tropiano
+tt0115685,nm0688497,Jean Poiret
+tt0115685,nm0891554,Francis Veber
+tt0115685,nm0596850,Édouard Molinaro
+tt0115685,nm0200473,Marcello Danon
+tt0115685,nm0561938,Elaine May
+tt0115725,nm0745087,Jeff Rothberg
+tt0115725,nm4267752,Francis X. McCarthy Jr.
+tt0115725,nm0765091,Alvin Sargent
+tt0115798,nm0392648,Lou Holtz Jr.
+tt0115950,nm0170043,Isabel Coixet
+tt0115963,nm0276823,Peter Filardi
+tt0115963,nm0281598,Andrew Fleming
+tt0115988,nm0007186,Arthur Miller
+tt0116036,nm0800872,Megan Simpson Huberman
+tt0116040,nm0092018,Leslie Bohem
+tt0116075,nm0660016,Dennis Paoli
+tt0116075,nm0002340,Stuart Gordon
+tt0116075,nm0277393,Charles Finch
+tt0116095,nm0092267,Pierre Boileau
+tt0116095,nm0092268,Thomas Narcejac
+tt0116095,nm0167241,Henri-Georges Clouzot
+tt0116095,nm0740400,Don Roos
+tt0116151,nm0394201,John Hopkins
+tt0116151,nm0333949,Bruce Graham
+tt0116209,nm0648546,Michael Ondaatje
+tt0116209,nm0005237,Anthony Minghella
+tt0116213,nm0701049,Tony Puryear
+tt0116213,nm0338396,Walon Green
+tt0116213,nm0155961,Michael S. Chernuchin
+tt0116282,nm0001053,Ethan Coen
+tt0116282,nm0001054,Joel Coen
+tt0116313,nm0326118,Olivia Goldsmith
+tt0116313,nm0363326,Robert Harling
+tt0116514,nm0040643,Peter Atkins
+tt0116629,nm0002041,Dean Devlin
+tt0116629,nm0000386,Roland Emmerich
+tt0116669,nm0218621,James DeMonaco
+tt0116669,nm0618800,Gary Nadeau
+tt0116695,nm0001081,Cameron Crowe
+tt0116999,nm0574259,Scott McPherson
+tt0117008,nm0001094,Roald Dahl
+tt0117008,nm0443582,Nicholas Kazan
+tt0117008,nm0842523,Robin Swicord
+tt0117011,nm0272511,Larry Ferguson
+tt0117038,nm0223320,Peter Dexter
+tt0117038,nm0703720,Jim Quinlan
+tt0117038,nm0001188,Nora Ephron
+tt0117038,nm0258286,Delia Ephron
+tt0117218,nm0001471,Jerry Lewis
+tt0117218,nm0725075,Bill Richmond
+tt0117218,nm0790775,David Sheffield
+tt0117218,nm0087904,Barry W. Blaustein
+tt0117218,nm0001723,Tom Shadyac
+tt0117218,nm0644203,Steve Oedekerk
+tt0117247,nm0783559,Terrel Seltzer
+tt0117247,nm0800124,Ellen Simon
+tt0117276,nm0781225,Marc Sedaka
+tt0117276,nm0089237,Steve Bloom
+tt0117372,nm0622251,Robert Nathan
+tt0117372,nm0792845,Robert E. Sherwood
+tt0117372,nm0073394,Leonardo Bercovici
+tt0117372,nm0560894,Nat Mauldin
+tt0117372,nm0778819,Allan Scott
+tt0117407,nm0196930,Jens Dahl
+tt0117407,nm0716347,Nicolas Winding Refn
+tt0117420,nm0245235,Frank Dux
+tt0117420,nm0000241,Jean-Claude Van Damme
+tt0117420,nm12026427,Steven Klein
+tt0117420,nm0597857,Paul Mones
+tt0117438,nm0401738,Cyril Hume
+tt0117438,nm0537363,Richard Maibaum
+tt0117438,nm0697115,Richard Price
+tt0117438,nm0407245,Alexander Ignon
+tt0117571,nm0932078,Kevin Williamson
+tt0117826,nm0301362,William M. Gaines
+tt0117826,nm0301826,Bob Gale
+tt0117826,nm0000709,Robert Zemeckis
+tt0117826,nm0441623,A L Katz
+tt0117826,nm0012155,Gilbert Adler
+tt0117887,nm0000158,Tom Hanks
+tt0117913,nm0001300,John Grisham
+tt0117913,nm0326040,Akiva Goldsman
+tt0117951,nm0920543,Irvine Welsh
+tt0117951,nm0388076,John Hodge
+tt0117979,nm0920108,Audrey Wells
+tt0117998,nm0000341,Michael Crichton
+tt0117998,nm0551926,Anne-Marie Martin
+tt0118001,nm0922799,Donald E. Westlake
+tt0118001,nm0874096,Fernando Trueba
+tt0118001,nm0874093,David Trueba
+tt0118254,nm0005082,David E. Kelley
+tt0118254,nm0070142,Roberto Benabib
+tt0118254,nm0121154,Constance M. Burge
+tt0118254,nm0509078,Cindy Lichtman
+tt0118254,nm0533582,Barb Mackintosh
+tt0118254,nm2685067,Josh Caplan
+tt0118254,nm0484485,Shelly Landau
+tt0118254,nm0684374,Jeff Pinkner
+tt0118254,nm0696518,Dawn Prestwich
+tt0118254,nm0948820,Nicole Yorkin
+tt0118254,nm1003804,Andi Bushell
+tt0118254,nm0695643,Jim Praytor
+tt0118254,nm0326086,Jill Goldsmith
+tt0118254,nm0551892,Alicia Martin
+tt0118254,nm1547852,Kayla Alpert
+tt0118254,nm0086694,Peter Blake
+tt0118254,nm0501890,Kerry Lenhart
+tt0118254,nm0742279,Melissa Rosenberg
+tt0118254,nm0757218,John J. Sakmar
+tt0118254,nm0001493,Peter MacNicol
+tt0118301,nm0009159,Anthony Abrams
+tt0118301,nm0110791,Adam Larson Broder
+tt0118301,nm0870592,Michael Traeger
+tt0118301,nm0925234,Mike White
+tt0118528,nm0741627,Reginald Rose
+tt0118556,nm0330565,Robert Gordon
+tt0118694,nm0939182,Wong Kar-Wai
+tt0118715,nm0001053,Ethan Coen
+tt0118715,nm0001054,Joel Coen
+tt0118798,nm0000886,Warren Beatty
+tt0118798,nm0683282,Jeremy Pikser
+tt0118799,nm0148437,Vincenzo Cerami
+tt0118799,nm0000905,Roberto Benigni
+tt0118884,nm0366337,James V. Hart
+tt0118884,nm0325533,Michael Goldenberg
+tt0118884,nm0755981,Carl Sagan
+tt0118884,nm0238668,Ann Druyan
+tt0118887,nm0003506,James Mangold
+tt0118928,nm0092018,Leslie Bohem
+tt0118971,nm0003825,Andrew Neiderman
+tt0118971,nm0501380,Jonathan Lemkin
+tt0118971,nm0006904,Tony Gilroy
+tt0118998,nm0517452,Hugh Lofting
+tt0118998,nm0560894,Nat Mauldin
+tt0118998,nm0505648,Larry Levin
+tt0119013,nm0415979,Don Jakoby
+tt0119013,nm0597857,Paul Mones
+tt0119054,nm0205157,Michael Davis
+tt0119099,nm0443582,Nicholas Kazan
+tt0119137,nm0853139,Samuel W. Taylor
+tt0119137,nm0000455,John Hughes
+tt0119137,nm0909556,Bill Walsh
+tt0119223,nm0002042,Charles Dickens
+tt0119223,nm0322248,Mitch Glazer
+tt0119229,nm0417716,Tom Jankiewicz
+tt0119229,nm0222584,D.V. DeVincentis
+tt0119229,nm0684336,Steve Pink
+tt0119229,nm0000131,John Cusack
+tt0119313,nm0737216,Steven Rogers
+tt0119345,nm0932078,Kevin Williamson
+tt0119345,nm0242028,Lois Duncan
+tt0119528,nm0345488,Paul Guay
+tt0119528,nm0563397,Stephen Mazur
+tt0119535,nm0388076,John Hodge
+tt0119567,nm0000341,Michael Crichton
+tt0119567,nm0462895,David Koepp
+tt0119632,nm0227779,Greg Dinner
+tt0119632,nm0418321,Karen Janszen
+tt0119632,nm0637491,Louis Nowra
+tt0119632,nm0512627,Graham Linehan
+tt0119643,nm0651592,Ron Osborn
+tt0119643,nm0719734,Jeff Reno
+tt0119643,nm0905458,Kevin Wade
+tt0119643,nm0325743,Bo Goldman
+tt0119643,nm0143281,Alberto Casella
+tt0119643,nm0274923,Walter Ferris
+tt0119643,nm0027173,Maxwell Anderson
+tt0119643,nm0499628,Gladys Lehman
+tt0119654,nm0192384,Lowell Cunningham
+tt0119654,nm0004412,Ed Solomon
+tt0119668,nm0073509,John Berendt
+tt0119668,nm0359387,John Lee Hancock
+tt0119707,nm0095460,Ed Boon
+tt0119707,nm0440415,Lawrence Kasanoff
+tt0119707,nm0923312,Joshua Wexler
+tt0119707,nm0864880,John Tobias
+tt0119707,nm0295165,Brent Friedman
+tt0119707,nm0007233,Bryce Zabel
+tt0119738,nm0060103,Ron Bass
+tt0119778,nm0026442,Brad Anderson
+tt0119778,nm0891299,Lyn Vaus
+tt0119822,nm0029125,Mark Andrus
+tt0119822,nm0000985,James L. Brooks
+tt0120082,nm0932078,Kevin Williamson
+tt0120094,nm0622695,Gregory Nava
+tt0120265,nm0452102,Abbas Kiarostami
+tt0120338,nm0000116,James Cameron
+tt0120376,nm0121106,Andy Burg
+tt0120376,nm0616851,Scott Myers
+tt0120382,nm0629272,Andrew Niccol
+tt0120587,nm0017305,Todd Alcott
+tt0120587,nm0919363,Chris Weitz
+tt0120587,nm0919369,Paul Weitz
+tt0120591,nm0378144,Jonathan Hensleigh
+tt0120591,nm0009190,J.J. Abrams
+tt0120591,nm0006904,Tony Gilroy
+tt0120591,nm0004307,Shane Salerno
+tt0120591,nm0690798,Robert Roy Pool
+tt0120616,nm0814085,Stephen Sommers
+tt0120616,nm0285126,Lloyd Fonvielle
+tt0120616,nm0418883,Kevin Jarre
+tt0120616,nm0049721,John L. Balderston
+tt0120616,nm0701233,Nina Wilcox Putnam
+tt0120616,nm0770337,Richard Schayer
+tt0120631,nm0335666,Susannah Grant
+tt0120631,nm0855035,Andy Tennant
+tt0120631,nm0663002,Rick Parks
+tt0120631,nm0674518,Charles Perrault
+tt0120632,nm0000694,Wim Wenders
+tt0120632,nm0359563,Peter Handke
+tt0120632,nm0718637,Richard Reitinger
+tt0120632,nm0828342,Dana Stevens
+tt0120647,nm0748022,Bruce Joel Rubin
+tt0120647,nm0866062,Michael Tolkin
+tt0120655,nm0003620,Kevin Smith
+tt0120660,nm0545861,David Marconi
+tt0120663,nm0000040,Stanley Kubrick
+tt0120663,nm0710698,Frederic Raphael
+tt0120663,nm0774217,Arthur Schnitzler
+tt0120679,nm0380419,Hayden Herrera
+tt0120679,nm0797397,Clancy Sigal
+tt0120679,nm1187860,Diane Lake
+tt0120679,nm0622695,Gregory Nava
+tt0120679,nm0858482,Anna Thomas
+tt0120686,nm0505144,Gigi Levangie
+tt0120686,nm0625458,Jessie Nelson
+tt0120686,nm0737216,Steven Rogers
+tt0120686,nm0394212,Karen Leigh Hopkins
+tt0120686,nm0060103,Ron Bass
+tt0120687,nm0325128,Sandra Goldbacher
+tt0120692,nm0449576,Sarah Kernochan
+tt0120694,nm0384185,Debra Hill
+tt0120694,nm0000118,John Carpenter
+tt0120694,nm0002526,Robert Zappia
+tt0120694,nm0338557,Matt Greenberg
+tt0120701,nm0776114,Tom Schulman
+tt0120724,nm0211823,Steven E. de Souza
+tt0120749,nm0669379,Ryne Douglas Pearson
+tt0120749,nm0465199,Lawrence Konner
+tt0120749,nm0742797,Mark Rosenthal
+tt0120772,nm0565522,Stephen McCauley
+tt0120772,nm0913715,Wendy Wasserstein
+tt0120780,nm0001465,Elmore Leonard
+tt0120780,nm0291082,Scott Frank
+tt0120783,nm0477696,Erich Kästner
+tt0120783,nm0842582,David Swift
+tt0120783,nm0583600,Nancy Meyers
+tt0120783,nm0796124,Charles Shyer
+tt0120787,nm0461425,Frederick Knott
+tt0120787,nm0446761,Patrick Smith Kelly
+tt0120789,nm0002657,Gary Ross
+tt0120791,nm0388805,Alice Hoffman
+tt0120791,nm0842523,Robin Swicord
+tt0120791,nm0326040,Akiva Goldsman
+tt0120791,nm0111845,Adam Brooks
+tt0120802,nm0001528,Don McKellar
+tt0120802,nm0320660,François Girard
+tt0120815,nm0734441,Robert Rodat
+tt0120824,nm0698925,Annie Proulx
+tt0120824,nm0414608,Robert Nelson Jacobs
+tt0120828,nm0115192,Michael Browning
+tt0120836,nm0177074,J.B. Cook
+tt0120836,nm0576149,Marc Meeks
+tt0120836,nm0005450,David Spade
+tt0120841,nm0271022,Dennis Feldman
+tt0120841,nm0104333,Chris Brancato
+tt0120873,nm0400403,Roy Huggins
+tt0120873,nm0688282,John Pogue
+tt0120885,nm0067248,Larry Beinhart
+tt0120885,nm0377088,Hilary Henkin
+tt0120885,nm0000519,David Mamet
+tt0120891,nm0859029,Jim Thomas
+tt0120891,nm0859049,John Thomas
+tt0120891,nm0934093,S.S. Wilson
+tt0120891,nm0534681,Brent Maddock
+tt0120891,nm0696949,Jeffrey Price
+tt0120891,nm0780620,Peter S. Seaman
+tt0120912,nm0192384,Lowell Cunningham
+tt0120912,nm0330565,Robert Gordon
+tt0120912,nm0266673,Barry Fanaro
+tt0122459,nm0001372,Bonnie Hunt
+tt0122459,nm0482141,Don Lake
+tt0122459,nm0827632,Andrew Stern
+tt0122459,nm0329224,Samantha Goodman
+tt0123209,nm0741228,Alexandra Rose
+tt0123209,nm0725407,Blair Richwood
+tt0123209,nm0005190,Garry Marshall
+tt0123209,nm0116358,Bob Brunner
+tt0124349,nm0847749,Tibor Takács
+tt0124349,nm0410237,Brian Irving
+tt0124879,nm0425756,Mark Steven Johnson
+tt0124879,nm0410288,John Irving
+tt0124901,nm0940790,Skip Woods
+tt0125439,nm0193485,Richard Curtis
+tt0125971,nm0268380,Peter Farrelly
+tt0125971,nm0180912,Michael Corrente
+tt0125971,nm0125803,Bobby Farrelly
+tt0126388,nm0504802,Sheldon Lettich
+tt0126388,nm0000241,Jean-Claude Van Damme
+tt0126388,nm0607286,Rebecca Morrison
+tt0126886,nm0674909,Tom Perrotta
+tt0126886,nm0668247,Alexander Payne
+tt0126886,nm0852591,Jim Taylor
+tt0127626,nm0921264,Piotr Weresniak
+tt0127723,nm0438226,Deborah Kaplan
+tt0127723,nm0253323,Harry Elfont
+tt0128853,nm0529450,Miklós László
+tt0128853,nm0001188,Nora Ephron
+tt0128853,nm0258286,Delia Ephron
+tt0129290,nm0011254,Patch Adams
+tt0129290,nm0616962,Maureen Mylander
+tt0129290,nm0644203,Steve Oedekerk
+tt0129387,nm0214036,Ed Decter
+tt0129387,nm0833828,John J. Strauss
+tt0129387,nm0268380,Peter Farrelly
+tt0129387,nm0125803,Bobby Farrelly
+tt0129884,nm0567126,Bruce McCulloch
+tt0130018,nm0242028,Lois Duncan
+tt0130018,nm0007029,Trey Callaway
+tt0130121,nm0770649,Adam Scheinman
+tt0130121,nm0002675,Robert Kuhn
+tt0130827,nm0878756,Tom Tykwer
+tt0132278,nm0433671,Martin Jørgensen
+tt0132278,nm6267663,Louis Levy
+tt0132451,nm0139605,Neal Marshall Stevens
+tt0133046,nm0932078,Kevin Williamson
+tt0133093,nm0905152,Lilly Wachowski
+tt0133093,nm0905154,Lana Wachowski
+tt0133751,nm0917066,David Wechter
+tt0133751,nm0453987,Bruce Kimmel
+tt0133751,nm0932078,Kevin Williamson
+tt0134084,nm0932078,Kevin Williamson
+tt0134084,nm0472567,Ehren Kruger
+tt0135659,nm0000175,Stephen King
+tt0137523,nm0657333,Chuck Palahniuk
+tt0137523,nm0880243,Jim Uhls
+tt0138524,nm0709070,Robert Ramsey
+tt0138524,nm0832043,Matthew Stone
+tt0138524,nm0738908,John Romano
+tt0138524,nm0001053,Ethan Coen
+tt0138524,nm0001054,Joel Coen
+tt0139134,nm0480166,Choderlos de Laclos
+tt0139134,nm0474955,Roger Kumble
+tt0139151,nm0642583,Tom O'Rourke
+tt0139462,nm0817023,Nicholas Sparks
+tt0139462,nm0224187,Gerald Di Pego
+tt0139654,nm0043742,David Ayer
+tt0140340,nm0278277,Jack Finney
+tt0140340,nm0376967,James S. Henerson
+tt0143746,nm0160305,Richard Christie
+tt0144084,nm0254735,Bret Easton Ellis
+tt0144084,nm0366004,Mary Harron
+tt0144084,nm0877587,Guinevere Turner
+tt0144117,nm0240627,Troy Duffy
+tt0144120,nm0238841,Don Mancini
+tt0144528,nm0001471,Jerry Lewis
+tt0144528,nm0644203,Steve Oedekerk
+tt0144528,nm0087904,Barry W. Blaustein
+tt0144528,nm0790775,David Sheffield
+tt0144528,nm0919369,Paul Weitz
+tt0144528,nm0919363,Chris Weitz
+tt0145487,nm0498278,Stan Lee
+tt0145487,nm0228492,Steve Ditko
+tt0145487,nm0462895,David Koepp
+tt0145531,nm0493842,Tom Lazarus
+tt0145531,nm0707931,Rick Ramage
+tt0145681,nm0213281,Jeffery Deaver
+tt0145681,nm0406228,Jeremy Iacone
+tt0145893,nm0731287,Judith Roberts
+tt0146316,nm0153384,Sara B. Cooper
+tt0146316,nm0108273,Mike Werb
+tt0146316,nm0171718,Michael Colleary
+tt0146316,nm0922346,Simon West
+tt0146316,nm0557266,Patrick Massett
+tt0146316,nm0957003,John Zinman
+tt0146336,nm0395531,Silvio Horta
+tt0146675,nm0549256,Andrew W. Marlowe
+tt0146882,nm0394984,Nick Hornby
+tt0146882,nm0222584,D.V. DeVincentis
+tt0146882,nm0684336,Steve Pink
+tt0146882,nm0000131,John Cusack
+tt0146882,nm0003298,Scott Rosenberg
+tt0147004,nm0142179,Jim Cartwright
+tt0147004,nm0379179,Mark Herman
+tt0147800,nm0527581,Karen McCullah
+tt0147800,nm0809006,Kirsten Smith
+tt0147800,nm0000636,William Shakespeare
+tt0149261,nm0003300,Duncan Kennedy
+tt0149261,nm0694526,Donna Powers
+tt0149261,nm0694638,Wayne Powers
+tt0150377,nm0918711,David Weisberg
+tt0150377,nm0177018,Douglas Cook
+tt0151073,nm0351724,Yu-sang Ha
+tt0151073,nm0497043,Chung-Joon Lee
+tt0151738,nm0463359,Abby Kohn
+tt0151738,nm0799050,Marc Silverstein
+tt0151804,nm0431918,Mike Judge
+tt0155776,nm0825434,Darren Stein
+tt0156757,nm0287161,John Forte
+tt0158973,nm0412257,Julia Crawford Ivers
+tt0158983,nm0005295,Trey Parker
+tt0158983,nm0001778,Matt Stone
+tt0158983,nm0103702,Pam Brady
+tt0159097,nm0262325,Jeffrey Eugenides
+tt0159097,nm0001068,Sofia Coppola
+tt0160127,nm0746598,Ryan Rowe
+tt0160127,nm0004412,Ed Solomon
+tt0160127,nm0041864,John August
+tt0160127,nm0324578,Ivan Goff
+tt0160127,nm0730850,Ben Roberts
+tt0160184,nm0842697,Howard Swindle
+tt0160184,nm0109587,Ron L. Brinkerhoff
+tt0160862,nm0281592,R. Lee Fleming Jr.
+tt0161081,nm0163988,Clark Gregg
+tt0161081,nm0449576,Sarah Kernochan
+tt0162212,nm0770360,Jeff Schechter
+tt0162222,nm0115310,William Broyles Jr.
+tt0162650,nm0862781,Ernest Tidyman
+tt0162650,nm0005436,John Singleton
+tt0162650,nm0004307,Shane Salerno
+tt0162650,nm0697115,Richard Price
+tt0162661,nm0410331,Washington Irving
+tt0162661,nm0944892,Kevin Yagher
+tt0162661,nm0001825,Andrew Kevin Walker
+tt0163187,nm0569210,Josann McGibbon
+tt0163187,nm0663490,Sara Parriott
+tt0163651,nm0381221,Adam Herz
+tt0164114,nm0833510,Todd Strasser
+tt0164114,nm0859432,Rob Thomas
+tt0164181,nm0558577,Richard Matheson
+tt0164181,nm0462895,David Koepp
+tt0164221,nm0713056,Chloe Rayban
+tt0164221,nm0279717,Nick Fisher
+tt0165456,nm0780051,Nell Scovell
+tt0165456,nm0773536,Jonathan Schmock
+tt0165456,nm0169231,Barney Cohen
+tt0165456,nm0908942,Kathryn Wallack
+tt0165456,nm0264878,Nicholas Factor
+tt0165456,nm0073504,Dan Berendsen
+tt0165710,nm0243463,Carl V. Dupré
+tt0166252,nm0771872,Cathleen Schine
+tt0166252,nm0535940,Maria Maggenti
+tt0166302,nm0134898,Frantisek Cáp
+tt0166302,nm0538083,Marie Majerová
+tt0166302,nm0881610,A.J. Urban
+tt0166302,nm0904706,Otakar Vávra
+tt0166485,nm0503103,Anna Leonowens
+tt0166485,nm0576228,Steve Meerson
+tt0166485,nm0471298,Peter Krikes
+tt0166924,nm0000186,David Lynch
+tt0167242,nm0801427,Eduard Simácek
+tt0167242,nm0294758,Martin Fric
+tt0167242,nm0344720,Josef Gruss
+tt0167242,nm0637610,Yvan Noé
+tt0168629,nm0001885,Lars von Trier
+tt0168629,nm0797604,Sjón
+tt0169547,nm0050332,Alan Ball
+tt0170016,nm0317450,Dr. Seuss
+tt0170016,nm0696949,Jeffrey Price
+tt0170016,nm0780620,Peter S. Seaman
+tt0171363,nm0783100,David Self
+tt0171363,nm0414047,Shirley Jackson
+tt0174336,nm0169680,Peter M. Cohen
+tt0175142,nm0915465,Shawn Wayans
+tt0175142,nm0005541,Marlon Wayans
+tt0175142,nm0424688,Buddy Johnson
+tt0175142,nm0064556,Phil Beauman
+tt0175142,nm0294997,Jason Friedberg
+tt0175142,nm0783536,Aaron Seltzer
+tt0175526,nm0783023,Ken Selden
+tt0175777,nm0637497,Marti Noxon
+tt0175777,nm0590174,Roger E. Mills
+tt0175880,nm0000759,Paul Thomas Anderson
+tt0176269,nm0745330,Richard Rothstein
+tt0176269,nm0500609,Christopher Leitch
+tt0176269,nm0002041,Dean Devlin
+tt0176269,nm0540532,William Malone
+tt0176269,nm0004591,John Fasano
+tt0176783,nm0201304,Gregory Poirier
+tt0176783,nm0714246,Theresa Rebeck
+tt0177625,nm0000175,Stephen King
+tt0177625,nm0837913,Tim Sulka
+tt0177625,nm0291463,John Franklin
+tt0178737,nm0000807,Jane Austen
+tt0178737,nm0005390,Patricia Rozema
+tt0181852,nm0104335,John Brancato
+tt0181852,nm0274905,Michael Ferris
+tt0181852,nm0093328,Tedi Sarafian
+tt0181875,nm0001081,Cameron Crowe
+tt0182789,nm0001920,Isaac Asimov
+tt0182789,nm0798844,Robert Silverberg
+tt0182789,nm0443582,Nicholas Kazan
+tt0183505,nm0268380,Peter Farrelly
+tt0183505,nm0148808,Mike Cerrone
+tt0183505,nm0125803,Bobby Farrelly
+tt0183649,nm0169540,Larry Cohen
+tt0183790,nm0001338,Brian Helgeland
+tt0184791,nm0000636,William Shakespeare
+tt0184791,nm0433994,Brad Kaaya
+tt0185431,nm0379056,Tim Herlihy
+tt0185431,nm0001191,Adam Sandler
+tt0185431,nm0109359,Steven Brill
+tt0186975,nm0410640,Kris Isacsson
+tt0187696,nm1141289,Peter Engelmann
+tt0187696,nm0752328,Stefan Ruzowitzky
+tt0189456,nm0912442,Dave Warner
+tt0189456,nm0483953,Mark Lamprell
+tt0189791,nm0023207,José Alvarenga Jr.
+tt0189791,nm0053773,Maria Carmem Barbosa
+tt0189791,nm0518353,Carlos Lombardi
+tt0189791,nm0933851,Mauro Wilson
+tt0190096,nm0799012,Nancey Silvers
+tt0192071,nm0281592,R. Lee Fleming Jr.
+tt0192111,nm0833828,John J. Strauss
+tt0192111,nm0214036,Ed Decter
+tt0192111,nm0452235,David Kidd
+tt0192111,nm0120816,Ron Burch
+tt0192731,nm0395531,Silvio Horta
+tt0192731,nm0090199,Paul Harris Boardman
+tt0192731,nm0220600,Scott Derrickson
+tt0195714,nm0604688,Glen Morgan
+tt0195714,nm0939128,James Wong
+tt0195714,nm0714695,Jeffrey Reddick
+tt0196229,nm0766153,Drake Sather
+tt0196229,nm0001774,Ben Stiller
+tt0196229,nm0357453,John Hamburg
+tt0198021,nm0304665,Lowell Ganz
+tt0198021,nm0541632,Babaloo Mandel
+tt0198021,nm0504819,Billie Letts
+tt0199314,nm0826437,Gerard Stembridge
+tt0199314,nm0862916,Tommy Tiernan
+tt0200027,nm0195838,Beverly Donofrio
+tt0200027,nm0911750,Morgan Ward
+tt0200192,nm0000972,Tinto Brass
+tt0200192,nm0162640,Carla Cipriani
+tt0200192,nm0672117,Nicolaj Pennestri
+tt0200192,nm0744321,Silvia Rossi
+tt0200192,nm0953026,Massimiliano Zanin
+tt0200550,nm0920859,Gina Wendkos
+tt0202470,nm0007082,John Stockwell
+tt0203009,nm0525303,Baz Luhrmann
+tt0203009,nm0668902,Craig Pearce
+tt0203166,nm0600546,Lukas Moodysson
+tt0203632,nm0878756,Tom Tykwer
+tt0204175,nm0523198,Andrew Lowery
+tt0204175,nm0587884,Andrew Miller
+tt0204946,nm0070566,Jessica Bendinger
+tt0205000,nm0325214,Harris Goldberg
+tt0205000,nm0001705,Rob Schneider
+tt0206420,nm0087733,Vera Blasi
+tt0206926,nm0255780,Ben Elton
+tt0207201,nm0326092,Josh Goldsmith
+tt0207201,nm0951135,Cathy Yuspa
+tt0207201,nm0236884,Diane Drake
+tt0208003,nm0702912,Darryl Quarles
+tt0208003,nm0722610,Don Rhymer
+tt0208092,nm0005363,Guy Ritchie
+tt0208196,nm0026442,Brad Anderson
+tt0208988,nm0507794,Ted Lewis
+tt0208988,nm0571346,David McKenna
+tt0209144,nm0634240,Christopher Nolan
+tt0209144,nm0634300,Jonathan Nolan
+tt0209163,nm0814085,Stephen Sommers
+tt0209297,nm0073504,Dan Berendsen
+tt0209297,nm0169231,Barney Cohen
+tt0209297,nm0908942,Kathryn Wallack
+tt0209297,nm0264878,Nicholas Factor
+tt0209297,nm0780051,Nell Scovell
+tt0209297,nm0773536,Jonathan Schmock
+tt0209475,nm0266184,Pamela Falk
+tt0209475,nm0963400,Michael Ellis
+tt0210070,nm0910550,Karen Walton
+tt0210070,nm0269502,John Fawcett
+tt0211443,nm0267805,Todd Farmer
+tt0211443,nm0566699,Victor Miller
+tt0211878,nm1216570,Alberto Gómez
+tt0211878,nm1294113,Dolores Ortega
+tt0211878,nm0734570,Inés Rodena
+tt0211878,nm0739351,Carlos Romero
+tt0211915,nm0491011,Guillaume Laurant
+tt0211915,nm0000466,Jean-Pierre Jeunet
+tt0212338,nm0322839,Greg Glienna
+tt0212338,nm0164898,Mary Ruth Clarke
+tt0212338,nm0381272,Jim Herzfeld
+tt0212338,nm0357453,John Hamburg
+tt0212346,nm0492909,Marc Lawrence
+tt0212346,nm0974301,Katie Ford
+tt0212346,nm0524095,Caryn Lucas
+tt0212985,nm0365383,Thomas Harris
+tt0212985,nm0000519,David Mamet
+tt0212985,nm0001873,Steven Zaillian
+tt0213847,nm0868153,Giuseppe Tornatore
+tt0213847,nm0898812,Luciano Vincenzoni
+tt0214388,nm0205157,Michael Davis
+tt0215129,nm0680846,Todd Phillips
+tt0215129,nm0035905,Scot Armstrong
+tt0215369,nm0955434,Yang Zhang
+tt0215369,nm0514921,Fendou Liu
+tt0215369,nm0403230,Xin Huo
+tt0215369,nm0224801,Yi'nan Diao
+tt0215369,nm0128754,Shangjun Cai
+tt0216216,nm0926727,Cormac Wibberley
+tt0216216,nm0926729,Marianne Wibberley
+tt0217869,nm0796117,M. Night Shyamalan
+tt0218619,nm0139461,Stephen Carpenter
+tt0218864,nm0065608,Walt Becker
+tt0218864,nm1378028,Peter W. Nelson
+tt0218967,nm0224601,David Diamond
+tt0218967,nm0919289,David Weissman
+tt0219699,nm0000671,Billy Bob Thornton
+tt0219699,nm0258370,Tom Epperson
+tt0221218,nm0834338,Wesley Strick
+tt0222851,nm0001429,Takeshi Kitano
+tt0225071,nm0224187,Gerald Di Pego
+tt0229440,nm0000850,Clive Barker
+tt0229440,nm0090199,Paul Harris Boardman
+tt0229440,nm0220600,Scott Derrickson
+tt0230600,nm0024622,Alejandro Amenábar
+tt0230838,nm0712029,Herman Raucher
+tt0230838,nm0951049,Paul Yurick
+tt0230838,nm0900820,Kurt Voelker
+tt0233469,nm0740462,Ronald Roose
+tt0233469,nm0341656,David Griffiths
+tt0233469,nm0341735,Peter Griffiths
+tt0234137,nm0106928,Valerie Breiman
+tt0234215,nm0905152,Lilly Wachowski
+tt0234215,nm0905154,Lana Wachowski
+tt0234829,nm0266468,Kevin Falls
+tt0234829,nm0309691,John Gatins
+tt0236348,nm0438226,Deborah Kaplan
+tt0236348,nm0253323,Harry Elfont
+tt0236348,nm0326406,Richard Goldwater
+tt0236348,nm0213642,Dan DeCarlo
+tt0236348,nm0326402,John L. Goldwater
+tt0236640,nm0943442,Elizabeth Wurtzel
+tt0236640,nm0630633,Galt Niederhoffer
+tt0236640,nm0213234,Frank Deasy
+tt0236640,nm0343419,Larry Gross
+tt0238137,nm0509340,Jeffrey Lieber
+tt0238137,nm1008924,Michael Shapiro
+tt0238137,nm0800742,Shawn Simons
+tt0238552,nm0726651,Lawrence Riggins
+tt0238552,nm0002659,Les Weldon
+tt0240462,nm0517452,Hugh Lofting
+tt0240462,nm0505648,Larry Levin
+tt0240510,nm0556571,A.E.W. Mason
+tt0240510,nm0771512,Michael Schiffer
+tt0240510,nm0024925,Hossein Amini
+tt0240772,nm0425138,George Clayton Johnson
+tt0240772,nm0751207,Jack Golden Russell
+tt0240772,nm0113689,Harry Brown
+tt0240772,nm0496468,Charles Lederer
+tt0240772,nm0341372,Ted Griffin
+tt0240890,nm0458884,Marc Klein
+tt0241303,nm0364862,Joanne Harris
+tt0241303,nm0414608,Robert Nelson Jacobs
+tt0241760,nm0447583,David Kendall
+tt0242423,nm0823255,Philip Stark
+tt0242527,nm0123434,Guy Burt
+tt0242527,nm0181185,Ben Court
+tt0242527,nm0409675,Caroline Ip
+tt0242653,nm0905152,Lilly Wachowski
+tt0242653,nm0905154,Lana Wachowski
+tt0242888,nm0420746,Guy Jenkin
+tt0242998,nm0767393,Tom Savage
+tt0242998,nm0694526,Donna Powers
+tt0242998,nm0694638,Wayne Powers
+tt0242998,nm0073766,Gretchen J. Berg
+tt0242998,nm0361912,Aaron Harberts
+tt0243155,nm0276144,Helen Fielding
+tt0243155,nm0203577,Andrew Davies
+tt0243155,nm0193485,Richard Curtis
+tt0243736,nm0673608,Rob Perez
+tt0243862,nm0082759,Maeve Binchy
+tt0243862,nm0771054,Lone Scherfig
+tt0244970,nm0956376,Laura Zigman
+tt0244970,nm0151358,Elizabeth Chandler
+tt0245674,nm0925380,Robb White
+tt0245674,nm0139605,Neal Marshall Stevens
+tt0245674,nm0006902,Richard D'Ovidio
+tt0245674,nm0017305,Todd Alcott
+tt0245674,nm0348181,James Gunn
+tt0245844,nm0241416,Alexandre Dumas
+tt0245844,nm0938684,Jay Wolpert
+tt0246332,nm0009059,Terry Abrahamson
+tt0246405,nm0246159,Nana Dzhordzhadze
+tt0246405,nm0476993,Irakli Kvirikadze
+tt0246578,nm0446819,Richard Kelly
+tt0246772,nm0626686,Sandra Nettelbeck
+tt0247638,nm0127690,Meg Cabot
+tt0247638,nm0920859,Gina Wendkos
+tt0248654,nm0050332,Alan Ball
+tt0248654,nm1362905,Craig Wright
+tt0248654,nm1280672,Nancy Oliver
+tt0248654,nm0166498,Rick Cleveland
+tt0248654,nm0732206,Kate Robin
+tt0248654,nm1001155,Bruce Eric Kaplan
+tt0248654,nm0118420,Scott Buck
+tt0248654,nm0813561,Joey Soloway
+tt0248654,nm0028982,Laurence Andries
+tt0248654,nm0995597,Christian Taylor
+tt0248654,nm0003994,Christian Williams
+tt0248654,nm1720532,Johnny Otto
+tt0248654,nm10551634,Tim Williams
+tt0249478,nm0171474,Lewis Colick
+tt0249478,nm0173539,William S. Comanor
+tt0249478,nm0238470,Gary Drucker
+tt0250247,nm1089922,Josef Hais-Týnecký
+tt0250247,nm0695654,Premysl Prazský
+tt0250292,nm0348640,Andrew Gurland
+tt0250431,nm0413519,Felix Jackson
+tt0250431,nm0467396,Henry Koster
+tt0250797,nm0001031,Claude Chabrol
+tt0250797,nm0765091,Alvin Sargent
+tt0250797,nm0115310,William Broyles Jr.
+tt0251075,nm0415979,Don Jakoby
+tt0251075,nm0224601,David Diamond
+tt0251075,nm0919289,David Weissman
+tt0251127,nm0018630,Michele Alexander
+tt0251127,nm0519009,Jeannie Long
+tt0251127,nm0118649,Kristen Buckley
+tt0251127,nm0716391,Brian Regan
+tt0251127,nm0824882,Burr Steers
+tt0251160,nm0444006,James Kearns
+tt0252076,nm0000455,John Hughes
+tt0252076,nm0905458,Kevin Wade
+tt0252866,nm0381221,Adam Herz
+tt0252866,nm0825738,David H. Steinberg
+tt0253867,nm0683726,Nancy M. Pimental
+tt0256380,nm1765923,Sean Moynihan
+tt0256380,nm0268380,Peter Farrelly
+tt0256380,nm0125803,Bobby Farrelly
+tt0256415,nm0248248,Douglas J. Eboch
+tt0256415,nm0184947,C. Jay Cox
+tt0257076,nm0358842,Robert Hamner
+tt0257076,nm0593856,Ron Mita
+tt0257076,nm0572151,Jim McClain
+tt0257076,nm0043742,David Ayer
+tt0257076,nm0571346,David McKenna
+tt0257106,nm0915465,Shawn Wayans
+tt0257106,nm0005541,Marlon Wayans
+tt0257106,nm0424688,Buddy Johnson
+tt0257106,nm0064556,Phil Beauman
+tt0257106,nm0294997,Jason Friedberg
+tt0257106,nm0783536,Aaron Seltzer
+tt0257106,nm1010379,Alyson Fouse
+tt0257106,nm0333240,Greg Grabianski
+tt0257106,nm0689844,Dave Polsky
+tt0257106,nm0811360,Michael Anthony Snowden
+tt0257106,nm0915460,Craig Wayans
+tt0258000,nm0462895,David Koepp
+tt0258153,nm0629272,Andrew Niccol
+tt0258967,nm0614050,Christopher Murphey
+tt0258967,nm0854185,Miguel Tejada-Flores
+tt0258967,nm0931662,Scott Williams
+tt0259153,nm0000175,Stephen King
+tt0259446,nm0889522,Nia Vardalos
+tt0261392,nm0003620,Kevin Smith
+tt0261983,nm0026442,Brad Anderson
+tt0261983,nm0315342,Stephen Gevedon
+tt0262934,nm0628709,Vítezslav Nezval
+tt0262934,nm0532561,Gustav Machatý
+tt0263488,nm0759207,Victor Salva
+tt0263757,nm0196932,Julie Margaret Hogben
+tt0263757,nm0644806,Mo Ogrodnik
+tt0263757,nm0203183,Lisa Davidowitz
+tt0263757,nm0414324,Allison Jacobs
+tt0264689,nm0752783,Paul F. Ryan
+tt0264935,nm0311024,Tony Gayton
+tt0265010,nm0205157,Michael Davis
+tt0265029,nm0000345,Billy Crystal
+tt0265029,nm0865847,Peter Tolan
+tt0265208,nm0905858,David Wagner
+tt0265208,nm0325166,Brent Goldberg
+tt0265208,nm0089742,Stuart Blumberg
+tt0265298,nm0773759,Dan Schneider
+tt0265298,nm0005367,Brian Robbins
+tt0265930,nm0610831,Gabriele Muccino
+tt0266697,nm0000233,Quentin Tarantino
+tt0266697,nm0000235,Uma Thurman
+tt0266747,nm0397411,Paul Rudnick
+tt0270980,nm0233563,David Dorfman
+tt0272338,nm0000759,Paul Thomas Anderson
+tt0273689,nm0750000,Mogens Rukov
+tt0273689,nm0899121,Thomas Vinterberg
+tt0273923,nm0925234,Mike White
+tt0274546,nm0000850,Clive Barker
+tt0274546,nm0243463,Carl V. Dupré
+tt0274546,nm0206609,Tim Day
+tt0274558,nm1259728,Michael Cunningham
+tt0274558,nm0002376,David Hare
+tt0276919,nm0001885,Lars von Trier
+tt0277371,nm0070500,Mike Bender
+tt0277371,nm0258418,Adam Jay Epstein
+tt0277371,nm0414795,Andrew Jacobson
+tt0277371,nm0064556,Phil Beauman
+tt0277371,nm0424688,Buddy Johnson
+tt0278435,nm0443582,Nicholas Kazan
+tt0279778,nm0920385,Rebecca Wells
+tt0279778,nm0029125,Mark Andrus
+tt0279778,nm0451884,Callie Khouri
+tt0280720,nm0414117,Tracey Jackson
+tt0281358,nm0817023,Nicholas Sparks
+tt0281358,nm0418321,Karen Janszen
+tt0282209,nm0004591,John Fasano
+tt0282209,nm0888743,James Vanderbilt
+tt0282209,nm0364899,Joe Harris
+tt0282593,nm0690053,Eric Pomerance
+tt0283026,nm0092035,Charles F. Bohl
+tt0283026,nm1152459,Phillip Schneider
+tt0283084,nm0044810,Natalie Babbitt
+tt0283084,nm0509340,Jeffrey Lieber
+tt0283084,nm0366337,James V. Hart
+tt0283111,nm0325166,Brent Goldberg
+tt0283111,nm0905858,David Wagner
+tt0283139,nm1433521,Janet Fitch
+tt0283139,nm0232858,Mary Agnes Donoghue
+tt0283530,nm0133982,Ethan Canin
+tt0283530,nm0866063,Neil Tolkin
+tt0283900,nm0458251,Cédric Klapisch
+tt0285531,nm0000175,Stephen King
+tt0285531,nm0001279,William Goldman
+tt0285531,nm0001410,Lawrence Kasdan
+tt0285742,nm0995906,Milo Addica
+tt0285742,nm0737993,Will Rokos
+tt0285879,nm0996424,David Bakalar
+tt0285879,nm0997145,Jim Jermanok
+tt0285879,nm0997146,Steve Jermanok
+tt0286751,nm0475905,Kiyoshi Kurosawa
+tt0286788,nm0392942,William Douglas-Home
+tt0286788,nm0081081,Jenny Bicks
+tt0286788,nm0151358,Elizabeth Chandler
+tt0288477,nm0360144,Mark Hanlon
+tt0288477,nm0688282,John Pogue
+tt0289043,nm0307497,Alex Garland
+tt0289765,nm0365383,Thomas Harris
+tt0289765,nm0848217,Ted Tally
+tt0289879,nm0344259,J. Mackye Gruber
+tt0289879,nm0107774,Eric Bress
+tt0292506,nm0870013,Roger Towne
+tt0292506,nm0934483,Kurt Wimmer
+tt0292506,nm0322248,Mitch Glazer
+tt0292644,nm0254735,Bret Easton Ellis
+tt0292644,nm0000812,Roger Avary
+tt0293116,nm0859985,Christopher Thompson
+tt0293116,nm0860019,Danièle Thompson
+tt0293508,nm0503693,Gaston Leroux
+tt0293508,nm0515908,Andrew Lloyd Webber
+tt0293508,nm0001708,Joel Schumacher
+tt0295289,nm0322839,Greg Glienna
+tt0295289,nm1046710,Pete Schwaba
+tt0295289,nm0850696,Matt Tarses
+tt0295289,nm0943035,Bill Wrubel
+tt0295700,nm0568416,Alan B. McElroy
+tt0297037,nm0254288,Michael Elliot
+tt0297037,nm0266622,Rick Famuyiwa
+tt0298130,nm0472567,Ehren Kruger
+tt0298130,nm0840626,Kôji Suzuki
+tt0298130,nm0847126,Hiroshi Takahashi
+tt0298296,nm0203246,Boaz Davidson
+tt0298296,nm0026829,Jace Anderson
+tt0298296,nm0317368,Adam Gierasch
+tt0301357,nm1319382,Bernd Lichtenberg
+tt0301357,nm0065615,Wolfgang Becker
+tt0301357,nm0902022,Achim von Borries
+tt0301357,nm0359634,Henk Handloegten
+tt0301357,nm1557910,Chris Silber
+tt0301470,nm0759207,Victor Salva
+tt0302297,nm0825738,David H. Steinberg
+tt0302640,nm0103744,Tom Brady
+tt0302640,nm0001705,Rob Schneider
+tt0303361,nm1031246,Lucky McKee
+tt0304415,nm0465199,Lawrence Konner
+tt0304415,nm0742797,Mark Rosenthal
+tt0304711,nm0001338,Brian Helgeland
+tt0305224,nm0233563,David Dorfman
+tt0305669,nm0276821,Jason Filardi
+tt0305711,nm0363958,Sam Harper
+tt0306047,nm0563301,Craig Mazin
+tt0306047,nm0698493,Pat Proft
+tt0306047,nm0915465,Shawn Wayans
+tt0306047,nm0005541,Marlon Wayans
+tt0306047,nm0424688,Buddy Johnson
+tt0306047,nm0064556,Phil Beauman
+tt0306047,nm0294997,Jason Friedberg
+tt0306047,nm0783536,Aaron Seltzer
+tt0308152,nm1125131,Jean-Baptiste Andrea
+tt0308152,nm1125458,Fabrice Canepa
+tt0308506,nm0254288,Michael Elliot
+tt0308506,nm0595623,Jordan Moffet
+tt0309530,nm0013996,Eve Ahlert
+tt0309530,nm0236881,Dennis Drake
+tt0309593,nm0344259,J. Mackye Gruber
+tt0309593,nm0107774,Eric Bress
+tt0309593,nm0714695,Jeffrey Reddick
+tt0309698,nm0177769,Michael Cooney
+tt0310357,nm0604688,Glen Morgan
+tt0310357,nm0707804,Gilbert Ralston
+tt0310357,nm4781842,Stephen Gilbert
+tt0310775,nm1155681,Jong-yong Lee
+tt0310775,nm1136985,Jae-sun Lee
+tt0310775,nm0497929,Mu-yeong Lee
+tt0310775,nm0661791,Park Chan-wook
+tt0310775,nm5371819,Park Myeong-chan
+tt0313196,nm0508200,Vicente Leñero
+tt0313196,nm0211055,Eça de Queirós
+tt0313443,nm1152581,Dave Collard
+tt0313542,nm0001300,John Grisham
+tt0313542,nm0002718,Brian Koppelman
+tt0313542,nm0505522,David Levien
+tt0313542,nm0166498,Rick Cleveland
+tt0313542,nm0152466,Matthew Chapman
+tt0313737,nm0492909,Marc Lawrence
+tt0314331,nm0193485,Richard Curtis
+tt0314412,nm0170043,Isabel Coixet
+tt0314412,nm1563090,Nanci Kincaid
+tt0314431,nm0379179,Mark Herman
+tt0314431,nm0916047,Charles Webb
+tt0314498,nm0405190,Marc Hyman
+tt0314498,nm0951686,Jon Zack
+tt0314498,nm0777043,Mark Schwahn
+tt0314786,nm0000921,Andrew Bergman
+tt0314786,nm0560894,Nat Mauldin
+tt0314786,nm0004412,Ed Solomon
+tt0315327,nm0466175,Steve Koren
+tt0315327,nm0641479,Mark O'Keefe
+tt0315327,nm0644203,Steve Oedekerk
+tt0315983,nm1164318,Andre Dubus III
+tt0315983,nm1166926,Vadim Perelman
+tt0315983,nm1171067,Shawn Lawrence Otto
+tt0317248,nm1130251,Bráulio Mantovani
+tt0317248,nm0513130,Paulo Lins
+tt0317303,nm0734900,Geoff Rodkey
+tt0317740,nm0448392,Troy Kennedy Martin
+tt0317740,nm0694526,Donna Powers
+tt0317740,nm0694638,Wayne Powers
+tt0318283,nm0505230,Jeremy Leven
+tt0319970,nm0298188,Bryan Fuller
+tt0319970,nm0000175,Stephen King
+tt0322330,nm0734742,Mary Rodgers
+tt0322330,nm0352320,Heather Hach
+tt0322330,nm0228908,Leslie Dixon
+tt0323033,nm0112459,Aline Brosh McKenna
+tt0323033,nm0363326,Robert Harling
+tt0323571,nm1168394,Jesse Warn
+tt0325703,nm1212988,Dean Georgaris
+tt0325703,nm0211823,Steven E. de Souza
+tt0325703,nm0366337,James V. Hart
+tt0325733,nm0902022,Achim von Borries
+tt0325733,nm0359634,Henk Handloegten
+tt0325733,nm1259708,Annette Hess
+tt0325733,nm1210547,Alexander Pfeuffer
+tt0325733,nm13159066,Arno Meyer zu Künigdorf
+tt0327162,nm0505615,Ira Levin
+tt0327162,nm0397411,Paul Rudnick
+tt0327679,nm0185934,Laurie Craig
+tt0327679,nm0527581,Karen McCullah
+tt0327679,nm0809006,Kirsten Smith
+tt0327679,nm0372659,Jennifer Heath
+tt0327679,nm0938293,Michele J. Wolff
+tt0327679,nm1217079,Gail Carson Levine
+tt0328107,nm0704031,A.J. Quinnell
+tt0328107,nm0001338,Brian Helgeland
+tt0328538,nm0362566,Catherine Hardwicke
+tt0328538,nm1223023,Nikki Reed
+tt0328589,nm1217227,Frances Mayes
+tt0328589,nm0920108,Audrey Wells
+tt0329101,nm0000127,Wes Craven
+tt0329101,nm0566699,Victor Miller
+tt0329101,nm1226735,Damian Shannon
+tt0329101,nm1226737,Mark Swift
+tt0329913,nm0577334,Lisa Melamed
+tt0330243,nm0467666,Marek Koterski
+tt0330793,nm0378144,Jonathan Hensleigh
+tt0330793,nm0289833,Michael France
+tt0332280,nm0505230,Jeremy Leven
+tt0332280,nm0764982,Jan Sardi
+tt0332280,nm0817023,Nicholas Sparks
+tt0332375,nm0200380,Brian Dannelly
+tt0332375,nm1247295,Michael Urban
+tt0332379,nm0925234,Mike White
+tt0333766,nm0103785,Zach Braff
+tt0335119,nm1256768,Tracy Chevalier
+tt0335119,nm0381757,Olivia Hetreed
+tt0335266,nm0001068,Sofia Coppola
+tt0337563,nm0326092,Josh Goldsmith
+tt0337563,nm0951135,Cathy Yuspa
+tt0337636,nm0000850,Clive Barker
+tt0337636,nm0139605,Neal Marshall Stevens
+tt0337636,nm0206609,Tim Day
+tt0337697,nm0024909,Mark Amin
+tt0337697,nm0297545,Katherine Fugate
+tt0337697,nm0024856,Jack Amiel
+tt0337697,nm0066764,Michael Begler
+tt0337741,nm0583600,Nancy Meyers
+tt0337876,nm0140643,Jean-Claude Carrière
+tt0337876,nm0995906,Milo Addica
+tt0337876,nm0322242,Jonathan Glazer
+tt0337921,nm0169540,Larry Cohen
+tt0337921,nm0604555,Chris Morgan
+tt0338013,nm0442109,Charlie Kaufman
+tt0338013,nm0327273,Michel Gondry
+tt0338013,nm1410028,Pierre Bismuth
+tt0338133,nm1269479,Mark Milgard
+tt0338133,nm0932133,Robbie C. Williamson
+tt0338133,nm0614646,Richard Murphy
+tt0338309,nm0347188,Jan Guillou
+tt0338309,nm0405632,Mikael Håfström
+tt0338309,nm1076710,Hans Gunnarsson
+tt0338309,nm0960161,Klas Östergren
+tt0339135,nm0899328,Eric James Virgets
+tt0339135,nm0991253,Jorge Alvarez
+tt0339135,nm0023260,George Alvarez
+tt0340331,nm0434864,Jonathan Kahn
+tt0343135,nm0357453,John Hamburg
+tt0343660,nm1286500,George Wing
+tt0344011,nm0036272,Morten Arnfred
+tt0345591,nm1268985,Cindy Kelley
+tt0345591,nm0484901,Michael Landon Jr.
+tt0345591,nm1031745,Janette Oke
+tt0346491,nm0000231,Oliver Stone
+tt0346491,nm0477370,Christopher Kyle
+tt0346491,nm0436164,Laeta Kalogridis
+tt0348836,nm0349406,Sebastian Gutierrez
+tt0349205,nm0318326,Frank B. Gilbreth Jr.
+tt0349205,nm0136950,Ernestine Gilbreth Carey
+tt0349205,nm0864471,Craig Titley
+tt0349205,nm0363958,Sam Harper
+tt0349205,nm0169505,Joel Cohen
+tt0349205,nm0812513,Alec Sokolow
+tt0349903,nm1079776,George Nolfi
+tt0349903,nm0425138,George Clayton Johnson
+tt0349903,nm0751207,Jack Golden Russell
+tt0350028,nm0166767,Patrick J. Clifton
+tt0350028,nm1621084,Beth Rigazio
+tt0350028,nm0024856,Jack Amiel
+tt0350028,nm0066764,Michael Begler
+tt0351283,nm0123666,Mark Burton
+tt0351283,nm1129905,Billy Frolick
+tt0351283,nm0201509,Eric Darnell
+tt0351283,nm0569891,Tom McGrath
+tt0353489,nm0910550,Karen Walton
+tt0353489,nm1325872,Megan Martin
+tt0354502,nm1326653,Matthew J. Coombs
+tt0354502,nm1328019,Jamie Rowland
+tt0354502,nm1315826,James Shanks
+tt0354623,nm0000850,Clive Barker
+tt0354623,nm0812373,Joel Soisson
+tt0354623,nm0243463,Carl V. Dupré
+tt0355954,nm0308376,Mick Garris
+tt0355954,nm0000175,Stephen King
+tt0355987,nm0276823,Peter Filardi
+tt0355987,nm0000175,Stephen King
+tt0356150,nm0073688,Alec Berg
+tt0356150,nm0541635,David Mandel
+tt0356150,nm0769840,Jeff Schaffer
+tt0356470,nm1354901,Leigh Dunlap
+tt0356618,nm0224187,Gerald Di Pego
+tt0356680,nm0080120,Thomas Bezucha
+tt0357110,nm0589182,Rebecca Miller
+tt0358135,nm0839397,Masayuki Suô
+tt0358135,nm0920108,Audrey Wells
+tt0360139,nm0346938,Derek Guiley
+tt0360139,nm1447604,David Schneiderman
+tt0360201,nm0111845,Adam Brooks
+tt0360201,nm0280814,Jennifer Flackett
+tt0360201,nm0505662,Mark Levin
+tt0360486,nm1393443,Jamie Delano
+tt0360486,nm1212017,Garth Ennis
+tt0360486,nm0110778,Kevin Brodbin
+tt0360486,nm0135141,Frank A. Cappello
+tt0361217,nm0614682,Ryan Murphy
+tt0361217,nm1004299,Brad Falchuk
+tt0361217,nm0338115,Lynnie Greene
+tt0361217,nm0505934,Richard Levine
+tt0361217,nm0759022,Jennifer Salt
+tt0361217,nm0413005,Sean Jablonski
+tt0361217,nm0157656,Hank Chilton
+tt0361217,nm2064869,Dell Chandler
+tt0361467,nm1358381,Dyan Sheldon
+tt0361467,nm0661275,Gail Parent
+tt0361620,nm0070566,Jessica Bendinger
+tt0361620,nm0005278,Jerry O'Connell
+tt0361620,nm1009988,Kate Kondell
+tt0361696,nm1112597,Mitch Rotter
+tt0361696,nm1368026,Sam Schreiber
+tt0361841,nm0141812,Melissa Carter
+tt0361841,nm0068183,Elisa Bell
+tt0362120,nm0563301,Craig Mazin
+tt0362120,nm0000720,Jim Abrahams
+tt0362120,nm0698493,Pat Proft
+tt0362120,nm0915465,Shawn Wayans
+tt0362120,nm0005541,Marlon Wayans
+tt0362120,nm0424688,Buddy Johnson
+tt0362120,nm0064556,Phil Beauman
+tt0362120,nm0294997,Jason Friedberg
+tt0362120,nm0783536,Aaron Seltzer
+tt0362165,nm1141749,Lance Khazei
+tt0362478,nm0446819,Richard Kelly
+tt0362478,nm0558577,Richard Matheson
+tt0362511,nm1352459,Pat Casey
+tt0362511,nm1351254,Josh Miller
+tt0363504,nm0882867,Rodney Patrick Vaccaro
+tt0363988,nm0000175,Stephen King
+tt0363988,nm0462895,David Koepp
+tt0364045,nm1373865,Michael Pye
+tt0364045,nm0092578,Jon Bokenkamp
+tt0364517,nm1077168,Yann Samuell
+tt0364569,nm1628380,Garon Tsuchiya
+tt0364569,nm2057405,Nobuaki Minegishi
+tt0364569,nm0661791,Park Chan-wook
+tt0364569,nm1369364,Jo-yun Hwang
+tt0364569,nm1367409,Joon-hyung Lim
+tt0364725,nm1098493,Rawson Marshall Thurber
+tt0365265,nm0251569,Christina Ray
+tt0365265,nm1351157,Stephen Massicotte
+tt0365376,nm0453518,Kim Jee-woon
+tt0365480,nm0001728,Wallace Shawn
+tt0365480,nm0129085,Tom Cairns
+tt0365545,nm0111845,Adam Brooks
+tt0365545,nm0697656,Gina Prince-Bythewood
+tt0365545,nm1946260,Trisha R. Thomas
+tt0366551,nm1375358,Jon Hurwitz
+tt0366551,nm1376383,Hayden Schlossberg
+tt0366627,nm1789514,Tom Bleecker
+tt0366627,nm0733692,Marc Rocco
+tt0366627,nm1127653,Massy Tadjedin
+tt0367478,nm0205169,Mick Davis
+tt0367478,nm1531607,Laurent Fellous
+tt0367478,nm0358006,Kristina Hamilton-Grobler
+tt0367478,nm0553662,Philippe Martinez
+tt0367594,nm0001094,Roald Dahl
+tt0367594,nm0041864,John August
+tt0368447,nm0796117,M. Night Shyamalan
+tt0368563,nm0678104,Michael Petroni
+tt0368563,nm0126500,Won-mi Byun
+tt0368563,nm1236649,Min-ho Song
+tt0368563,nm1030706,Jae-young Kwak
+tt0368933,nm0127690,Meg Cabot
+tt0368933,nm0920859,Gina Wendkos
+tt0368933,nm0722274,Shonda Rhimes
+tt0368975,nm0068183,Elisa Bell
+tt0369339,nm0064181,Stuart Beattie
+tt0369436,nm0020820,Matt Allen
+tt0369436,nm0933128,Caleb Wilson
+tt0369436,nm0524190,Jon Lucas
+tt0369436,nm0601859,Scott Moore
+tt0369441,nm0031976,Judd Apatow
+tt0369441,nm0831557,Nicholas Stoller
+tt0369441,nm0301416,Gerald Gaiser
+tt0369441,nm0318429,David Giler
+tt0369441,nm0069547,Jerry Belson
+tt0369441,nm0725006,Mordecai Richler
+tt0369735,nm0462525,Anya Kochoff
+tt0370904,nm0056337,Jessica Barondes
+tt0371190,nm1394892,Melissa Senate
+tt0371190,nm0493018,Sheila Lawrence
+tt0371246,nm0000985,James L. Brooks
+tt0372237,nm0741740,William Rose
+tt0372237,nm0740115,David Ronn
+tt0372237,nm0771065,Jay Scherick
+tt0372237,nm0865847,Peter Tolan
+tt0372532,nm1814871,Elizabeth Young
+tt0372532,nm1401416,Dana Fox
+tt0373469,nm0356539,Brett Halliday
+tt0373469,nm0000948,Shane Black
+tt0373968,nm0122335,Allison Burnett
+tt0375063,nm0681914,Rex Pickett
+tt0375063,nm0668247,Alexander Payne
+tt0375063,nm0852591,Jim Taylor
+tt0375173,nm0622540,Bill Naughton
+tt0375173,nm0691114,Elaine Pope
+tt0375173,nm0796124,Charles Shyer
+tt0375210,nm0425894,Niall Johnson
+tt0375679,nm0353673,Paul Haggis
+tt0375679,nm0604263,Bobby Moresco
+tt0376136,nm0732430,Bruce Robinson
+tt0376136,nm0860219,Hunter S. Thompson
+tt0376541,nm0544999,Patrick Marber
+tt0377084,nm0516810,William J. Locke
+tt0377084,nm0001097,Charles Dance
+tt0377092,nm1577281,Rosalind Wiseman
+tt0377092,nm0275486,Tina Fey
+tt0377109,nm0472567,Ehren Kruger
+tt0377109,nm0840626,Kôji Suzuki
+tt0377109,nm0847126,Hiroshi Takahashi
+tt0378194,nm0000233,Quentin Tarantino
+tt0378194,nm0000235,Uma Thurman
+tt0380366,nm0491956,Paul Laverty
+tt0380510,nm0909638,Fran Walsh
+tt0380510,nm0101991,Philippa Boyens
+tt0380510,nm0001392,Peter Jackson
+tt0380510,nm1451254,Alice Sebold
+tt0380623,nm1444139,Michael McQuown
+tt0380623,nm1449113,Heather Robinson
+tt0380623,nm0868282,Katie Torpey
+tt0380623,nm0920859,Gina Wendkos
+tt0381681,nm0000500,Richard Linklater
+tt0381681,nm0000365,Julie Delpy
+tt0381681,nm0000160,Ethan Hawke
+tt0381681,nm0471811,Kim Krizan
+tt0381707,nm0005540,Keenen Ivory Wayans
+tt0381707,nm0915465,Shawn Wayans
+tt0381707,nm0005541,Marlon Wayans
+tt0381707,nm0568377,Andrew McElfresh
+tt0381707,nm0811360,Michael Anthony Snowden
+tt0381707,nm0177348,Xavier Cook
+tt0381966,nm1247462,Christopher Smith
+tt0382286,nm0593480,Judith Paige Mitchell
+tt0383216,nm0089676,Len Blum
+tt0383216,nm0000188,Steve Martin
+tt0383216,nm0759167,Michael Saltzman
+tt0383216,nm0725009,Maurice Richlin
+tt0383216,nm0001175,Blake Edwards
+tt0383534,nm1011326,David Hubbard
+tt0384537,nm0000812,Roger Avary
+tt0386588,nm1358355,Kevin Bisch
+tt0387131,nm0128997,Jeffrey Caine
+tt0387131,nm0494170,John le Carré
+tt0387514,nm0950226,Ben Younger
+tt0387564,nm1191481,Leigh Whannell
+tt0387564,nm1490123,James Wan
+tt0387575,nm0238841,Don Mancini
+tt0387877,nm0295264,Josh Friedman
+tt0387877,nm0255278,James Ellroy
+tt0388213,nm1110844,Hannah Shakespeare
+tt0388213,nm1497251,Victoria Redel
+tt0388500,nm0402804,Elizabeth Hunter
+tt0388500,nm0486824,Kate Lanier
+tt0388500,nm0888491,Norman Vance Jr.
+tt0388795,nm0698925,Annie Proulx
+tt0388795,nm0573505,Larry McMurtry
+tt0388795,nm0652223,Diana Ossana
+tt0389860,nm0466175,Steve Koren
+tt0389860,nm0641479,Mark O'Keefe
+tt0390221,nm0551358,Joshua Marston
+tt0391198,nm0839812,Stephen Susco
+tt0391198,nm1234345,Takashi Shimizu
+tt0391304,nm0528260,Colin Patrick Lynch
+tt0391726,nm1104115,Flávio de Souza
+tt0391728,nm0437597,Justin Kanew
+tt0395169,nm0669311,Keir Pearson
+tt0395169,nm0313623,Terry George
+tt0395495,nm0335666,Susannah Grant
+tt0396652,nm0127690,Meg Cabot
+tt0396652,nm0204678,Hadley Davis
+tt0396734,nm1487550,Connie Milton
+tt0396752,nm0000668,Emma Thompson
+tt0396752,nm0104447,Christianna Brand
+tt0397078,nm0454783,I. Marlene King
+tt0397078,nm0364423,Amy Harris
+tt0397078,nm0077080,Jonathan Bernstein
+tt0397078,nm0085933,Mark Blackwell
+tt0397078,nm0007079,James Greer
+tt0397101,nm0472567,Ehren Kruger
+tt0401085,nm0885249,Jean-Marc Vallée
+tt0401085,nm1583617,François Boulay
+tt0401383,nm0367838,Ronald Harwood
+tt0401383,nm1568285,Jean-Dominique Bauby
+tt0402022,nm0006534,Phil Hay
+tt0402022,nm0542062,Matt Manfredi
+tt0402022,nm0161285,Peter Chung
+tt0402910,nm0317638,Tony Giglio
+tt0403237,nm0498291,Steven A. Lee
+tt0403237,nm1752582,Kevin Lawrence King
+tt0403237,nm1738747,Natalie Prado
+tt0403508,nm1569351,Ann Brashares
+tt0403508,nm0258286,Delia Ephron
+tt0403508,nm0151358,Elizabeth Chandler
+tt0403702,nm1122978,Gustin Nash
+tt0403702,nm0668276,C.D. Payne
+tt0404032,nm0090199,Paul Harris Boardman
+tt0404032,nm0220600,Scott Derrickson
+tt0404203,nm0276062,Todd Field
+tt0404203,nm0674909,Tom Perrotta
+tt0404254,nm0505741,Victor Levin
+tt0404254,nm1030706,Jae-young Kwak
+tt0404254,nm1030519,Ho-sik Kim
+tt0404978,nm0001054,Joel Coen
+tt0404978,nm0001053,Ethan Coen
+tt0404978,nm0140987,Sidney Carroll
+tt0405296,nm0001140,Philip K. Dick
+tt0405296,nm0000500,Richard Linklater
+tt0405422,nm0031976,Judd Apatow
+tt0405422,nm0136797,Steve Carell
+tt0407998,nm0149446,Gurinder Chadha
+tt0407998,nm0074488,Paul Mayeda Berges
+tt0407998,nm2117209,Chitra Banerjee Divakaruni
+tt0408790,nm1618225,Peter A. Dowling
+tt0408790,nm0712753,Billy Ray
+tt0408839,nm0035905,Scot Armstrong
+tt0408839,nm0228908,Leslie Dixon
+tt0408839,nm0125803,Bobby Farrelly
+tt0408839,nm0268380,Peter Farrelly
+tt0408839,nm0055937,Kevin Barnett
+tt0408839,nm0295171,Bruce Jay Friedman
+tt0408839,nm0800319,Neil Simon
+tt0408927,nm1600822,Bernard Jeanjean
+tt0408985,nm0696949,Jeffrey Price
+tt0408985,nm0780620,Peter S. Seaman
+tt0408985,nm0697362,J.B. Priestley
+tt0409011,nm0486405,Stephen Langford
+tt0409182,nm0698873,Mark Protosevich
+tt0409182,nm0302904,Paul Gallico
+tt0409184,nm0458251,Cédric Klapisch
+tt0410297,nm1430632,David Auburn
+tt0410297,nm0453442,Eun-Jeong Kim
+tt0410297,nm1022446,Ji Na Yeo
+tt0412028,nm0353964,Rochus Hahn
+tt0412028,nm0770120,Natalie Scharf
+tt0412922,nm0280814,Jennifer Flackett
+tt0413099,nm0466175,Steve Koren
+tt0413099,nm0641479,Mark O'Keefe
+tt0413099,nm0644203,Steve Oedekerk
+tt0413099,nm0169505,Joel Cohen
+tt0413099,nm0812513,Alec Sokolow
+tt0413879,nm1017117,Tassie Cameron
+tt0414387,nm0595738,Deborah Moggach
+tt0414387,nm0000807,Jane Austen
+tt0414387,nm0000668,Emma Thompson
+tt0414982,nm0604688,Glen Morgan
+tt0414982,nm0939128,James Wong
+tt0414982,nm0714695,Jeffrey Reddick
+tt0414993,nm0004716,Darren Aronofsky
+tt0414993,nm0359504,Ari Handel
+tt0415965,nm0060106,Seth Bass
+tt0415965,nm0866038,Jonathan Tolins
+tt0415965,nm0314775,David Gerrold
+tt0416320,nm0000095,Woody Allen
+tt0416449,nm0811583,Zack Snyder
+tt0416449,nm0426500,Kurt Johnstad
+tt0416449,nm1290582,Michael B. Gordon
+tt0416449,nm0588340,Frank Miller
+tt0416449,nm2241067,Lynn Varley
+tt0417001,nm1654465,Claire Cook
+tt0417001,nm0325204,Gary David Goldberg
+tt0419706,nm1709264,Dave Callaham
+tt0419706,nm0834338,Wesley Strick
+tt0420223,nm1590998,Zach Helm
+tt0420509,nm0081433,Fabián Bielinsky
+tt0420509,nm3381175,Pablo De Santis
+tt0420683,nm1757249,Cara Lockwood
+tt0420683,nm0153338,Eric C. Charmelo
+tt0420683,nm1709372,Nicole Snyder
+tt0421715,nm0744839,Eric Roth
+tt0421715,nm0842523,Robin Swicord
+tt0421715,nm0280234,F. Scott Fitzgerald
+tt0422272,nm0049371,Jaume Balagueró
+tt0422272,nm0301788,Jordi Galceran
+tt0423866,nm1104118,Kim Ki-duk
+tt0424136,nm0625198,Brian Nelson
+tt0424880,nm1729294,Luke Davies
+tt0424880,nm0035462,Neil Armfield
+tt0425123,nm0865847,Peter Tolan
+tt0425123,nm0228908,Leslie Dixon
+tt0425123,nm1344075,Marc Lévy
+tt0425326,nm1286500,George Wing
+tt0425326,nm0420112,John Jeffcoat
+tt0425482,nm1341986,Ina Bruhn
+tt0426553,nm0881628,Jens Urban
+tt0427229,nm0040022,Tom J. Astle
+tt0427229,nm0256079,Matt Ember
+tt0429591,nm1735367,John Quaintance
+tt0429591,nm0070566,Jessica Bendinger
+tt0429591,nm0388805,Alice Hoffman
+tt0430105,nm0254213,David Elliot
+tt0430105,nm1749087,Paul Lovett
+tt0430770,nm0257606,Diane English
+tt0430770,nm0524403,Clare Boothe Luce
+tt0430770,nm0002616,Anita Loos
+tt0430770,nm0613848,Jane Murfin
+tt0431308,nm0481418,Richard LaGravenese
+tt0431308,nm0737216,Steven Rogers
+tt0431308,nm1754499,Cecelia Ahern
+tt0432348,nm1191481,Leigh Whannell
+tt0432348,nm1135423,Darren Lynn Bousman
+tt0433386,nm0839812,Stephen Susco
+tt0433386,nm1234345,Takashi Shimizu
+tt0433400,nm0204129,Adam 'Tex' Davis
+tt0433412,nm1735367,John Quaintance
+tt0433412,nm1890301,Jessica O'Toole
+tt0433412,nm1898779,Amy Rardin
+tt0433562,nm0321167,Richard Gitelson
+tt0434409,nm0905152,Lilly Wachowski
+tt0434409,nm0905154,Lana Wachowski
+tt0434409,nm2331222,David Lloyd
+tt0434424,nm1922703,John Galt
+tt0438315,nm0076791,Kevin Bernhardt
+tt0438315,nm1825212,Dan Millman
+tt0440803,nm1059740,Parkpoom Wongpoom
+tt0440803,nm1802294,Banjong Pisanthanakun
+tt0440803,nm1637163,Sophon Sakdaphisit
+tt0443295,nm0120816,Ron Burch
+tt0443295,nm0452235,David Kidd
+tt0443295,nm0789520,Melville Shavelson
+tt0443295,nm0480048,Mort Lachman
+tt0443295,nm0205070,Madelyn Davis
+tt0443295,nm0140717,Bob Carroll Jr.
+tt0443465,nm0060103,Ron Bass
+tt0443465,nm2267102,Jen Smolka
+tt0443465,nm1281191,Chris Shafer
+tt0443465,nm1343759,Paul Vicknair
+tt0445945,nm0457736,Edward Kitsis
+tt0445945,nm0395271,Adam Horowitz
+tt0445946,nm0441859,Stephen Katz
+tt0445946,nm1847822,John Darrouzet
+tt0446744,nm0593480,Judith Paige Mitchell
+tt0448011,nm0669379,Ryne Douglas Pearson
+tt0448011,nm1340000,Juliet Snowden
+tt0448011,nm0925482,Stiles White
+tt0448157,nm1378206,Vy Vincent Ngo
+tt0448157,nm0319213,Vince Gilligan
+tt0449059,nm1578335,Michael Arndt
+tt0449851,nm0891554,Francis Veber
+tt0450188,nm2517835,Isabelle Sobelman
+tt0450188,nm0196860,Olivier Dahan
+tt0450232,nm0921013,Richard Wenk
+tt0450259,nm0495378,Charles Leavitt
+tt0450259,nm2057149,C. Gaby Mitchell
+tt0450278,nm0744834,Eli Roth
+tt0450385,nm0338557,Matt Greenberg
+tt0450385,nm0018735,Scott Alexander
+tt0450385,nm0438989,Larry Karaszewski
+tt0450385,nm0000175,Stephen King
+tt0451094,nm1941029,Chung Seo-kyung
+tt0451094,nm0661791,Park Chan-wook
+tt0451094,nm5371819,Park Myeong-chan
+tt0452594,nm1275670,Jeremy Garelick
+tt0452594,nm1191891,Jay Lavender
+tt0452594,nm0000681,Vince Vaughn
+tt0452625,nm0831457,Josh Stolberg
+tt0452625,nm2521593,Steve Glenn
+tt0453047,nm0138759,Marcos Carnevale
+tt0453047,nm0346351,Marcela Guerty
+tt0453047,nm1272478,Lily Ann Martin
+tt0453467,nm1319490,Bill Marsilii
+tt0453467,nm0744429,Terry Rossio
+tt0454084,nm1622326,Christopher Theo
+tt0454841,nm0000127,Wes Craven
+tt0454841,nm0014960,Alexandre Aja
+tt0454841,nm0505183,Grégory Levasseur
+tt0454848,nm1897957,Russell Gewirtz
+tt0454921,nm0175726,Steve Conrad
+tt0454945,nm1894168,Ewan Leslie
+tt0454945,nm0527581,Karen McCullah
+tt0454945,nm0809006,Kirsten Smith
+tt0455760,nm1191481,Leigh Whannell
+tt0455760,nm1490123,James Wan
+tt0455944,nm0921013,Richard Wenk
+tt0455944,nm0805994,Michael Sloan
+tt0455944,nm2030456,Richard Lindheim
+tt0455967,nm0523094,Jeff Lowell
+tt0457430,nm0868219,Guillermo del Toro
+tt0457939,nm0583600,Nancy Meyers
+tt0458352,nm0112459,Aline Brosh McKenna
+tt0458352,nm1916979,Lauren Weisberger
+tt0460792,nm1906802,Eric Schlosser
+tt0460792,nm0000500,Richard Linklater
+tt0461770,nm0446210,Bill Kelly
+tt0462519,nm0680846,Todd Phillips
+tt0462519,nm0035905,Scot Armstrong
+tt0462519,nm0156320,Hal E. Chester
+tt0462519,nm0610480,Patricia Moyes
+tt0462519,nm0693355,Stephen Potter
+tt0463034,nm1942829,Michael LeSieur
+tt0465234,nm0926729,Marianne Wibberley
+tt0465234,nm0926727,Cormac Wibberley
+tt0465234,nm0201304,Gregory Poirier
+tt0465234,nm0254645,Ted Elliott
+tt0465234,nm0744429,Terry Rossio
+tt0465234,nm0467942,Jim Kouf
+tt0465234,nm0043233,Oren Aviv
+tt0465234,nm1469874,Charles Segars
+tt0465624,nm0668309,Don Payne
+tt0467406,nm1959505,Diablo Cody
+tt0468492,nm0094435,Bong Joon Ho
+tt0468492,nm1506112,Won-jun Ha
+tt0468492,nm2277597,Chul-hyun Baek
+tt0469099,nm1830797,Cathy Randall
+tt0473308,nm0791248,Adrienne Shelly
+tt0473488,nm1996918,Dito Montiel
+tt0475944,nm0136592,J.S. Cardone
+tt0476964,nm0266023,Roderick Taylor
+tt0476964,nm0852073,Bruce A. Taylor
+tt0476964,nm0607725,Cynthia Mort
+tt0477080,nm0093560,Mark Bomback
+tt0477139,nm1058247,Goran Dukic
+tt0477139,nm0449316,Etgar Keret
+tt0477348,nm0001054,Joel Coen
+tt0477348,nm0001053,Ethan Coen
+tt0477348,nm0565092,Cormac McCarthy
+tt0478087,nm0826041,Peter Steinfeld
+tt0478087,nm1615610,Allan Loeb
+tt0478087,nm0583826,Ben Mezrich
+tt0478311,nm0031976,Judd Apatow
+tt0478724,nm0149260,Alain Chabat
+tt0478724,nm2382268,Philippe Mechelen
+tt0478724,nm1016687,Laurent Tirard
+tt0478724,nm0897065,Grégoire Vigneron
+tt0478724,nm1552771,Laurent Zeitoun
+tt0479884,nm0004410,Mark Neveldine
+tt0479884,nm0962729,Brian Taylor
+tt0479952,nm1000113,Etan Cohen
+tt0479952,nm0201509,Eric Darnell
+tt0479952,nm0569891,Tom McGrath
+tt0480242,nm0307070,Pierce Gardner
+tt0480242,nm0373282,Peter Hedges
+tt0480669,nm1443023,Nacho Vigalondo
+tt0480687,nm0971919,Pete Jones
+tt0480687,nm0268380,Peter Farrelly
+tt0480687,nm0055937,Kevin Barnett
+tt0480687,nm0125803,Bobby Farrelly
+tt0480844,nm0271095,Rachel Feldman
+tt0480844,nm0620967,Susan Nanus
+tt0481141,nm0297182,Carol Fuchs
+tt0481141,nm0626686,Sandra Nettelbeck
+tt0482088,nm0759270,Pierre Salvadori
+tt0482088,nm0333818,Benoît Graffin
+tt0482527,nm0213017,Geoff Deane
+tt0482527,nm2050680,Steve Hamilton Shaw
+tt0482606,nm1052162,Bryan Bertino
+tt0484090,nm2707225,Aummaraporn Phandintong
+tt0484090,nm1802294,Banjong Pisanthanakun
+tt0484090,nm1637163,Sophon Sakdaphisit
+tt0484090,nm1059740,Parkpoom Wongpoom
+tt0486551,nm0151540,Jay Chandrasekhar
+tt0486551,nm0373571,Kevin Heffernan
+tt0486551,nm0501399,Steve Lemme
+tt0486551,nm0815418,Paul Soter
+tt0486551,nm0831479,Erik Stolhanske
+tt0486655,nm0963359,Jane Goldman
+tt0486655,nm0891216,Matthew Vaughn
+tt0486655,nm0301274,Neil Gaiman
+tt0486655,nm2679195,Charles Vess
+tt0486822,nm0484907,Christopher Landon
+tt0486822,nm0255296,Carl Ellsworth
+tt0488535,nm0591400,Cecilia Miniucchi
+tt0489237,nm2096064,Emma McLaughlin
+tt0489237,nm2096624,Nicola Kraus
+tt0489237,nm0075849,Shari Springer Berman
+tt0489237,nm0700301,Robert Pulcini
+tt0490084,nm0394212,Karen Leigh Hopkins
+tt0490084,nm0625458,Jessie Nelson
+tt0490204,nm0082802,Mike Binder
+tt0491152,nm1646565,Jennie Snyder Urman
+tt0491152,nm2808946,Emily Giffin
+tt0492473,nm0911032,Shuo Wang
+tt0492473,nm0632439,Dai Ning
+tt0492473,nm0955451,Yuan Zhang
+tt0493464,nm0104973,Michael Brandt
+tt0493464,nm0351929,Derek Haas
+tt0493464,nm0604555,Chris Morgan
+tt0493464,nm2092839,Mark Millar
+tt0493464,nm1631852,J.G. Jones
+tt0496436,nm1107639,Matt Venne
+tt0497025,nm1028026,Stephanie T. Baxendale
+tt0497030,nm0770848,Jeffrey Schenck
+tt0497030,nm0838289,Peter Sullivan
+tt0497116,nm0330722,Al Gore
+tt0497465,nm0000095,Woody Allen
+tt0498353,nm0744834,Eli Roth
+tt0498989,nm1597669,Kathrine Haugen
+tt0498989,nm1475993,Anette Winblad
+tt0499097,nm0792263,Taylor Sheridan
+tt0499097,nm1475436,Will Staples
+tt0499097,nm0002007,Tom Clancy
+tt0734604,nm0064579,Charles Beaumont
+tt0734604,nm0866634,John Tomerlin
+tt0734604,nm0785245,Rod Serling
+tt0758752,nm1017488,Charles Randolph
+tt0758752,nm0001880,Edward Zwick
+tt0758752,nm0380980,Marshall Herskovitz
+tt0758752,nm2168221,Jamie Reidy
+tt0758753,nm0715076,Markus Redmond
+tt0758758,nm0000576,Sean Penn
+tt0758758,nm1040556,Jon Krakauer
+tt0758766,nm0492909,Marc Lawrence
+tt0762105,nm0889522,Nia Vardalos
+tt0762105,nm0266104,Stephen David
+tt0762105,nm0957840,Ben Zook
+tt0762107,nm0266673,Barry Fanaro
+tt0762107,nm0668247,Alexander Payne
+tt0762107,nm0852591,Jim Taylor
+tt0762107,nm0303056,Lew Gallo
+tt0763831,nm0466175,Steve Koren
+tt0765120,nm0939182,Wong Kar-Wai
+tt0765120,nm0088747,Lawrence Block
+tt0765447,nm0591612,Susan Minot
+tt0765447,nm1259728,Michael Cunningham
+tt0770703,nm1271341,Karyn Bosnak
+tt0770703,nm1000302,Gabrielle Allan
+tt0770703,nm0188243,Jennifer Crittenden
+tt0770752,nm0163177,John Claflin
+tt0770752,nm0954664,Daniel Zelman
+tt0770752,nm0855035,Andy Tennant
+tt0770806,nm0288021,Robert Foster
+tt0770806,nm0827750,Joshua Michael Stern
+tt0770806,nm0441828,Robert Katz
+tt0770806,nm0268609,André Farwagi
+tt0780534,nm0303032,George Gallo
+tt0780567,nm0004412,Ed Solomon
+tt0780567,nm0558533,Chris Matheson
+tt0790686,nm0014960,Alexandre Aja
+tt0790686,nm0505183,Grégory Levasseur
+tt0790686,nm1193005,Sung-ho Kim
+tt0791304,nm0029125,Mark Andrus
+tt0792965,nm0001945,Claude Berri
+tt0792965,nm1674495,Anna Gavalda
+tt0795368,nm1918877,Dean Craig
+tt0795421,nm0424735,Catherine Johnson
+tt0799934,nm0327273,Michel Gondry
+tt0800039,nm0781981,Jason Segel
+tt0805564,nm1280672,Nancy Oliver
+tt0808279,nm0359734,Michael Haneke
+tt0809504,nm1597668,Mimi Hare
+tt0809504,nm1646529,Clare Naylor
+tt0809504,nm0773731,Bonnie Sikowitz
+tt0814314,nm1455356,Grant Nieporte
+tt0814331,nm1451294,Ryan Shiraki
+tt0814331,nm0237222,Rachel Dratch
+tt0814335,nm0136592,J.S. Cardone
+tt0814335,nm0922799,Donald E. Westlake
+tt0814335,nm0498839,Carolyn Lefcourt
+tt0814335,nm0307257,Brian Garfield
+tt0815244,nm1548657,Chad Gomez Creasey
+tt0815245,nm0742194,Craig Rosenberg
+tt0815245,nm1215164,Doug Miro
+tt0815245,nm0076166,Carlo Bernard
+tt0815245,nm0453518,Kim Jee-woon
+tt0816692,nm0634300,Jonathan Nolan
+tt0816692,nm0634240,Christopher Nolan
+tt0817177,nm0001661,Rob Reiner
+tt0817177,nm0770650,Andrew Scheinman
+tt0817177,nm2300000,Wendelin Van Draanen
+tt0817230,nm0297545,Katherine Fugate
+tt0817230,nm0463359,Abby Kohn
+tt0817230,nm0799050,Marc Silverstein
+tt0817538,nm0003249,Kristofor Brown
+tt0817538,nm0736622,Seth Rogen
+tt0817538,nm0000455,John Hughes
+tt0821640,nm0524190,Jon Lucas
+tt0821640,nm0601859,Scott Moore
+tt0825232,nm0951698,Justin Zackham
+tt0829482,nm0736622,Seth Rogen
+tt0829482,nm1698571,Evan Goldberg
+tt0832266,nm0111845,Adam Brooks
+tt0840303,nm2487144,Trevor Reed Cristow
+tt0840303,nm2474032,Jacqueline David
+tt0841044,nm0000365,Julie Delpy
+tt0842926,nm0158966,Lisa Cholodenko
+tt0842926,nm0089742,Stuart Blumberg
+tt0842929,nm0001814,Gus Van Sant
+tt0842929,nm0625183,Blake Nelson
+tt0844330,nm0000807,Jane Austen
+tt0844330,nm0121866,Simon Burke
+tt0844708,nm2085654,Adam Alleca
+tt0844708,nm0255296,Carl Ellsworth
+tt0844708,nm0000127,Wes Craven
+tt0844794,nm0203577,Andrew Davies
+tt0844794,nm0000807,Jane Austen
+tt0848228,nm0923736,Joss Whedon
+tt0848228,nm0672015,Zak Penn
+tt0852713,nm0527581,Karen McCullah
+tt0852713,nm0809006,Kirsten Smith
+tt0861689,nm0764832,José Saramago
+tt0861689,nm0001528,Don McKellar
+tt0861739,nm0655683,José Padilha
+tt0861739,nm1284081,Rodrigo Pimentel
+tt0861739,nm1130251,Bráulio Mantovani
+tt0861739,nm1284450,Luiz Eduardo Soares
+tt0861739,nm2845583,André Batista
+tt0865559,nm0718514,Mike Reiss
+tt0866437,nm0842523,Robin Swicord
+tt0866437,nm1983962,Karen Joy Fowler
+tt0866439,nm1186373,Adam Sztykiel
+tt0866439,nm0438226,Deborah Kaplan
+tt0866439,nm0253323,Harry Elfont
+tt0877057,nm1981275,Gracie P. Aylward
+tt0877057,nm0409323,Toshiki Inoue
+tt0877057,nm2423816,Tomohiko Itô
+tt0877057,nm1639992,Yasuko Kobayashi
+tt0877057,nm1761126,Takeshi Obata
+tt0877057,nm1316290,Shôji Yonemura
+tt0877057,nm2174097,Tsugumi Ôba
+tt0878804,nm0359387,John Lee Hancock
+tt0878804,nm1034122,Michael Lewis
+tt0879833,nm0408553,Kjetil Indregard
+tt0879833,nm0707392,Siv Rajendram Eliassen
+tt0879870,nm0614682,Ryan Murphy
+tt0879870,nm0759022,Jennifer Salt
+tt0879870,nm2418691,Elizabeth Gilbert
+tt0881891,nm2184890,Kim Barker
+tt0887883,nm0001054,Joel Coen
+tt0887883,nm0001053,Ethan Coen
+tt0889573,nm0262325,Jeffrey Eugenides
+tt0889573,nm1615610,Allan Loeb
+tt0892318,nm1433580,Jose Rivera
+tt0892318,nm0003201,Tim Sullivan
+tt0893412,nm0868643,Fina Torres
+tt0893412,nm0019079,Luis Alfaro
+tt0893412,nm0272948,Craig Fernandez
+tt0893412,nm0000807,Jane Austen
+tt0896529,nm0618779,Ruba Nadda
+tt0899106,nm0131969,Brandon Camp
+tt0899106,nm0860513,Mike Thompson
+tt0901476,nm0220045,Greg DePaul
+tt0901476,nm1988111,Casey Wilson
+tt0901476,nm2053085,June Diane Raphael
+tt0901485,nm0537921,Cécile Maistre
+tt0901485,nm0001031,Claude Chabrol
+tt0907657,nm0138809,John Carney
+tt0914797,nm0767713,Jody Savin
+tt0914797,nm0589168,Randall Miller
+tt0914797,nm0777421,Ross Schwartz
+tt0914797,nm2658258,Lannette Pabon
+tt0918927,nm0788234,John Patrick Shanley
+tt0922424,nm1159380,Michel Kammoun
+tt0936501,nm0000108,Luc Besson
+tt0936501,nm0436543,Robert Mark Kamen
+tt0937375,nm0926211,Preston A. Whitmore II
+tt0938666,nm0256913,Sara Endsley
+tt0945513,nm1618286,Ben Ripley
+tt0947798,nm2114730,Mark Heyman
+tt0947798,nm0374560,Andres Heinz
+tt0947798,nm0572352,John J. McLaughlin
+tt0951216,nm1020896,Glenn Gers
+tt0951216,nm0592961,John Mister
+tt0951216,nm0571032,Neil McKay
+tt0951216,nm0935528,Terry Winsor
+tt0952640,nm0900140,Jon Vitti
+tt0952640,nm0574509,Will McRobb
+tt0952640,nm0899531,Chris Viscardi
+tt0952640,nm0046564,Ross Bagdasarian
+tt0970468,nm1341735,David Magee
+tt0970468,nm0064479,Simon Beaufoy
+tt0970468,nm2803760,Winifred Watson
+tt0974661,nm0276821,Jason Filardi
+tt0976051,nm0002376,David Hare
+tt0976051,nm0772384,Bernhard Schlink
+tt0981227,nm1032521,Lorene Scafaria
+tt0981227,nm2578825,Rachel Cohn
+tt0981227,nm2832819,David Levithan
+tt0987918,nm0067457,Timur Bekmambetov
+tt0987918,nm0103932,Emil Braginskiy
+tt0987918,nm0752922,Eldar Ryazanov
+tt0987918,nm2819698,Aleksey Slapovskiy
+tt0988595,nm0112459,Aline Brosh McKenna
+tt0991173,nm2595969,Shalene Portman
+tt0993840,nm0811583,Zack Snyder
+tt0993840,nm8748334,Shay Hatten
+tt0993840,nm1703612,Joby Harold
+tt0993842,nm2605946,Seth Lochhead
+tt0993842,nm1016333,David Farr
+tt0995039,nm0462895,David Koepp
+tt0995039,nm0436960,John Kamps
+tt0997152,nm0771228,Paul T. Scheuring
+tt0997152,nm0320342,Mario Giordano
+tt0997152,nm0201543,Christoph Darnstädt
+tt0997152,nm0092063,Don Bohlinger
+tt0997152,nm0386570,Oliver Hirschbiegel
+tt0999913,nm0527109,Rod Lurie
+tt0999913,nm0329051,David Zelag Goodman
+tt0999913,nm0001603,Sam Peckinpah
+tt0999913,nm0930684,Gordon Williams
+tt10006006,nm1405911,Nate Atkins
+tt10006006,nm6912381,Karen Schaler
+tt1001508,nm0463359,Abby Kohn
+tt1001508,nm0799050,Marc Silverstein
+tt1001508,nm1021163,Greg Behrendt
+tt1001508,nm0875710,Liz Tuccillo
+tt10016180,nm0359387,John Lee Hancock
+tt10060094,nm4426398,Cara J. Russell
+tt1007028,nm0003620,Kevin Smith
+tt10131024,nm10343741,Melanie Toast
+tt1013743,nm0642277,Patrick O'Neill
+tt1015999,nm1548657,Chad Gomez Creasey
+tt1015999,nm1551542,Dara Resnik
+tt1015999,nm0113005,Amanda Brown
+tt10177634,nm0676248,Fred Olen Ray
+tt10177634,nm0770848,Jeffrey Schenck
+tt10177634,nm0838289,Peter Sullivan
+tt10183816,nm0325406,David Golden
+tt1019452,nm0001054,Joel Coen
+tt1019452,nm0001053,Ethan Coen
+tt1020955,nm1615028,Oriol Capel
+tt1020955,nm0844887,David S. Olivas
+tt1020955,nm2729273,Antonio Sánchez
+tt1020955,nm1818121,Nacho G. Velilla
+tt1022603,nm2354099,Scott Neustadter
+tt1022603,nm2352210,Michael H. Weber
+tt10235718,nm0174885,Eileen Conn
+tt10235718,nm0240797,Dennis Dugan
+tt10235718,nm0588777,Larry Miller
+tt10242388,nm0296827,Marc Frydman
+tt1024255,nm1779941,Lucy Dahl
+tt1025100,nm1125275,David Benioff
+tt1025100,nm0712753,Billy Ray
+tt1025100,nm0501359,Darren Lemke
+tt10276482,nm1475479,Jim Strouse
+tt10276482,nm8973399,Sofie Cramer
+tt10276482,nm0932731,Andrea Willson
+tt10276482,nm5621145,Malte Welding
+tt10276482,nm0378932,Karoline Herfurth
+tt10276482,nm2559188,Sophie Kluge
+tt10276482,nm2873754,Anika Decker
+tt10288566,nm0899121,Thomas Vinterberg
+tt10288566,nm2105585,Tobias Lindholm
+tt10303430,nm3628233,Cooper Karl
+tt10326928,nm0426785,Michelle Johnston
+tt10326928,nm1354901,Leigh Dunlap
+tt1033643,nm1401416,Dana Fox
+tt10366206,nm8748334,Shay Hatten
+tt10366206,nm3360218,Michael Finch
+tt10366206,nm4401003,Derek Kolstad
+tt10366460,nm1571761,Sian Heder
+tt10366460,nm2605079,Victoria Bedos
+tt10366460,nm0141133,Stanislas Carré de Malberg
+tt10366460,nm0489309,Éric Lartigau
+tt10366460,nm0081179,Thomas Bidegain
+tt10370710,nm1258777,Eskil Vogt
+tt10370710,nm1258686,Joachim Trier
+tt1037705,nm1729428,Gary Whitta
+tt1038919,nm0861638,Sarah Thorp
+tt10407272,nm0024887,Santiago Amigorena
+tt10407272,nm0458251,Cédric Klapisch
+tt1041753,nm0780643,T. Sean Shannon
+tt1041753,nm0276248,Greg Fields
+tt1041829,nm1095804,Peter Chiarelli
+tt10451914,nm2559427,Rob Yescombe
+tt10451914,nm1424282,Rowan Athale
+tt1045658,nm0751102,David O. Russell
+tt1045658,nm2683048,Matthew Quick
+tt1046163,nm2588827,Jordan Cahan
+tt1046947,nm0394199,Joel Hopkins
+tt1049405,nm0414117,Tracey Jackson
+tt1051906,nm1191481,Leigh Whannell
+tt1051906,nm0920229,H.G. Wells
+tt10530176,nm1230585,Sergio Casci
+tt10530176,nm8066994,Chung-Hyun Lee
+tt1055292,nm0215130,Ian Deitchman
+tt1055292,nm0750809,Kristin Rusk Robinson
+tt1059905,nm2703870,Lisi Harrison
+tt1059905,nm1168067,Liz Tigelaar
+tt10620868,nm4252203,Il Cho
+tt10620868,nm2916080,Matt Naylor
+tt10638522,nm4053334,Danny Philippou
+tt10638522,nm5921025,Bill Hinzman
+tt10638522,nm2587184,Daley Pearson
+tt1064932,nm0200702,Dany Boon
+tt1064932,nm0153265,Alexandre Charlot
+tt1064932,nm0536251,Franck Magnier
+tt10676012,nm2692519,Katie Lovejoy
+tt10676012,nm6614229,Jenny Han
+tt1067774,nm0080120,Thomas Bezucha
+tt1067774,nm0086194,April Blair
+tt1067774,nm0535940,Maria Maggenti
+tt1067774,nm2797005,Kelly Bowe
+tt1067774,nm0060072,Jules Bass
+tt1068680,nm0831557,Nicholas Stoller
+tt1068680,nm0666871,Jarrad Paul
+tt1068680,nm2361949,Andrew Mogel
+tt1068680,nm0991245,Danny Wallace
+tt1074214,nm0332393,Howard Michael Gould
+tt10752004,nm2202271,Daniel Mackey
+tt10752004,nm10887693,Rebecca Ewing
+tt1078588,nm0505230,Jeremy Leven
+tt1078588,nm0001024,Nick Cassavetes
+tt1078588,nm0682030,Jodi Picoult
+tt1078940,nm0269463,Jon Favreau
+tt1078940,nm0000681,Vince Vaughn
+tt1078940,nm1401416,Dana Fox
+tt1083448,nm0078943,Janeen Damian
+tt1083448,nm0198755,Michael Damian
+tt1083456,nm0323239,Will Gluck
+tt1085492,nm1061002,Andre Fabrizio
+tt1085492,nm0664920,Jeremy Passmore
+tt10855768,nm4148345,Will Merrick
+tt10855768,nm4946908,Nicholas D. Johnson
+tt10855768,nm3539578,Sev Ohanian
+tt10855768,nm3792134,Aneesh Chaganty
+tt1086772,nm0578771,Ivan Menchell
+tt1086772,nm0784771,Clare Sera
+tt10888708,nm5327403,Sarah Rothschild
+tt10919380,nm3208182,Michael Kennedy
+tt10919380,nm0484907,Christopher Landon
+tt10921042,nm0646987,Ron Oliver
+tt10931784,nm2762302,Nikyatu Jusu
+tt1093908,nm0414117,Tracey Jackson
+tt1093908,nm0278759,Tim Firth
+tt1093908,nm1547852,Kayla Alpert
+tt1093908,nm1536494,Sophie Kinsella
+tt1095174,nm0709408,Ken Rance
+tt1095174,nm0184947,C. Jay Cox
+tt10962368,nm10989837,Elizabeth Brundage
+tt10962368,nm0075849,Shari Springer Berman
+tt10962368,nm0700301,Robert Pulcini
+tt1099212,nm0742279,Melissa Rosenberg
+tt1099212,nm2769412,Stephenie Meyer
+tt11010144,nm3451654,Lwazi Mvusi
+tt11024272,nm2356525,Dan Lagana
+tt11024272,nm4632792,Brad Morris
+tt11024272,nm1843538,Jimmy Warden
+tt11024272,nm0629334,McG
+tt11024272,nm3929259,Brian Duffield
+tt1103153,nm0220521,Bob DeRosa
+tt1103153,nm0341372,Ted Griffin
+tt1103982,nm0505522,David Levien
+tt1103982,nm0002718,Brian Koppelman
+tt11057594,nm0838289,Peter Sullivan
+tt11057594,nm3831588,Rasheeda Garner
+tt11057594,nm0770848,Jeffrey Schenck
+tt11080108,nm5107819,Lev Grossman
+tt11083552,nm0099398,Nicolas Boukhrief
+tt11083552,nm0078704,Éric Besnard
+tt11083552,nm0005363,Guy Ritchie
+tt11083552,nm6842463,Ivan Atkinson
+tt11083552,nm3044095,Marn Davies
+tt11100856,nm4306620,Elizabeth Hackett
+tt11100856,nm1194570,Hilary Galanoy
+tt1111422,nm0001338,Brian Helgeland
+tt1111422,nm0323945,John Godey
+tt1119646,nm0524190,Jon Lucas
+tt1119646,nm0601859,Scott Moore
+tt11199410,nm0076820,Robin Bernheim
+tt11199410,nm2997602,Megan Metzger
+tt1120985,nm0161834,Derek Cianfrance
+tt1120985,nm0193387,Joey Curtis
+tt1120985,nm2337556,Cami Delavigne
+tt1121948,nm0000247,John Woo
+tt1121948,nm0001338,Brian Helgeland
+tt1121948,nm1061091,Josh Campbell
+tt1121948,nm1173295,Matt Stuecken
+tt1121948,nm2123102,Eran Creevy
+tt1124215,nm0426120,Rodney Johnson
+tt1124215,nm0459349,Nora Kletter
+tt1124215,nm0459350,Richard Kletter
+tt1124401,nm0068183,Elisa Bell
+tt1124401,nm2803204,Lola Douglas
+tt1124401,nm5195431,Jess Penner
+tt1126618,nm0112459,Aline Brosh McKenna
+tt1127180,nm0000600,Sam Raimi
+tt1127180,nm0706898,Ivan Raimi
+tt11274492,nm4475394,Ben Zazove
+tt11274492,nm1602263,Evan Turner
+tt11307724,nm1481172,Nicolás Giacobone
+tt1130884,nm0436164,Laeta Kalogridis
+tt1130884,nm1212331,Dennis Lehane
+tt1132620,nm1064048,Nikolaj Arcel
+tt1132620,nm1065452,Rasmus Heisterberg
+tt1132620,nm2297183,Stieg Larsson
+tt1134629,nm0589182,Rebecca Miller
+tt1135503,nm0001188,Nora Ephron
+tt1135503,nm2823045,Julie Powell
+tt1135503,nm0157463,Julia Child
+tt1135503,nm2954422,Alex Prud'homme
+tt1137450,nm0138620,Joe Carnahan
+tt1137450,nm0307257,Brian Garfield
+tt1137450,nm0562606,Wendell Mayes
+tt11390036,nm1347153,Tyler Perry
+tt1139668,nm0275286,David S. Goyer
+tt1142433,nm2609807,Kelly Fremon Craig
+tt11426232,nm3544219,David Matalon
+tt11426232,nm1172993,Sasha Perl-Raver
+tt11426232,nm4594415,Jen D'Angelo
+tt1142988,nm2946831,Nicole Eastman
+tt1142988,nm0527581,Karen McCullah
+tt1142988,nm0809006,Kirsten Smith
+tt1145157,nm1430257,Scott S. Anderson
+tt1145157,nm2845157,Abraham Taylor
+tt1148204,nm0424901,David Leslie Johnson-McGoldrick
+tt1148204,nm2858852,Alex Mace
+tt11514780,nm2006136,Simon Allen
+tt11514780,nm2016267,Toby Meakins
+tt11514780,nm2469821,Matthew James Wilkinson
+tt1152398,nm1400426,Daniel Barnz
+tt1152398,nm2860544,Alex Flinn
+tt1156506,nm0950701,Alan Yuen
+tt1156506,nm0150802,Benny Chan
+tt1156506,nm2588638,Bing Xu
+tt1156506,nm0169540,Larry Cohen
+tt1156506,nm0604555,Chris Morgan
+tt11576374,nm0673297,Maggie Peren
+tt11655202,nm0421314,Anders Thomas Jensen
+tt11655202,nm1064048,Nikolaj Arcel
+tt11681250,nm2876788,Kari Granlund
+tt11681250,nm2602433,Melissa K. Stack
+tt1171222,nm0847859,David E. Talbert
+tt1179794,nm2356614,Jac Schaeffer
+tt11804152,nm1712383,Jason Carvey
+tt1182350,nm0000095,Woody Allen
+tt11827628,nm0769123,Dario Scardapane
+tt11827628,nm0311640,Jef Geeraerts
+tt11827628,nm0429741,Carl Joos
+tt11827628,nm0887452,Erik Van Looy
+tt1182887,nm0196932,Julie Margaret Hogben
+tt1182887,nm2920032,Jane Porter
+tt1185416,nm0224601,David Diamond
+tt1185416,nm0919289,David Weissman
+tt1187041,nm1668051,John Hindman
+tt1193138,nm1174529,Walter Kirn
+tt1193138,nm0718646,Jason Reitman
+tt1193138,nm1417242,Sheldon Turner
+tt1194263,nm0699046,Chris Provenzano
+tt1194263,nm2057149,C. Gaby Mitchell
+tt1194263,nm3015337,Scott Seeke
+tt11951276,nm0845860,Matthew Tabak
+tt1197624,nm0934483,Kurt Wimmer
+tt1198138,nm0521739,David Loughery
+tt1198340,nm0305864,Yolanda García Serrano
+tt1198340,nm0649875,Joaquín Oristrell
+tt12004038,nm2178592,Zack Ford
+tt12004038,nm3013234,Chloe Okuno
+tt1205535,nm0294505,Bart Freundlich
+tt1205537,nm3092414,Adam Cozad
+tt1205537,nm0462895,David Koepp
+tt1205537,nm0002007,Tom Clancy
+tt12110636,nm2098346,Adam Rockoff
+tt1211956,nm1974016,Miles Chapman
+tt1211956,nm0445669,Jason Keller
+tt1216487,nm0296926,Jonas Frykberg
+tt1216487,nm2297183,Stieg Larsson
+tt1216492,nm0438226,Deborah Kaplan
+tt1216492,nm0253323,Harry Elfont
+tt1219289,nm0228908,Leslie Dixon
+tt1219289,nm2982186,Alan Glynn
+tt1220888,nm0315065,Sacha Gervasi
+tt1220888,nm1277955,David N. White
+tt1220888,nm1336500,Stephen Hamel
+tt1225822,nm0431918,Mike Judge
+tt12263384,nm0751648,Joe Russo
+tt12263384,nm3133666,Ande Parks
+tt12263384,nm0751577,Anthony Russo
+tt1230414,nm0583600,Nancy Meyers
+tt1231287,nm1044447,Stacey Kramer
+tt1231287,nm0788555,Lara Shapiro
+tt1231583,nm0169180,Alan R. Cohen
+tt1231583,nm0293139,Alan Freedland
+tt1231583,nm1186373,Adam Sztykiel
+tt1231583,nm0680846,Todd Phillips
+tt1231587,nm0372222,Josh Heald
+tt1231587,nm1890845,Sean Anders
+tt1231587,nm1898234,John Morris
+tt1235841,nm1391924,Gustavo Taretto
+tt1242432,nm2098346,Adam Rockoff
+tt1242432,nm0953392,Meir Zarchi
+tt1243957,nm0003697,Florian Henckel von Donnersmarck
+tt1243957,nm0003160,Christopher McQuarrie
+tt1243957,nm0271501,Julian Fellowes
+tt1243957,nm1362432,Jérôme Salle
+tt1245526,nm1979137,Warren Ellis
+tt1245526,nm1216642,Cully Hamner
+tt1245526,nm0388377,Jon Hoeber
+tt1245526,nm0388375,Erich Hoeber
+tt12528166,nm11672642,Bill Lawrence
+tt1259521,nm0923736,Joss Whedon
+tt1259521,nm1206844,Drew Goddard
+tt1259528,nm0345615,Christian Gudegast
+tt1259528,nm0771228,Paul T. Scheuring
+tt1259571,nm0742279,Melissa Rosenberg
+tt1259571,nm2769412,Stephenie Meyer
+tt1261954,nm0415382,Sam Jaeger
+tt1265990,nm1867458,Sonny Mallhi
+tt1272878,nm1398578,Blake Masters
+tt1272878,nm1556427,Steven Grant
+tt1276104,nm0426059,Rian Johnson
+tt12773628,nm0792494,Julie Sherman Wolfe
+tt12773628,nm1292366,Andrew Gernhard
+tt12773628,nm2572627,Colin Theys
+tt1277953,nm0201509,Eric Darnell
+tt1277953,nm0000876,Noah Baumbach
+tt1277953,nm2593444,Alejandro Bien-Willner
+tt1278027,nm0078943,Janeen Damian
+tt1278027,nm0198755,Michael Damian
+tt1279935,nm0458441,Josh Klausner
+tt1282140,nm1421629,Bert V. Royal
+tt12823454,nm0112459,Aline Brosh McKenna
+tt1284575,nm1969144,Gene Stupnitsky
+tt1284575,nm1072409,Lee Eisenberg
+tt1285009,nm1052162,Bryan Bertino
+tt1285009,nm2406892,Ben Ketai
+tt1285309,nm0227870,Randy T. Dinzler
+tt1285309,nm0097517,Derrick Borte
+tt1292566,nm0463359,Abby Kohn
+tt1292566,nm0799050,Marc Silverstein
+tt1292566,nm1401416,Dana Fox
+tt1292566,nm0875710,Liz Tuccillo
+tt12929990,nm12510759,Tabi McCartney
+tt12929990,nm1018895,Dana Schmalenberg
+tt1294688,nm1127653,Massy Tadjedin
+tt1297919,nm2914162,Nathan Parker
+tt1297919,nm2012698,Ken Bruen
+tt12986254,nm3623156,Michael Varrati
+tt12998268,nm11855438,Kim Sung-Gi
+tt13055780,nm4549519,Lauren Swickard
+tt13070602,nm2256234,Ally Carter
+tt13070602,nm1144897,Kim Beyer-Johnson
+tt1307068,nm1032521,Lorene Scafaria
+tt1308729,nm0131947,Alessandro Camon
+tt1308729,nm1989798,Alexis Nolent
+tt1308729,nm5631325,Colin Wilson
+tt13148548,nm2956628,Angela Burt-Murray
+tt1318522,nm3245149,Elena Krupp
+tt1319746,nm2340392,Howard March
+tt1320253,nm1709264,Dave Callaham
+tt1320253,nm0000230,Sylvester Stallone
+tt1322312,nm3192484,Geoff LaTulippe
+tt13236566,nm0744032,Gregg Rossen
+tt13236566,nm0768139,Brian Sawyer
+tt1324999,nm0742279,Melissa Rosenberg
+tt1324999,nm2769412,Stephenie Meyer
+tt1325004,nm0742279,Melissa Rosenberg
+tt1325004,nm2769412,Stephenie Meyer
+tt13265876,nm1143429,Corey Large
+tt13265876,nm4864836,Edward Drake
+tt13276352,nm6995804,Mehdi Avaz
+tt13276352,nm0771055,Nikolaj Scherfig
+tt13327038,nm4916283,Celeste Ballard
+tt13327038,nm3066492,Jennifer Kaytin Robinson
+tt1334512,nm0063165,Peter Baynham
+tt1334512,nm0330619,Steve Gordon
+tt13352968,nm1113539,Katy Brand
+tt1341188,nm0000985,James L. Brooks
+tt1343097,nm0296926,Jonas Frykberg
+tt1343097,nm2297183,Stieg Larsson
+tt1343097,nm0752968,Ulf Ryberg
+tt13433802,nm3968825,Michael Sarnoski
+tt13433802,nm1024677,John Krasinski
+tt13433802,nm1456816,Bryan Woods
+tt13433802,nm1399714,Scott Beck
+tt1343727,nm0905957,John Wagner
+tt1343727,nm0264338,Carlos Ezquerra
+tt1343727,nm0307497,Alex Garland
+tt13456976,nm2587018,Joel Veach
+tt1345836,nm0634300,Jonathan Nolan
+tt1345836,nm0634240,Christopher Nolan
+tt1345836,nm0275286,David S. Goyer
+tt1345836,nm0004170,Bob Kane
+tt1361313,nm0700301,Robert Pulcini
+tt1361313,nm0024718,Jonathan Ames
+tt1361313,nm0075849,Shari Springer Berman
+tt13655328,nm2709022,Christopher J. Moore
+tt13655328,nm0521739,David Loughery
+tt1366312,nm0000807,Jane Austen
+tt1366312,nm0919652,Sandy Welch
+tt1366365,nm0007045,Scott Wiper
+tt1366365,nm2275309,John Petro
+tt1371150,nm2267086,Jonathan Tropper
+tt1374992,nm0812626,Juan Solanas
+tt1374992,nm0024887,Santiago Amigorena
+tt1374992,nm0536421,Pierre Magny
+tt1375666,nm0634240,Christopher Nolan
+tt1375670,nm0001191,Adam Sandler
+tt1375670,nm0937748,Fred Wolf
+tt13834006,nm3753393,Laurence Arné
+tt13834006,nm0200702,Dany Boon
+tt13842628,nm12250371,Simone J. Chapman
+tt13842628,nm0542752,Farhad Mann
+tt13846542,nm7121490,Wiktor Piatkowski
+tt13846542,nm12277491,Marzanna Polit
+tt1385543,nm4469602,Charles Agron
+tt1385543,nm0759207,Victor Salva
+tt1385826,nm1079776,George Nolfi
+tt1385826,nm0001140,Philip K. Dick
+tt1385867,nm0191523,Robb Cullen
+tt1385867,nm0191502,Mark Cullen
+tt1389139,nm3357261,Jack Olsen
+tt1391034,nm1068980,Jennifer Derwingson
+tt1391034,nm1259604,Marcos Efron
+tt1391034,nm0166018,Brian Clemens
+tt1391034,nm0622334,Terry Nation
+tt1396484,nm1286060,Chase Palmer
+tt1396484,nm1560977,Cary Joji Fukunaga
+tt1396484,nm2477891,Gary Dauberman
+tt1396484,nm0000175,Stephen King
+tt1397280,nm0000108,Luc Besson
+tt1397280,nm0436543,Robert Mark Kamen
+tt13989030,nm0381675,Holly Hester
+tt1401152,nm0124700,Oliver Butcher
+tt1401152,nm0180508,Stephen Cornwell
+tt1401152,nm0885857,Didier Van Cauwelaert
+tt14014068,nm2892750,Analeine Cal y Mayor
+tt14014068,nm0213017,Geoff Deane
+tt14014068,nm0702880,David Quantick
+tt14039028,nm12070716,T. Booker James
+tt1403988,nm0630633,Galt Niederhoffer
+tt14057604,nm0340485,Kevin Grevioux
+tt1405810,nm0182891,Ivan Cotroneo
+tt1405810,nm0654858,Ferzan Özpetek
+tt14060094,nm12235649,Nick May
+tt14060094,nm0931251,Mark Williams
+tt14060094,nm12339173,Brandon Reavis
+tt1407061,nm0254288,Michael Elliot
+tt1409024,nm1000113,Etan Cohen
+tt1409024,nm0192384,Lowell Cunningham
+tt1411238,nm2057975,Elizabeth Meriwether
+tt1411238,nm0759986,Michael Samonek
+tt1411697,nm0563301,Craig Mazin
+tt1411697,nm0035905,Scot Armstrong
+tt1411697,nm0680846,Todd Phillips
+tt1411697,nm0524190,Jon Lucas
+tt1411697,nm0601859,Scott Moore
+tt1412386,nm0662530,Ol Parker
+tt1412386,nm0595738,Deborah Moggach
+tt1414382,nm0420596,Moe Jelline
+tt14253846,nm0846369,Christian Tafdrup
+tt14253846,nm1582843,Mads Tafdrup
+tt1429432,nm0636506,Jonathan Nossiter
+tt14298328,nm2046271,April Prosser
+tt1431045,nm1014201,Rhett Reese
+tt1431045,nm1116660,Paul Wernick
+tt1431115,nm0325406,David Golden
+tt1431115,nm0534160,Debbie Macomber
+tt14330236,nm3269243,Madeline Walter
+tt14330236,nm3519272,Paul Welsh
+tt1436559,nm1184635,Anouska Chydzik
+tt1436559,nm1680346,Caprice Crane
+tt1436572,nm2267617,Marc Erlbaum
+tt1440129,nm0388377,Jon Hoeber
+tt1440129,nm0388375,Erich Hoeber
+tt14406178,nm9075613,Jae-Hoon Choi
+tt14456350,nm0667330,Tiffany Paulsen
+tt14456350,nm0103932,Emil Braginskiy
+tt14456350,nm0752922,Eldar Ryazanov
+tt14463514,nm1310000,Cristóbal Garrido
+tt14463514,nm2926123,Adolfo Valor
+tt14463514,nm1283047,Núria Gago
+tt1448755,nm3906411,Matt Sherring
+tt1448755,nm0276399,Ranulph Fiennes
+tt1457767,nm0370937,Chad Hayes
+tt1457767,nm0370928,Carey W. Hayes
+tt1462041,nm0521649,David Loucka
+tt1462769,nm0373282,Peter Hedges
+tt1462769,nm0953257,Ahmet Zappa
+tt1464335,nm1988994,Rafe Judkins
+tt1464335,nm1436466,Art Marcum
+tt1464335,nm0391344,Matt Holloway
+tt1464335,nm2616125,Jon Hanley Rosenberg
+tt1464335,nm4731086,Mark D. Walker
+tt1464560,nm2210641,Anna Bean
+tt1464560,nm3505289,Karen Maine
+tt1464560,nm3521871,Gillian Robespierre
+tt1464763,nm3467335,Michael Robert Johnson
+tt1464763,nm1512910,Duncan Jones
+tt1465487,nm1552771,Laurent Zeitoun
+tt1465487,nm0232442,Jeremy Doner
+tt1465487,nm3557725,Yoann Gromb
+tt1465496,nm1448682,Christine Bartlett
+tt1465496,nm0417413,Amanda Jane
+tt14674728,nm8319528,Beautie Masvaure Alt
+tt14674728,nm9921916,Yvette Sams
+tt14715170,nm2602637,Jeff Bonnett
+tt14715170,nm0646987,Ron Oliver
+tt14731142,nm0076820,Robin Bernheim
+tt14731142,nm2997602,Megan Metzger
+tt14757872,nm12785791,Oh-Seung Kwon
+tt1478338,nm1325419,Kristen Wiig
+tt1478338,nm1754239,Annie Mumolo
+tt14817272,nm8166118,Sarah Alderson
+tt14826022,nm1706767,Jonah Hill
+tt14826022,nm1244069,Kenya Barris
+tt1483324,nm2773757,Glenn German
+tt1483324,nm2666268,Adam Rodgers
+tt1485762,nm0393394,Christophe Honoré
+tt1485762,nm3559233,Geneviève Brisac
+tt1486834,nm0997459,Elan Mastai
+tt1486834,nm5182094,T.J. Dawe
+tt1486834,nm3867315,Michael Rinaldi
+tt1488555,nm0524190,Jon Lucas
+tt1488555,nm0601859,Scott Moore
+tt14900738,nm2792617,Noga Pnueli
+tt14923008,nm0521739,David Loughery
+tt1493842,nm0002505,Michael Horowitz
+tt1493842,nm3839237,Daniella Brodsky
+tt14961624,nm8030368,Leandro Fernandez
+tt14961624,nm1421638,Greg Rucka
+tt14961624,nm0908194,Sarah L. Walker
+tt1498574,nm0326211,Gary Goldstein
+tt1498574,nm0163813,Dan Clark
+tt1499658,nm0002864,Michael Markowitz
+tt1499658,nm0197855,John Francis Daley
+tt1499658,nm0326246,Jonathan Goldstein
+tt1502420,nm0628146,Jonathan Newman
+tt1504320,nm0782436,David Seidler
+tt1506999,nm0229644,Lem Dobbs
+tt15083184,nm2035118,Babak Anvari
+tt15083184,nm8939191,Namsi Khan
+tt15083184,nm1149420,Clare Keogh
+tt1508675,nm0442454,Aki Kaurismäki
+tt15143222,nm1265089,Luke Albright
+tt15143222,nm2230472,Greg Boaldin
+tt15143222,nm2207078,Joe Wanjai Ross
+tt1519663,nm2697944,James Hacking
+tt15215512,nm4306620,Elizabeth Hackett
+tt15215512,nm1194570,Hilary Galanoy
+tt1521848,nm0654830,François Ozon
+tt1521848,nm0054667,Pierre Barillet
+tt1521848,nm0344899,Jean-Pierre Grédy
+tt1527186,nm0001885,Lars von Trier
+tt1528750,nm0179576,Antony Cordier
+tt1528750,nm1701553,Julie Peyr
+tt15314262,nm0934483,Kurt Wimmer
+tt1535110,nm3660691,Ralph Stein
+tt1535110,nm1087263,Nayan Padrai
+tt1535438,nm0961827,Vanessa Taylor
+tt1535565,nm0799012,Nancey Silvers
+tt1535565,nm3716022,Sarah Strohmeyer
+tt1536537,nm1363111,Max Botkin
+tt1536537,nm1201058,Kerry Williamson
+tt1541160,nm0524190,Jon Lucas
+tt1541160,nm0601859,Scott Moore
+tt1545304,nm0710784,Ellen Rapoport
+tt15463032,nm0425756,Mark Steven Johnson
+tt15474916,nm6475689,Parker Finn
+tt1549920,nm3689973,Andrew Knauer
+tt15521050,nm0131969,Brandon Camp
+tt15521050,nm13815185,Jenna Evans Welch
+tt1555149,nm0655683,José Padilha
+tt1555149,nm1284081,Rodrigo Pimentel
+tt1555149,nm1130251,Bráulio Mantovani
+tt15565510,nm0024169,Mark Amato
+tt15565510,nm2703607,Tracy Andreen
+tt1563738,nm0390141,David Nicholls
+tt1564367,nm1615610,Allan Loeb
+tt1564367,nm0000251,Timothy Dowling
+tt1564367,nm0224634,I.A.L. Diamond
+tt1564367,nm0123242,Abe Burrows
+tt1564367,nm0054667,Pierre Barillet
+tt1564367,nm0344899,Jean-Pierre Grédy
+tt15654800,nm1192470,Alessandro Aronadio
+tt15654800,nm2680680,Renato Sannio
+tt15671028,nm1969144,Gene Stupnitsky
+tt15671028,nm4544229,John Phillips
+tt1567385,nm1142065,Samantha Mazeras
+tt1567385,nm0125664,Joyce Buñuel
+tt1568346,nm0001873,Steven Zaillian
+tt1568346,nm2297183,Stieg Larsson
+tt1570728,nm1557594,Dan Fogelman
+tt1571249,nm2574897,Craig Johnson
+tt1571249,nm2114730,Mark Heyman
+tt15721088,nm10354657,James Pedersen
+tt1573483,nm0683111,Marguerite Pigott
+tt1573483,nm2583521,Liam Card
+tt15782690,nm9191333,Mark Michael McNally
+tt15782690,nm0516384,Terry Loane
+tt15783426,nm0004790,Scott Caan
+tt15799866,nm1032297,Robert Archer Lynn
+tt15824322,nm0267401,Paco Farias
+tt15824322,nm2037049,Jennifer C. Stetson
+tt15824322,nm3623156,Michael Varrati
+tt15824322,nm1106548,German Michael Torres
+tt1582507,nm0521649,David Loucka
+tt1582507,nm0609236,Jonathan Mostow
+tt15829734,nm0676295,Steven Peterman
+tt15829734,nm0233108,Gary Dontzig
+tt15829734,nm0295105,Lee Friedlander
+tt15829734,nm0281074,Markus Flanagan
+tt1583420,nm0000158,Tom Hanks
+tt1583420,nm0889522,Nia Vardalos
+tt15850662,nm4772560,Abishek J. Bajaj
+tt1586265,nm0189272,Shauna Cross
+tt1586265,nm0352320,Heather Hach
+tt1586265,nm3763939,Heidi Murkoff
+tt1588398,nm3772967,Julia Leigh
+tt1590193,nm2068778,Byron Willinger
+tt1590193,nm2071379,Philip de Blasi
+tt1590193,nm0257513,Ryan Engle
+tt1591095,nm1191481,Leigh Whannell
+tt1596350,nm0000251,Timothy Dowling
+tt1596350,nm1334526,Simon Kinberg
+tt1596350,nm0310225,Marcus Gautesen
+tt1598778,nm1994243,Scott Z. Burns
+tt1598822,nm0297545,Katherine Fugate
+tt1598828,nm1995411,Stacy Sherman
+tt1598828,nm4558594,Karen Ray
+tt1598828,nm2470990,Liz Brixius
+tt1598828,nm2208656,Janet Evanovich
+tt1599348,nm1638756,David Guggenheim
+tt1600438,nm3826376,Jennifer Jan
+tt1600438,nm1372462,Brittany Wiscombe
+tt1600438,nm0000807,Jane Austen
+tt1603257,nm2133655,Chris Sparling
+tt1603257,nm0864128,Ron Tippe
+tt1604171,nm2251854,Katie Wech
+tt16085592,nm1625872,Sam Wolfson
+tt1609492,nm0535234,Ole Christian Madsen
+tt1609492,nm2145370,Anders Frithiof August
+tt1618434,nm0888743,James Vanderbilt
+tt1621045,nm2226647,Keith Merryman
+tt1621045,nm2226970,David A. Newman
+tt1621045,nm0367724,Steve Harvey
+tt1625346,nm1959505,Diablo Cody
+tt16287844,nm4056107,Anna White
+tt1631867,nm0003160,Christopher McQuarrie
+tt1631867,nm0125336,Jez Butterworth
+tt1631867,nm3890871,John-Henry Butterworth
+tt1631867,nm3872326,Hiroshi Sakurazaka
+tt1632708,nm2226647,Keith Merryman
+tt1632708,nm2226970,David A. Newman
+tt1632708,nm0323239,Will Gluck
+tt1632708,nm0679037,Harley Peyton
+tt1637688,nm0629272,Andrew Niccol
+tt1637725,nm0532235,Seth MacFarlane
+tt1637725,nm1273148,Alec Sulkin
+tt1637725,nm1273397,Wellesley Wild
+tt1638355,nm0005363,Guy Ritchie
+tt1638355,nm0927880,Lionel Wigram
+tt1638355,nm0458566,Jeff Kleeman
+tt1638355,nm0933276,David C. Wilson
+tt1638355,nm0738222,Sam Rolfe
+tt1640484,nm0402804,Elizabeth Hunter
+tt1640484,nm1656428,Arlene Gibbs
+tt1640571,nm0886749,Shane Van Dyke
+tt1645089,nm2480587,Charles Ferguson
+tt1645089,nm1556822,Chad Beck
+tt1645089,nm2903269,Adam Bolt
+tt1646974,nm1928581,Baya Kasmi
+tt1646974,nm1098171,Michel Leclerc
+tt1646987,nm2669197,Dan Mazeau
+tt1646987,nm0424901,David Leslie Johnson-McGoldrick
+tt1646987,nm0075528,Greg Berlanti
+tt1646987,nm0189117,Beverley Cross
+tt1649780,nm3898253,Christina Mengert
+tt1649780,nm3895605,Joseph Muszynski
+tt1655460,nm0906476,David Wain
+tt1655460,nm0547800,Ken Marino
+tt1656190,nm0945026,Boaz Yakin
+tt1657507,nm0000108,Luc Besson
+tt1657507,nm0436543,Robert Mark Kamen
+tt1659337,nm0154716,Stephen Chbosky
+tt1666801,nm1038800,Josh A. Cagan
+tt1666801,nm3929735,Kody Keplinger
+tt1667100,nm2236676,Luc Bossi
+tt1667100,nm1668171,Laurent Turner
+tt1667353,nm0458884,Marc Klein
+tt1667353,nm0445669,Jason Keller
+tt1667353,nm2214893,Melisa Wallack
+tt1670345,nm0004412,Ed Solomon
+tt1670345,nm0945026,Boaz Yakin
+tt1670345,nm3242689,Edward Ricourt
+tt1673434,nm2769412,Stephenie Meyer
+tt1673434,nm0742279,Melissa Rosenberg
+tt1675434,nm0619923,Olivier Nakache
+tt1675434,nm0865918,Éric Toledano
+tt1675434,nm4778840,Philippe Pozzo di Borgo
+tt1684914,nm3974857,Charles T. Daniels
+tt1684914,nm0004906,Peter Facinelli
+tt16900880,nm2604863,Byun Sung-hyun
+tt1691916,nm0535940,Maria Maggenti
+tt1691916,nm3986344,Lauren Oliver
+tt1692486,nm0722078,Yasmina Reza
+tt1692486,nm0441301,Michael Katims
+tt1692486,nm0000591,Roman Polanski
+tt1699746,nm0909233,Aury Wallington
+tt1700467,nm0609981,Emmanuel Mouret
+tt17024450,nm0921013,Richard Wenk
+tt17024450,nm0805994,Michael Sloan
+tt17024450,nm2030456,Richard Lindheim
+tt1708459,nm0799012,Nancey Silvers
+tt1708459,nm0534160,Debbie Macomber
+tt1712187,nm2281534,Andrea Agnello
+tt1712187,nm0158323,Ugo Chiti
+tt1712187,nm0894787,Giovanni Veronesi
+tt1712192,nm0124700,Oliver Butcher
+tt1712192,nm0180508,Stephen Cornwell
+tt1714202,nm2226647,Keith Merryman
+tt1714202,nm2226970,David A. Newman
+tt1718948,nm2673307,Bertrand Deveaud
+tt1718948,nm4056254,Vincent Martin
+tt1718948,nm2836529,Marie Du Roy
+tt1718948,nm2741870,Pierre Monjanel
+tt1720616,nm0922724,Jennifer Westfeldt
+tt1726592,nm0423626,Rowan Joffe
+tt1726592,nm4081356,S.J. Watson
+tt1729211,nm0894207,Simon Verhoeven
+tt1733737,nm1054974,Rick Suvalle
+tt1735898,nm2489193,Evan Daugherty
+tt1735898,nm0359387,John Lee Hancock
+tt1735898,nm0024925,Hossein Amini
+tt1742650,nm0112459,Aline Brosh McKenna
+tt1742650,nm1308026,Allison Pearson
+tt1743360,nm0372659,Jennifer Heath
+tt1743360,nm0537386,Heather Maidat
+tt1743360,nm0799012,Nancey Silvers
+tt1743360,nm0666248,James Patterson
+tt1743360,nm3545510,Gabrielle Charbonnet
+tt17526714,nm0267287,Coralie Fargeat
+tt1754787,nm4685731,Anna Sam
+tt1754787,nm0797777,Michel Siksik
+tt1764651,nm0921013,Richard Wenk
+tt1764651,nm0000230,Sylvester Stallone
+tt1764651,nm0442190,Ken Kaufman
+tt1764651,nm0013234,David Agosto
+tt1764651,nm1709264,Dave Callaham
+tt1766094,nm1615610,Allan Loeb
+tt1766094,nm0669093,Steven Pearl
+tt1769363,nm0456509,Lee Kirk
+tt1783244,nm0388956,Jerzy Hoffman
+tt1783244,nm1008161,Jaroslaw Sokól
+tt1790621,nm2605642,Joany Kane
+tt1798709,nm0005069,Spike Jonze
+tt1807892,nm2189126,Charlotte Clark-Gamache
+tt1807892,nm1672013,Barbara Kymlicka
+tt1807892,nm0266302,Jim Fall
+tt18083578,nm0086301,Macon Blair
+tt18083578,nm0192090,Rusty Cundieff
+tt18083578,nm1196745,E.C. Tubb
+tt1817081,nm2342540,Christian Long
+tt1817081,nm0519043,Justin Long
+tt1817081,nm1218757,Keir O'Donnell
+tt1821694,nm0388377,Jon Hoeber
+tt1821694,nm0388375,Erich Hoeber
+tt1821694,nm1979137,Warren Ellis
+tt1821694,nm1216642,Cully Hamner
+tt1825683,nm3363032,Ryan Coogler
+tt1825683,nm1963288,Joe Robert Cole
+tt1825683,nm0498278,Stan Lee
+tt1825683,nm0456158,Jack Kirby
+tt1826590,nm2853516,Leslye Headland
+tt1826590,nm0443730,Tim Kazurinsky
+tt1826590,nm0213932,Denise DeClue
+tt1826590,nm0000519,David Mamet
+tt1835977,nm3596856,Robin Palmer
+tt1835977,nm4306620,Elizabeth Hackett
+tt1835977,nm1194570,Hilary Galanoy
+tt1838544,nm0122335,Allison Burnett
+tt1838556,nm2551258,Steve Allrich
+tt1838556,nm0931251,Mark Williams
+tt1838556,nm1569452,Louis Per Bruno
+tt1839492,nm1443740,Zoe Kazan
+tt1843303,nm3667421,Brendan Steere
+tt1845849,nm0908037,Michael Walker
+tt1845866,nm0447583,David Kendall
+tt1845866,nm4352571,Kathryn McCullough
+tt1845866,nm0949319,Bob Young
+tt1846442,nm0578850,Aaron Mendelsohn
+tt1846442,nm0115114,Janet Brownell
+tt1846442,nm4671079,Blake Harris
+tt1849868,nm4341803,Evan Laughlin
+tt1849868,nm1545296,Jennifer Notas Shapiro
+tt1850397,nm0210916,Bart De Pauw
+tt1850397,nm0834338,Wesley Strick
+tt1853739,nm1440023,Simon Barrett
+tt1854236,nm0421314,Anders Thomas Jensen
+tt1854236,nm0081540,Susanne Bier
+tt1866205,nm0116511,Massimiliano Bruno
+tt1866205,nm2640138,Edoardo Maria Falcone
+tt1866205,nm0110292,Fausto Brizzi
+tt1866205,nm2766853,Riccardo Cassini
+tt1869716,nm2610231,Zal Batmanglij
+tt1869716,nm1779870,Brit Marling
+tt18747542,nm2203642,Jane Ainscough
+tt18747542,nm2560034,Alex Kendall
+tt1878841,nm0572562,Greg McLean
+tt1878841,nm2453858,Shayne Armstrong
+tt1878841,nm1324960,S.P. Krause
+tt1878841,nm0926625,Nacoma Whobrey
+tt1885331,nm1523943,Sophie Lellouche
+tt1893256,nm1140275,Steven Knight
+tt1904996,nm0572352,John J. McLaughlin
+tt1904996,nm0922799,Donald E. Westlake
+tt1907668,nm0309691,John Gatins
+tt1911553,nm0169300,Daniel Cohen
+tt1911553,nm0206797,Olivier Dazat
+tt1913166,nm0007439,Doug Aarniokoski
+tt1913166,nm0521739,David Loughery
+tt1920849,nm2853516,Leslye Headland
+tt19226340,nm9964152,Rebeca Hughes
+tt19226340,nm2977667,Danny Morgan
+tt1922777,nm0220600,Scott Derrickson
+tt1922777,nm1803036,C. Robert Cargill
+tt19267924,nm0569210,Josann McGibbon
+tt1931435,nm0951698,Justin Zackham
+tt1931435,nm0111379,Jean-Stéphane Bron
+tt1931435,nm0837141,Karine Sudan
+tt1932718,nm0089742,Stuart Blumberg
+tt1932718,nm0935616,Matt Winston
+tt1937269,nm0505262,Dode B. Levenson
+tt1939659,nm0169548,Lawrence D. Cohen
+tt1939659,nm2630745,Roberto Aguirre-Sacasa
+tt1939659,nm0000175,Stephen King
+tt1959563,nm4468296,Tom O'Connor
+tt1967688,nm0615181,Michael J. Murray
+tt1969062,nm0285379,Maya Forbes
+tt19713090,nm7057789,Ji-Woong Nam
+tt19753884,nm8581206,Ximena García Lecuona
+tt19848268,nm0001438,Neil LaBute
+tt1996264,nm4561763,Katie Anne Naylon
+tt1996264,nm1601643,Lauren Miller Rogen
+tt2011159,nm1350938,Aimee Lagos
+tt20115096,nm5149399,Eirene Donohue
+tt2023587,nm0615592,Andy Muschietti
+tt2023587,nm1953833,Barbara Muschietti
+tt2023587,nm0189232,Neil Cross
+tt2024432,nm0563301,Craig Mazin
+tt2024432,nm1087085,Jerry Eeten
+tt2024469,nm1622147,John W. Richardson
+tt2024469,nm1496753,Chris Roach
+tt2024469,nm0257513,Ryan Engle
+tt20258516,nm4102608,Graham Locke
+tt20258516,nm1602192,Angela Mancuso
+tt2036408,nm1834345,Hans G. Raeth
+tt2036408,nm0745131,Marc Rothemund
+tt2036408,nm1839743,André Erkau
+tt2036408,nm3036348,Gernot Gricksch
+tt2036408,nm1040343,Hendrik Hölzemann
+tt2055709,nm0521739,David Loughery
+tt2055765,nm0152911,Dan Chariton
+tt2055765,nm0919173,Stacy Chariton
+tt20768712,nm2250139,Bill Holderman
+tt20768712,nm0799958,Erin Simms
+tt20892688,nm1144897,Kim Beyer-Johnson
+tt2091935,nm0484840,Max Landis
+tt2118624,nm4784201,M.A. Fortin
+tt2118624,nm0588679,Joshua John Miller
+tt21216870,nm5448205,Sofie Forsman
+tt21216870,nm12587245,Tove Forsman
+tt21216870,nm1490113,Mikael Ljung
+tt21220756,nm8104714,Julia Cranney
+tt2124787,nm5038047,Adam Prince
+tt2124787,nm2687643,Johnny Silver
+tt2124787,nm0769181,Stephen Scarlata
+tt2124787,nm0785162,Alejandro Seri
+tt21255308,nm3519794,Sophie Tilson
+tt21255308,nm3951994,Adrian Powers
+tt21255308,nm10770001,Caera Bradshaw
+tt21279122,nm7905703,Il-Hyeong Lee
+tt2131532,nm1819972,Matt Duffer
+tt2131532,nm1819973,Ross Duffer
+tt21388556,nm0230058,Ali Afshar
+tt21388556,nm1520988,Tiffany Dupont
+tt21388556,nm0239768,John Ducey
+tt2140619,nm3472302,Mark Hammer
+tt21469794,nm1225921,Liz W. Garcia
+tt2170593,nm0577647,Theodore Melfi
+tt21830902,nm1211790,Christine Lenig
+tt21830902,nm8020147,Justin Matthews
+tt21830902,nm6845927,Luke Spencer Roberts
+tt2184339,nm0218621,James DeMonaco
+tt2191701,nm0937748,Fred Wolf
+tt2191701,nm0001191,Adam Sandler
+tt2191701,nm0379056,Tim Herlihy
+tt2194499,nm0193485,Richard Curtis
+tt21957774,nm0360937,Kirsten Hansen
+tt2199571,nm2145487,Brad Ingelsby
+tt2203939,nm2602433,Melissa K. Stack
+tt2205401,nm0920530,Christina Welsh
+tt2205401,nm0053228,Ernie Barbarash
+tt2205401,nm2268532,Zane
+tt2205697,nm1837748,Josh Boone
+tt2205697,nm0084598,Rick Bitzelberger
+tt2212008,nm4333222,David Grovic
+tt2212008,nm0176759,Paul Conway
+tt2212008,nm0751638,James Russo
+tt2214864,nm1145513,Peter Hunziker
+tt2214864,nm2090106,Cynthia Riddle
+tt22247450,nm0244058,Brook Durham
+tt2226417,nm1191481,Leigh Whannell
+tt2226417,nm1490123,James Wan
+tt2229499,nm0330687,Joseph Gordon-Levitt
+tt2231253,nm0001279,William Goldman
+tt2234155,nm0000681,Vince Vaughn
+tt2234155,nm2972864,Jared Stern
+tt2234261,nm0394199,Joel Hopkins
+tt2234261,nm2208729,Tess Morris
+tt2237324,nm0604263,Bobby Moresco
+tt2237324,nm5132985,Joseph P. O'Donnell
+tt22528200,nm3704359,Ivan Diaz
+tt22528200,nm3887747,Dan Scheinkman
+tt22528200,nm5213735,Meghan Brown
+tt2256703,nm0326211,Gary Goldstein
+tt2267998,nm5058839,Gillian Flynn
+tt2309260,nm3951039,Chris Lofing
+tt2309260,nm4000389,Travis Cluff
+tt2312718,nm0000230,Sylvester Stallone
+tt2312718,nm5335939,Chuck Logan
+tt2314886,nm0006860,Damian Lee
+tt2314886,nm0906817,Deborah Wakeham
+tt2314886,nm3588335,Christian Piers Betley
+tt2319580,nm0779433,Ken Scott
+tt2319580,nm0236226,Michael Dowse
+tt2321549,nm0448768,Jennifer Kent
+tt2326612,nm0000382,Atom Egoyan
+tt2326612,nm1449098,David Fraser
+tt2333784,nm0000230,Sylvester Stallone
+tt2333784,nm4950667,Creighton Rothenberger
+tt2333784,nm4951717,Katrin Benedikt
+tt2333784,nm1709264,Dave Callaham
+tt2334090,nm0770848,Jeffrey Schenck
+tt2334090,nm0838289,Peter Sullivan
+tt2334090,nm0676248,Fred Olen Ray
+tt2334879,nm0888743,James Vanderbilt
+tt23468450,nm0674020,Osgood Perkins
+tt2350496,nm3592235,Ritesh Batra
+tt2350496,nm3035236,Vasan Bala
+tt2355762,nm1768277,Pnenah Goldstein
+tt2355762,nm2377542,Lisa Kleypas
+tt2361509,nm0583600,Nancy Meyers
+tt2380331,nm0224187,Gerald Di Pego
+tt2381941,nm0275629,Glenn Ficarra
+tt2381941,nm0720135,John Requa
+tt2386237,nm2406892,Ben Ketai
+tt2386237,nm2192285,Eva Konstantopoulos
+tt2390361,nm0392237,Nicole Holofcener
+tt2395247,nm0279386,Bart Fisher
+tt2395427,nm0923736,Joss Whedon
+tt2395427,nm0498278,Stan Lee
+tt2395427,nm0456158,Jack Kirby
+tt2395427,nm0800209,Joe Simon
+tt2395427,nm4160687,Jim Starlin
+tt2398249,nm0795290,Michael Showalter
+tt2398249,nm0906476,David Wain
+tt2400463,nm0006534,Phil Hay
+tt2400463,nm0542062,Matt Manfredi
+tt2404463,nm1767754,Katie Dippold
+tt2406566,nm0426500,Kurt Johnstad
+tt2406566,nm2985952,Antony Johnston
+tt2406566,nm8697009,Sam Hart
+tt2415112,nm1672013,Barbara Kymlicka
+tt2430044,nm0643130,Agnès Obadia
+tt2430044,nm1142065,Samantha Mazeras
+tt2430044,nm4717265,Pénélope Bagieu
+tt2463208,nm2267086,Jonathan Tropper
+tt2463208,nm2385905,T.S. Nowlin
+tt2463208,nm0280814,Jennifer Flackett
+tt2463208,nm0505662,Mark Levin
+tt2464018,nm2694342,Paulo Gustavo
+tt2464018,nm4767807,Fil Braz
+tt2464018,nm1492569,Rafael Dragaud
+tt2465140,nm1347153,Tyler Perry
+tt2465146,nm0029125,Mark Andrus
+tt2503944,nm1140275,Steven Knight
+tt2503944,nm0435701,Michael Kalesniko
+tt2509850,nm0492909,Marc Lawrence
+tt2537176,nm1140089,Neil Elman
+tt2537176,nm0272090,Thomas Fenton
+tt2555736,nm0662530,Ol Parker
+tt2555736,nm0006960,John Madden
+tt2568862,nm0577647,Theodore Melfi
+tt2568862,nm0134191,Edward Cannon
+tt2597760,nm3300027,Dominique Ferrari
+tt2597760,nm1422233,Suzanne Wrubel
+tt26047818,nm8004357,Ilana Wolpert
+tt26047818,nm0323239,Will Gluck
+tt26160190,nm10255350,Akira Shiga
+tt26160190,nm15756067,Kim Tae-joon
+tt2622122,nm5460839,Ann Gunder
+tt2622122,nm0895995,Michael Vickerman
+tt26245570,nm1988976,Scott Damian
+tt26245570,nm0256913,Sara Endsley
+tt26245570,nm1597349,Heather R. Provost
+tt26350277,nm8066994,Chung-Hyun Lee
+tt26581740,nm1199107,Zach Cregger
+tt2717822,nm1420156,Morgan Davis Foehl
+tt2724064,nm0505736,Thunder Levin
+tt2737304,nm2104063,Eric Heisserer
+tt2737304,nm4789922,Josh Malerman
+tt2752772,nm0220600,Scott Derrickson
+tt2752772,nm1803036,C. Robert Cargill
+tt2785032,nm0493257,Josh Lawson
+tt2798920,nm0307497,Alex Garland
+tt2798920,nm4554159,Jeff VanderMeer
+tt2802136,nm0020343,Carlo Allen
+tt2802136,nm1118003,Ted Elrick
+tt2802136,nm0491706,Tom Lavagnino
+tt28182736,nm0322839,Greg Glienna
+tt28182736,nm1555158,Peter Stass
+tt28182736,nm14972759,Kirsten Guenther
+tt28182736,nm3887747,Dan Scheinkman
+tt28182736,nm3683221,Richard Alan Reid
+tt2838678,nm0078943,Janeen Damian
+tt2838678,nm0198755,Michael Damian
+tt2838678,nm0229800,Neal H. Dobrofsky
+tt2838678,nm0229801,Tippi Dobrofsky
+tt2872732,nm0000108,Luc Besson
+tt2883512,nm0269463,Jon Favreau
+tt2910274,nm3521871,Gillian Robespierre
+tt2910274,nm3505289,Karen Maine
+tt2910274,nm3831085,Elisabeth Holm
+tt2910274,nm2210641,Anna Bean
+tt2911666,nm4401003,Derek Kolstad
+tt29268110,nm6475689,Parker Finn
+tt2948790,nm1729470,Patricia Beauchamp
+tt2948790,nm5280688,Joe Gossett
+tt29536228,nm3957224,Dan Steele
+tt2975578,nm0218621,James DeMonaco
+tt2980648,nm1140275,Steven Knight
+tt2980648,nm5728000,Richard C. Morais
+tt3011960,nm3131705,Michael Caissie
+tt3011960,nm3132590,Charles Huttinger
+tt3062976,nm0449576,Sarah Kernochan
+tt3062976,nm1801092,Katha Pollitt
+tt3064298,nm2208729,Tess Morris
+tt3065204,nm0370937,Chad Hayes
+tt3065204,nm0370928,Carey W. Hayes
+tt3065204,nm1490123,James Wan
+tt3065204,nm0424901,David Leslie Johnson-McGoldrick
+tt3079380,nm0082450,Paul Feig
+tt31176520,nm4170048,Ari Aster
+tt31184028,nm5479260,Michael Shanks
+tt31194612,nm3153018,Alan Fox
+tt31194612,nm0386750,Eijirô Hisaita
+tt31194612,nm0402805,Evan Hunter
+tt31194612,nm0452878,Ryûzô Kikushima
+tt31194612,nm0000041,Akira Kurosawa
+tt31194612,nm0644823,Hideo Oguni
+tt3120054,nm0875710,Liz Tuccillo
+tt3120280,nm5170222,Lindsey Anderson Beer
+tt3131456,nm1672013,Barbara Kymlicka
+tt3205394,nm0193485,Richard Curtis
+tt3205394,nm0562687,Paul Mayhew-Archer
+tt3205394,nm0001094,Roald Dahl
+tt3235888,nm1379002,David Robert Mitchell
+tt3236120,nm1417640,Brett Haley
+tt3236120,nm5303256,Marc Basch
+tt3255590,nm6033035,Christopher Wehner
+tt3255590,nm0577647,Theodore Melfi
+tt3272066,nm2847370,Lisa Joy
+tt3278540,nm3072662,Ayn Carrillo Gailey
+tt3278540,nm0545243,Andrea Marcellus
+tt3322940,nm2477891,Gary Dauberman
+tt3338436,nm0229800,Neal H. Dobrofsky
+tt3338436,nm0229801,Tippi Dobrofsky
+tt3346986,nm0924896,J.B. White
+tt3346986,nm0008899,Jean Abounader
+tt3352390,nm0050722,Matthew Ballen
+tt3352390,nm2279441,Philip Koch
+tt3352390,nm0894207,Simon Verhoeven
+tt3387542,nm2406892,Ben Ketai
+tt3387542,nm0180506,Sarah Cornwell
+tt3387542,nm4528537,Nick Antosca
+tt3397884,nm0792263,Taylor Sheridan
+tt3399024,nm0865918,Éric Toledano
+tt3399024,nm0619923,Olivier Nakache
+tt3399024,nm0183419,Delphine Coulin
+tt3399024,nm0183421,Muriel Coulin
+tt3409440,nm0226016,Mike van Diem
+tt3409440,nm0392288,Karen van Holst Pellekaan
+tt3409440,nm1178188,Belcampo
+tt3501112,nm1912600,Tony Mosher
+tt3501112,nm1071097,John Sullivan
+tt3515524,nm0623604,Dylan Neal
+tt3515524,nm0000647,Alan Smithee
+tt3522806,nm0137573,Lewis John Carlino
+tt3522806,nm1909937,Philip Shelby
+tt3522806,nm1912600,Tony Mosher
+tt3522806,nm0519154,Rachel Long
+tt3522806,nm4256393,Brian Pittman
+tt3531824,nm0789366,Jessica Sharzer
+tt3531824,nm6290393,Jeanne Ryan
+tt3534842,nm0770848,Jeffrey Schenck
+tt3534842,nm0838289,Peter Sullivan
+tt3564472,nm1106214,Erica Rivinoja
+tt3564472,nm1244069,Kenya Barris
+tt3564472,nm2002824,Tracy Oliver
+tt3588588,nm1720878,Mike Maples
+tt3610746,nm1135022,Joe Johnson
+tt3716530,nm0229172,Philippe Djian
+tt3716530,nm0083547,David Birke
+tt3717016,nm1383745,Jason Sherman
+tt3717016,nm2169801,Kate Melville
+tt3717016,nm1912424,Lana Griffin
+tt3717016,nm0974301,Katie Ford
+tt3717016,nm0280817,Diane Flacks
+tt3717016,nm0397921,Albert Howell
+tt3717016,nm0824997,Rob Stefaniuk
+tt3717016,nm0176164,Sarah Constible
+tt3746298,nm6512178,Justin Shady
+tt3748172,nm1093039,Mike Flanagan
+tt3748172,nm3670452,Jeff Howard
+tt3748172,nm0000175,Stephen King
+tt3760922,nm0889522,Nia Vardalos
+tt3766354,nm0921013,Richard Wenk
+tt3766354,nm0805994,Michael Sloan
+tt3766354,nm2030456,Richard Lindheim
+tt3783958,nm3227090,Damien Chazelle
+tt3799232,nm1479803,Vince Marcello
+tt3799232,nm6564541,Beth Reekles
+tt3825738,nm1055179,Giulia Calenda
+tt3825738,nm0181246,Paola Cortellesi
+tt3825738,nm2424881,Furio Andreotti
+tt3825738,nm0182891,Ivan Cotroneo
+tt3825738,nm0586837,Riccardo Milani
+tt3846674,nm2531261,Sofia Alvarez
+tt3846674,nm6614229,Jenny Han
+tt3862750,nm0568416,Alan B. McElroy
+tt3862750,nm0931862,Tyger Williams
+tt3882082,nm3771577,Stacey Menear
+tt3890160,nm0942367,Edgar Wright
+tt3986820,nm1918140,Justin Benson
+tt4009278,nm4620383,T.J. Cimfel
+tt4009278,nm5020816,David White
+tt4019560,nm1768304,Gee Malik Linton
+tt4030600,nm0672103,Jonathan Penner
+tt4030600,nm6765196,Robert Damon Schneck
+tt4062536,nm1099918,Jeremy Saulnier
+tt4067256,nm0615181,Michael J. Murray
+tt4079944,nm0464383,Jan Jakub Kolski
+tt4087916,nm0720334,Patricia Resnick
+tt4094724,nm0218621,James DeMonaco
+tt4139588,nm0745343,Jayson Rothwell
+tt4139588,nm9853356,Víctor Santos
+tt4147210,nm2325744,Terry Miles
+tt4160708,nm1793079,Fede Alvarez
+tt4160708,nm2140186,Rodo Sayagues
+tt4180032,nm0770848,Jeffrey Schenck
+tt4180032,nm0838289,Peter Sullivan
+tt4180032,nm0259821,George Erschbamer
+tt4180032,nm0055310,Jeffrey Barmash
+tt4180032,nm0188500,Barbara Fixx
+tt4180032,nm1545296,Jennifer Notas Shapiro
+tt4180560,nm0029125,Mark Andrus
+tt4180560,nm0161330,Cindy Chupack
+tt4180560,nm0840015,William Sutcliffe
+tt4189442,nm2078193,Alex Goyette
+tt4205128,nm4679271,Charlotte Blom
+tt4225622,nm3929259,Brian Duffield
+tt4263482,nm3211470,Robert Eggers
+tt4329242,nm0011950,Robert Adetuyi
+tt4329242,nm6590707,Linda Eskeland
+tt4332232,nm0568416,Alan B. McElroy
+tt4357394,nm7054168,Noga Landau
+tt4425200,nm4401003,Derek Kolstad
+tt4463894,nm0862781,Ernest Tidyman
+tt4463894,nm1244069,Kenya Barris
+tt4463894,nm1113415,Alex Barnow
+tt4479380,nm0539803,Laurence Malkin
+tt4479380,nm0573512,Andy McNab
+tt4504044,nm1161528,Jeff Buhler
+tt4526950,nm0720334,Patricia Resnick
+tt4538916,nm1276348,Meg Leonard
+tt4538916,nm1319618,Nick Moorcroft
+tt4565520,nm0395196,David Hornsby
+tt4565520,nm0469414,Lance Krall
+tt4581576,nm1942197,Javier Gullón
+tt4590256,nm0281592,R. Lee Fleming Jr.
+tt4592572,nm0426505,James Robert Johnston
+tt4592572,nm0947395,Bennett Yellin
+tt4649416,nm0847859,David E. Talbert
+tt4653586,nm7196048,Pat Barker
+tt4653586,nm0597290,Stephen Molton
+tt4653586,nm0961577,Frank Pugliese
+tt4695012,nm4099092,Trey Edward Shults
+tt4698792,nm0028892,Virginia C. Andrews
+tt4698792,nm0479952,Scarlett Lacey
+tt4779682,nm1212988,Dean Georgaris
+tt4779682,nm0388377,Jon Hoeber
+tt4779682,nm0388375,Erich Hoeber
+tt4779682,nm0022709,Steve Alten
+tt4786282,nm2104063,Eric Heisserer
+tt4786282,nm2497546,David F. Sandberg
+tt4827558,nm0219136,Claire Denis
+tt4827558,nm0267288,Jean-Pol Fargeau
+tt4827558,nm3563262,Geoff Cox
+tt4827558,nm0514817,Andrew Litvack
+tt4827558,nm7429362,Nick Laird
+tt4846232,nm2563482,Ronald Bronstein
+tt4846232,nm1343394,Josh Safdie
+tt4867110,nm5274019,Ann Deborah Fishman
+tt4871980,nm1393214,Brandon Broussard
+tt4871980,nm0362544,Gary Hardwick
+tt4871980,nm3276776,Dana Verde
+tt4954522,nm4469445,Julia Ducournau
+tt4997624,nm0215245,Dawn DeKeyser
+tt4997624,nm0205319,Sandra Berg
+tt4997624,nm0723200,Judith Berg
+tt5022702,nm1093039,Mike Flanagan
+tt5022702,nm2318089,Kate Siegel
+tt5033114,nm0325406,David Golden
+tt5034266,nm2354099,Scott Neustadter
+tt5034266,nm2352210,Michael H. Weber
+tt5034266,nm1367106,Kent Haruf
+tt5034474,nm0001353,Walter Hill
+tt5034474,nm0357671,Denis Hamill
+tt5052448,nm1443502,Jordan Peele
+tt5076032,nm7672508,MacKenzie Austin
+tt5096470,nm1918877,Dean Craig
+tt5096470,nm0630666,Francis Nief
+tt5096470,nm4680629,Christelle Raynal
+tt5096470,nm5290484,Federico Sperindei
+tt5109784,nm0004716,Darren Aronofsky
+tt5115024,nm2131687,Héctor Cabello Reyes
+tt5115024,nm0491708,Eric Lavaine
+tt5133572,nm0078943,Janeen Damian
+tt5133572,nm0198755,Michael Damian
+tt5133572,nm0229800,Neal H. Dobrofsky
+tt5133572,nm0229801,Tippi Dobrofsky
+tt5133810,nm6265828,Lynn Grant Beck
+tt5133810,nm1545296,Jennifer Notas Shapiro
+tt5133810,nm0838289,Peter Sullivan
+tt5140878,nm2477891,Gary Dauberman
+tt5153236,nm0275284,Robert Festinger
+tt5156770,nm7801273,Rosalind Noonan
+tt5156770,nm0565749,Karen McClellan
+tt5164184,nm1396104,Anthony Byrne
+tt5164184,nm1754059,Natalie Dormer
+tt5210048,nm0144459,Rickie Castaneda
+tt5210048,nm9785025,Megan Hocking
+tt5304992,nm4199289,Katie Silberman
+tt5308322,nm1245146,Scott Lobdell
+tt5315210,nm1891775,Maggie Cohn
+tt5315210,nm6177805,Jack Stanley
+tt5315212,nm3689973,Andrew Knauer
+tt5315212,nm2435600,Arthur Pielli
+tt5315212,nm1601147,Brandon Scott Jones
+tt5316540,nm2351920,Vicky Jewson
+tt5316540,nm2374886,Rupert Whitaker
+tt5340362,nm3204152,Barbara Curry
+tt5368354,nm0768139,Brian Sawyer
+tt5368354,nm0744032,Gregg Rossen
+tt5368354,nm0692708,Ari Posner
+tt5397194,nm0629272,Andrew Niccol
+tt5437194,nm7913242,Irina Gorbenko
+tt5437194,nm3607564,Taisiya Igumentseva
+tt5437194,nm7902510,Dmitriy Osmerkin
+tt5437194,nm7913243,Zhana Randina
+tt5442456,nm0593856,Ron Mita
+tt5442456,nm0572151,Jim McClain
+tt5442456,nm3916149,Zach Dean
+tt5458812,nm2194973,Damon Tod Hill
+tt5458812,nm0156213,Howard Chesley
+tt5463162,nm1014201,Rhett Reese
+tt5463162,nm1116660,Paul Wernick
+tt5463162,nm0005351,Ryan Reynolds
+tt5463162,nm0509580,Rob Liefeld
+tt5463162,nm1436760,Fabian Nicieza
+tt5519340,nm0484840,Max Landis
+tt5525014,nm2669989,Vasiliy Rovenskiy
+tt5539054,nm1397787,Ben Epstein
+tt5563324,nm2133655,Chris Sparling
+tt5577742,nm2057798,Luke Harvis
+tt5577742,nm6366015,Alistair Legrand
+tt5616294,nm0017690,Matthew Aldrich
+tt5616294,nm2362124,George Harrar
+tt5640450,nm0254660,Tony Elliott
+tt5670152,nm1938064,Deon Taylor
+tt5676118,nm1094769,Helen Frost
+tt5676118,nm1104079,Don MacLeod
+tt5676118,nm3734363,Liam Fearnley
+tt5700672,nm6711056,Park Joo-suk
+tt5700672,nm3613566,Yeon Sang-ho
+tt5748448,nm4007981,Kurt McLeod
+tt5748448,nm0138620,Joe Carnahan
+tt5748448,nm0931251,Mark Williams
+tt5783956,nm4465847,John Whittington
+tt5828874,nm0770848,Jeffrey Schenck
+tt5828874,nm0838289,Peter Sullivan
+tt5828874,nm2438571,Topher Payne
+tt5834760,nm0077002,Assaf Bernstein
+tt5884796,nm5684500,Charles Cumming
+tt5884796,nm0204731,J.P. Davis
+tt5913798,nm2035118,Babak Anvari
+tt5913798,nm11015372,Nathan Ballingrud
+tt5932368,nm4350997,Samuel Bartlett
+tt5932368,nm0303032,George Gallo
+tt5990342,nm1475479,Jim Strouse
+tt6009140,nm3372724,Reem Kherici
+tt6009140,nm0443592,Stéphane Kazandjian
+tt6009140,nm3743617,Philippe Lacheau
+tt6048930,nm0023315,Rick Alvarez
+tt6048930,nm0461830,Mårten Knutsson
+tt6048930,nm0461835,Torkel Knutsson
+tt6048930,nm1326627,Cory Koller
+tt6048930,nm0005541,Marlon Wayans
+tt6079772,nm0921013,Richard Wenk
+tt6119504,nm1393214,Brandon Broussard
+tt6119504,nm1537777,Hudson Obayuwana
+tt6119504,nm2434433,Jana Savage
+tt6133466,nm0218621,James DeMonaco
+tt6146586,nm4401003,Derek Kolstad
+tt6146586,nm8748334,Shay Hatten
+tt6146586,nm2384772,Chris Collins
+tt6146586,nm0009207,Marc Abrams
+tt6222118,nm2790197,Lior Chefetz
+tt6222118,nm2751870,Joe Swanson
+tt6222118,nm12257041,Devon Rose
+tt6222118,nm9042572,Matt McAllester
+tt6222118,nm9042350,Greg Williams
+tt6246322,nm1793079,Fede Alvarez
+tt6246322,nm2140186,Rodo Sayagues
+tt6266306,nm0008053,Scott Abbott
+tt6266306,nm0709585,Florence Engel Randall
+tt6288694,nm1107639,Matt Venne
+tt6387232,nm0053228,Ernie Barbarash
+tt6387232,nm0024169,Mark Amato
+tt6421110,nm1433517,John Newman
+tt6421110,nm1582836,Christian Swegal
+tt6421110,nm0031078,Steve Antin
+tt6432466,nm8714831,Jennifer Mathieu
+tt6432466,nm2309894,Tamara Chestna
+tt6432466,nm3231710,Dylan Meyer
+tt6462958,nm4170842,Isaac Aptaker
+tt6462958,nm0074165,Elizabeth Berger
+tt6485928,nm10122456,Ted Thompson
+tt6485928,nm0392237,Nicole Holofcener
+tt6547170,nm5529327,Bryce Hammons
+tt6663582,nm2573005,Susanna Fogel
+tt6663582,nm1503347,David Iserson
+tt6722030,nm0521739,David Loughery
+tt6723592,nm0634240,Christopher Nolan
+tt6742252,nm7546166,Gustav Möller
+tt6742252,nm3764055,Emil Nygaard Albertsen
+tt6751668,nm0094435,Bong Joon Ho
+tt6751668,nm8243301,Han Jin-won
+tt6772950,nm0718555,Michael Reisz
+tt6772950,nm3273842,Jillian Jacobs
+tt6772950,nm1496753,Chris Roach
+tt6772950,nm0905592,Jeff Wadlow
+tt6777338,nm3468066,Jung Byung-gil
+tt6777338,nm8990729,Byeong-sik Jung
+tt6792478,nm1093723,Michael Shear
+tt6792478,nm2427387,Samantha Shear
+tt6802400,nm0000552,Eddie Murphy
+tt6802400,nm0087904,Barry W. Blaustein
+tt6802400,nm0790775,David Sheffield
+tt6802400,nm0437597,Justin Kanew
+tt6802400,nm1244069,Kenya Barris
+tt6803212,nm1096524,Jacob Estes
+tt6803212,nm0206782,Drew Daywalt
+tt6857112,nm1443502,Jordan Peele
+tt6857166,nm2250139,Bill Holderman
+tt6857166,nm0799958,Erin Simms
+tt6888938,nm2917649,Paul Raschid
+tt6968614,nm3207866,Misha Green
+tt6968614,nm0075696,Andrea Berloff
+tt6968614,nm0185976,Peter Craig
+tt6987770,nm0505741,Victor Levin
+tt7007696,nm4549849,Pippa Bianco
+tt7057496,nm1203013,Jang Hang-jun
+tt7074092,nm10350281,Stacy Connelly
+tt7074092,nm1669597,Keith Cooper
+tt7074092,nm5734680,Rebecca Lamarche
+tt7137846,nm0257513,Ryan Engle
+tt7137846,nm4003337,Jaime Primak Sullivan
+tt7144666,nm0454872,Joe Hill
+tt7144666,nm0220600,Scott Derrickson
+tt7144666,nm1803036,C. Robert Cargill
+tt7149336,nm3220704,Will Elliott
+tt7149336,nm2267899,Kirk C. Johnson
+tt7149336,nm0751990,Nicholas Rutherford
+tt7149336,nm0777521,Robert Schwartzman
+tt7153488,nm2515643,Mary Ann Barnes
+tt7153488,nm5680354,David Dittlinger
+tt7153488,nm2532541,Stephen Durham
+tt7153488,nm1712005,Ellen Hollman
+tt7153766,nm0077080,Jonathan Bernstein
+tt7153766,nm0007079,James Greer
+tt7286456,nm0680846,Todd Phillips
+tt7286456,nm0798788,Scott Silver
+tt7286456,nm0004170,Bob Kane
+tt7286456,nm0277730,Bill Finger
+tt7286456,nm1047603,Jerry Robinson
+tt7315484,nm1139317,Carey Van Dyke
+tt7315484,nm0886749,Shane Van Dyke
+tt7315484,nm2423304,Tim Lebbon
+tt7349950,nm0000175,Stephen King
+tt7349950,nm2477891,Gary Dauberman
+tt7358936,nm9815188,Stella Bagwell
+tt7358936,nm3673530,Amanda McNeice
+tt7374948,nm4399227,Ali Wong
+tt7374948,nm1320827,Randall Park
+tt7374948,nm1486706,Michael Golamco
+tt7395114,nm1290515,Antonio Campos
+tt7395114,nm10101337,Paulo Campos
+tt7395114,nm5675928,Donald Ray Pollock
+tt7456310,nm0000108,Luc Besson
+tt7469828,nm2008031,Anna Gutto
+tt7545266,nm2850785,Sam Pitman
+tt7545266,nm1428311,Adam Cole-Kelly
+tt7545266,nm1294678,Danielle Sanchez-Witzel
+tt7549884,nm5610859,Lee An-kyu
+tt7550000,nm3231728,Mattson Tomlin
+tt7556122,nm1421638,Greg Rucka
+tt7556122,nm8030368,Leandro Fernandez
+tt7557108,nm3819217,Rose Glass
+tt7608418,nm6912381,Karen Schaler
+tt7608418,nm1405911,Nate Atkins
+tt7608534,nm7107839,Dinah Eng
+tt7634968,nm1202276,Tina Gordon
+tt7634968,nm0404752,Peter Huyck
+tt7634968,nm0339733,Alex Gregory
+tt7634968,nm1944708,Jas Waters
+tt7634968,nm0326092,Josh Goldsmith
+tt7634968,nm0951135,Cathy Yuspa
+tt7634968,nm0236884,Diane Drake
+tt7638348,nm2482939,Chris Borey
+tt7638348,nm2282967,Eddie Borey
+tt7638348,nm0138620,Joe Carnahan
+tt7654082,nm7837495,Rick Garman
+tt7668870,nm3792134,Aneesh Chaganty
+tt7668870,nm3539578,Sev Ohanian
+tt7685962,nm4249530,Daniel Bernal
+tt7685962,nm4143640,Jordi Farga
+tt7720142,nm1711449,Thomas Dunn
+tt7737528,nm7073779,Umair Aleem
+tt7784604,nm4170048,Ari Aster
+tt7785106,nm0061363,Susan Batten
+tt7785106,nm0744032,Gregg Rossen
+tt7785106,nm0768139,Brian Sawyer
+tt7785106,nm0796631,Sydney Sidner
+tt7798634,nm2361509,Guy Busick
+tt7798634,nm1459583,R. Christopher Murphy
+tt7888964,nm4401003,Derek Kolstad
+tt7905880,nm9576433,Carrie Freedle
+tt7923220,nm5755883,Matthew Kennedy
+tt7945440,nm0127894,Veena Sud
+tt7945440,nm0782297,Marcus Seibert
+tt7945440,nm1664028,Sebastian Ko
+tt7991608,nm1098493,Rawson Marshall Thurber
+tt8008948,nm0345615,Christian Gudegast
+tt8008948,nm0771228,Paul T. Scheuring
+tt8041006,nm10266826,Teresa Southwick
+tt8041006,nm0278031,David Finley
+tt8041006,nm5734680,Rebecca Lamarche
+tt8075260,nm3066492,Jennifer Kaytin Robinson
+tt8079880,nm3507602,Bryan Dick
+tt8085790,nm2002824,Tracy Oliver
+tt8085790,nm1202276,Tina Gordon
+tt8097306,nm1347153,Tyler Perry
+tt8106534,nm1116660,Paul Wernick
+tt8106534,nm1014201,Rhett Reese
+tt8110640,nm2309496,Gregory Weidman
+tt8110640,nm2205460,Geoffrey Tock
+tt8111210,nm0024169,Mark Amato
+tt8155288,nm0484907,Christopher Landon
+tt8155288,nm1245146,Scott Lobdell
+tt8169446,nm1560199,Liz Cackowski
+tt8169446,nm0819225,Emily Spivey
+tt8201170,nm0089237,Steve Bloom
+tt8201170,nm6590106,Randall Green
+tt8231668,nm2955597,Iliza Shlesinger
+tt8250512,nm9776403,Rachel Hauck
+tt8250512,nm2703607,Tracy Andreen
+tt8332922,nm1024677,John Krasinski
+tt8332922,nm1456816,Bryan Woods
+tt8332922,nm1399714,Scott Beck
+tt8363392,nm5943432,Van B. Nguyen
+tt8367084,nm0317537,Kathie Lee Gifford
+tt8367084,nm6631654,Chris Blake
+tt8368408,nm4142927,Navot Papushado
+tt8368408,nm6975399,Ehud Lavski
+tt8485364,nm1466691,Christian Volckman
+tt8485364,nm1162056,Eric Forestier
+tt8485364,nm1615033,Gaia Guasti
+tt8485364,nm2348263,Sabrina B. Karine
+tt8485364,nm0712257,Vincent Ravalec
+tt8510488,nm0229800,Neal H. Dobrofsky
+tt8510488,nm0229801,Tippi Dobrofsky
+tt8522006,nm0245112,Clea DuVall
+tt8522006,nm4364610,Mary Holland
+tt8623904,nm0584117,George Michael
+tt8623904,nm0000668,Emma Thompson
+tt8623904,nm0936353,Greg Wise
+tt8623904,nm6507883,Bryony Kimmings
+tt8707922,nm4050491,Peter Hutchings
+tt8707922,nm1536494,Sophie Kinsella
+tt8709036,nm1405911,Nate Atkins
+tt8709036,nm6912381,Karen Schaler
+tt8718158,nm3898253,Christina Mengert
+tt8718158,nm9982294,Sally Thorne
+tt8772262,nm4170048,Ari Aster
+tt8784956,nm0628563,Matthew Newton
+tt8850222,nm3613566,Yeon Sang-ho
+tt8850222,nm6804206,Ryu Yong-jae
+tt8889818,nm10563886,Ian Hayden
+tt8936646,nm0751648,Joe Russo
+tt8936646,nm3133666,Ande Parks
+tt8936646,nm0751577,Anthony Russo
+tt8936646,nm11461720,Fernando León González
+tt8954732,nm0076820,Robin Bernheim
+tt8954732,nm2997602,Megan Metzger
+tt9000184,nm5476520,Kyle Warren
+tt9000184,nm1072411,Veronika Franz
+tt9000184,nm3868633,Severin Fiala
+tt9028856,nm1634214,Jay Cipriani
+tt9028856,nm4056107,Anna White
+tt9028856,nm1654657,Michael Ciminera
+tt9028856,nm1232512,Richard Gnolfo
+tt9028856,nm0555646,Matt Marx
+tt9028880,nm0555646,Matt Marx
+tt9028880,nm4056107,Anna White
+tt9033628,nm6101352,Samantha Herman
+tt9033632,nm3135866,Joie Botkin
+tt9033632,nm0178900,Matthew Coppola
+tt9033632,nm7837495,Rick Garman
+tt9058820,nm0770848,Jeffrey Schenck
+tt9058820,nm0838289,Peter Sullivan
+tt9058820,nm9394808,Amy Carlson
+tt9058820,nm4056107,Anna White
+tt9071456,nm10164302,Grant Ginder
+tt9071456,nm0597313,Lizzie Molyneux-Logelin
+tt9071456,nm2203779,Wendy Molyneux
+tt9150192,nm1570426,Chuck Dixon
+tt9150192,nm0000230,Sylvester Stallone
+tt9150192,nm0043742,David Ayer
+tt9252508,nm1625872,Sam Wolfson
+tt9271164,nm7483705,Matt Young
+tt9347730,nm1443502,Jordan Peele
+tt9347730,nm1545391,Win Rosenfeld
+tt9347730,nm4804442,Nia DaCosta
+tt9347730,nm0741262,Bernard Rose
+tt9347730,nm0000850,Clive Barker
+tt9354842,nm2531261,Sofia Alvarez
+tt9354842,nm0328987,J. Mills Goodloe
+tt9354842,nm6614229,Jenny Han
+tt9419834,nm1482634,Kraig Wenman
+tt9419834,nm0838289,Peter Sullivan
+tt9448932,nm4560395,Jake Brunger
+tt9448932,nm2450688,Eliza Schroeder
+tt9448932,nm3405973,Mahalia Rimmer
+tt9484998,nm4460791,Andy Siara
+tt9484998,nm3817317,Max Barbakow
+tt9619798,nm2475608,Chris Pappas
+tt9619798,nm0055937,Kevin Barnett
+tt9686790,nm3472302,Mark Hammer
+tt9784456,nm1479803,Vince Marcello
+tt9784456,nm10477231,Jay S Arnold
+tt9784456,nm6564541,Beth Reekles
+tt9806322,nm3494602,Oliver Kienle
+tt9815714,nm0994275,Thomas J. Churchill
+tt9815714,nm0915394,Keoni Waxman
+tt9860728,nm4306620,Elizabeth Hackett
+tt9860728,nm1194570,Hilary Galanoy
+tt9866072,nm0667330,Tiffany Paulsen

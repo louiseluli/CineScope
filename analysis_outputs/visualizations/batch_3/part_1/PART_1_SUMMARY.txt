@@ -1,0 +1,21 @@
+
+================================================================================
+BATCH 3 PART 1: TOP PERFORMERS & BASIC STATISTICS - SUMMARY
+================================================================================
+
+Q1: Most-watched actor overall: Vincent Price (31 films)
+
+Q2-4: Most-watched by gender:
+  Male: Vincent Price (31 films)
+  Female: Bess Flowers (22 films)
+
+Q5-6: Unique actor counts:
+  Total: 27,795
+  Male: 14,792 (53.2%)
+  Female: 9,155 (32.9%)
+
+Q7: Gender ratio: 53.2% Male / 32.9% Female
+
+✅ Batch 3 Part 1 Complete!
+3 visualizations created in: /Users/louisesfer/Documents/Programming/CineScope/analysis_outputs/visualizations/batch_3/part_1
+================================================================================
