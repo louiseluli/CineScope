@@ -1,14 +1,14 @@
-Here’s a full README you can drop into your CineScope repo and then tweak as you like. I’ve leaned into the “curated for years” + “turning passion into data” story and used several visuals.
-
-You can literally save this as `README.md` in the root of the CineScope project.
-
-````markdown
 # 🎬 CineScope – Personal Cinema Analytics
 
 > _A data-driven love letter to my own film taste._  
-> CineScope turns years of carefully curated watchlists and a movie collection into a full analytics project, exploring my cinematic patterns, biases, and obsessions.
+> CineScope turns years of carefully curated watchlists and a movie collection into a full analytics pipeline, exploring my cinematic patterns, biases, and obsessions.
 
-For years I’ve been curating my movie list: exporting from IMDb, maintaining spreadsheets, organizing my collection, and tracking what I watch. CineScope is how I turned that quiet, nerdy passion into something meaningful: a complete data pipeline that ingests my personal watch history and collection, enriches each title with multiple external sources, and generates hundreds of visualizations to understand **how I watch films**, **who I watch**, and **which stories I return to again and again**.
+For years I've been exporting IMDb lists, maintaining spreadsheets, and organizing my collection. CineScope is where that quiet obsession becomes something rigorous: a modular Python project that ingests my own watch history and collection, enriches each title with external data, and generates hundreds of visualizations about:
+
+- **What I actually watch**
+- **Who keeps appearing on screen**
+- **How my taste moves across decades & genres**
+- **Where the gaps and blind spots in my collection are**
 
 ---
 
@@ -17,11 +17,10 @@ For years I’ve been curating my movie list: exporting from IMDb, maintaining s
 **CineScope is:**
 
 - 🧠 **Quantified self for cinema**  
-  Analyse my own watch history and collection as if it were a dataset in a research project.
+  Treats my watch history and collection as a research dataset.
 
 - 🔗 **Multi-source enrichment**  
-  Combine personal lists with:
-
+  Combines personal data with:
   - IMDb non-commercial datasets (TSV + IMDb IDs)
   - TMDb metadata
   - OMDb ratings & details
@@ -29,268 +28,280 @@ For years I’ve been curating my movie list: exporting from IMDb, maintaining s
   - Wikidata entities & extra facts
 
 - 📊 **Rich visual analytics**  
-  Generate **250+ static and interactive visualizations** on:
-
-  - Ratings, genres, decades, runtimes
-  - Actors, actresses, directors, writers
-  - Genres and hybrid genre combinations
-  - Studios, awards, and critic alignment
-  - Representation, careers, and patterns
-  - Recommendations and “collection gaps”
+  Generates static and interactive visualizations about:
+  - Ratings, decades, runtimes
+  - Genres, hybrids, and evolution over time
+  - Actors, actresses, ensembles, representation
+  - Directors, studios, awards, and critical alignment
+  - Patterns, recommendations, and diversity of my collection
 
 - 🧱 **Modular, inspectable pipeline**  
-  Scripts and modules are organized in small, clear steps (batches), so every part of the pipeline is inspectable and reproducible.
+  Each step is a separate batch/script, so you can see exactly how data flows and transforms.
 
 ---
 
-## 2. Why I Built This
+## 2. Repository Structure & Pipeline
 
-I’ve been keeping movie lists for years:
-
-- Exporting watchlists from IMDb
-- Maintaining personal CSVs and databases
-- Organizing my own collection in `*.db` files
-
-At some point, I realized I wasn’t just tracking films, I was **documenting my relationship with cinema**.
-
-CineScope is how I:
-
-- Turn that long-term curation into a **structured dataset**
-- Ask serious questions about **my own patterns**:
-  - Do I really watch as much classic cinema as I think?
-  - Which actors and directors quietly dominate my nights?
-  - How does my taste evolve by decade or genre?
-  - Where are the “gaps” in my personal film education?
-- Use the same tools I use academically (Python, data pipelines, ML-style analysis) on something I genuinely love.
-
----
-
-## 3. Data Pipeline & Architecture
-
-The repo is organized as a pipeline:
+The project is organized as a multi-stage data pipeline:
 
 ```text
-data/raw
-  ├── Watched-Dec.csv              # Personal watched history
-  ├── Watchlist_IMDB.csv           # IMDb watchlist export
-  ├── collection_movies.db         # Local collection
-  ├── imdb.db                      # Local SQLite mirror of IMDb
-  ├── name.basics.tsv*             # IMDb names
-  ├── title.basics.tsv*            # IMDb titles
-  ├── title.crew.tsv*              # IMDb crew
-  ├── title.principals.tsv*        # IMDb principals
-  ├── title.ratings.tsv*           # IMDb ratings
-  └── watched_movies.db            # Another structured source of watched data
-
-data/processed
-  ├── imdb_cache/                  # Parquet versions of IMDb tables
-  ├── master_media_list.csv        # Unified list of all titles in scope
-  ├── master_cinema_data.csv       # Fully enriched master table
-  ├── actors_master.parquet        # Actor-centric data
-  ├── omdb_enrichment_status.json  # Enrichment progress tracking
-  └── people_cache.json            # Cached person lookups
+data/
+  raw/                    # Personal exports + IMDb non-commercial datasets
+  processed/              # Enriched and merged tables (CSV, Parquet, caches)
+  logs/, reports/, user/  # Logs, reports, user-specific inputs
 
 scripts/
-  ├── 00_create_master_list.py     # Build base list of titles
-  ├── apply_verification_corrections.py
-  ├── batch_0_data_engineering.py
-  ├── batch_0_filter_watched.py
-  ├── batch_0_fix_data.py          # Cleaning & preprocessing
-  ├── batch_1_quantified_self.py   # Ratings, genres, decades overview
-  ├── batch_2_content_genome.py    # Tags, genre combos, cast networks
-  ├── batch_3_part_1_top_performers.py
-  ├── batch_3_part_2_filmography_completion.py
-  ├── batch_3_part_3_comparisons_quality.py
-  ├── batch_3_parts_4_5_age_career_character.py
-  ├── batch_4_directors_writers.py
-  ├── batch_5_genres.py
-  ├── batch_6_production_awards.py
-  ├── batch_7_critical_alignment.py
-  ├── batch_8_patterns_recommendations.py
-  └── merge_all_enriched.py
+  00_create_master_list.py              # Build base list of titles
+  batch_0_*                             # Data engineering & cleaning
+  batch_1_quantified_self.py            # Ratings, decades, runtimes
+  batch_2_content_genome.py             # Genres, hybrids, cast networks
+  batch_3_*                             # Actors, representation, careers
+  batch_4_directors_writers.py          # Directors & writers
+  batch_5_genres.py                     # Genre-specific analytics
+  batch_6_production_awards.py          # Studios & awards
+  batch_7_critical_alignment.py         # Critics & ratings sources
+  batch_8_patterns_recommendations.py   # Patterns, gaps, recommendations
 
 scripts/enrich/
-  ├── 00_enrich_imdb.py            # Build IMDb backbone
-  ├── 01_enrich_tmdb.py            # TMDb API enrichment
-  ├── 02_enrich_omdb.py            # OMDb API enrichment
-  ├── 03_enrich_ddd.py             # DoesTheDogDie enrichment
-  ├── 04_enrich_cast.py            # Cast and crew details
-  └── 05_enrich_wikidata.py        # Wikidata-based enrichment
+  00_enrich_imdb.py     # Build IMDb backbone
+  01_enrich_tmdb.py     # TMDb enrichment
+  02_enrich_omdb.py     # OMDb enrichment
+  03_enrich_ddd.py      # DoesTheDogDie enrichment
+  04_enrich_cast.py     # Cast and crew details
+  05_enrich_wikidata.py # Wikidata enrichment
 
 analysis_outputs/
-  ├── visualizations/              # All PNG/HTML visual outputs
-  ├── exports/                     # CSVs and JSON summaries
-  ├── reports/                     # Text summaries and logs
-  └── README_visualizations/       # Curated selection of hero charts
+  visualizations/       # PNG & HTML charts/dashboards by batch
+  exports/              # CSV and JSON summaries
+  reports/              # Text reports (per batch)
+  README_visualizations/# Curated "hero" plots for documentation
 
 ui_research/
-  ├── index.html                   # Early UI prototype
-  ├── style.css                    # Styling
-  ├── app.js                       # Front-end logic
-  └── backend/                     # Tiny Python backend for queries
+  index.html, style.css, app.js        # Experimental UI for browsing
+  backend/ (Python API)                # Tiny backend over the enriched data
 ```
-````
+
+**Core enriched tables** live under `data/processed/`:
+- `master_media_list.csv` – all titles in scope
+- `master_cinema_data.csv` – fully enriched movie-level data
+- `actors_master.parquet` – actor-centric view
 
 ---
 
-## 4. Visual Highlights
+## 3. Visual Story of My Cinema Universe
 
-I generated **hundreds of charts**, but here is a curated subset that best tells the story of my viewing habits and patterns.
+This section mirrors the same narrative structure used in my portfolio: taste & time, genres, people, careers, behind the camera, critics, and patterns & gaps.
 
-> All image paths below are relative to the repo – GitHub will render them directly in the README.
-
-### 4.1. Quantified Taste: Ratings, Genres, Decades
-
-<p align="center">
-  <img src="analysis_outputs/README_visualizations/01_batch1_01_rating_distribution.png"
-       alt="Rating distribution of my watched movies" width="45%">
-  <img src="analysis_outputs/README_visualizations/01_batch1_02_decade_genre_heatmap.png"
-       alt="Decade vs genre heatmap" width="45%">
-</p>
-
-- **Rating distribution** – Do I rate generously or harshly? Where do my scores cluster?
-- **Decade × genre heatmap** – Which combinations of decade and genre define my habits (e.g. 1940s noir vs 1980s horror)?
-
-<p align="center">
-  <img src="analysis_outputs/visualizations/batch_1/07_decade_distribution.png"
-       alt="Decade distribution of films" width="45%">
-  <img src="analysis_outputs/visualizations/batch_1/05_runtime_sweet_spot.png"
-       alt="Runtime sweet spot chart" width="45%">
-</p>
-
-- **Decade distribution** – How balanced (or biased) my collection is across historical periods.
-- **Runtime sweet spot** – The runtimes where I tend to rate films higher.
+All thumbnails below are real outputs from `analysis_outputs/**` and render directly on GitHub.
 
 ---
 
-### 4.2. People in My Universe: Actors, Actresses, Co-stars
+### 3.1. My Taste, Over Time
 
 <p align="center">
-  <img src="analysis_outputs/visualizations/batch_2/01_top_actors_leaderboard.png"
-       alt="Top actors leaderboard" width="45%">
-  <img src="analysis_outputs/visualizations/batch_2/02_top_actresses_leaderboard.png"
-       alt="Top actresses leaderboard" width="45%">
+  <img src="analysis_outputs/README_visualizations/01_batch1_01_rating_distribution.png" alt="Rating distribution of my watched movies" width="45%">
+  <img src="analysis_outputs/README_visualizations/01_batch1_07_decade_distribution.png" alt="Decade distribution of my watched movies" width="45%">
 </p>
 
-- **Top actors & actresses** – Who appears over and over in my watch history, even when I’m not consciously choosing based on cast?
+**Rating distribution** – Whether I'm generous or harsh, and where my scores cluster.  
+**Decade distribution** – Which eras dominate my watch history and which are surprisingly empty.
 
 <p align="center">
-  <img src="analysis_outputs/visualizations/batch_2/03b_top_costar_pairs.png"
-       alt="Top co-star pairs" width="45%">
-  <img src="analysis_outputs/visualizations/batch_3/part_1/03_gender_distribution.png"
-       alt="Gender distribution in cast" width="45%">
+  <img src="analysis_outputs/README_visualizations/01_batch1_05_runtime_sweet_spot.png" alt="Runtime sweet spot chart" width="45%">
+  <img src="analysis_outputs/README_visualizations/01_batch1_08_popularity_vs_rating.png" alt="Popularity vs my ratings" width="45%">
 </p>
 
-- **Co-star pairs** – Recurring collaborations that quietly shape my perception of cinema.
-- **Gender distribution** – How gender representation looks across casts in my collection.
-
-Some of these views also have **interactive versions**, such as:
-
-- `analysis_outputs/visualizations/batch_2/03_actor_network_interactive.html`
-
-which let me explore actor networks as a graph.
+**Runtime sweet spot** – The lengths where I consistently rate films higher.  
+**Popularity vs my ratings** – Where I align with the crowd and where I quietly rebel.
 
 ---
 
-### 4.3. Careers & Representation: Age, Longevity, Quality
+### 3.2. Genres, Hybrids & Evolution
 
 <p align="center">
-  <img src="analysis_outputs/visualizations/batch_3/part_4/viz_23_career_evolution.png"
-       alt="Career evolution chart" width="45%">
-  <img src="analysis_outputs/visualizations/batch_3/parts_4_5/19_career_length_distribution.png"
-       alt="Career length distribution" width="45%">
+  <img src="analysis_outputs/README_visualizations/01_batch1_04_genre_distribution.png" alt="Genre distribution" width="45%">
+  <img src="analysis_outputs/README_visualizations/01_batch1_02_decade_genre_heatmap.png" alt="Decade vs genre heatmap" width="45%">
 </p>
 
-- **Career evolution** – How an actor’s roles and film quality evolve over time.
-- **Career length distribution** – Which careers are long, which are short, and how that interacts with visibility in my dataset.
+**Genre distribution** – The backbone of my collection, from mainstream to niche.  
+**Decade × genre heatmap** – Where genres live in time (e.g. 40s noir, 80s horror).
 
 <p align="center">
-  <img src="analysis_outputs/visualizations/batch_3/part_3/viz_18_actors_in_top_films.png"
-       alt="Actors in top-rated films" width="45%">
-  <img src="analysis_outputs/visualizations/batch_3/part_3/viz_17_classic_vs_modern.png"
-       alt="Classic vs modern comparisons" width="45%">
+  <img src="analysis_outputs/visualizations/batch_5/05_genre_combinations.png" alt="Genre combinations heatmap" width="45%">
+  <img src="analysis_outputs/visualizations/batch_5/04_pure_vs_hybrid.png" alt="Pure vs hybrid genre comparison" width="45%">
 </p>
 
-- **Actors in my top-rated movies** – Which performers dominate the films I love the most.
-- **Classic vs modern** – How my ratings differ between older and newer eras.
+**Genre combinations** – Hybrids like horror-comedy, noir-thriller, sci-fi-drama.  
+**Pure vs hybrid genres** – How single-genre titles compare to hybrids in ratings and frequency.
+
+<p align="center">
+  <img src="analysis_outputs/visualizations/batch_5/02_genre_quality_runtime.png" alt="Genre quality vs runtime" width="45%">
+  <img src="analysis_outputs/visualizations/batch_5/06_genre_decade_heatmap.png" alt="Genre evolution across decades" width="45%">
+</p>
+
+**Genre × runtime × quality** – Which genres work best short and which need room to breathe.  
+**Genre evolution** – How my favourite genres travel across decades.
 
 ---
 
-### 4.4. Directors, Writers, Studios & Awards
+### 3.3. Who I Watch: People & Representation
 
 <p align="center">
-  <img src="analysis_outputs/visualizations/batch_4/01_director_leaderboard.png"
-       alt="Director leaderboard" width="45%">
-  <img src="analysis_outputs/visualizations/batch_4/02_director_quality.png"
-       alt="Director quality comparison" width="45%">
+  <img src="analysis_outputs/visualizations/batch_2/01_top_actors_leaderboard.png" alt="Top actors leaderboard" width="45%">
+  <img src="analysis_outputs/visualizations/batch_2/02_top_actresses_leaderboard.png" alt="Top actresses leaderboard" width="45%">
 </p>
 
-- **Director leaderboard** – Which directors show up the most in my films.
-- **Director quality** – Average ratings per director and how consistent they are.
+**Top actors & actresses** – The people who silently dominate my nights at the movies.
 
 <p align="center">
-  <img src="analysis_outputs/visualizations/batch_6/01_studio_leaderboard.png"
-       alt="Studio leaderboard" width="45%">
-  <img src="analysis_outputs/visualizations/batch_6/08_oscar_timeline.png"
-       alt="Awards and Oscar timeline" width="45%">
+  <img src="analysis_outputs/visualizations/batch_2/16_cast_gender_balance.png" alt="Cast gender balance" width="45%">
+  <img src="analysis_outputs/visualizations/batch_2/14_actor_diversity_score.png" alt="Actor diversity score" width="45%">
 </p>
 
-- **Studios & production companies** – Who’s behind the films I gravitate towards.
-- **Awards timeline** – Where awards cluster within my collection.
+**Cast gender balance** – How equitable (or not) casts are across the films I watch.  
+**Actor diversity score** – A synthesized metric capturing how varied on-screen presence actually is.
 
-Batch 6 also includes interactive dashboards, for example:
+<p align="center">
+  <img src="analysis_outputs/visualizations/batch_2/17_largest_ensembles.png" alt="Largest ensembles" width="45%">
+  <img src="analysis_outputs/visualizations/batch_3/part_3/viz_18_actors_in_top_films.png" alt="Actors in top rated films" width="45%">
+</p>
 
-- `analysis_outputs/visualizations/batch_6/11_interactive_production_dashboard.html`
-- `analysis_outputs/visualizations/batch_6/12_interactive_awards_explorer.html`
+**Largest ensembles** – Huge casts where dozens of careers intersect in a single film.  
+**Actors in my top-rated films** – Who shows up when I give something my highest scores.
+
+*(Several of these also have interactive `.html` versions under `analysis_outputs/visualizations/batch_2/` and `batch_3/`.)*
 
 ---
 
-### 4.5. Patterns, Recommendations & Collection Gaps
+### 3.4. Careers, Longevity & Classic vs Modern
 
 <p align="center">
-  <img src="analysis_outputs/visualizations/batch_8/01_pattern_overview.png"
-       alt="Pattern overview" width="45%">
-  <img src="analysis_outputs/visualizations/batch_8/06_similar_films_recommendations.png"
-       alt="Similar films recommendations" width="45%">
+  <img src="analysis_outputs/visualizations/batch_3/parts_4_5/viz_23_career_evolution.png" alt="Actor career evolution" width="45%">
+  <img src="analysis_outputs/visualizations/batch_3/parts_4_5/19_career_length_distribution.png" alt="Career length distribution" width="45%">
 </p>
 
-- **Pattern overview** – Latent patterns in features like genre, decade, cast, and ratings.
-- **Similar films recommendations** – Using those patterns to recommend films _I don’t own_ but would likely enjoy.
+**Career evolution** – How actors move across time and quality inside the films I've chosen.  
+**Career length distribution** – Short vs decades-long careers and how that shapes visibility.
 
 <p align="center">
-  <img src="analysis_outputs/visualizations/batch_8/11_collection_gaps_analysis.png"
-       alt="Collection gaps analysis" width="45%">
-  <img src="analysis_outputs/visualizations/batch_8/12_collection_diversity_score.png"
-       alt="Collection diversity score" width="45%">
+  <img src="analysis_outputs/visualizations/batch_3/part_3/viz_17_classic_vs_modern.png" alt="Classic vs modern films comparison" width="45%">
+  <img src="analysis_outputs/visualizations/batch_3/parts_4_5/viz_22_age_distribution.png" alt="Actor age distribution" width="45%">
 </p>
 
-- **Collection gaps** – Where my collection under-represents certain genres, eras, or types of films.
-- **Collection diversity score** – A summary metric capturing how varied (or homogeneous) my cinema universe is.
+**Classic vs modern** – How my ratings shift between older films and contemporary ones.  
+**Age distribution** – The generational spread of actors in my collection.
 
-Batch 8 includes more interactive exploration in:
+<p align="center">
+  <img src="analysis_outputs/visualizations/batch_3/parts_4_5/viz_27_actor_type_classification.png" alt="Actor type classification" width="45%">
+  <img src="analysis_outputs/visualizations/batch_3/parts_4_5/viz_28_genre_crossing.png" alt="Genre crossing analysis" width="45%">
+</p>
 
-- `analysis_outputs/visualizations/batch_8/08_interactive_pattern_explorer.html`
+**Actor type classification** – Categorizing performers by their career patterns and versatility.  
+**Genre crossing** – Which actors traverse genres and which stay in their lane.
 
 ---
 
-## 5. How to Run the Project
+### 3.5. Behind the Camera & Awards
 
-> ⚠️ Note: this project uses **personal data** (my own watchlists and collection).
-> The scripts are generalizable, but you’ll need to use your own exports/API keys.
+<p align="center">
+  <img src="analysis_outputs/visualizations/batch_4/01_director_leaderboard.png" alt="Director leaderboard" width="45%">
+  <img src="analysis_outputs/visualizations/batch_4/02_director_quality.png" alt="Director quality chart" width="45%">
+</p>
 
-### 5.1. Requirements
+**Director leaderboard** – Which directors are most present in my watch history.  
+**Director quality** – How consistent different directors are in the films I watch.
 
-- Python 3.11+ (tested with 3.12)
+<p align="center">
+  <img src="analysis_outputs/visualizations/batch_6/01_studio_leaderboard.png" alt="Studio leaderboard" width="45%">
+  <img src="analysis_outputs/visualizations/batch_6/08_oscar_timeline.png" alt="Oscar timeline and awards" width="45%">
+</p>
+
+**Studio leaderboard** – The production houses that quietly shape my collection.  
+**Oscar timeline** – How Oscar-winning/nominated titles are distributed in my universe.
+
+<p align="center">
+  <img src="analysis_outputs/visualizations/batch_6/10_top_awarded_films.png" alt="Top awarded films" width="45%">
+  <img src="analysis_outputs/visualizations/batch_6/07_awards_overview.png" alt="Awards overview" width="45%">
+</p>
+
+**Top awarded films** – Titles that accumulate the most recognition and how they sit within my taste.  
+**Awards overview** – A comprehensive look at how decorated my collection really is.
+
+---
+
+### 3.6. How Critics & Sources See My Films
+
+<p align="center">
+  <img src="analysis_outputs/visualizations/batch_7/01_sources_overview.png" alt="Sources overview" width="45%">
+  <img src="analysis_outputs/visualizations/batch_7/06_source_divergence.png" alt="Source divergence chart" width="45%">
+</p>
+
+**Sources overview** – Coverage from IMDb, Rotten Tomatoes, Metacritic, etc.  
+**Source divergence** – Where different critics/platforms disagree the most on the same films.
+
+<p align="center">
+  <img src="analysis_outputs/visualizations/batch_7/09_rotten_tomatoes_analysis.png" alt="Rotten Tomatoes analysis" width="45%">
+  <img src="analysis_outputs/visualizations/batch_7/10_metacritic_analysis.png" alt="Metacritic analysis" width="45%">
+</p>
+
+**Rotten Tomatoes vs me** – Where critics and I align or diverge.  
+**Metacritic vs me** – Two complementary views of how "critical consensus" aligns—or doesn't—with my own ratings.
+
+<p align="center">
+  <img src="analysis_outputs/visualizations/batch_7/02_source_correlations.png" alt="Source correlations" width="45%">
+  <img src="analysis_outputs/visualizations/batch_7/05_decade_quality.png" alt="Decade quality by source" width="45%">
+</p>
+
+**Source correlations** – How different rating sources relate to each other.  
+**Decade quality by source** – How critical reception varies across eras.
+
+---
+
+### 3.7. Patterns, Gaps & Recommendations
+
+<p align="center">
+  <img src="analysis_outputs/visualizations/batch_8/01_pattern_overview.png" alt="Pattern overview" width="45%">
+  <img src="analysis_outputs/visualizations/batch_8/06_similar_films_recommendations.png" alt="Similar films recommendations" width="45%">
+</p>
+
+**Pattern overview** – High-level patterns across genres, decades, casts, and ratings.  
+**Similar films recommendations** – Data-driven suggestions of unwatched titles I'm likely to enjoy.
+
+<p align="center">
+  <img src="analysis_outputs/visualizations/batch_8/11_collection_gaps_analysis.png" alt="Collection gaps analysis" width="45%">
+  <img src="analysis_outputs/visualizations/batch_8/12_collection_diversity_score.png" alt="Collection diversity score" width="45%">
+</p>
+
+**Collection gaps** – Genres, eras, or styles that I under-explore, even though they connect to what I already love.  
+**Collection diversity score** – A single view summarizing how varied my personal cinema universe really is.
+
+<p align="center">
+  <img src="analysis_outputs/visualizations/batch_8/03_similarity_clusters.png" alt="Similarity clusters" width="45%">
+  <img src="analysis_outputs/visualizations/batch_8/04_feature_correlations.png" alt="Feature correlations" width="45%">
+</p>
+
+**Similarity clusters** – Films grouped by shared characteristics.  
+**Feature correlations** – What predicts my ratings and viewing choices.
+
+---
+
+## 4. How to Run CineScope
+
+> ⚠️ **This project uses personal data** (my own watchlists and collection).  
+> The pipeline is reusable, but you should plug in your own exports and API keys.
+
+### 4.1. Requirements
+
+- **Python 3.11+** (tested with 3.12)
 - `pip` or `conda`
 - Access to:
-
   - IMDb non-commercial datasets
   - TMDb API key
   - OMDb API key
-  - DoesTheDogDie API key (if you want content warnings)
-  - Wikidata (via standard HTTP/SPARQL; no key required)
+  - DoesTheDogDie API key (optional, for content warnings)
+  - Wikidata (via HTTP/SPARQL; no key required)
 
-Install dependencies:
+**Install dependencies:**
 
 ```bash
 python -m venv .venv
@@ -298,66 +309,64 @@ source .venv/bin/activate      # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 5.2. Prepare Raw Data
+### 4.2. Prepare Raw Data
 
 Place your raw files under `data/raw/`:
 
-- `Watched-Dec.csv` – your watched history (or equivalent file)
+- `Watched-Dec.csv` – your watched history
 - `Watchlist_IMDB.csv` – IMDb watchlist export
-- `collection_movies.db` – local collection (or your own DB / CSVs)
-- IMDb TSVs – at least:
-
+- `collection_movies.db` / `watched_movies.db` – local collection databases (or your own equivalents)
+- **IMDb TSVs** (gzipped or not), at minimum:
   - `name.basics.tsv.gz`
   - `title.basics.tsv.gz`
   - `title.crew.tsv.gz`
   - `title.principals.tsv.gz`
   - `title.ratings.tsv.gz`
 
-You can adjust file names and paths in the scripts or config.
+You can adjust file names and paths in the scripts or through config modules under `src/core/`.
 
-### 5.3. Build the Master Dataset
+### 4.3. Build the Master Dataset
 
-1. **Create the initial master list of titles:**
+**Create initial master list of titles:**
 
-   ```bash
-   python scripts/00_create_master_list.py
-   ```
+```bash
+python scripts/00_create_master_list.py
+```
 
-2. **Run enrichment steps** (adjust based on which APIs you have configured):
+**Run enrichment steps** (enable only the APIs you've configured):
 
-   ```bash
-   python scripts/enrich/00_enrich_imdb.py
-   python scripts/enrich/01_enrich_tmdb.py
-   python scripts/enrich/02_enrich_omdb.py
-   python scripts/enrich/03_enrich_ddd.py
-   python scripts/enrich/04_enrich_cast.py
-   python scripts/enrich/05_enrich_wikidata.py
-   ```
+```bash
+python scripts/enrich/00_enrich_imdb.py
+python scripts/enrich/01_enrich_tmdb.py
+python scripts/enrich/02_enrich_omdb.py
+python scripts/enrich/03_enrich_ddd.py
+python scripts/enrich/04_enrich_cast.py
+python scripts/enrich/05_enrich_wikidata.py
+```
 
-3. **Merge everything into the master tables:**
+**Merge into unified tables:**
 
-   ```bash
-   python scripts/merge_all_enriched.py
-   ```
+```bash
+python scripts/merge_all_enriched.py
+```
 
-You should now have:
-
+You should now see:
 - `data/processed/master_media_list.csv`
 - `data/processed/master_cinema_data.csv`
 - `data/processed/actors_master.parquet`
 
-### 5.4. Generate Analytics & Visualizations
+### 4.4. Generate Analytics & Visualizations
 
-Run analysis batches individually (you can choose only the ones you care about):
+Run whichever analysis batches you want:
 
 ```bash
-# Quantified self: ratings, genres, decades
+# Ratings, decades, runtimes
 python scripts/batch_1_quantified_self.py
 
-# Content genome: tags, genre combinations, cast networks
+# Genre patterns, hybrids, content genome
 python scripts/batch_2_content_genome.py
 
-# Actors: top performers, filmographies, quality, age & careers
+# Actors, representation, careers
 python scripts/batch_3_part_1_top_performers.py
 python scripts/batch_3_part_2_filmography_completion.py
 python scripts/batch_3_part_3_comparisons_quality.py
@@ -366,86 +375,62 @@ python scripts/batch_3_parts_4_5_age_career_character.py
 # Directors & writers
 python scripts/batch_4_directors_writers.py
 
-# Genres
+# Genres (deep dive)
 python scripts/batch_5_genres.py
 
-# Production, studios & awards
+# Studios & awards
 python scripts/batch_6_production_awards.py
 
-# Critical alignment across sources (IMDb, RT, Metacritic, etc.)
+# Ratings sources & critic alignment
 python scripts/batch_7_critical_alignment.py
 
-# Patterns, recommendations & collection gaps
+# Patterns, recommendations, collection gaps
 python scripts/batch_8_patterns_recommendations.py
 ```
 
-Outputs will appear under:
-
-- `analysis_outputs/visualizations/` – all PNGs and HTML dashboards
-- `analysis_outputs/exports/` – CSV & JSON summaries
-- `analysis_outputs/reports/` – text summaries and logs
+**Outputs appear under:**
+- `analysis_outputs/visualizations/` – PNGs and HTML dashboards
+- `analysis_outputs/exports/` – CSVs and JSON summaries
+- `analysis_outputs/reports/` – batch summaries and logs
 
 ---
 
-## 6. UI Prototype
+## 5. UI Prototype
 
-The `ui_research/` folder contains a small, experimental interface that hints at how CineScope could evolve into a full web app:
+The `ui_research/` folder is a small experimental interface that hints at how CineScope could become a full web app:
 
 - `ui_research/index.html` – front-end layout
 - `ui_research/style.css` – styling
-- `ui_research/app.js` – basic interactions
-- `ui_research/backend/main.py` – simple Python backend to query the enriched data
-- `ui_research/backend/imdb_query.py` – helper methods for separating titles/people queries
+- `ui_research/app.js` – simple interactions
+- `ui_research/backend/main.py` – tiny Flask-style backend to expose enriched data
+- `ui_research/backend/imdb_query.py` – helper for querying titles and people
 
-This prototype is not production-ready, but it showcases the direction: **interactive exploration** of my personal cinema universe.
-
----
-
-## 7. How I Use This in My Portfolio
-
-CineScope is more than just a codebase for me. It’s:
-
-- A **case study** in turning a long-term personal passion into a structured, technical project.
-- A living lab where I test:
-
-  - Data cleaning and integration strategies
-  - API enrichment pipelines
-  - Visualization techniques
-  - Ideas about representation, patterns, and recommendation systems
-
-On my portfolio site, CineScope appears as a **visual project page** that:
-
-- Shows selected charts from `analysis_outputs/README_visualizations/`
-- Links back to this repository for the technical details
-- Connects my love for cinema to my work in AI, data analysis, and algorithmic fairness
+It's not production-ready, but it shows how all these analytics could one day become an interactive "CineScope Explorer" for my personal cinema universe.
 
 ---
 
-## 8. Roadmap
+## 6. How This Fits My Portfolio
 
-Some future directions I’m considering:
+On my portfolio site, CineScope appears as:
 
-- 🔍 **Interactive dashboards** (Plotly/Dash, Streamlit, or a custom JS front-end)
-- 🎯 **More explicit fairness & representation metrics** inside my own collection
-- 🍿 **“What should I watch next?” recommender** using advanced models
-- 🌐 **Public demo** with anonymized or synthetic data to share the experience more broadly
+- **A visual, narrative project page** (`project-cinescope.html`) showing selected charts and storylines.
+- **A technical foundation** that demonstrates:
+  - Data engineering on messy, multi-source inputs
+  - API-driven enrichment
+  - Statistical analysis + visualization
+  - Early recommender-system thinking
+- **A lens on representation and diversity**, even in something as personal as "what I watch."
 
----
-
-## 9. Acknowledgements
-
-- IMDb non-commercial datasets
-- TMDb, OMDb, DoesTheDogDie, and Wikidata projects for their APIs and open data
-- Everyone who ever recommended me a weird, beautiful, or terrible movie – it’s probably in here somewhere.
+This repository is the engine room behind that story.
 
 ---
 
-If you’re curious about how to adapt this project to your own watchlist, or how this connects to my broader research on AI, media, and fairness, you can learn more on my portfolio site or reach out.
+## 📬 Get in Touch
 
-```
+If you're interested in adapting CineScope to your own watch history or in connecting this to research on AI, media, and fairness, feel free to explore the code or reach out.
 
-If you want, next step I can:
-- Tailor a shorter **“project summary” block** to paste directly into your portfolio website, perfectly aligned with this README, or
-- Help you design a **visual gallery section** on your site that mirrors these README visuals.
-::contentReference[oaicite:0]{index=0}
-```
+---
+
+<p align="center">
+  <em>CineScope – because even movie night deserves a data pipeline.</em>
+</p>
