@@ -21,6 +21,7 @@ For years I've been exporting IMDb lists, maintaining spreadsheets, and organizi
 
 - 🔗 **Multi-source enrichment**  
   Combines personal data with:
+
   - IMDb non-commercial datasets (TSV + IMDb IDs)
   - TMDb metadata
   - OMDb ratings & details
@@ -29,6 +30,7 @@ For years I've been exporting IMDb lists, maintaining spreadsheets, and organizi
 
 - 📊 **Rich visual analytics**  
   Generates static and interactive visualizations about:
+
   - Ratings, decades, runtimes
   - Genres, hybrids, and evolution over time
   - Actors, actresses, ensembles, representation
@@ -82,6 +84,7 @@ ui_research/
 ```
 
 **Core enriched tables** live under `data/processed/`:
+
 - `master_media_list.csv` – all titles in scope
 - `master_cinema_data.csv` – fully enriched movie-level data
 - `actors_master.parquet` – actor-centric view
@@ -169,7 +172,7 @@ All thumbnails below are real outputs from `analysis_outputs/**` and render dire
 **Largest ensembles** – Huge casts where dozens of careers intersect in a single film.  
 **Actors in my top-rated films** – Who shows up when I give something my highest scores.
 
-*(Several of these also have interactive `.html` versions under `analysis_outputs/visualizations/batch_2/` and `batch_3/`.)*
+_(Several of these also have interactive `.html` versions under `analysis_outputs/visualizations/batch_2/` and `batch_3/`.)_
 
 ---
 
@@ -351,6 +354,7 @@ python scripts/merge_all_enriched.py
 ```
 
 You should now see:
+
 - `data/processed/master_media_list.csv`
 - `data/processed/master_cinema_data.csv`
 - `data/processed/actors_master.parquet`
@@ -389,6 +393,7 @@ python scripts/batch_8_patterns_recommendations.py
 ```
 
 **Outputs appear under:**
+
 - `analysis_outputs/visualizations/` – PNGs and HTML dashboards
 - `analysis_outputs/exports/` – CSVs and JSON summaries
 - `analysis_outputs/reports/` – batch summaries and logs
