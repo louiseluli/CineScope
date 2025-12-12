@@ -1171,8 +1171,108 @@ class ContentGenomeAnalysis:
     def viz_9_theme_network_interactive(self):
         log_message("📊 Creating Visualization 9: Theme Network (Interactive HTML)")
         html_path = self.batch_dir / '09_theme_network_interactive.html'
-        html_path.write_text("<h1>Theme Co-Occurrence Network</h1><p>Requires TMDB keywords for full graph.</p>",
-                             encoding="utf-8")
+        
+        # Check for tmdb_keywords column
+        if "tmdb_keywords" not in self.df.columns:
+            html_path.write_text("<h1>Theme Co-Occurrence Network</h1><p>Requires TMDB keywords column.</p>",
+                                 encoding="utf-8")
+            log_message(f"  ✅ HTML saved: {html_path.name}")
+            return self
+        
+        # Parse keywords and build co-occurrence
+        from collections import Counter
+        keyword_counts = Counter()
+        co_occurrences = Counter()
+        
+        for kw_str in self.df["tmdb_keywords"].dropna():
+            keywords = [k.strip().lower() for k in str(kw_str).split("|") if k.strip()]
+            for kw in keywords:
+                keyword_counts[kw] += 1
+            # Count co-occurrences
+            for i, kw1 in enumerate(keywords):
+                for kw2 in keywords[i+1:]:
+                    pair = tuple(sorted([kw1, kw2]))
+                    co_occurrences[pair] += 1
+        
+        if not keyword_counts:
+            html_path.write_text("<h1>Theme Co-Occurrence Network</h1><p>No keywords found in data.</p>",
+                                 encoding="utf-8")
+            log_message(f"  ✅ HTML saved: {html_path.name}")
+            return self
+        
+        # Get top keywords and their connections
+        top_keywords = [kw for kw, _ in keyword_counts.most_common(50)]
+        top_set = set(top_keywords)
+        
+        # Build nodes and edges for visualization
+        nodes = []
+        for kw in top_keywords:
+            nodes.append({
+                "id": kw,
+                "label": kw.replace("-", " ").title(),
+                "count": keyword_counts[kw],
+                "size": min(30, 8 + keyword_counts[kw] * 0.5)
+            })
+        
+        edges = []
+        for (kw1, kw2), weight in co_occurrences.most_common(200):
+            if kw1 in top_set and kw2 in top_set and weight >= 3:
+                edges.append({"from": kw1, "to": kw2, "weight": weight})
+        
+        # Generate interactive HTML with vis.js
+        nodes_json = json.dumps(nodes)
+        edges_json = json.dumps(edges)
+        
+        html_content = f'''<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Theme Co-Occurrence Network</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        body {{ font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #1a1a2e; color: #eee; }}
+        h1 {{ text-align: center; color: #00d4ff; }}
+        #network {{ width: 100%; height: 700px; border: 1px solid #333; background: #16213e; }}
+        .stats {{ text-align: center; margin: 10px 0; color: #aaa; }}
+    </style>
+</head>
+<body>
+    <h1>🎬 Theme Co-Occurrence Network</h1>
+    <p class="stats">Top 50 keywords from {len(self.df)} films • {len(edges)} connections shown</p>
+    <div id="network"></div>
+    <script>
+        var nodes = new vis.DataSet({nodes_json}.map(n => ({{
+            id: n.id,
+            label: n.label,
+            title: n.label + " (" + n.count + " films)",
+            size: n.size,
+            color: {{ background: '#00d4ff', border: '#0099cc' }},
+            font: {{ color: '#fff', size: 12 }}
+        }})));
+        
+        var edges = new vis.DataSet({edges_json}.map(e => ({{
+            from: e.from,
+            to: e.to,
+            width: Math.min(5, 1 + e.weight * 0.3),
+            color: {{ color: 'rgba(255,255,255,0.3)' }},
+            title: e.weight + " co-occurrences"
+        }})));
+        
+        var container = document.getElementById('network');
+        var data = {{ nodes: nodes, edges: edges }};
+        var options = {{
+            physics: {{
+                stabilization: {{ iterations: 200 }},
+                barnesHut: {{ gravitationalConstant: -3000, springLength: 150 }}
+            }},
+            interaction: {{ hover: true, tooltipDelay: 100 }}
+        }};
+        var network = new vis.Network(container, data, options);
+    </script>
+</body>
+</html>'''
+        
+        html_path.write_text(html_content, encoding="utf-8")
         log_message(f"  ✅ HTML saved: {html_path.name}")
         return self
 
