@@ -504,42 +504,21 @@ def load_imdb_tables():
     crew = pd.read_parquet(paths["crew"], columns=["tconst","directors","writers"])
     return names, principals, crew
 
-def _extract_tmdb_gender(df_titles: pd.DataFrame) -> pd.DataFrame:
-    """Extract gender from tmdb_cast JSON AND enriched people_cache.json. Returns: actor name → gender (1=F, 2=M)."""
-    gender_map = {}  # name → gender (1=female, 2=male, 0=unknown)
+def _load_gender_mappings(df_titles: pd.DataFrame) -> tuple[dict, dict]:
+    """
+    Load gender mappings from all sources.
+    Returns: (name_to_gender, nconst_to_gender) dicts.
     
-    # First, load enriched people_cache.json (this has the best gender data after enrichment)
-    people_cache_path = PROCESSED_DATA_DIR / "people_cache.json"
-    if people_cache_path.exists():
-        try:
-            with open(people_cache_path, 'r', encoding='utf-8') as f:
-                people_cache = json.load(f)
-            for person_id, person in people_cache.items():
-                # Try multiple name fields (imdb_name is populated by enrichment, name by original TMDB fetch)
-                name = (person.get("imdb_name") or person.get("name") or "").strip()
-                gender = person.get("gender")
-                if name and gender is not None and gender in (1, 2, 3):  # Only known genders
-                    gender_map[name] = gender
-            log_message(f"  Loaded {len(gender_map)} people with known gender from people_cache.json")
-        except Exception as e:
-            log_message(f"  ⚠️ Could not load people_cache.json: {e}")
+    Priority (highest to lowest):
+    1. Manual gender_corrections.json
+    2. people_cache.json (imdb_name field, linked via enrichment)
+    3. tmdb_cast column (TMDB names from movie data)
+    """
+    name_to_gender = {}  # name → gender (1=female, 2=male, 3=non-binary)
+    nconst_to_gender = {}  # IMDB nconst (e.g. 'nm0000138') → gender
     
-    # Load manual gender corrections (highest priority)
-    corrections_path = PROCESSED_DATA_DIR / "gender_corrections.json"
-    if corrections_path.exists():
-        try:
-            with open(corrections_path, 'r', encoding='utf-8') as f:
-                corrections = json.load(f)
-            corrections_count = 0
-            for name, gender in corrections.items():
-                if not name.startswith("_") and isinstance(gender, int) and gender in (1, 2, 3):
-                    gender_map[name] = gender
-                    corrections_count += 1
-            log_message(f"  Applied {corrections_count} manual gender corrections")
-        except Exception as e:
-            log_message(f"  ⚠️ Could not load gender_corrections.json: {e}")
-    
-    # Then supplement with tmdb_cast column if available
+    # LOWEST priority: tmdb_cast column (TMDB names may differ from IMDB names)
+    tmdb_cast_count = 0
     if "tmdb_cast" in df_titles.columns:
         for cast_json in df_titles["tmdb_cast"].dropna():
             try:
@@ -551,22 +530,72 @@ def _extract_tmdb_gender(df_titles: pd.DataFrame) -> pd.DataFrame:
                         name = person.get("name", "").strip()
                         gender = person.get("gender")  # 1=F, 2=M, 0=unknown
                         if name and gender is not None and gender in (1, 2, 3):
-                            # Only override if not already in people_cache or if higher value
-                            if name not in gender_map or gender > gender_map[name]:
-                                gender_map[name] = gender
+                            name_to_gender[name] = gender
+                            tmdb_cast_count += 1
             except:
                 pass
+        log_message(f"  Loaded {len(name_to_gender):,} names with gender from tmdb_cast column")
     
-    if not gender_map:
+    # MEDIUM priority: people_cache.json (enriched with IMDB data)
+    people_cache_path = PROCESSED_DATA_DIR / "people_cache.json"
+    if people_cache_path.exists():
+        try:
+            with open(people_cache_path, 'r', encoding='utf-8') as f:
+                people_cache = json.load(f)
+            cache_name_count = 0
+            for person_id, person in people_cache.items():
+                gender = person.get("gender")
+                if gender is None or gender not in (1, 2, 3):
+                    continue
+                
+                # Add to nconst mapping (most reliable for matching)
+                imdb_id = person.get("imdb_id")
+                if imdb_id:
+                    nconst_to_gender[imdb_id] = gender
+                
+                # Add to name mapping (overwrites tmdb_cast if same name)
+                name = (person.get("imdb_name") or person.get("name") or "").strip()
+                if name:
+                    name_to_gender[name] = gender
+                    cache_name_count += 1
+            
+            log_message(f"  Loaded {len(nconst_to_gender):,} IMDB IDs and {cache_name_count:,} names from people_cache.json")
+        except Exception as e:
+            log_message(f"  ⚠️ Could not load people_cache.json: {e}")
+    
+    # HIGHEST priority: Manual gender corrections
+    corrections_path = PROCESSED_DATA_DIR / "gender_corrections.json"
+    if corrections_path.exists():
+        try:
+            with open(corrections_path, 'r', encoding='utf-8') as f:
+                corrections = json.load(f)
+            corrections_count = 0
+            for name, gender in corrections.items():
+                if not name.startswith("_") and isinstance(gender, int) and gender in (1, 2, 3):
+                    name_to_gender[name] = gender
+                    corrections_count += 1
+            log_message(f"  Applied {corrections_count} manual gender corrections")
+        except Exception as e:
+            log_message(f"  ⚠️ Could not load gender_corrections.json: {e}")
+    
+    log_message(f"  Total: {len(name_to_gender):,} unique names, {len(nconst_to_gender):,} IMDB IDs")
+    return name_to_gender, nconst_to_gender
+
+
+def _extract_tmdb_gender(df_titles: pd.DataFrame) -> pd.DataFrame:
+    """Extract gender from tmdb_cast JSON AND enriched people_cache.json. Returns: actor name → gender (1=F, 2=M)."""
+    name_to_gender, _ = _load_gender_mappings(df_titles)
+    
+    if not name_to_gender:
         return pd.DataFrame(columns=["actor_name", "tmdb_gender"])
     
     return pd.DataFrame([
         {"actor_name": name, "tmdb_gender": gender}
-        for name, gender in gender_map.items()
+        for name, gender in name_to_gender.items()
     ])
 
 def build_imdb_cast(df_titles: pd.DataFrame) -> pd.DataFrame:
-    """Strict cast from IMDb only, enriched with TMDB gender. Returns: const, nconst, actor, gender, ordering."""
+    """Strict cast from IMDb only, enriched with gender from people_cache. Returns: const, nconst, actor, gender, ordering."""
     names, principals, _ = load_imdb_tables()
     acting = principals[principals["category"].isin({"actor","actress","self"})].copy()
 
@@ -578,17 +607,24 @@ def build_imdb_cast(df_titles: pd.DataFrame) -> pd.DataFrame:
                  .rename(columns={"primaryName":"actor"}))
     # Quality gates
     cast = cast[cast["actor"].notna()]
-    cast = cast[~cast["actor"].str.fullmatch(r"\d{3,4}")]  # drop “1905”, etc.
+    cast = cast[~cast["actor"].str.fullmatch(r"\d{3,4}")]  # drop "1905", etc.
     cast["const"] = cast["tconst"].astype(str)
     
-    # Extract TMDB gender and merge by actor name
-    tmdb_gender = _extract_tmdb_gender(df_titles)
-    if not tmdb_gender.empty:
-        cast = cast.merge(tmdb_gender, left_on="actor", right_on="actor_name", how="left")
-        cast["gender"] = cast["tmdb_gender"]
-        cast = cast.drop(columns=["tmdb_gender", "actor_name"], errors="ignore")
-    else:
-        cast["gender"] = None
+    # Load gender mappings from people_cache (by nconst and name)
+    name_to_gender, nconst_to_gender = _load_gender_mappings(df_titles)
+    
+    # First, try to match by nconst (IMDB ID) - most reliable
+    cast["gender"] = cast["nconst"].map(nconst_to_gender)
+    
+    # For rows still without gender, fallback to name matching
+    missing_gender_mask = cast["gender"].isna()
+    if missing_gender_mask.any():
+        cast.loc[missing_gender_mask, "gender"] = cast.loc[missing_gender_mask, "actor"].map(name_to_gender)
+    
+    matched_by_nconst = cast["nconst"].isin(nconst_to_gender).sum()
+    total_with_gender = cast["gender"].notna().sum()
+    log_message(f"  Gender matching: {matched_by_nconst:,} by IMDB ID, {total_with_gender - matched_by_nconst:,} by name, "
+                f"{cast['gender'].isna().sum():,} unknown")
     
     cast = cast[["const","nconst","actor","gender","ordering"]].drop_duplicates()
     return cast.reset_index(drop=True)
