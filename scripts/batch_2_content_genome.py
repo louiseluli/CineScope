@@ -1215,7 +1215,7 @@ class ContentGenomeAnalysis:
             })
         
         edges = []
-        for (kw1, kw2), weight in co_occurrences.most_common(200):
+        for (kw1, kw2), weight in co_occurrences.most_common(1000):
             if kw1 in top_set and kw2 in top_set and weight >= 3:
                 edges.append({"from": kw1, "to": kw2, "weight": weight})
         
