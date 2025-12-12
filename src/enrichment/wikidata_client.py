@@ -95,42 +95,32 @@ class WikidataClient:
         Returns:
             dict or None: Comprehensive movie data, or None if not found
         """
-        # Clean IMDb ID
+        # Clean IMDb ID - KEEP the tt prefix! Wikidata stores full IMDB IDs
         if not imdb_id:
             return None
-        imdb_id = imdb_id.strip().replace('tt', '')
+        imdb_id = str(imdb_id).strip()
+        # Ensure tt prefix is present (Wikidata P345 stores full IMDB IDs like 'tt0111161')
+        if not imdb_id.startswith('tt'):
+            imdb_id = f'tt{imdb_id}'
         
+        # Optimized SPARQL query - simplified for better performance
+        # Original was timing out due to too many GROUP_CONCATs
         query = f"""
-        PREFIX wd: <http://www.wikidata.org/entity/>
-        PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        PREFIX schema: <http://schema.org/>
-        
         SELECT DISTINCT
             ?film ?filmLabel ?filmDescription
-            ?image ?publicationDate
+            ?image ?publicationDate ?duration
             (GROUP_CONCAT(DISTINCT ?genreLabel; separator=", ") AS ?genres)
             (GROUP_CONCAT(DISTINCT ?countryLabel; separator=", ") AS ?countries)
             (GROUP_CONCAT(DISTINCT ?languageLabel; separator=", ") AS ?languages)
             (GROUP_CONCAT(DISTINCT ?directorLabel; separator=", ") AS ?directors)
             (GROUP_CONCAT(DISTINCT ?screenwriterLabel; separator=", ") AS ?screenwriters)
             (GROUP_CONCAT(DISTINCT ?composerLabel; separator=", ") AS ?composers)
-            (GROUP_CONCAT(DISTINCT ?producerLabel; separator=", ") AS ?producers)
             (GROUP_CONCAT(DISTINCT ?cinematographerLabel; separator=", ") AS ?cinematographers)
-            (GROUP_CONCAT(DISTINCT ?editorLabel; separator=", ") AS ?editors)
-            (GROUP_CONCAT(DISTINCT ?productionCompanyLabel; separator=", ") AS ?productionCompanies)
-            (GROUP_CONCAT(DISTINCT ?distributorLabel; separator=", ") AS ?distributors)
-            (GROUP_CONCAT(DISTINCT ?castMemberLabel; separator="|") AS ?castMembers)
             (GROUP_CONCAT(DISTINCT ?awardLabel; separator=", ") AS ?awards)
-            (GROUP_CONCAT(DISTINCT ?nominationLabel; separator=", ") AS ?nominations)
-            (GROUP_CONCAT(DISTINCT ?narrativeLocationLabel; separator=", ") AS ?narrativeLocations)
             (GROUP_CONCAT(DISTINCT ?filmingLocationLabel; separator=", ") AS ?filmingLocations)
             (GROUP_CONCAT(DISTINCT ?basedOnLabel; separator=", ") AS ?basedOnWorks)
-            ?duration ?boxOffice ?budget ?costOfProduction
-            ?aspectRatio ?colorLabel
-            ?followsLabel ?followedByLabel
+            ?boxOffice ?budget
             ?tmdbId ?rottenTomatoesId ?letterboxdId
-            ?wikipediaUrl ?officialWebsite
         WHERE {{
             ?film wdt:P345 "{imdb_id}" .
             
@@ -154,10 +144,6 @@ class WikidataClient:
                 ?film wdt:P364 ?language . 
                 ?language rdfs:label ?languageLabel FILTER(LANG(?languageLabel) = "en") 
             }}
-            OPTIONAL {{ 
-                ?film wdt:P272 ?productionCompany . 
-                ?productionCompany rdfs:label ?productionCompanyLabel FILTER(LANG(?productionCompanyLabel) = "en") 
-            }}
             
             # Key People
             OPTIONAL {{ 
@@ -173,57 +159,21 @@ class WikidataClient:
                 ?composer rdfs:label ?composerLabel FILTER(LANG(?composerLabel) = "en") 
             }}
             OPTIONAL {{ 
-                ?film wdt:P162 ?producer . 
-                ?producer rdfs:label ?producerLabel FILTER(LANG(?producerLabel) = "en") 
-            }}
-            OPTIONAL {{ 
                 ?film wdt:P344 ?cinematographer . 
                 ?cinematographer rdfs:label ?cinematographerLabel FILTER(LANG(?cinematographerLabel) = "en") 
             }}
-            OPTIONAL {{ 
-                ?film wdt:P1040 ?editor . 
-                ?editor rdfs:label ?editorLabel FILTER(LANG(?editorLabel) = "en") 
-            }}
             
-            # Cast (limited to avoid query timeout)
-            OPTIONAL {{ 
-                ?film wdt:P161 ?castMember . 
-                ?castMember rdfs:label ?castMemberLabel FILTER(LANG(?castMemberLabel) = "en") 
-            }}
-            
-            # Distribution
-            OPTIONAL {{ 
-                ?film wdt:P750 ?distributor . 
-                ?distributor rdfs:label ?distributorLabel FILTER(LANG(?distributorLabel) = "en") 
-            }}
-            
-            # Recognition
+            # Recognition (awards only, nominations too slow)
             OPTIONAL {{ 
                 ?film wdt:P166 ?award . 
                 ?award rdfs:label ?awardLabel FILTER(LANG(?awardLabel) = "en") 
-            }}
-            OPTIONAL {{ 
-                ?film wdt:P1411 ?nomination . 
-                ?nomination rdfs:label ?nominationLabel FILTER(LANG(?nominationLabel) = "en") 
             }}
             
             # Business
             OPTIONAL {{ ?film wdt:P2142 ?boxOffice . }}
             OPTIONAL {{ ?film wdt:P2130 ?budget . }}
-            OPTIONAL {{ ?film wdt:P5371 ?costOfProduction . }}
-            
-            # Technical
-            OPTIONAL {{ ?film wdt:P2061 ?aspectRatio . }}
-            OPTIONAL {{ 
-                ?film wdt:P462 ?color . 
-                ?color rdfs:label ?colorLabel FILTER(LANG(?colorLabel) = "en") 
-            }}
             
             # Locations
-            OPTIONAL {{ 
-                ?film wdt:P840 ?narrativeLocation . 
-                ?narrativeLocation rdfs:label ?narrativeLocationLabel FILTER(LANG(?narrativeLocationLabel) = "en") 
-            }}
             OPTIONAL {{ 
                 ?film wdt:P915 ?filmingLocation . 
                 ?filmingLocation rdfs:label ?filmingLocationLabel FILTER(LANG(?filmingLocationLabel) = "en") 
@@ -234,35 +184,19 @@ class WikidataClient:
                 ?film wdt:P144 ?basedOn . 
                 ?basedOn rdfs:label ?basedOnLabel FILTER(LANG(?basedOnLabel) = "en") 
             }}
-            OPTIONAL {{ 
-                ?film wdt:P155 ?follows . 
-                ?follows rdfs:label ?followsLabel FILTER(LANG(?followsLabel) = "en") 
-            }}
-            OPTIONAL {{ 
-                ?film wdt:P156 ?followedBy . 
-                ?followedBy rdfs:label ?followedByLabel FILTER(LANG(?followedByLabel) = "en") 
-            }}
             
             # External IDs
             OPTIONAL {{ ?film wdt:P4947 ?tmdbId . }}
             OPTIONAL {{ ?film wdt:P1258 ?rottenTomatoesId . }}
             OPTIONAL {{ ?film wdt:P6127 ?letterboxdId . }}
-            OPTIONAL {{ ?film wdt:P856 ?officialWebsite . }}
-            OPTIONAL {{
-                ?wikipediaUrl schema:about ?film ;
-                              schema:isPartOf <https://en.wikipedia.org/> .
-            }}
             
             SERVICE wikibase:label {{ 
                 bd:serviceParam wikibase:language "en" .
-                ?film rdfs:label ?filmLabel .
-                ?film schema:description ?filmDescription .
             }}
         }}
         GROUP BY ?film ?filmLabel ?filmDescription ?image ?publicationDate 
-                 ?duration ?boxOffice ?budget ?costOfProduction ?aspectRatio 
-                 ?colorLabel ?followsLabel ?followedByLabel ?tmdbId 
-                 ?rottenTomatoesId ?letterboxdId ?wikipediaUrl ?officialWebsite
+                 ?duration ?boxOffice ?budget ?tmdbId 
+                 ?rottenTomatoesId ?letterboxdId
         LIMIT 1
         """
         
@@ -293,48 +227,30 @@ class WikidataClient:
             # Production
             'wd_countries': self._get_value(binding, 'countries'),
             'wd_languages': self._get_value(binding, 'languages'),
-            'wd_production_companies': self._get_value(binding, 'productionCompanies'),
             
             # Key People
             'wd_directors': self._get_value(binding, 'directors'),
             'wd_screenwriters': self._get_value(binding, 'screenwriters'),
             'wd_composers': self._get_value(binding, 'composers'),
-            'wd_producers': self._get_value(binding, 'producers'),
             'wd_cinematographers': self._get_value(binding, 'cinematographers'),
-            'wd_editors': self._get_value(binding, 'editors'),
-            'wd_cast_members': self._get_value(binding, 'castMembers'),
-            
-            # Distribution
-            'wd_distributors': self._get_value(binding, 'distributors'),
             
             # Recognition
             'wd_awards': self._get_value(binding, 'awards'),
-            'wd_nominations': self._get_value(binding, 'nominations'),
             
             # Business
             'wd_box_office': self._parse_numeric(binding, 'boxOffice'),
             'wd_budget': self._parse_numeric(binding, 'budget'),
-            'wd_cost_of_production': self._parse_numeric(binding, 'costOfProduction'),
-            
-            # Technical Details
-            'wd_aspect_ratio': self._get_value(binding, 'aspectRatio'),
-            'wd_color': self._get_value(binding, 'colorLabel'),
             
             # Locations
-            'wd_narrative_locations': self._get_value(binding, 'narrativeLocations'),
             'wd_filming_locations': self._get_value(binding, 'filmingLocations'),
             
             # Related Works
             'wd_based_on': self._get_value(binding, 'basedOnWorks'),
-            'wd_follows': self._get_value(binding, 'followsLabel'),
-            'wd_followed_by': self._get_value(binding, 'followedByLabel'),
             
             # External Links
             'wd_tmdb_id': self._get_value(binding, 'tmdbId'),
             'wd_rotten_tomatoes_id': self._get_value(binding, 'rottenTomatoesId'),
             'wd_letterboxd_id': self._get_value(binding, 'letterboxdId'),
-            'wd_wikipedia_url': self._get_value(binding, 'wikipediaUrl'),
-            'wd_official_website': self._get_value(binding, 'officialWebsite'),
         }
         
         return enriched
