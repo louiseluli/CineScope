@@ -12,7 +12,24 @@ python scripts/enrich/02_enrich_omdb.py
 python scripts/enrich/03_enrich_ddd.py
 python scripts/enrich/04_enrich_cast.py
 python scripts/enrich/05_enrich_wikidata.py
+python scripts/enrich/06_enrich_people.py       # NEW: Complete people database
 python scripts/merge_all_enriched.py
+```
+
+### People Database Enrichment (NEW - Step 6)
+
+```bash
+# Full people enrichment (IMDB IDs + IMDB data + gender resolution)
+python scripts/enrich/06_enrich_people.py
+
+# Individual steps:
+python scripts/enrich/06_enrich_people.py --validate         # Check current status
+python scripts/enrich/06_enrich_people.py --fetch-imdb-ids   # Get IMDB IDs from TMDB
+python scripts/enrich/06_enrich_people.py --enrich-imdb      # Enrich with IMDB data
+python scripts/enrich/06_enrich_people.py --resolve-gender   # Fix unknown genders via Wikidata
+
+# Test with limited batch:
+python scripts/enrich/06_enrich_people.py --fetch-imdb-ids --limit 100
 ```
 
 ### Testing (Sample 10 Items)

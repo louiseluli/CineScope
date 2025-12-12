@@ -44,7 +44,7 @@ sys.path.insert(0, str(project_root))
 from src.core.config import (  # type: ignore
     WATCHED_ONLY_DATA, VISUALIZATIONS_DIR, RATING_COLORS, GENRE_COLORS,
     DEFAULT_FIGSIZE, DEFAULT_DPI, save_figure, get_batch_output_dir,
-    log_message
+    log_message, PROCESSED_DATA_DIR
 )
 from src.core.helpers import (
     parse_genres, parse_directors, explode_genres
@@ -505,27 +505,57 @@ def load_imdb_tables():
     return names, principals, crew
 
 def _extract_tmdb_gender(df_titles: pd.DataFrame) -> pd.DataFrame:
-    """Extract gender from tmdb_cast JSON. Returns: actor name → gender (1=F, 2=M)."""
+    """Extract gender from tmdb_cast JSON AND enriched people_cache.json. Returns: actor name → gender (1=F, 2=M)."""
     gender_map = {}  # name → gender (1=female, 2=male, 0=unknown)
     
-    if "tmdb_cast" not in df_titles.columns:
-        return pd.DataFrame(columns=["actor_name", "tmdb_gender"])
-    
-    for cast_json in df_titles["tmdb_cast"].dropna():
+    # First, load enriched people_cache.json (this has the best gender data after enrichment)
+    people_cache_path = PROCESSED_DATA_DIR / "people_cache.json"
+    if people_cache_path.exists():
         try:
-            cast_list = ast.literal_eval(cast_json) if isinstance(cast_json, str) else cast_json
-            if not isinstance(cast_list, list):
-                continue
-            for person in cast_list:
-                if isinstance(person, dict):
-                    name = person.get("name", "").strip()
-                    gender = person.get("gender")  # 1=F, 2=M, 0=unknown
-                    if name and gender is not None:
-                        # Keep highest gender value if there's a conflict
-                        if name not in gender_map or gender > gender_map[name]:
-                            gender_map[name] = gender
-        except:
-            pass
+            with open(people_cache_path, 'r', encoding='utf-8') as f:
+                people_cache = json.load(f)
+            for person_id, person in people_cache.items():
+                # Try multiple name fields (imdb_name is populated by enrichment, name by original TMDB fetch)
+                name = (person.get("imdb_name") or person.get("name") or "").strip()
+                gender = person.get("gender")
+                if name and gender is not None and gender in (1, 2, 3):  # Only known genders
+                    gender_map[name] = gender
+            log_message(f"  Loaded {len(gender_map)} people with known gender from people_cache.json")
+        except Exception as e:
+            log_message(f"  ⚠️ Could not load people_cache.json: {e}")
+    
+    # Load manual gender corrections (highest priority)
+    corrections_path = PROCESSED_DATA_DIR / "gender_corrections.json"
+    if corrections_path.exists():
+        try:
+            with open(corrections_path, 'r', encoding='utf-8') as f:
+                corrections = json.load(f)
+            corrections_count = 0
+            for name, gender in corrections.items():
+                if not name.startswith("_") and isinstance(gender, int) and gender in (1, 2, 3):
+                    gender_map[name] = gender
+                    corrections_count += 1
+            log_message(f"  Applied {corrections_count} manual gender corrections")
+        except Exception as e:
+            log_message(f"  ⚠️ Could not load gender_corrections.json: {e}")
+    
+    # Then supplement with tmdb_cast column if available
+    if "tmdb_cast" in df_titles.columns:
+        for cast_json in df_titles["tmdb_cast"].dropna():
+            try:
+                cast_list = ast.literal_eval(cast_json) if isinstance(cast_json, str) else cast_json
+                if not isinstance(cast_list, list):
+                    continue
+                for person in cast_list:
+                    if isinstance(person, dict):
+                        name = person.get("name", "").strip()
+                        gender = person.get("gender")  # 1=F, 2=M, 0=unknown
+                        if name and gender is not None and gender in (1, 2, 3):
+                            # Only override if not already in people_cache or if higher value
+                            if name not in gender_map or gender > gender_map[name]:
+                                gender_map[name] = gender
+            except:
+                pass
     
     if not gender_map:
         return pd.DataFrame(columns=["actor_name", "tmdb_gender"])
@@ -830,6 +860,51 @@ class ContentGenomeAnalysis:
         ax.set_title("Top 30 Actresses You Watch Most (with Avg IMDb Rating)", fontweight="bold")
         plt.tight_layout()
         save_figure(fig, '02_top_actresses_leaderboard.png', batch_number=2)
+        plt.close()
+        return self
+
+    # -------------------- VIZ 2b --------------------
+    def viz_2b_top_unknown_gender_leaderboard(self):
+        log_message("📊 Creating Visualization 2b: Top 30 Unknown Gender Leaderboard")
+
+        if self.actors_df.empty:
+            fig, ax = plt.subplots(figsize=(16, 12))
+            ax.text(0.5, 0.5, 'No cast data detected.',
+                    ha='center', va='center', fontsize=16, transform=ax.transAxes)
+            ax.set_title('Top 30 Unknown Gender (Cast Missing)', fontsize=16, fontweight='bold', pad=20)
+            ax.axis('off')
+            save_figure(fig, '02b_top_unknown_gender_leaderboard.png', batch_number=2)
+            plt.close()
+            return self
+
+        # Filter for unknown gender (gender=0 or NaN/None)
+        unknown = self.actors_df[(self.actors_df["gender"] == 0) | (self.actors_df["gender"].isna())]
+        if unknown.empty:
+            fig, ax = plt.subplots(figsize=(16, 12))
+            ax.text(0.5, 0.5, 'No performers with unknown gender detected.\nAll cast members have gender identified.',
+                    ha='center', va='center', fontsize=14, transform=ax.transAxes)
+            ax.set_title('Top 30 Unknown Gender', fontsize=16, fontweight='bold', pad=20)
+            ax.axis('off')
+            save_figure(fig, '02b_top_unknown_gender_leaderboard.png', batch_number=2)
+            plt.close()
+            return self
+
+        left = unknown.merge(self.df[["const", "imdb_rating"]], on="const", how="left")
+        stats = (left.groupby("actor")
+                      .agg(Count=("const", "nunique"),
+                           Avg_Rating=("imdb_rating", "mean"))
+                      .reset_index()
+                      .sort_values(["Count", "Avg_Rating"], ascending=[False, False])
+                      .head(30))
+
+        fig, ax = plt.subplots(figsize=(16, 10))
+        ax.barh(stats["actor"][::-1], stats["Count"][::-1], color="#9E9E9E", edgecolor="black")
+        for y, (cnt, r) in enumerate(zip(stats["Count"][::-1], stats["Avg_Rating"][::-1])):
+            ax.text(cnt + 0.3, y, f"{cnt} • {r:.2f}", va="center", fontsize=10)
+        ax.set_xlabel("Number of Films")
+        ax.set_title("Top 30 Unknown Gender Performers You Watch Most (with Avg IMDb Rating)", fontweight="bold")
+        plt.tight_layout()
+        save_figure(fig, '02b_top_unknown_gender_leaderboard.png', batch_number=2)
         plt.close()
         return self
 
@@ -1433,6 +1508,7 @@ def main():
     (analysis
         .viz_1_top_actors_leaderboard()
         .viz_2_top_actresses_leaderboard()
+        .viz_2b_top_unknown_gender_leaderboard()
         .viz_3_actor_network_interactive()
         .viz_3b_top_costar_pairs()
         .viz_4_genre_combination_heatmap()
