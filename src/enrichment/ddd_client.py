@@ -88,13 +88,13 @@ class DDDClient:
         """
         search_url = f"{self.BASE_URL}dddsearch"
         
-        # IMDb ID can be passed with or without 'tt' prefix
-        imdb_clean = imdb_id.replace("tt", "") if imdb_id.startswith("tt") else imdb_id
+        # The DDD API accepts IMDb ID with the 'tt' prefix
+        # Do NOT strip the prefix - it works correctly with it
         
         try:
             response = self.session.get(
                 search_url,
-                params={"imdb": imdb_clean},
+                params={"imdb": imdb_id},  # Keep full tt prefix
                 timeout=self.TIMEOUT
             )
             response.raise_for_status()
