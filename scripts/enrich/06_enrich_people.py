@@ -277,6 +277,163 @@ class PeopleEnricher:
         logger.info(f"Enriched {enriched:,} people with IMDB data")
     
     # =========================================================================
+    # STEP 2.5: Enrich with Wikidata data (birthplace, nationality, awards)
+    # =========================================================================
+    
+    def enrich_from_wikidata(self, limit: int = None):
+        """
+        Enrich people cache with additional Wikidata data.
+        Fetches: birthplace, nationality, awards, occupation details, Wikipedia link.
+        """
+        logger.info("="*80)
+        logger.info("STEP 2.5: Enriching with Wikidata data")
+        logger.info("="*80)
+        
+        # Only query people with IMDB IDs (most reliable way to match)
+        people_with_imdb = [
+            (tmdb_id, person) for tmdb_id, person in self.people_cache.items()
+            if person.get('imdb_id') and not person.get('wd_enriched')
+        ]
+        
+        if limit:
+            people_with_imdb = people_with_imdb[:limit]
+        
+        logger.info(f"People to enrich from Wikidata: {len(people_with_imdb):,}")
+        
+        if not people_with_imdb:
+            logger.info("All people already enriched from Wikidata!")
+            return
+        
+        enriched = 0
+        for tmdb_id, person in tqdm(people_with_imdb, desc="Wikidata Enrichment"):
+            imdb_id = person.get('imdb_id')
+            
+            try:
+                wd_data = self._query_wikidata_person_data(imdb_id)
+                
+                if wd_data:
+                    # Add Wikidata fields
+                    if wd_data.get('birthplace'):
+                        person['wd_birthplace'] = wd_data['birthplace']
+                    if wd_data.get('nationality'):
+                        person['wd_nationality'] = wd_data['nationality']
+                    if wd_data.get('awards'):
+                        person['wd_awards'] = wd_data['awards']
+                    if wd_data.get('occupations'):
+                        person['wd_occupations'] = wd_data['occupations']
+                    if wd_data.get('wikipedia_url'):
+                        person['wd_wikipedia_url'] = wd_data['wikipedia_url']
+                    if wd_data.get('wikidata_id'):
+                        person['wd_id'] = wd_data['wikidata_id']
+                    
+                    # Also grab gender if still unknown
+                    if person.get('gender') == 0 and wd_data.get('gender'):
+                        person['gender'] = wd_data['gender']
+                        person['gender_source'] = 'wikidata_enrichment'
+                        self.stats['genders_resolved'] += 1
+                    
+                    person['wd_enriched'] = True
+                    enriched += 1
+                
+                self.stats['wikidata_queries'] += 1
+                time.sleep(0.5)  # Rate limit
+                
+                # Checkpoint every 100
+                if enriched % 100 == 0 and enriched > 0:
+                    self._save_people_cache()
+                    
+            except Exception as e:
+                logger.debug(f"Wikidata enrichment failed for {imdb_id}: {e}")
+                self.stats['errors'] += 1
+        
+        self.stats['wikidata_enriched'] = enriched
+        self._save_people_cache()
+        logger.info(f"Enriched {enriched:,} people with Wikidata data")
+    
+    def _query_wikidata_person_data(self, imdb_id: str) -> Optional[Dict]:
+        """Query Wikidata for comprehensive person data."""
+        sparql = f"""
+        SELECT ?person ?personLabel ?birthplace ?birthplaceLabel 
+               ?nationality ?nationalityLabel ?genderLabel
+               (GROUP_CONCAT(DISTINCT ?awardLabel; SEPARATOR="|") AS ?awards)
+               (GROUP_CONCAT(DISTINCT ?occupationLabel; SEPARATOR="|") AS ?occupations)
+               ?article
+        WHERE {{
+            ?person wdt:P345 "{imdb_id}" .
+            
+            OPTIONAL {{ ?person wdt:P19 ?birthplace . }}
+            OPTIONAL {{ ?person wdt:P27 ?nationality . }}
+            OPTIONAL {{ ?person wdt:P21 ?gender . }}
+            OPTIONAL {{ 
+                ?person wdt:P166 ?award .
+                ?award rdfs:label ?awardLabel .
+                FILTER(LANG(?awardLabel) = "en")
+            }}
+            OPTIONAL {{ 
+                ?person wdt:P106 ?occupation .
+                ?occupation rdfs:label ?occupationLabel .
+                FILTER(LANG(?occupationLabel) = "en")
+            }}
+            OPTIONAL {{
+                ?article schema:about ?person .
+                ?article schema:isPartOf <https://en.wikipedia.org/> .
+            }}
+            
+            SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
+        }}
+        GROUP BY ?person ?personLabel ?birthplace ?birthplaceLabel 
+                 ?nationality ?nationalityLabel ?genderLabel ?article
+        LIMIT 1
+        """
+        
+        try:
+            url = "https://query.wikidata.org/sparql"
+            headers = {'Accept': 'application/json', 'User-Agent': 'CineScope/1.0'}
+            response = requests.get(url, params={'query': sparql}, headers=headers, timeout=15)
+            
+            if response.status_code == 200:
+                data = response.json()
+                results = data.get('results', {}).get('bindings', [])
+                
+                if results:
+                    r = results[0]
+                    result = {}
+                    
+                    # Extract Wikidata ID from person URI
+                    person_uri = r.get('person', {}).get('value', '')
+                    if '/Q' in person_uri:
+                        result['wikidata_id'] = person_uri.split('/')[-1]
+                    
+                    if r.get('birthplaceLabel', {}).get('value'):
+                        result['birthplace'] = r['birthplaceLabel']['value']
+                    
+                    if r.get('nationalityLabel', {}).get('value'):
+                        result['nationality'] = r['nationalityLabel']['value']
+                    
+                    if r.get('awards', {}).get('value'):
+                        result['awards'] = r['awards']['value']
+                    
+                    if r.get('occupations', {}).get('value'):
+                        result['occupations'] = r['occupations']['value']
+                    
+                    if r.get('article', {}).get('value'):
+                        result['wikipedia_url'] = r['article']['value']
+                    
+                    # Gender
+                    gender_str = r.get('genderLabel', {}).get('value', '').lower()
+                    if 'female' in gender_str:
+                        result['gender'] = 1
+                    elif 'male' in gender_str:
+                        result['gender'] = 2
+                    
+                    return result if result else None
+                    
+        except Exception as e:
+            logger.debug(f"Wikidata query failed for {imdb_id}: {e}")
+        
+        return None
+    
+    # =========================================================================
     # STEP 3: Resolve unknown genders via Wikidata
     # =========================================================================
     
@@ -489,6 +646,9 @@ class PeopleEnricher:
         # Step 2: Enrich with IMDB data
         self.enrich_from_imdb()
         
+        # Step 2.5: Enrich with Wikidata (birthplace, nationality, awards)
+        self.enrich_from_wikidata(limit=limit)
+        
         # Step 3: Resolve unknown genders
         self.resolve_unknown_genders(limit=limit)
         
@@ -500,6 +660,7 @@ class PeopleEnricher:
         logger.info("="*80)
         logger.info(f"IMDB IDs fetched:    {self.stats['imdb_ids_fetched']:,}")
         logger.info(f"IMDB enriched:       {self.stats['imdb_enriched']:,}")
+        logger.info(f"Wikidata enriched:   {self.stats.get('wikidata_enriched', 0):,}")
         logger.info(f"Genders resolved:    {self.stats['genders_resolved']:,}")
         logger.info(f"Wikidata queries:    {self.stats['wikidata_queries']:,}")
         logger.info(f"Errors:              {self.stats['errors']:,}")
@@ -513,6 +674,8 @@ def main():
                        help="Only fetch IMDB IDs from TMDB API")
     parser.add_argument('--enrich-imdb', action='store_true',
                        help="Only enrich with IMDB data")
+    parser.add_argument('--enrich-wikidata', action='store_true',
+                       help="Only enrich with Wikidata data (birthplace, nationality, awards)")
     parser.add_argument('--resolve-gender', action='store_true',
                        help="Only resolve unknown genders via Wikidata")
     parser.add_argument('--validate', action='store_true',
@@ -531,6 +694,9 @@ def main():
             enricher.validate_and_report()
         elif args.enrich_imdb:
             enricher.enrich_from_imdb()
+            enricher.validate_and_report()
+        elif args.enrich_wikidata:
+            enricher.enrich_from_wikidata(limit=args.limit)
             enricher.validate_and_report()
         elif args.resolve_gender:
             enricher.resolve_unknown_genders(limit=args.limit)
