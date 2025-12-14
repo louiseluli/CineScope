@@ -1795,6 +1795,338 @@ def get_similar_recommendations(movie_id):
     })
 
 
+# =============================================================================
+# DISCOVERY ENGINE - Find ANY movie from TMDB
+# =============================================================================
+
+discovery_engine = None
+
+def get_discovery_engine():
+    """Initialize discovery engine lazily."""
+    global discovery_engine
+    if discovery_engine is None:
+        try:
+            import sys
+            sys.path.insert(0, str(Path(__file__).parent.parent))
+            from src.recommender.discovery_engine import DiscoveryEngine
+            discovery_engine = DiscoveryEngine()
+            
+            # Load watched movie IDs to exclude
+            if movies_df is not None:
+                tmdb_ids = movies_df['tmdb_id'].dropna().astype(int).tolist()
+                discovery_engine.set_watched_movies(tmdb_ids)
+                logger.info(f"Discovery engine initialized with {len(tmdb_ids)} watched movies")
+        except Exception as e:
+            logger.error(f"Failed to initialize discovery engine: {e}")
+            return None
+    return discovery_engine
+
+
+@app.route('/api/discover')
+def discover_movies():
+    """
+    Discover NEW movies from TMDB based on preferences.
+    
+    Query params:
+        genres: Comma-separated list of genres
+        decades: Comma-separated list of decades (e.g., "1990,2000")
+        directors: Comma-separated list of director names
+        actors: Comma-separated list of actor names
+        min_rating: Minimum TMDB rating (default: 6.0)
+        mood: feel_good, intense, thought_provoking, fun, any
+        limit: Max results per category (default: 10)
+    """
+    engine = get_discovery_engine()
+    if not engine:
+        return jsonify({'error': 'Discovery engine not available. Check TMDB API key.'}), 500
+    
+    # Parse preferences from query params
+    genres = request.args.get('genres', '')
+    decades = request.args.get('decades', '')
+    directors = request.args.get('directors', '')
+    actors = request.args.get('actors', '')
+    min_rating = request.args.get('min_rating', 6.0, type=float)
+    mood = request.args.get('mood', 'any')
+    limit = request.args.get('limit', 10, type=int)
+    
+    # Set preferences
+    engine.set_preferences(
+        favorite_genres=[g.strip() for g in genres.split(',') if g.strip()] if genres else [],
+        favorite_decades=[int(d.strip()) for d in decades.split(',') if d.strip()] if decades else [],
+        favorite_directors=[d.strip() for d in directors.split(',') if d.strip()] if directors else [],
+        favorite_actors=[a.strip() for a in actors.split(',') if a.strip()] if actors else [],
+        min_rating=min_rating,
+        mood=mood
+    )
+    
+    # Run discovery
+    results = engine.get_recommendations_json(limit)
+    
+    return jsonify({
+        'preferences': {
+            'genres': engine.preferences.favorite_genres,
+            'decades': engine.preferences.favorite_decades,
+            'directors': engine.preferences.favorite_directors,
+            'actors': engine.preferences.favorite_actors,
+            'min_rating': engine.preferences.min_rating,
+            'mood': engine.preferences.mood
+        },
+        'discoveries': results,
+        'note': 'These are movies you have NOT watched yet, discovered from TMDB'
+    })
+
+
+@app.route('/api/discover/search')
+def discover_search():
+    """Search for any movie in TMDB database."""
+    engine = get_discovery_engine()
+    if not engine:
+        return jsonify({'error': 'Discovery engine not available'}), 500
+    
+    query = request.args.get('q', '')
+    if not query:
+        return jsonify({'error': 'Search query required'}), 400
+    
+    limit = request.args.get('limit', 20, type=int)
+    results = engine.search(query, limit)
+    
+    return jsonify({
+        'query': query,
+        'results': [m.to_dict() for m in results],
+        'total': len(results)
+    })
+
+
+@app.route('/api/discover/similar/<int:tmdb_id>')
+def discover_similar(tmdb_id):
+    """Find movies similar to a specific TMDB movie."""
+    engine = get_discovery_engine()
+    if not engine:
+        return jsonify({'error': 'Discovery engine not available'}), 500
+    
+    limit = request.args.get('limit', 10, type=int)
+    results = engine.find_similar_to(tmdb_id, limit)
+    
+    return jsonify({
+        'source_tmdb_id': tmdb_id,
+        'similar_movies': [m.to_dict() for m in results]
+    })
+
+
+@app.route('/api/discover/director/<director_name>')
+def discover_by_director(director_name):
+    """Discover all movies by a specific director."""
+    engine = get_discovery_engine()
+    if not engine:
+        return jsonify({'error': 'Discovery engine not available'}), 500
+    
+    limit = request.args.get('limit', 30, type=int)
+    results = engine.discover_by_director(director_name, limit)
+    
+    return jsonify({
+        'director': director_name,
+        'movies': [m.to_dict() for m in results],
+        'total': len(results)
+    })
+
+
+@app.route('/api/discover/actor/<actor_name>')
+def discover_by_actor(actor_name):
+    """Discover movies featuring a specific actor."""
+    engine = get_discovery_engine()
+    if not engine:
+        return jsonify({'error': 'Discovery engine not available'}), 500
+    
+    limit = request.args.get('limit', 30, type=int)
+    results = engine.discover_by_actor(actor_name, limit)
+    
+    return jsonify({
+        'actor': actor_name,
+        'movies': [m.to_dict() for m in results],
+        'total': len(results)
+    })
+
+
+@app.route('/api/discover/trending')
+def discover_trending():
+    """Get trending movies that match your preferences."""
+    engine = get_discovery_engine()
+    if not engine:
+        return jsonify({'error': 'Discovery engine not available'}), 500
+    
+    time_window = request.args.get('window', 'week')  # 'day' or 'week'
+    limit = request.args.get('limit', 20, type=int)
+    results = engine.get_trending(time_window, limit)
+    
+    return jsonify({
+        'time_window': time_window,
+        'movies': [m.to_dict() for m in results]
+    })
+
+
+@app.route('/api/discover/hidden-gems')
+def discover_hidden_gems():
+    """Find highly-rated but under-the-radar movies."""
+    engine = get_discovery_engine()
+    if not engine:
+        return jsonify({'error': 'Discovery engine not available'}), 500
+    
+    # Optionally set genre preferences
+    genres = request.args.get('genres', '')
+    if genres:
+        engine.set_preferences(
+            favorite_genres=[g.strip() for g in genres.split(',') if g.strip()]
+        )
+    
+    limit = request.args.get('limit', 20, type=int)
+    results = engine.discover_hidden_gems(limit)
+    
+    return jsonify({
+        'movies': [m.to_dict() for m in results]
+    })
+
+
+@app.route('/api/discover/genre/<genre>')
+def discover_by_genre(genre):
+    """Discover top movies in a specific genre."""
+    engine = get_discovery_engine()
+    if not engine:
+        return jsonify({'error': 'Discovery engine not available'}), 500
+    
+    limit = request.args.get('limit', 20, type=int)
+    min_rating = request.args.get('min_rating', 6.5, type=float)
+    
+    engine.set_preferences(favorite_genres=[genre], min_rating=min_rating)
+    results = engine.discover_by_genre([genre], limit)
+    
+    return jsonify({
+        'genre': genre,
+        'movies': [m.to_dict() for m in results]
+    })
+
+
+@app.route('/api/discover/decade/<int:decade>')
+def discover_by_decade(decade):
+    """Discover top movies from a specific decade."""
+    engine = get_discovery_engine()
+    if not engine:
+        return jsonify({'error': 'Discovery engine not available'}), 500
+    
+    limit = request.args.get('limit', 20, type=int)
+    results = engine.discover_by_decade(decade, limit)
+    
+    return jsonify({
+        'decade': f"{decade}s",
+        'movies': [m.to_dict() for m in results]
+    })
+
+
+@app.route('/api/preferences')
+def get_user_preferences():
+    """
+    Analyze user's preferences based on watched movies.
+    Returns suggested preferences for discovery.
+    """
+    if movies_df is None or movies_df.empty:
+        return jsonify({'error': 'No movie data'}), 500
+    
+    # Analyze genres
+    genre_col = 'Genres' if 'Genres' in movies_df.columns else 'genres'
+    rating_col = 'Your Rating' if 'Your Rating' in movies_df.columns else 'your_rating'
+    
+    genre_ratings = {}
+    genre_counts = {}
+    
+    for _, row in movies_df.iterrows():
+        genres = str(row.get(genre_col, '')).split(',')
+        rating = row.get(rating_col)
+        
+        for g in genres:
+            g = g.strip()
+            if g:
+                genre_counts[g] = genre_counts.get(g, 0) + 1
+                if pd.notna(rating):
+                    if g not in genre_ratings:
+                        genre_ratings[g] = []
+                    genre_ratings[g].append(float(rating))
+    
+    # Calculate weighted scores
+    genre_scores = {}
+    for genre, ratings in genre_ratings.items():
+        avg = sum(ratings) / len(ratings)
+        count = genre_counts.get(genre, 0)
+        # Score = avg rating * log(count) 
+        import math
+        genre_scores[genre] = avg * math.log1p(count)
+    
+    top_genres = sorted(genre_scores.items(), key=lambda x: x[1], reverse=True)[:5]
+    
+    # Analyze decades
+    year_col = 'Year' if 'Year' in movies_df.columns else 'year'
+    decade_counts = {}
+    for _, row in movies_df.iterrows():
+        year = row.get(year_col)
+        if pd.notna(year):
+            decade = (int(year) // 10) * 10
+            decade_counts[decade] = decade_counts.get(decade, 0) + 1
+    
+    top_decades = sorted(decade_counts.items(), key=lambda x: x[1], reverse=True)[:3]
+    
+    # Find top directors
+    director_col = 'Directors' if 'Directors' in movies_df.columns else 'directors'
+    director_ratings = {}
+    
+    for _, row in movies_df.iterrows():
+        directors = str(row.get(director_col, '')).split(',')
+        rating = row.get(rating_col)
+        
+        for d in directors:
+            d = d.strip()
+            if d and pd.notna(rating):
+                if d not in director_ratings:
+                    director_ratings[d] = []
+                director_ratings[d].append(float(rating))
+    
+    # Directors with multiple high-rated films
+    trusted_directors = [
+        (d, sum(r)/len(r), len(r)) 
+        for d, r in director_ratings.items() 
+        if len(r) >= 2 and sum(r)/len(r) >= 7.5
+    ]
+    trusted_directors.sort(key=lambda x: x[1] * math.log1p(x[2]), reverse=True)
+    
+    return jsonify({
+        'suggested_preferences': {
+            'genres': [g for g, _ in top_genres],
+            'decades': [d for d, _ in top_decades],
+            'directors': [d for d, _, _ in trusted_directors[:5]],
+            'min_rating': 6.5
+        },
+        'analysis': {
+            'favorite_genres': [
+                {'genre': g, 'score': round(s, 2), 'count': genre_counts.get(g, 0)}
+                for g, s in top_genres
+            ],
+            'favorite_decades': [
+                {'decade': f"{d}s", 'count': c}
+                for d, c in top_decades
+            ],
+            'trusted_directors': [
+                {'name': d, 'avg_rating': round(r, 1), 'films': c}
+                for d, r, c in trusted_directors[:10]
+            ],
+            'total_movies_watched': len(movies_df)
+        },
+        'api_usage': {
+            'discover_url': '/api/discover?genres=Drama,Thriller&decades=1990,2000&min_rating=7',
+            'search_url': '/api/discover/search?q=movie+title',
+            'director_url': '/api/discover/director/Christopher%20Nolan',
+            'genre_url': '/api/discover/genre/Thriller',
+            'trending_url': '/api/discover/trending'
+        }
+    })
+
+
 # Error handlers
 @app.errorhandler(404)
 def not_found(e):
