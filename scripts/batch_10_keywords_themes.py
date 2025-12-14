@@ -163,7 +163,10 @@ class KeywordsAnalyzer:
         logger.info("=" * 80)
         
         # Process all keywords
-        self._process_keywords()
+        has_keywords = self._process_keywords()
+        
+        if not has_keywords:
+            return  # Exit early if no keywords
         
         # Generate visualizations
         self._viz_top_keywords()
@@ -188,29 +191,22 @@ class KeywordsAnalyzer:
         
         for movie in tqdm(self.movies, desc="Processing movies"):
             tmdb_id = str(movie.get('tmdb_id') or movie.get('TMDB_ID') or '')
-            
             if not tmdb_id or tmdb_id not in self.keywords_cache:
                 continue
-            
             kw_data = self.keywords_cache[tmdb_id]
             keywords = kw_data.get('keywords', [])
-            
             if not keywords:
                 continue
-            
             # Overall counts
             for kw in keywords:
                 kw_lower = kw.lower()
                 self.all_keywords[kw_lower] += 1
-            
-            # By genre
+            # By genre (normalize genre names)
             genres = movie.get('genres', '').split('|') if movie.get('genres') else []
+            genres = [g.strip().title() for g in genres if g.strip()]
             for genre in genres:
-                genre = genre.strip()
-                if genre:
-                    for kw in keywords:
-                        self.keywords_by_genre[genre][kw.lower()] += 1
-            
+                for kw in keywords:
+                    self.keywords_by_genre[genre][kw.lower()] += 1
             # By decade
             try:
                 year = int(movie.get('release_year') or movie.get('Year') or 0)
@@ -243,12 +239,31 @@ class KeywordsAnalyzer:
                     self.category_stats[category][kw.lower()] += 1
         
         logger.info(f"Processed {len(self.all_keywords):,} unique keywords")
+        
+        # Early exit if no keywords found
+        if len(self.all_keywords) == 0:
+            logger.warning("=" * 60)
+            logger.warning("NO KEYWORDS FOUND IN DATA!")
+            logger.warning("=" * 60)
+            logger.warning("Please run the keywords enrichment script first:")
+            logger.warning("  python scripts/enrich/08_enrich_keywords.py")
+            logger.warning("")
+            logger.warning("This will fetch keywords from TMDB for your watched movies.")
+            return False
+        
+        return True
     
     def _viz_top_keywords(self):
         """Visualize top keywords."""
         logger.info("Creating top keywords visualization...")
         
         top_30 = self.all_keywords.most_common(30)
+        
+        if not top_30:
+            logger.warning("No keywords found - skipping visualization")
+            logger.warning("Hint: Run 'python scripts/enrich/08_enrich_keywords.py' first")
+            return
+        
         keywords, counts = zip(*top_30)
         
         fig, ax = plt.subplots(figsize=(14, 10))
@@ -323,20 +338,20 @@ class KeywordsAnalyzer:
         
         for idx, genre in enumerate(top_genres):
             ax = axes[idx]
-            
-            if genre in self.keywords_by_genre:
-                top_10 = self.keywords_by_genre[genre].most_common(10)
-                if top_10:
-                    keywords, counts = zip(*top_10)
-                    
-                    color = GENRE_COLORS.get(genre, '#3498DB')
-                    y_pos = np.arange(len(keywords))
-                    
-                    ax.barh(y_pos, counts, color=color, edgecolor='white', alpha=0.8)
-                    ax.set_yticks(y_pos)
-                    ax.set_yticklabels(keywords, fontsize=9)
-                    ax.invert_yaxis()
-            
+            genre_keywords = self.keywords_by_genre.get(genre, None)
+            if genre_keywords and len(genre_keywords) > 0:
+                top_10 = genre_keywords.most_common(10)
+                keywords, counts = zip(*top_10)
+                color = GENRE_COLORS.get(genre, '#3498DB')
+                y_pos = np.arange(len(keywords))
+                ax.barh(y_pos, counts, color=color, edgecolor='white', alpha=0.8)
+                ax.set_yticks(y_pos)
+                ax.set_yticklabels(keywords, fontsize=9)
+                ax.invert_yaxis()
+            else:
+                ax.text(0.5, 0.5, "No data", ha='center', va='center', fontsize=14)
+                ax.set_xticks([])
+                ax.set_yticks([])
             ax.set_title(f'{genre}', fontsize=12, fontweight='bold')
             ax.set_xlabel('Count')
         
@@ -357,6 +372,11 @@ class KeywordsAnalyzer:
         
         # Sort by count
         sorted_themes = sorted(theme_counts.items(), key=lambda x: x[1], reverse=True)
+        
+        if not sorted_themes or all(c == 0 for _, c in sorted_themes):
+            logger.warning("No theme data to visualize")
+            return
+        
         themes, counts = zip(*sorted_themes)
         
         fig, ax = plt.subplots(figsize=(12, 8))
@@ -386,6 +406,10 @@ class KeywordsAnalyzer:
         
         # Get top 15 keywords
         top_keywords = [kw for kw, _ in self.all_keywords.most_common(15)]
+        
+        if not top_keywords:
+            logger.warning("No keywords for heatmap visualization")
+            return
         
         # Build co-occurrence matrix
         matrix = np.zeros((len(top_keywords), len(top_keywords)))
