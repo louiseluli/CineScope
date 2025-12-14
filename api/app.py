@@ -1355,6 +1355,446 @@ def compare_actors():
     return jsonify({'error': 'Data not available'}), 500
 
 
+# =============================================================================
+# ZODIAC & ASTROLOGICAL ANALYSIS ENDPOINTS
+# =============================================================================
+
+@app.route('/api/zodiac/distribution')
+def get_zodiac_distribution():
+    """Get zodiac sign distribution among actors/directors"""
+    if not people_cache:
+        return jsonify({'error': 'People data not loaded'}), 500
+    
+    # Western zodiac
+    western_zodiac = {}
+    chinese_zodiac = {}
+    elements = {'Fire': 0, 'Earth': 0, 'Air': 0, 'Water': 0}
+    
+    element_map = {
+        'Aries': 'Fire', 'Leo': 'Fire', 'Sagittarius': 'Fire',
+        'Taurus': 'Earth', 'Virgo': 'Earth', 'Capricorn': 'Earth',
+        'Gemini': 'Air', 'Libra': 'Air', 'Aquarius': 'Air',
+        'Cancer': 'Water', 'Scorpio': 'Water', 'Pisces': 'Water'
+    }
+    
+    for person_id, person in people_cache.items():
+        sign = person.get('zodiac_western')
+        chinese = person.get('zodiac_chinese')
+        
+        if sign:
+            western_zodiac[sign] = western_zodiac.get(sign, 0) + 1
+            if sign in element_map:
+                elements[element_map[sign]] += 1
+        
+        if chinese:
+            chinese_zodiac[chinese] = chinese_zodiac.get(chinese, 0) + 1
+    
+    return jsonify({
+        'western': western_zodiac,
+        'chinese': chinese_zodiac,
+        'elements': elements,
+        'total_with_zodiac': sum(western_zodiac.values())
+    })
+
+
+@app.route('/api/zodiac/people/<sign>')
+def get_people_by_zodiac(sign):
+    """Get people by zodiac sign"""
+    if not people_cache:
+        return jsonify({'error': 'People data not loaded'}), 500
+    
+    sign = sign.title()
+    page = request.args.get('page', 1, type=int)
+    per_page = request.args.get('per_page', 20, type=int)
+    
+    people = []
+    for person_id, person in people_cache.items():
+        if person.get('zodiac_western') == sign or person.get('zodiac_chinese') == sign:
+            people.append({
+                'id': person_id,
+                'name': person.get('name'),
+                'profile_path': person.get('profile_path'),
+                'known_for': person.get('known_for_department'),
+                'zodiac_western': person.get('zodiac_western'),
+                'zodiac_chinese': person.get('zodiac_chinese'),
+                'birthday': person.get('birthday') or person.get('ext_birth_date'),
+                'popularity': person.get('popularity', 0)
+            })
+    
+    # Sort by popularity
+    people.sort(key=lambda x: x.get('popularity', 0) or 0, reverse=True)
+    
+    # Paginate
+    start = (page - 1) * per_page
+    end = start + per_page
+    
+    return jsonify({
+        'sign': sign,
+        'total': len(people),
+        'page': page,
+        'per_page': per_page,
+        'people': people[start:end]
+    })
+
+
+@app.route('/api/zodiac/stats')
+def get_zodiac_stats():
+    """Get zodiac-related statistics"""
+    if not people_cache:
+        return jsonify({'error': 'People data not loaded'}), 500
+    
+    stats = {
+        'by_department': {},
+        'mortality': {
+            'causes': {},
+            'avg_age_at_death': None,
+            'deceased_count': 0
+        }
+    }
+    
+    ages_at_death = []
+    
+    for person_id, person in people_cache.items():
+        sign = person.get('zodiac_western')
+        dept = person.get('known_for_department', 'Unknown')
+        
+        if sign:
+            if dept not in stats['by_department']:
+                stats['by_department'][dept] = {}
+            stats['by_department'][dept][sign] = stats['by_department'][dept].get(sign, 0) + 1
+        
+        # Mortality
+        cause = person.get('ext_cause_of_death')
+        if cause:
+            stats['mortality']['causes'][cause] = stats['mortality']['causes'].get(cause, 0) + 1
+            stats['mortality']['deceased_count'] += 1
+        
+        age_at_death = person.get('ext_age_at_death')
+        if age_at_death:
+            ages_at_death.append(age_at_death)
+    
+    if ages_at_death:
+        stats['mortality']['avg_age_at_death'] = sum(ages_at_death) / len(ages_at_death)
+        stats['mortality']['median_age_at_death'] = sorted(ages_at_death)[len(ages_at_death) // 2]
+    
+    # Sort causes
+    stats['mortality']['top_causes'] = sorted(
+        stats['mortality']['causes'].items(),
+        key=lambda x: x[1],
+        reverse=True
+    )[:20]
+    
+    return jsonify(stats)
+
+
+# =============================================================================
+# KEYWORDS & THEMES ENDPOINTS
+# =============================================================================
+
+# Load keywords cache
+keywords_cache = None
+
+def load_keywords_cache():
+    """Load keywords cache"""
+    global keywords_cache
+    keywords_file = PROCESSED_DIR / 'keywords_cache.json'
+    if keywords_file.exists():
+        with open(keywords_file, 'r') as f:
+            keywords_cache = json.load(f)
+        logger.info(f"Loaded keywords for {len(keywords_cache)} movies")
+    else:
+        keywords_cache = {}
+
+
+@app.route('/api/keywords/movie/<movie_id>')
+def get_movie_keywords(movie_id):
+    """Get keywords for a specific movie"""
+    if keywords_cache is None:
+        load_keywords_cache()
+    
+    # Try to find by TMDB ID
+    if str(movie_id) in keywords_cache:
+        return jsonify(keywords_cache[str(movie_id)])
+    
+    # Try to find by IMDB ID - need to map
+    if movies_df is not None:
+        match = movies_df[
+            (movies_df.get('Const', pd.Series()) == movie_id) |
+            (movies_df.get('const', pd.Series()) == movie_id) |
+            (movies_df.get('imdb_id', pd.Series()) == movie_id)
+        ]
+        if not match.empty:
+            tmdb_id = match.iloc[0].get('tmdb_id')
+            if tmdb_id and str(tmdb_id) in keywords_cache:
+                return jsonify(keywords_cache[str(tmdb_id)])
+    
+    return jsonify({'error': 'Keywords not found', 'keywords': []}), 404
+
+
+@app.route('/api/keywords/top')
+def get_top_keywords():
+    """Get top keywords across all movies"""
+    if keywords_cache is None:
+        load_keywords_cache()
+    
+    limit = request.args.get('limit', 50, type=int)
+    
+    # Count all keywords
+    keyword_counts = {}
+    for movie_id, data in keywords_cache.items():
+        for kw in data.get('keywords', []):
+            keyword_counts[kw] = keyword_counts.get(kw, 0) + 1
+    
+    # Sort and return top
+    top_keywords = sorted(keyword_counts.items(), key=lambda x: x[1], reverse=True)[:limit]
+    
+    return jsonify({
+        'total_unique': len(keyword_counts),
+        'keywords': [{'keyword': k, 'count': c} for k, c in top_keywords]
+    })
+
+
+@app.route('/api/keywords/search')
+def search_by_keyword():
+    """Search movies by keyword"""
+    if keywords_cache is None:
+        load_keywords_cache()
+    
+    keyword = request.args.get('q', '').lower()
+    if not keyword:
+        return jsonify({'error': 'Keyword query required'}), 400
+    
+    page = request.args.get('page', 1, type=int)
+    per_page = request.args.get('per_page', 20, type=int)
+    
+    # Find movies with this keyword
+    matching_movies = []
+    for movie_id, data in keywords_cache.items():
+        keywords_lower = [kw.lower() for kw in data.get('keywords', [])]
+        if keyword in keywords_lower:
+            matching_movies.append(movie_id)
+    
+    # Get movie details
+    movies = []
+    if movies_df is not None:
+        for tmdb_id in matching_movies:
+            match = movies_df[movies_df.get('tmdb_id', pd.Series()).astype(str) == str(tmdb_id)]
+            if not match.empty:
+                movies.append(movie_to_dict(match.iloc[0]))
+    
+    # Paginate
+    start = (page - 1) * per_page
+    end = start + per_page
+    
+    return jsonify({
+        'keyword': keyword,
+        'total': len(movies),
+        'page': page,
+        'per_page': per_page,
+        'movies': movies[start:end]
+    })
+
+
+@app.route('/api/keywords/categories')
+def get_keyword_categories():
+    """Get keywords grouped by category"""
+    if keywords_cache is None:
+        load_keywords_cache()
+    
+    categories = {
+        'themes': {},
+        'settings': {},
+        'character_types': {},
+        'narrative': {},
+        'emotional': {},
+        'content': {}
+    }
+    
+    for movie_id, data in keywords_cache.items():
+        for category, kws in data.get('categories', {}).items():
+            if category in categories:
+                for kw in kws:
+                    categories[category][kw] = categories[category].get(kw, 0) + 1
+    
+    # Sort each category
+    result = {}
+    for category, kws in categories.items():
+        sorted_kws = sorted(kws.items(), key=lambda x: x[1], reverse=True)[:30]
+        result[category] = [{'keyword': k, 'count': c} for k, c in sorted_kws]
+    
+    return jsonify(result)
+
+
+# =============================================================================
+# ENHANCED RECOMMENDATIONS ENDPOINTS
+# =============================================================================
+
+@app.route('/api/recommendations/personalized')
+def get_personalized_recommendations():
+    """Get personalized recommendations based on viewing history"""
+    if movies_df is None or movies_df.empty:
+        return jsonify({'error': 'Movie data not loaded'}), 500
+    
+    recommendation_type = request.args.get('type', 'all')  # all, hidden_gems, new_directors, etc.
+    limit = request.args.get('limit', 10, type=int)
+    
+    # Get user's highly rated movies (8+)
+    rating_col = 'Your Rating' if 'Your Rating' in movies_df.columns else 'your_rating'
+    high_rated = movies_df[pd.to_numeric(movies_df[rating_col], errors='coerce') >= 8]
+    
+    # Analyze preferences
+    user_genres = {}
+    user_directors = {}
+    user_decades = {}
+    
+    for _, row in high_rated.iterrows():
+        # Genres
+        genres = str(row.get('Genres') or row.get('genres') or '').split(',')
+        for genre in genres:
+            genre = genre.strip()
+            if genre:
+                user_genres[genre] = user_genres.get(genre, 0) + 1
+        
+        # Directors
+        directors = str(row.get('Directors') or row.get('directors') or '').split(',')
+        for director in directors:
+            director = director.strip()
+            if director:
+                user_directors[director] = user_directors.get(director, 0) + 1
+        
+        # Decades
+        year = row.get('Year') or row.get('year')
+        if year:
+            try:
+                decade = (int(year) // 10) * 10
+                user_decades[decade] = user_decades.get(decade, 0) + 1
+            except:
+                pass
+    
+    # Get top preferences
+    top_genres = sorted(user_genres.items(), key=lambda x: x[1], reverse=True)[:5]
+    top_directors = sorted(user_directors.items(), key=lambda x: x[1], reverse=True)[:10]
+    top_decades = sorted(user_decades.items(), key=lambda x: x[1], reverse=True)[:3]
+    
+    return jsonify({
+        'profile': {
+            'favorite_genres': [{'genre': g, 'count': c} for g, c in top_genres],
+            'favorite_directors': [{'name': d, 'count': c} for d, c in top_directors],
+            'favorite_decades': [{'decade': d, 'count': c} for d, c in top_decades],
+            'total_highly_rated': len(high_rated)
+        },
+        'recommendations': {
+            'note': 'Use /api/recommendations/gaps for viewing gaps, /api/movies for filtered browsing'
+        }
+    })
+
+
+@app.route('/api/recommendations/director/<director_name>')
+def get_director_recommendations(director_name):
+    """Get unwatched films by a specific director"""
+    if movies_df is None:
+        return jsonify({'error': 'Data not loaded'}), 500
+    
+    # This would need a database of all films by director
+    # For now, show watched films by this director
+    director_col = 'Directors' if 'Directors' in movies_df.columns else 'directors'
+    
+    director_films = movies_df[
+        movies_df[director_col].str.contains(director_name, case=False, na=False)
+    ]
+    
+    films = [movie_to_dict(row) for _, row in director_films.iterrows()]
+    films.sort(key=lambda x: x.get('year') or 0)
+    
+    return jsonify({
+        'director': director_name,
+        'watched_count': len(films),
+        'films': films,
+        'note': 'These are watched films. Full filmography requires external API.'
+    })
+
+
+@app.route('/api/recommendations/similar/<movie_id>')
+def get_similar_recommendations(movie_id):
+    """Get movies similar to a specific movie (enhanced version)"""
+    if movies_df is None:
+        return jsonify({'error': 'Data not loaded'}), 500
+    
+    if keywords_cache is None:
+        load_keywords_cache()
+    
+    # Find the source movie
+    match = movies_df[
+        (movies_df.get('Const', pd.Series()).astype(str) == str(movie_id)) |
+        (movies_df.get('const', pd.Series()).astype(str) == str(movie_id)) |
+        (movies_df.get('tmdb_id', pd.Series()).astype(str) == str(movie_id))
+    ]
+    
+    if match.empty:
+        return jsonify({'error': 'Movie not found'}), 404
+    
+    source = match.iloc[0]
+    source_genres = set(str(source.get('Genres') or source.get('genres') or '').lower().split(','))
+    source_directors = set(str(source.get('Directors') or source.get('directors') or '').lower().split(','))
+    
+    # Get source keywords
+    source_tmdb_id = str(source.get('tmdb_id', ''))
+    source_keywords = set()
+    if source_tmdb_id in keywords_cache:
+        source_keywords = set(kw.lower() for kw in keywords_cache[source_tmdb_id].get('keywords', []))
+    
+    # Score all other movies
+    similarities = []
+    
+    for _, row in movies_df.iterrows():
+        if row.get('Const') == movie_id or row.get('tmdb_id') == source.get('tmdb_id'):
+            continue
+        
+        score = 0
+        
+        # Genre overlap
+        genres = set(str(row.get('Genres') or row.get('genres') or '').lower().split(','))
+        genre_overlap = len(source_genres & genres)
+        score += genre_overlap * 3
+        
+        # Director overlap
+        directors = set(str(row.get('Directors') or row.get('directors') or '').lower().split(','))
+        if source_directors & directors:
+            score += 5
+        
+        # Keyword overlap
+        row_tmdb_id = str(row.get('tmdb_id', ''))
+        if row_tmdb_id in keywords_cache:
+            row_keywords = set(kw.lower() for kw in keywords_cache[row_tmdb_id].get('keywords', []))
+            keyword_overlap = len(source_keywords & row_keywords)
+            score += keyword_overlap * 2
+        
+        # Year proximity (within 10 years)
+        try:
+            source_year = int(source.get('Year') or source.get('year') or 0)
+            row_year = int(row.get('Year') or row.get('year') or 0)
+            if abs(source_year - row_year) <= 10:
+                score += 1
+        except:
+            pass
+        
+        if score > 0:
+            similarities.append((movie_to_dict(row), score))
+    
+    # Sort by score
+    similarities.sort(key=lambda x: x[1], reverse=True)
+    
+    limit = request.args.get('limit', 10, type=int)
+    
+    return jsonify({
+        'source_movie': movie_to_dict(source),
+        'similar_movies': [
+            {**movie, 'similarity_score': score}
+            for movie, score in similarities[:limit]
+        ]
+    })
+
+
 # Error handlers
 @app.errorhandler(404)
 def not_found(e):
