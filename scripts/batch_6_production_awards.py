@@ -81,7 +81,7 @@ class ProductionAwardsAnalyzer:
         self.production_data = self._process_production_credits()
         self.awards_data = self._process_awards()
         logger.info(f"Analyzing {len(self.df)} films")
-        logger.info(f"Found {len(self.production_data.get('studios', []))} studio mentions")
+        logger.info(f"Found {len(self.production_data.get('production_companies', []))} production company mentions")
         logger.info(f"Found {len(self.awards_data)} films with awards data")
     
     def _parse_pipe_separated(self, value: str) -> List[str]:

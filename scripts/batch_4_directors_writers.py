@@ -83,11 +83,21 @@ class DirectorAnalyzer:
         records = []
         
         for _, film in self.df.iterrows():
-            writers_str = film.get('writers', '')
+            # Prefer tmdb_writers (has names), fall back to writers (may have IDs)
+            writers_str = film.get('tmdb_writers', '')
+            if pd.isna(writers_str) or not writers_str:
+                writers_str = film.get('writers', '')
             if pd.isna(writers_str):
                 continue
             
-            writers = [w.strip() for w in str(writers_str).split(',') if w.strip()]
+            # tmdb_writers uses pipe separator, others use comma
+            if '|' in str(writers_str):
+                writers = [w.strip() for w in str(writers_str).split('|') if w.strip()]
+            else:
+                writers = [w.strip() for w in str(writers_str).split(',') if w.strip()]
+            
+            # Skip IMDb IDs (nm followed by digits)
+            writers = [w for w in writers if not (w.startswith('nm') and w[2:].isdigit())]
             
             for writer in writers:
                 records.append({

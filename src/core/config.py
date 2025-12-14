@@ -377,7 +377,7 @@ def get_color_palette(palette_name, n_colors=None):
             return palette[:n_colors]
     return palette
 
-def save_figure(fig, filename, batch_number, dpi=None):
+def save_figure(fig, filename, batch_number, dpi=None, pad_inches=0.1):
     """Save figure to batch-specific directory."""
     output_dir = get_batch_output_dir(batch_number)
     filepath = output_dir / filename
@@ -385,7 +385,9 @@ def save_figure(fig, filename, batch_number, dpi=None):
     if dpi is None:
         dpi = DEFAULT_DPI
     
-    fig.savefig(filepath, dpi=dpi, bbox_inches='tight', facecolor='white')
+    # Use the figure's facecolor instead of forcing white
+    facecolor = fig.get_facecolor()
+    fig.savefig(filepath, dpi=dpi, bbox_inches='tight', pad_inches=pad_inches, facecolor=facecolor)
     print(f"✅ Saved: {filepath}")
     return filepath
 

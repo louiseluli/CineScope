@@ -20,6 +20,7 @@ from pathlib import Path
 import logging
 from collections import Counter, defaultdict
 from itertools import combinations
+import ast
 
 # Setup
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -53,6 +54,29 @@ class GenreAnalyzer:
         self.genre_combos = self._analyze_combinations()
         logger.info(f"Loaded {len(df)} films with {len(self.genre_data['genre'].unique())} unique genres")
     
+    def _parse_genres(self, genres_str) -> list:
+        """Parse genres from various formats (list string, comma-separated, pipe-separated)."""
+        if pd.isna(genres_str):
+            return []
+        
+        genres_str = str(genres_str).strip()
+        
+        # Handle Python list format: "['Drama', 'Comedy']"
+        if genres_str.startswith('['):
+            try:
+                genres = ast.literal_eval(genres_str)
+                if isinstance(genres, list):
+                    return [g.strip() for g in genres if g.strip()]
+            except (ValueError, SyntaxError):
+                pass
+        
+        # Handle pipe-separated
+        if '|' in genres_str:
+            return [g.strip() for g in genres_str.split('|') if g.strip()]
+        
+        # Handle comma-separated
+        return [g.strip() for g in genres_str.split(',') if g.strip()]
+    
     def _process_genres(self) -> pd.DataFrame:
         """Extract genre-film relationships."""
         records = []
@@ -62,7 +86,7 @@ class GenreAnalyzer:
             if pd.isna(genres_str):
                 continue
             
-            genres = [g.strip() for g in str(genres_str).split(',') if g.strip()]
+            genres = self._parse_genres(genres_str)
             
             for genre in genres:
                 records.append({
@@ -86,7 +110,7 @@ class GenreAnalyzer:
             if pd.isna(genres_str):
                 continue
             
-            genres = tuple(sorted([g.strip() for g in str(genres_str).split(',') if g.strip()]))
+            genres = tuple(sorted(self._parse_genres(genres_str)))
             if len(genres) > 1:
                 combos.append(genres)
         
@@ -116,17 +140,21 @@ class GenreAnalyzer:
         hybrid = 0
         
         for genres_str in self.df['genres'].dropna():
-            genres = [g.strip() for g in str(genres_str).split(',') if g.strip()]
+            genres = self._parse_genres(genres_str)
             if len(genres) == 1:
                 pure += 1
             else:
                 hybrid += 1
         
+        total = pure + hybrid
+        if total == 0:
+            return {'pure': 0, 'hybrid': 0, 'pure_pct': 0, 'hybrid_pct': 0}
+        
         return {
             'pure': pure,
             'hybrid': hybrid,
-            'pure_pct': (pure / (pure + hybrid)) * 100,
-            'hybrid_pct': (hybrid / (pure + hybrid)) * 100
+            'pure_pct': (pure / total) * 100,
+            'hybrid_pct': (hybrid / total) * 100
         }
 
 
@@ -267,7 +295,7 @@ def viz_4_pure_vs_hybrid(analyzer: GenreAnalyzer):
     for _, film in analyzer.df.iterrows():
         genres_str = film.get('genres', '')
         if pd.notna(genres_str):
-            count = len([g.strip() for g in str(genres_str).split(',') if g.strip()])
+            count = len(analyzer._parse_genres(genres_str))
             genre_counts.append(count)
     
     genre_dist = Counter(genre_counts)
@@ -505,7 +533,7 @@ Q142: Top 5 genre combinations:
 📈 KEY INSIGHTS:
 
 1. Total unique genres: {len(analyzer.genre_data['genre'].unique())}
-2. Average genres per film: {analyzer.df['genres'].apply(lambda x: len(str(x).split(',')) if pd.notna(x) else 0).mean():.1f}
+2. Average genres per film: {len(analyzer.genre_data) / len(analyzer.df):.1f}
 3. Most consistent quality: {top_genres.nsmallest(1, 'rating_std').iloc[0]['genre']}
 4. Longest average runtime: {top_genres.nlargest(1, 'avg_runtime').iloc[0]['genre']} ({int(top_genres.nlargest(1, 'avg_runtime').iloc[0]['avg_runtime'])}min)
 5. Hybrid dominance: {hybrid_stats['hybrid_pct']:.1f}% of films mix multiple genres

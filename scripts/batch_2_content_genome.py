@@ -682,18 +682,40 @@ def build_imdb_directors_writers(df_titles: pd.DataFrame) -> tuple[pd.DataFrame,
 
 def load_ddd() -> pd.DataFrame:
     """Load DDD data with strict tconst join. Returns empty if file missing."""
-    ddd_path = project_root / "data" / "processed" / "ddd" / "ddd.parquet"
-    if not ddd_path.exists():
+    # Try multiple possible DDD file locations
+    possible_paths = [
+        project_root / "data" / "processed" / "03_ddd_enriched_media.csv",
+        project_root / "data" / "processed" / "ddd" / "ddd.parquet",
+        project_root / "data" / "processed" / "ddd_enriched_media.csv",
+    ]
+    
+    ddd_path = None
+    for path in possible_paths:
+        if path.exists():
+            ddd_path = path
+            break
+    
+    if ddd_path is None:
         log_message("⚠️ DDD file not found; skipping DDD integration.", level="WARNING")
         return pd.DataFrame()
+    
     try:
-        ddd = pd.read_parquet(ddd_path)
+        # Load based on file extension
+        if str(ddd_path).endswith('.parquet'):
+            ddd = pd.read_parquet(ddd_path)
+        else:
+            ddd = pd.read_csv(ddd_path, low_memory=False)
+        
         # Normalize tconst column name if needed
         if "tconst" not in ddd.columns and "imdb_id" in ddd.columns:
             ddd = ddd.rename(columns={"imdb_id": "tconst"})
-        ddd["const"] = ddd["tconst"].astype(str)
-        ddd = ddd.drop(columns=[c for c in ["tconst"] if c in ddd.columns])
-        log_message(f"✅ DDD loaded: {ddd.shape[0]} titles, {ddd.shape[1]-1} features")
+        if "const" not in ddd.columns and "tconst" in ddd.columns:
+            ddd["const"] = ddd["tconst"].astype(str)
+            ddd = ddd.drop(columns=[c for c in ["tconst"] if c in ddd.columns])
+        
+        # Get DDD-specific columns (those starting with 'ddd_')
+        ddd_cols = [c for c in ddd.columns if c.startswith('ddd_')]
+        log_message(f"✅ DDD loaded from {ddd_path.name}: {ddd.shape[0]} titles, {len(ddd_cols)} DDD features")
         return ddd
     except Exception as e:
         log_message(f"⚠️ Error loading DDD: {e}", level="WARNING")
@@ -1175,6 +1197,8 @@ class ContentGenomeAnalysis:
     # -------------------- VIZ 8 --------------------
     def viz_8_keywords_wordcloud(self):
         log_message("📊 Creating Visualization 8: Keywords/Themes Wordcloud")
+        from wordcloud import WordCloud
+        
         if "tmdb_keywords" not in self.df.columns:
             log_message("⚠️ No keyword column; using genres as proxy", level="WARNING")
             all_genres = []
@@ -1182,25 +1206,54 @@ class ContentGenomeAnalysis:
                 if pd.notna(r.get("genres")):
                     all_genres.extend(parse_genres(r["genres"]))
             counts = Counter(all_genres)
+        else:
+            # Parse TMDB keywords
+            counts = Counter()
+            for kw_str in self.df["tmdb_keywords"].dropna():
+                keywords = [k.strip() for k in str(kw_str).split("|") if k.strip()]
+                for kw in keywords:
+                    # Clean and title case for display
+                    clean_kw = kw.replace("-", " ").replace("_", " ").title()
+                    counts[clean_kw] += 1
+        
+        if not counts:
+            log_message("⚠️ No keywords found", level="WARNING")
             fig, ax = plt.subplots(figsize=(16, 12))
-            y = 0.9
-            if counts:
-                mx = max(counts.values())
-                for i, (g, c) in enumerate(counts.most_common(20)):
-                    size = 12 + (c / mx * 20)
-                    color = GENRE_COLORS.get(g, '#95a5a6')
-                    ax.text(0.1 + (i % 4) * 0.23, y - (i // 4) * 0.08,
-                            f'{g}\n({c})',
-                            fontsize=size, color=color, fontweight='bold',
-                            ha='left', va='top')
-            ax.set_title('Top 20 Genres (Keyword Proxy)', fontsize=16, fontweight='bold', pad=16)
+            ax.text(0.5, 0.5, "No keywords data available", ha='center', va='center', fontsize=20)
             ax.axis('off')
-            plt.tight_layout()
             save_figure(fig, '08_keywords_wordcloud.png', batch_number=2)
             plt.close()
             return self
-
-        # Placeholder for real TMDB keyword parsing
+        
+        # Create wordcloud with dark theme colors
+        def color_func(word, font_size, position, orientation, random_state=None, **kwargs):
+            colors = ['#00d4ff', '#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', 
+                      '#54a0ff', '#1dd1a1', '#ff9f43', '#ee5a24', '#a55eea']
+            import random
+            return random.choice(colors)
+        
+        wc = WordCloud(
+            width=1600,
+            height=1000,
+            background_color='#1a1a2e',
+            max_words=80,
+            max_font_size=150,
+            min_font_size=14,
+            relative_scaling=0.5,
+            color_func=color_func,
+            prefer_horizontal=0.7,
+            margin=10
+        ).generate_from_frequencies(counts)
+        
+        fig, ax = plt.subplots(figsize=(16, 10))
+        fig.set_facecolor('#1a1a2e')
+        ax.imshow(wc, interpolation='bilinear')
+        ax.axis('off')
+        ax.set_title(f'Top Keywords/Themes from {len(self.df):,} Films', 
+                     fontsize=18, fontweight='bold', color='white', pad=20)
+        plt.tight_layout()
+        save_figure(fig, '08_keywords_wordcloud.png', batch_number=2)
+        plt.close()
         return self
 
     # -------------------- VIZ 9 --------------------
@@ -1341,7 +1394,7 @@ class ContentGenomeAnalysis:
     # -------------------- VIZ 11 --------------------
     def viz_11_content_warnings_ddd(self):
         log_message("📊 Creating Visualization 11: Content Warnings (DDD)")
-        dcols = [c for c in self.df.columns if c.startswith("ddd_")]
+        dcols = [c for c in self.df.columns if c.startswith("ddd_") and c != "ddd_id"]
         if not dcols:
             fig, ax = plt.subplots(figsize=(16, 10))
             ax.text(0.5, 0.5, "No DDD columns present.", ha="center", va="center", fontsize=16)
@@ -1351,26 +1404,63 @@ class ContentGenomeAnalysis:
             plt.close()
             return self
 
-        boolish = {}
+        # Count "Yes" values in each DDD column (values are Yes/No/No Votes/Controversial)
+        yes_counts = {}
         for c in dcols:
-            s = self.df[c]
-            if s.dropna().isin([0, 1, True, False, "0", "1", "true", "false"]).mean() > 0.8:
-                val = (s.astype(str).str.lower().isin(["1", "true", "t", "yes"])).sum()
-                boolish[c] = int(val)
-        if not boolish:
+            # Count Yes and Controversial as positive flags
+            count = ((self.df[c] == 'Yes') | (self.df[c] == 'Controversial')).sum()
+            if count > 0:
+                # Clean up column name for display
+                clean_name = c.replace('ddd_', '').replace('_', ' ').title()
+                yes_counts[clean_name] = int(count)
+        
+        if not yes_counts:
             fig, ax = plt.subplots(figsize=(16, 10))
-            ax.text(0.5, 0.5, "DDD present but not boolean-style warnings.", ha="center", va="center", fontsize=16)
+            ax.text(0.5, 0.5, "No content warnings flagged in DDD data.", ha="center", va="center", fontsize=16)
             ax.axis("off")
             ax.set_title("Content Warnings (DDD)")
             save_figure(fig, '11_content_warnings_ddd.png', batch_number=2)
             plt.close()
             return self
 
-        items = sorted(boolish.items(), key=lambda x: x[1], reverse=True)[:20]
-        fig, ax = plt.subplots(figsize=(16, 10))
-        ax.barh([k for k, _ in items][::-1], [v for _, v in items][::-1], color="#ffcc80", edgecolor="black")
-        ax.set_title("Most Common Content Warnings (DDD)")
-        ax.set_xlabel("Count of Films Flagged")
+        # Sort and take top 25
+        items = sorted(yes_counts.items(), key=lambda x: x[1], reverse=True)[:25]
+        
+        fig, ax = plt.subplots(figsize=(16, 12))
+        ax.set_facecolor('#1a1a2e')
+        fig.set_facecolor('#1a1a2e')
+        
+        labels = [k for k, _ in items][::-1]
+        values = [v for _, v in items][::-1]
+        max_val = max(values) if values else 1
+        
+        colors = plt.cm.Reds(np.linspace(0.3, 0.9, len(items)))[::-1]
+        y_pos = np.arange(len(labels))
+        bars = ax.barh(y_pos, values, color=colors, edgecolor='white', linewidth=0.5, height=0.7)
+        
+        # Hide y-axis ticks and put labels INSIDE the bars
+        ax.set_yticks([])
+        
+        # Add labels inside bars (or just outside for small bars)
+        for i, (bar, val, label) in enumerate(zip(bars, values, labels)):
+            # Value at end of bar
+            ax.text(bar.get_width() + max_val * 0.01, bar.get_y() + bar.get_height()/2, 
+                    str(val), va='center', ha='left', fontsize=10, color='white', fontweight='bold')
+            # Label inside bar
+            label_x = max(bar.get_width() * 0.02, 5)
+            ax.text(label_x, bar.get_y() + bar.get_height()/2, 
+                    label, va='center', ha='left', fontsize=10, color='white', fontweight='bold')
+        
+        ax.set_title(f"Most Common Content Warnings (from {len(self.df):,} films)", 
+                     fontsize=18, fontweight='bold', color='white', pad=20)
+        ax.set_xlabel("Number of Films", fontsize=14, color='white')
+        ax.tick_params(colors='white', labelsize=11)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['bottom'].set_color('white')
+        ax.spines['left'].set_visible(False)
+        ax.set_xlim(0, max_val * 1.1)
+        
         plt.tight_layout()
         save_figure(fig, '11_content_warnings_ddd.png', batch_number=2)
         plt.close()
@@ -1379,10 +1469,96 @@ class ContentGenomeAnalysis:
     # -------------------- VIZ 12 --------------------
     def viz_12_emotional_content_ddd(self):
         log_message("📊 Creating Visualization 12: Emotional Content (DDD)")
+        
+        # Define emotional/mood related DDD columns
+        emotional_keywords = ['sad', 'happy', 'love', 'fear', 'angry', 'cry', 'laugh', 
+                             'emotion', 'feel', 'mood', 'depress', 'anxiety', 'joy',
+                             'romantic', 'scary', 'intense', 'suspense', 'amused']
+        
+        dcols = [c for c in self.df.columns if c.startswith("ddd_") and c != "ddd_id"]
+        
+        # Find emotional-related columns
+        emotional_cols = []
+        for c in dcols:
+            clean_name = c.replace('ddd_', '').replace('_', ' ').lower()
+            if any(kw in clean_name for kw in emotional_keywords):
+                emotional_cols.append(c)
+        
+        # If no specific emotional columns, use columns with sentiment-like names
+        if not emotional_cols:
+            # Fallback: use some common emotional indicators from DDD
+            emotional_cols = [c for c in dcols if any(w in c.lower() for w in 
+                            ['jumpscare', 'sad', 'cry', 'death', 'violence', 'romantic', 
+                             'scary', 'gore', 'disturbing', 'dark', 'tense'])]
+        
+        if not emotional_cols:
+            fig, ax = plt.subplots(figsize=(16, 10))
+            ax.text(0.5, 0.5, "No emotional content columns found in DDD data.", 
+                    ha="center", va="center", fontsize=16)
+            ax.axis("off")
+            ax.set_title("Emotional Content (DDD)")
+            save_figure(fig, '12_emotional_content_ddd.png', batch_number=2)
+            plt.close()
+            return self
+        
+        # Count flags for emotional columns
+        emotion_counts = {}
+        for c in emotional_cols:
+            count = ((self.df[c] == 'Yes') | (self.df[c] == 'Controversial')).sum()
+            if count > 0:
+                clean_name = c.replace('ddd_', '').replace('_', ' ').title()
+                emotion_counts[clean_name] = int(count)
+        
+        if not emotion_counts:
+            fig, ax = plt.subplots(figsize=(16, 10))
+            ax.text(0.5, 0.5, "No emotional flags found in DDD data.", 
+                    ha="center", va="center", fontsize=16)
+            ax.axis("off")
+            ax.set_title("Emotional Content (DDD)")
+            save_figure(fig, '12_emotional_content_ddd.png', batch_number=2)
+            plt.close()
+            return self
+        
+        # Sort and visualize
+        items = sorted(emotion_counts.items(), key=lambda x: x[1], reverse=True)[:20]
+        
         fig, ax = plt.subplots(figsize=(16, 10))
-        ax.text(0.5, 0.5, "Add your DDD emotional columns map when available.", ha="center", va="center", fontsize=16)
-        ax.axis("off")
-        ax.set_title("Emotional Content (DDD)")
+        ax.set_facecolor('#1a1a2e')
+        fig.set_facecolor('#1a1a2e')
+        
+        labels = [k for k, _ in items][::-1]
+        values = [v for _, v in items][::-1]
+        max_val = max(values) if values else 1
+        
+        # Use purple/blue gradient for emotional content
+        colors = plt.cm.cool(np.linspace(0.2, 0.8, len(items)))[::-1]
+        y_pos = np.arange(len(labels))
+        bars = ax.barh(y_pos, values, color=colors, edgecolor='white', linewidth=0.5, height=0.7)
+        
+        # Hide y-axis ticks and put labels INSIDE the bars
+        ax.set_yticks([])
+        
+        # Add labels inside bars
+        for i, (bar, val, label) in enumerate(zip(bars, values, labels)):
+            # Value at end of bar
+            ax.text(bar.get_width() + max_val * 0.01, bar.get_y() + bar.get_height()/2, 
+                    str(val), va='center', ha='left', fontsize=10, color='white', fontweight='bold')
+            # Label inside bar
+            label_x = max(bar.get_width() * 0.02, 5)
+            ax.text(label_x, bar.get_y() + bar.get_height()/2, 
+                    label, va='center', ha='left', fontsize=10, color='white', fontweight='bold')
+        
+        ax.set_title(f"Emotional Content Flags (from {len(self.df):,} films)", 
+                     fontsize=18, fontweight='bold', color='white', pad=20)
+        ax.set_xlabel("Number of Films", fontsize=14, color='white')
+        ax.tick_params(colors='white', labelsize=11)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['bottom'].set_color('white')
+        ax.spines['left'].set_visible(False)
+        ax.set_xlim(0, max_val * 1.1)
+        
+        plt.tight_layout()
         save_figure(fig, '12_emotional_content_ddd.png', batch_number=2)
         plt.close()
         return self

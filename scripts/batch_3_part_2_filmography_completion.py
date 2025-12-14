@@ -33,10 +33,17 @@ from typing import Dict, List, Tuple
 from collections import Counter, defaultdict
 import sys
 import json
+import ast
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
+# Add project root to path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.enrichment.tmdb_client import TMDbClient
+try:
+    from src.enrichment.tmdb_client import TMDbClient
+    TMDB_AVAILABLE = True
+except ImportError:
+    print("[WARNING] TMDbClient not available - filmography completion analysis will be limited")
+    TMDB_AVAILABLE = False
 
 # Setup paths
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,8 +86,25 @@ class FilmographyAnalyzer:
         actor_dict = {}
         
         for _, film in self.df.iterrows():
-            # Get cast JSON
-            cast_json = film.get('tmdb_cast', [])
+            # Get cast JSON - need to parse from string
+            cast_raw = film.get('tmdb_cast', None)
+            
+            if pd.isna(cast_raw):
+                continue
+            
+            # Parse JSON string if needed (uses Python format with single quotes)
+            if isinstance(cast_raw, str):
+                try:
+                    cast_json = ast.literal_eval(cast_raw)
+                except (ValueError, SyntaxError):
+                    try:
+                        cast_json = json.loads(cast_raw)
+                    except json.JSONDecodeError:
+                        continue
+            elif isinstance(cast_raw, list):
+                cast_json = cast_raw
+            else:
+                continue
             
             if not isinstance(cast_json, list):
                 continue
