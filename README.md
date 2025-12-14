@@ -71,16 +71,35 @@ scripts/enrich/
   03_enrich_ddd.py      # DoesTheDogDie enrichment
   04_enrich_cast.py     # Cast and crew details
   05_enrich_wikidata.py # Wikidata enrichment
+  06_enrich_people.py   # People/actor details enrichment
+
+src/
+  core/                 # Configuration and utilities
+  enrichment/           # API clients (TMDb, OMDb, Wikidata, DDD)
+  analysis/             # Analysis utilities
+  data_processing/      # Data transformation logic
+  recommender/          # Recommendation algorithms
+
+api/
+  app.py               # Flask REST API backend
+  requirements.txt     # Python dependencies for API
+
+ui/
+  src/
+    components/        # React components (charts, layout, movies, people)
+    pages/             # Page components (Dashboard, Movies, People, etc.)
+    hooks/             # Custom React hooks for data fetching
+    api/               # API client utilities
+    types/             # TypeScript type definitions
+  package.json         # Node.js dependencies
+  vite.config.ts       # Vite configuration
+  tsconfig.json        # TypeScript configuration
 
 analysis_outputs/
   visualizations/       # PNG & HTML charts/dashboards by batch
   exports/              # CSV and JSON summaries
   reports/              # Text reports (per batch)
   README_visualizations/# Curated "hero" plots for documentation
-
-ui_research/
-  index.html, style.css, app.js        # Experimental UI for browsing
-  backend/ (Python API)                # Tiny backend over the enriched data
 ```
 
 **Core enriched tables** live under `data/processed/`:
@@ -400,17 +419,71 @@ python scripts/batch_8_patterns_recommendations.py
 
 ---
 
-## 5. UI Prototype
+## 5. Interactive Web Application
 
-The `ui_research/` folder is a small experimental interface that hints at how CineScope could become a full web app:
+CineScope now includes a full-stack web application for exploring your cinema data:
 
-- `ui_research/index.html` – front-end layout
-- `ui_research/style.css` – styling
-- `ui_research/app.js` – simple interactions
-- `ui_research/backend/main.py` – tiny Flask-style backend to expose enriched data
-- `ui_research/backend/imdb_query.py` – helper for querying titles and people
+### 5.1. Backend API (`api/`)
 
-It's not production-ready, but it shows how all these analytics could one day become an interactive "CineScope Explorer" for my personal cinema universe.
+A Flask REST API that serves enriched movie data:
+
+```bash
+cd api
+pip install flask pandas flask-cors numpy
+python app.py  # Runs on http://localhost:5001
+```
+
+**Key Endpoints:**
+| Endpoint | Description |
+|----------|-------------|
+| `GET /api/stats` | Collection statistics (total movies, avg rating, watch time) |
+| `GET /api/movies` | Paginated movies with filtering, sorting, and search |
+| `GET /api/movies/:id` | Movie details with enriched metadata |
+| `GET /api/movies/:id/similar` | Similar movies based on genre overlap |
+| `GET /api/people` | Browse actors, directors, and crew |
+| `GET /api/people/:id/filmography` | Person's films in your collection |
+| `GET /api/analytics/actors` | Actor analytics and statistics |
+| `GET /api/recommendations` | Personalized recommendations |
+
+### 5.2. React Frontend (`ui/`)
+
+A modern React + TypeScript SPA built with Vite:
+
+```bash
+cd ui
+npm install
+npm run dev  # Runs on http://localhost:3000
+```
+
+**Tech Stack:**
+- **React 19** with TypeScript
+- **TanStack Query** for server state management
+- **React Router** for navigation
+- **Tailwind CSS** for styling
+- **Lucide React** for icons
+- **Axios** for API calls
+
+**Pages:**
+- **Dashboard** – Overview stats and recommendations
+- **Movies** – Browse/filter/search your collection
+- **Movie Detail** – Rich movie info with cast, ratings, similar films
+- **People** – Explore actors and directors
+- **Person Detail** – Career analytics and filmography
+- **Actor Analytics** – Deep dive into actor statistics
+- **Recommendations** – AI-driven suggestions
+- **Insights** – Visual analytics and patterns
+
+### 5.3. Running the Full Stack
+
+```bash
+# Terminal 1 - Start the API
+cd api && python app.py
+
+# Terminal 2 - Start the frontend
+cd ui && npm run dev
+```
+
+Open http://localhost:3000 to explore your cinema universe interactively.
 
 ---
 
@@ -421,12 +494,26 @@ On my portfolio site, CineScope appears as:
 - **A visual, narrative project page** (`project-cinescope.html`) showing selected charts and storylines.
 - **A technical foundation** that demonstrates:
   - Data engineering on messy, multi-source inputs
-  - API-driven enrichment
+  - API-driven enrichment (TMDb, OMDb, Wikidata, DoesTheDogDie)
   - Statistical analysis + visualization
+  - Full-stack web application (React + Flask)
   - Early recommender-system thinking
 - **A lens on representation and diversity**, even in something as personal as "what I watch."
 
 This repository is the engine room behind that story.
+
+---
+
+## 7. Future Enhancements
+
+Potential improvements on the roadmap:
+
+- **API Caching** – Redis/in-memory caching for expensive computations
+- **Pipeline Orchestration** – Prefect/Dagster for automated data pipeline runs
+- **Incremental Updates** – Skip already-enriched titles
+- **Extended Analytics** – More interactive D3/Recharts visualizations in the UI
+- **PWA Support** – Offline movie browsing capability
+- **OpenAPI Docs** – Swagger documentation for the REST API
 
 ---
 
