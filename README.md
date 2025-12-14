@@ -72,13 +72,15 @@ scripts/enrich/
   04_enrich_cast.py     # Cast and crew details
   05_enrich_wikidata.py # Wikidata enrichment
   06_enrich_people.py   # People/actor details enrichment
+  07_enrich_people_extended.py  # Extended biographical data (zodiac, cause of death, etc.)
+  08_enrich_keywords.py # Movie keywords and themes from TMDB
 
 src/
   core/                 # Configuration and utilities
-  enrichment/           # API clients (TMDb, OMDb, Wikidata, DDD)
-  analysis/             # Analysis utilities
+  enrichment/           # API clients (TMDb, OMDb, Wikidata, DDD, Keywords)
+  analysis/             # Analysis utilities (zodiac calculator)
   data_processing/      # Data transformation logic
-  recommender/          # Recommendation algorithms
+  recommender/          # Recommendation engine
 
 api/
   app.py               # Flask REST API backend
@@ -409,6 +411,12 @@ python scripts/batch_7_critical_alignment.py
 
 # Patterns, recommendations, collection gaps
 python scripts/batch_8_patterns_recommendations.py
+
+# Zodiac & astrological analysis (NEW)
+python scripts/batch_9_zodiac_analysis.py
+
+# Keywords & themes analysis (NEW)
+python scripts/batch_10_keywords_themes.py
 ```
 
 **Outputs appear under:**
@@ -444,6 +452,14 @@ python app.py  # Runs on http://localhost:5001
 | `GET /api/people/:id/filmography` | Person's films in your collection |
 | `GET /api/analytics/actors` | Actor analytics and statistics |
 | `GET /api/recommendations` | Personalized recommendations |
+| `GET /api/zodiac/distribution` | Zodiac sign distribution among talent |
+| `GET /api/zodiac/people/:sign` | Get people by zodiac sign |
+| `GET /api/zodiac/stats` | Zodiac statistics and mortality analysis |
+| `GET /api/keywords/movie/:id` | Keywords for a specific movie |
+| `GET /api/keywords/top` | Top keywords across all movies |
+| `GET /api/keywords/search?q=` | Search movies by keyword |
+| `GET /api/recommendations/personalized` | Enhanced personalized recommendations |
+| `GET /api/recommendations/similar/:id` | Similar movies with keyword matching |
 
 ### 5.2. React Frontend (`ui/`)
 
@@ -456,6 +472,7 @@ npm run dev  # Runs on http://localhost:3000
 ```
 
 **Tech Stack:**
+
 - **React 19** with TypeScript
 - **TanStack Query** for server state management
 - **React Router** for navigation
@@ -464,6 +481,7 @@ npm run dev  # Runs on http://localhost:3000
 - **Axios** for API calls
 
 **Pages:**
+
 - **Dashboard** – Overview stats and recommendations
 - **Movies** – Browse/filter/search your collection
 - **Movie Detail** – Rich movie info with cast, ratings, similar films
@@ -514,6 +532,46 @@ Potential improvements on the roadmap:
 - **Extended Analytics** – More interactive D3/Recharts visualizations in the UI
 - **PWA Support** – Offline movie browsing capability
 - **OpenAPI Docs** – Swagger documentation for the REST API
+- **Actor Connections Network** – Visualize co-star relationships and "degrees of separation"
+- **Advanced Recommendation Engine** – ML-based recommendations with explainability
+- **Character Analysis** – Analyze character names and roles across films
+
+---
+
+## 8. Recent Updates
+
+### New Enrichment Scripts
+- **07_enrich_people_extended.py** – Extends people data with:
+  - Full birth/death dates with zodiac calculation
+  - Cause of death from Wikidata
+  - Height, education, spouses
+  - Burial location for deceased talent
+
+- **08_enrich_keywords.py** – Adds movie keywords:
+  - TMDB keyword extraction
+  - Automatic categorization (themes, settings, characters, emotional, content)
+  - Keyword caching for fast analysis
+
+### New Analysis Batches
+- **batch_9_zodiac_analysis.py** – Astrological analysis:
+  - Western zodiac distribution charts
+  - Chinese zodiac distribution
+  - Element breakdown (Fire/Earth/Air/Water)
+  - Birth month patterns
+  - Mortality analysis (causes of death, ages)
+  - Zodiac wheel visualization
+
+- **batch_10_keywords_themes.py** – Keyword & theme analysis:
+  - Top keywords across your collection
+  - Keywords by genre and decade
+  - Theme distribution (love, revenge, family, etc.)
+  - Keyword co-occurrence heatmaps
+  - Word clouds (overall and by genre)
+
+### New API Endpoints
+- Zodiac endpoints (`/api/zodiac/*`)
+- Keywords endpoints (`/api/keywords/*`)
+- Enhanced recommendation endpoints with keyword-based similarity
 
 ---
 
