@@ -93,7 +93,9 @@ class ZodiacAnalyzer:
     
     def __init__(self):
         self.people_cache_file = settings.PROCESSED_DATA_DIR / "people_cache.json"
-        self.master_csv = settings.PROCESSED_DATA_DIR / "master_cinema_data.csv"
+        # Use watched_movies_master.csv (~2,300 watched films)
+        # NOT master_cinema_data.csv (includes unwatched catalog)
+        self.master_csv = settings.PROCESSED_DATA_DIR / "watched_movies_master.csv"
         self.output_dir = settings.VISUALIZATIONS_DIR / "batch_9"
         self.output_dir.mkdir(parents=True, exist_ok=True)
         

@@ -103,8 +103,9 @@ class KeywordsEnricher:
         })
         self._last_request_time = 0
         
-        # Paths
-        self.master_csv = settings.PROCESSED_DATA_DIR / "master_cinema_data.csv"
+        # Paths - Use watched_movies_master.csv (your ~2,300 watched films)
+        # NOT master_cinema_data.csv (which includes unwatched catalog)
+        self.master_csv = settings.PROCESSED_DATA_DIR / "watched_movies_master.csv"
         self.keywords_cache_file = settings.PROCESSED_DATA_DIR / "keywords_cache.json"
         self.keywords_output_csv = settings.PROCESSED_DATA_DIR / "06_keywords_enriched_media.csv"
         
