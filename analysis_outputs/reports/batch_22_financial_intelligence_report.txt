@@ -1,0 +1,163 @@
+================================================================================
+CINESCOPE BATCH 22: FINANCIAL INTELLIGENCE ANALYSIS
+================================================================================
+
+Generated: 2025-12-28 15:50:22
+
+================================================================================
+OVERVIEW STATISTICS
+================================================================================
+
+Total Films: 2,289
+
+Budget Coverage: 63.8%
+  • Films with Budget Data: 1,460
+
+Revenue Coverage: 65.7%
+  • Films with Revenue Data: 1,505
+
+Complete Financial Data: 58.9%
+  • Films with Both Budget & Revenue: 1,349
+
+================================================================================
+BUDGET STATISTICS
+================================================================================
+
+Total Budget: $41.21B
+Average Budget: $28.2M
+Median Budget: $17.0M
+Min Budget: $0.0M
+Max Budget: $250.0M
+
+================================================================================
+REVENUE STATISTICS
+================================================================================
+
+Total Revenue: $148.27B
+Average Revenue: $98.5M
+Median Revenue: $42.1M
+Min Revenue: $0.0M
+Max Revenue: $2264.2M
+
+================================================================================
+PROFITABILITY & ROI
+================================================================================
+
+Profitable Films: 1116 (82.7%)
+Unprofitable Films: 233 (17.3%)
+
+Average ROI: 688.5%
+Median ROI: 191.7%
+Best ROI: 99900.0%
+Worst ROI: -100.0%
+
+Total Profit: $106.46B
+Average Profit: $78.9M
+
+================================================================================
+TOP 20 MOST EXPENSIVE FILMS
+================================================================================
+
+Rank  Title                                        Year    Budget         
+--------------------------------------------------------------------------------
+1     The Dark Knight Rises                        2012    $250.0M
+2     Avengers: Age of Ultron                      2015    $235.0M
+3     Men in Black³                                2012    $225.0M
+4     The Avengers                                 2012    $220.0M
+5     Battleship                                   2012    $209.0M
+6     Tenet                                        2020    $205.0M
+7     Titanic                                      1997    $200.0M
+8     Terminator 3: Rise of the Machines           2003    $200.0M
+9     Black Panther                                2018    $200.0M
+10    Edge of Tomorrow                             2014    $178.0M
+11    Evan Almighty                                2007    $175.0M
+12    Wild Wild West                               1999    $170.0M
+13    Snow White and the Huntsman                  2012    $170.0M
+14    Interstellar                                 2014    $165.0M
+15    Inception                                    2010    $160.0M
+16    Poseidon                                     2006    $160.0M
+17    Red Notice                                   2021    $160.0M
+18    Alexander                                    2004    $155.0M
+19    The Curious Case of Benjamin Button          2008    $150.0M
+20    Wrath of the Titans                          2012    $150.0M
+
+================================================================================
+TOP 20 HIGHEST GROSSING FILMS
+================================================================================
+
+Rank  Title                                        Year    Revenue        
+--------------------------------------------------------------------------------
+1     Titanic                                      1997    $2264.2M
+2     The Avengers                                 2012    $1518.8M
+3     Avengers: Age of Ultron                      2015    $1405.4M
+4     Black Panther                                2018    $1349.9M
+5     The Dark Knight Rises                        2012    $1081.0M
+6     Joker                                        2019    $1079.0M
+7     Inception                                    2010    $839.0M
+8     The Twilight Saga: Breaking Dawn - Part 2    2012    $829.7M
+9     Spider-Man                                   2002    $821.7M
+10    Independence Day                             1996    $817.4M
+11    E.T. the Extra-Terrestrial                   1982    $797.3M
+12    Deadpool 2                                   2018    $785.9M
+13    Deadpool                                     2016    $782.8M
+14    Star Wars: Episode IV - A New Hope           1977    $775.4M
+15    The Lion King                                1994    $763.5M
+16    Madagascar 3: Europe's Most Wanted           2012    $746.9M
+17    Interstellar                                 2014    $746.6M
+18    The Matrix Reloaded                          2003    $738.6M
+19    The Twilight Saga: Breaking Dawn - Part 1    2011    $712.2M
+20    The Twilight Saga: New Moon                  2009    $709.8M
+
+================================================================================
+TOP 20 BEST ROI (RETURN ON INVESTMENT)
+================================================================================
+
+Rank  Title                                   Year    ROI         Profit         
+--------------------------------------------------------------------------------
+1     Fist of Fury                            1972    99900%        $99.9M
+2     Enter the Dragon                        1973    46959%        $399.1M
+3     The Gallows                             2015    42864%        $42.9M
+4     Night of the Living Dead                1968    26423%        $30.1M
+5     Rocky                                   1976    22425%        $224.3M
+6     The Way of the Dragon                   1972    20669%        $26.9M
+7     American Graffiti                       1973    17918%        $139.2M
+8     Easy Rider                              1969    14900%        $59.6M
+9     Once                                    2006    12844%        $20.6M
+10    Clerks                                  1994    11327%        $3.1M
+11    Gone with the Wind                      1939    9959%        $398.4M
+12    Saw                                     2004    8570%        $102.8M
+13    The Evil Dead                           1981    8361%        $29.3M
+14    E.T. the Extra-Terrestrial              1982    7493%        $786.8M
+15    Searching                               2018    7446%        $74.5M
+16    My Big Fat Greek Wedding                2002    7275%        $363.7M
+17    Star Wars: Episode IV - A New Hope      1977    6949%        $764.4M
+18    The Villainess                          2017    6890%        $8.6M
+19    To Sir, with Love                       1967    6689%        $41.8M
+20    Jaws                                    1975    6624%        $463.7M
+
+================================================================================
+TOP 20 ABSOLUTE PROFIT
+================================================================================
+
+Rank  Title                                        Year    Profit         
+--------------------------------------------------------------------------------
+1     Titanic                                      1997    $2064.2M
+2     The Avengers                                 2012    $1298.8M
+3     Avengers: Age of Ultron                      2015    $1170.4M
+4     Black Panther                                2018    $1149.9M
+5     Joker                                        2019    $1024.0M
+6     The Dark Knight Rises                        2012    $831.0M
+7     E.T. the Extra-Terrestrial                   1982    $786.8M
+8     Star Wars: Episode IV - A New Hope           1977    $764.4M
+9     Independence Day                             1996    $742.4M
+10    Deadpool                                     2016    $724.8M
+11    The Lion King                                1994    $718.5M
+12    The Twilight Saga: Breaking Dawn - Part 2    2012    $709.7M
+13    Spider-Man                                   2002    $682.7M
+14    Inception                                    2010    $679.0M
+15    Deadpool 2                                   2018    $675.9M
+16    It                                           2017    $669.2M
+17    The Twilight Saga: New Moon                  2009    $659.8M
+18    The Twilight Saga: Eclipse                   2010    $630.5M
+19    Forrest Gump                                 1994    $622.4M
+20    The Twilight Saga: Breaking Dawn - Part 1    2011    $602.2M
