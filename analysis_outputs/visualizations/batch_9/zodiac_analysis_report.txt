@@ -1,0 +1,64 @@
+================================================================================
+CINESCOPE BATCH 9: ZODIAC & ASTROLOGICAL ANALYSIS
+Generated: 2025-12-14 05:18:53
+================================================================================
+
+Total People Analyzed: 28,901
+
+WESTERN ZODIAC DISTRIBUTION
+----------------------------------------
+Capricorn          5,140 ( 17.8%)
+Leo                2,283 (  7.9%)
+Virgo              2,239 (  7.7%)
+Pisces             2,224 (  7.7%)
+Gemini             2,184 (  7.6%)
+Libra              2,173 (  7.5%)
+Cancer             2,171 (  7.5%)
+Taurus             2,156 (  7.5%)
+Aries              2,155 (  7.5%)
+Aquarius           2,108 (  7.3%)
+Scorpio            2,050 (  7.1%)
+Sagittarius        2,018 (  7.0%)
+
+
+ELEMENT BREAKDOWN
+----------------------------------------
+Fire               6,456 ( 22.3%)
+Earth              9,535 ( 33.0%)
+Air                6,465 ( 22.4%)
+Water              6,445 ( 22.3%)
+
+
+CHINESE ZODIAC DISTRIBUTION
+----------------------------------------
+Dog                2,529 (  8.8%)
+Pig                2,499 (  8.6%)
+Horse              2,422 (  8.4%)
+Ox                 2,421 (  8.4%)
+Dragon             2,413 (  8.3%)
+Rat                2,401 (  8.3%)
+Rooster            2,396 (  8.3%)
+Tiger              2,388 (  8.3%)
+Snake              2,378 (  8.2%)
+Monkey             2,378 (  8.2%)
+Rabbit             2,339 (  8.1%)
+Goat               2,337 (  8.1%)
+
+
+MORTALITY STATISTICS
+----------------------------------------
+Total deceased: 1,122
+Average age at death: 75.0
+Median age at death: 77.0
+
+Top Causes of Death:
+  myocardial infarction: 136
+  cancer: 58
+  disease: 56
+  pneumonia: 44
+  stroke: 37
+  lung cancer: 24
+  heart failure: 15
+  pancreatic cancer: 12
+  pulmonary emphysema: 12
+  cerebral hemorrhage: 11

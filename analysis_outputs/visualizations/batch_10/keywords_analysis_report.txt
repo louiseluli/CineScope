@@ -1,0 +1,466 @@
+================================================================================
+CINESCOPE BATCH 10: KEYWORDS & THEMES ANALYSIS
+Generated: 2025-12-28 15:29:08
+================================================================================
+
+Total Unique Keywords: 8,147
+Total Keyword Occurrences: 25,779
+Movies with Keywords: 2,287
+
+TOP 50 KEYWORDS
+----------------------------------------
+  1. based on novel or book            228
+  2. murder                            172
+  3. woman director                    154
+  4. new york city                     150
+  5. revenge                           116
+  6. black and white                   109
+  7. romcom                            109
+  8. christmas                         106
+  9. duringcreditsstinger               96
+ 10. love                               92
+ 11. high school                        86
+ 12. parent child relationship          80
+ 13. remake                             73
+ 14. serial killer                      73
+ 15. los angeles, california            72
+ 16. friendship                         67
+ 17. sequel                             66
+ 18. wedding                            64
+ 19. amused                             63
+ 20. martial arts                       60
+ 21. loss of loved one                  56
+ 22. aftercreditsstinger                55
+ 23. romantic                           54
+ 24. police                             51
+ 25. husband wife relationship          50
+ 26. kidnapping                         48
+ 27. holiday                            48
+ 28. suspenseful                        48
+ 29. sibling relationship               48
+ 30. paris, france                      47
+ 31. london, england                    47
+ 32. small town                         46
+ 33. jealousy                           46
+ 34. romance                            46
+ 35. coming of age                      45
+ 36. detective                          45
+ 37. action hero                        43
+ 38. family                             42
+ 39. marriage                           42
+ 40. infidelity                         42
+ 41. intense                            41
+ 42. slasher                            41
+ 43. dystopia                           40
+ 44. psychopath                         39
+ 45. based on play or musical           38
+ 46. screwball comedy                   38
+ 47. dog                                38
+ 48. suicide                            38
+ 49. hospital                           37
+ 50. time travel                        37
+
+
+TOP 10 KEYWORDS BY GENRE
+----------------------------------------
+
+Action:
+  martial arts: 59
+  revenge: 58
+  action hero: 41
+  murder: 35
+  assassin: 30
+  dystopia: 28
+  los angeles, california: 26
+  based on comic: 26
+  police: 26
+  new york city: 25
+
+Adventure:
+  based on novel or book: 25
+  duringcreditsstinger: 14
+  villain: 13
+  action hero: 13
+  sequel: 12
+  good versus evil: 12
+  revenge: 11
+  martial arts: 11
+  new york city: 11
+  intense: 9
+
+Animation:
+  villain: 6
+  lion: 4
+  cartoon: 4
+  friendship: 4
+  africa: 3
+  musical: 3
+  zoo: 3
+  hippopotamus: 3
+  giraffe: 3
+  penguin: 3
+
+Biography:
+  biography: 14
+  based on true story: 13
+  based on novel or book: 6
+  based on play or musical: 4
+  disabled: 3
+  musical: 3
+  france: 3
+  historical drama: 3
+  woman director: 3
+  parent child relationship: 2
+
+Comedy:
+  woman director: 109
+  romcom: 106
+  new york city: 90
+  christmas: 72
+  based on novel or book: 68
+  duringcreditsstinger: 65
+  love: 61
+  wedding: 56
+  high school: 54
+  friendship: 47
+
+Crime:
+  murder: 59
+  based on novel or book: 42
+  revenge: 42
+  police: 32
+  new york city: 31
+  serial killer: 29
+  detective: 28
+  los angeles, california: 25
+  kidnapping: 24
+  neo-noir: 24
+
+Documentary:
+  banker: 1
+  corruption: 1
+  capitalism: 1
+  globalization: 1
+  bank: 1
+  crisis: 1
+  fraud: 1
+  banking: 1
+  wall street: 1
+  global economy: 1
+
+Drama:
+  based on novel or book: 145
+  woman director: 86
+  new york city: 78
+  murder: 74
+  black and white: 73
+  love: 61
+  christmas: 53
+  parent child relationship: 47
+  revenge: 47
+  high school: 43
+
+Family:
+  christmas: 32
+  based on novel or book: 19
+  woman director: 15
+  holiday: 14
+  family: 11
+  parent child relationship: 11
+  high school: 11
+  slapstick comedy: 10
+  friendship: 10
+  teen movie: 9
+
+Fantasy:
+  based on novel or book: 29
+  christmas: 19
+  new york city: 16
+  magic: 16
+  woman director: 16
+  supernatural: 13
+  ghost: 13
+  time travel: 13
+  based on young adult novel: 12
+  good versus evil: 12
+
+Film-Noir:
+  film noir: 20
+  black and white: 13
+  murder: 7
+  based on novel or book: 7
+  detective: 5
+  jealousy: 3
+  murder suspect: 3
+  alcoholic: 3
+  whodunit: 3
+  poison: 3
+
+History:
+  based on true story: 3
+  royalty: 3
+  based on play or musical: 3
+  palace: 2
+  biography: 2
+  king of england: 2
+  france: 2
+  sword fight: 2
+  battlefield: 2
+  historical drama: 2
+
+Horror:
+  murder: 73
+  serial killer: 42
+  based on novel or book: 39
+  slasher: 34
+  revenge: 29
+  sequel: 29
+  black and white: 27
+  remake: 22
+  supernatural: 20
+  supernatural horror: 20
+
+Music:
+  singer: 7
+  concert: 6
+  high school: 5
+  rock 'n' roll: 4
+  pop: 4
+  pop star: 4
+  los angeles, california: 4
+  woman director: 4
+  musical: 4
+  musician: 3
+
+Musical:
+  musical: 21
+  based on play or musical: 6
+  christmas: 4
+  comforting: 4
+  based on novel or book: 4
+  playful: 3
+  exuberant: 3
+  joyful: 3
+  villain: 3
+  cheerful: 3
+
+Mystery:
+  murder: 68
+  based on novel or book: 37
+  serial killer: 33
+  detective: 27
+  black and white: 21
+  slasher: 20
+  investigation: 20
+  remake: 20
+  suspenseful: 20
+  revenge: 20
+
+Romance:
+  romcom: 108
+  woman director: 97
+  based on novel or book: 93
+  new york city: 82
+  christmas: 80
+  love: 79
+  wedding: 53
+  duringcreditsstinger: 47
+  romantic: 46
+  high school: 45
+
+Sci-Fi:
+  dystopia: 35
+  time travel: 26
+  based on novel or book: 25
+  alien: 21
+  scientist: 21
+  cyberpunk: 19
+  sequel: 18
+  murder: 18
+  black and white: 16
+  action hero: 15
+
+Short:
+  pregnancy: 1
+  woman director: 1
+  abortion: 1
+  short film: 1
+  paris, france: 1
+  flirt: 1
+  love: 1
+  flirting: 1
+  interclass romance: 1
+  pastries: 1
+
+Sport:
+  sports: 18
+  duringcreditsstinger: 4
+  high school: 4
+  amused: 4
+  martial arts: 4
+  high school sports: 3
+  cheerleading: 3
+  action hero: 3
+  reporter: 2
+  american football: 2
+
+Thriller:
+  murder: 125
+  based on novel or book: 77
+  revenge: 74
+  serial killer: 56
+  remake: 40
+  detective: 39
+  new york city: 39
+  suspenseful: 37
+  los angeles, california: 36
+  sequel: 35
+
+War:
+  world war ii: 11
+  black and white: 8
+  nazi: 6
+  anti war: 4
+  based on novel or book: 4
+  escape: 3
+  love triangle: 3
+  dark comedy: 3
+  dying and death: 3
+  loss of loved one: 3
+
+Western:
+  small town: 4
+  sheriff: 3
+  gold: 2
+  based on novel or book: 2
+  gold rush: 2
+  19th century: 2
+  gunfighter: 2
+  dark comedy: 2
+  neo-western: 2
+  loss of loved one: 1
+
+['Action']:
+  ex-lover: 1
+  drugs: 1
+  death of brother: 1
+  romania: 1
+  slavery: 1
+  revenge: 1
+  female soldier: 1
+  backwoods: 1
+  tough girl: 1
+  ex special forces: 1
+
+['Comedy']:
+  duringcreditsstinger: 9
+  high school: 8
+  amused: 7
+  woman director: 6
+  coming of age: 5
+  aftercreditsstinger: 5
+  drugs: 5
+  hilarious: 5
+  based on novel or book: 5
+  prison: 4
+
+['Documentary']:
+  capitalism: 1
+  economics: 1
+  unemployment: 1
+  corporate greed: 1
+  politics: 1
+  self-destruction: 1
+  truth: 1
+  climate: 1
+  climate change: 1
+  greenhouse effect: 1
+
+['Drama']:
+  based on novel or book: 7
+  parent child relationship: 5
+  gay theme: 5
+  rome, italy: 4
+  adultery: 4
+  coming of age: 4
+  teenager: 4
+  dysfunctional family: 4
+  lgbt: 4
+  prison: 3
+
+['Horror']:
+  murder: 7
+  gore: 5
+  slasher: 5
+  torture: 4
+  serial killer: 4
+  revenge: 4
+  evil: 3
+  necronomicon: 3
+  curse: 3
+  witch: 3
+
+['Romance']:
+  holiday: 2
+  christmas: 2
+  christmas tradition: 1
+  christmas romance: 1
+  princess: 1
+  castle: 1
+  royalty: 1
+  figure skating: 1
+  king: 1
+  ice skating: 1
+
+['Sci-Fi']:
+  woman director: 1
+
+['Thriller']:
+  murder: 2
+  police: 1
+  photographer: 1
+  heroin: 1
+  search: 1
+  neighbor: 1
+  doll: 1
+  blindness: 1
+  blind woman: 1
+  judge: 1
+
+
+THEME ANALYSIS
+----------------------------------------
+Love                    276
+Revenge                 127
+Survival                 31
+Family                  119
+Crime                   267
+War                      44
+Coming Of Age            79
+Supernatural            127
+Technology               40
+Nature                   26
+
+
+KEYWORDS WITH HIGHEST AVERAGE RATINGS
+----------------------------------------
+critical                       Avg: 7.80  (n=11)
+world war ii                   Avg: 7.74  (n=14)
+film noir                      Avg: 7.70  (n=28)
+commanding                     Avg: 7.66  (n=10)
+nazi                           Avg: 7.62  (n=11)
+black and white                Avg: 7.62  (n=109)
+suicide attempt                Avg: 7.61  (n=14)
+whodunit                       Avg: 7.59  (n=19)
+thoughtful                     Avg: 7.58  (n=10)
+1930s                          Avg: 7.56  (n=11)
+semi autobiographical          Avg: 7.56  (n=12)
+cautionary                     Avg: 7.56  (n=14)
+1950s                          Avg: 7.54  (n=12)
+philosophical                  Avg: 7.46  (n=11)
+comforting                     Avg: 7.46  (n=20)
+psychological thriller         Avg: 7.45  (n=26)
+based on true story            Avg: 7.45  (n=28)
+tense                          Avg: 7.45  (n=14)
+ominous                        Avg: 7.45  (n=13)
+secret love                    Avg: 7.44  (n=10)
