@@ -1,0 +1,132 @@
+================================================================================
+CINESCOPE BATCH 26: KEYWORD DEEP-DIVE ANALYSIS
+================================================================================
+
+Generated: 2025-12-28 15:49:13
+
+================================================================================
+OVERVIEW STATISTICS
+================================================================================
+
+Total Unique Keywords: 8,147
+Total Keyword Occurrences: 25,779
+Movies with Keywords: 2,287
+
+================================================================================
+DIVERSITY METRICS
+================================================================================
+
+Shannon Entropy: 11.86
+Diversity Score: 91.3%
+Gini Coefficient: 0.566
+
+================================================================================
+TOP 30 KEYWORDS BY AVERAGE RATING
+================================================================================
+
+Rank  Keyword                            Avg Rating  Count     
+--------------------------------------------------------------------------------
+1     film noir                          7.70        28        
+2     black and white                    7.62        109       
+3     whodunit                           7.59        19        
+4     comforting                         7.46        20        
+5     psychological thriller             7.45        26        
+6     based on true story                7.45        28        
+7     nostalgic                          7.41        17        
+8     dreams                             7.40        22        
+9     neo-noir                           7.40        34        
+10    biography                          7.36        15        
+11    1960s                              7.35        18        
+12    intense                            7.31        41        
+13    loneliness                         7.29        20        
+14    silent film                        7.28        18        
+15    hopeful                            7.27        22        
+16    satire                             7.25        21        
+17    defiant                            7.24        15        
+18    manipulation                       7.23        15        
+19    audacious                          7.22        20        
+20    screwball comedy                   7.22        38        
+21    coming of age                      7.22        45        
+22    awestruck                          7.22        16        
+23    based on play or musical           7.22        38        
+24    kung fu                            7.20        22        
+25    millionaire                        7.18        18        
+26    1970s                              7.18        18        
+27    excited                            7.17        16        
+28    mental illness                     7.16        16        
+29    musical                            7.16        25        
+30    dying and death                    7.16        27        
+
+================================================================================
+TOP 30 MOST VERSATILE KEYWORDS (Cross-Genre)
+================================================================================
+
+Rank  Keyword                            Genres    Count     
+--------------------------------------------------------------------------------
+1     based on novel or book             23        228       
+2     murder                             22        172       
+3     woman director                     21        154       
+4     new york city                      21        150       
+5     revenge                            20        116       
+6     black and white                    20        109       
+7     love                               20        92        
+8     parent child relationship          20        80        
+9     amused                             20        63        
+10    jealousy                           20        46        
+11    romance                            20        46        
+12    duringcreditsstinger               19        96        
+13    loss of loved one                  19        56        
+14    lgbt                               19        31        
+15    19th century                       19        20        
+16    christmas                          18        106       
+17    los angeles, california            18        72        
+18    friendship                         18        67        
+19    aftercreditsstinger                18        55        
+20    coming of age                      18        45        
+21    intense                            18        41        
+22    dramatic                           18        32        
+23    female protagonist                 18        26        
+24    admiring                           18        25        
+25    island                             18        22        
+26    high school                        17        86        
+27    remake                             17        73        
+28    sequel                             17        66        
+29    london, england                    17        47        
+30    small town                         17        46        
+
+================================================================================
+TOP 30 RAREST KEYWORDS (Ultra-Unique)
+================================================================================
+
+Rank  Keyword                                           Count     
+--------------------------------------------------------------------------------
+1     prison cell                                       1         
+2     voiceover                                         1         
+3     subconscious                                      1         
+4     dream                                             1         
+5     ghetto                                            1         
+6     black panther party                               1         
+7     bus stop                                          1         
+8     chameleon                                         1         
+9     anti war protest                                  1         
+10    college american football                         1         
+11    america                                           1         
+12    feel-good                                         1         
+13    harmonica                                         1         
+14    spaghetti western                                 1         
+15    arizona territory                                 1         
+16    intercontintental railroad                        1         
+17    outlaw gang                                       1         
+18    water pump                                        1         
+19    mysterious character                              1         
+20    boom town                                         1         
+21    railroad company                                  1         
+22    hope for a new life                               1         
+23    railroad construction                             1         
+24    vichy regime                                      1         
+25    visa                                              1         
+26    nationalism                                       1         
+27    aging actor                                       1         
+28    grandiose  behavior                               1         
+29    movie studio                                      1         
+30    flower shop                                       1         
