@@ -1,0 +1,73 @@
+================================================================================
+CINESCOPE BATCH 13: EDUCATION & ORIGINS ANALYSIS
+================================================================================
+
+Generated: 2025-12-28 16:30:11
+
+Total People in Dataset: 42,630
+Total Movies in Dataset: 2,289
+
+================================================================================
+EDUCATION DATA SUMMARY
+================================================================================
+
+People with Education Data: 10,877
+Coverage: 25.5%
+Total Education Records: 18,753
+Unique Schools/Universities: 6,143
+
+Top 10 Schools by Number of People:
+   1. Royal Academy of Dramatic Art                                 382 people
+   2. New York University Tisch School of the Arts                  197 people
+   3. University of California, Los Angeles                         190 people
+   4. American Academy of Dramatic Arts                             185 people
+   5. New York University                                           167 people
+   6. University of Southern California                             164 people
+   7. Juilliard School                                              134 people
+   8. HB Studio                                                     134 people
+   9. Columbia University                                           121 people
+  10. Lee Strasberg Theatre and Film Institute                      114 people
+
+================================================================================
+BIRTHPLACE DATA SUMMARY
+================================================================================
+
+People with Birthplace Data: 27,202
+Coverage: 63.8%
+Unique Cities: 6,786
+Unique Countries: 1,586
+
+Top 10 Cities by Number of People:
+   1. New York City                                      1149 people
+   2. Los Angeles                                         850 people
+   3. London                                              611 people
+   4. Chicago                                             484 people
+   5. Paris                                               414 people
+   6. Brooklyn                                            388 people
+   7. Toronto                                             298 people
+   8. Rio de Janeiro                                      248 people
+   9. Philadelphia                                        202 people
+  10. Vancouver                                           198 people
+
+Top 10 Countries by Number of People:
+   1. USA                                                11487 people
+   2. UK                                                 2544 people
+   3. Canada                                             1438 people
+   4. France                                             1043 people
+   5. Italy                                               753 people
+   6. Germany                                             676 people
+   7. Brazil                                              670 people
+   8. Japan                                               449 people
+   9. Australia                                           384 people
+  10. South Korea                                         334 people
+
+================================================================================
+ALUMNI NETWORK ANALYSIS
+================================================================================
+
+Total Movies with Alumni Collaborations: 4
+Schools with Collaborations: 2
+
+================================================================================
+END OF REPORT
+================================================================================
