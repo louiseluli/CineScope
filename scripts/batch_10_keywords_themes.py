@@ -202,8 +202,24 @@ class KeywordsAnalyzer:
                 kw_lower = kw.lower()
                 self.all_keywords[kw_lower] += 1
             # By genre (normalize genre names)
-            genres = movie.get('genres', '').split('|') if movie.get('genres') else []
-            genres = [g.strip().title() for g in genres if g.strip()]
+            genres_str = movie.get('genres', '') or movie.get('Genres', '')
+            if not genres_str:
+                genres = []
+            else:
+                # Try splitting by pipe first (TMDB format)
+                if '|' in genres_str:
+                    genres = [g.strip() for g in genres_str.split('|') if g.strip()]
+                # Try splitting by comma (list format like "['Comedy', 'Romance']")
+                elif ',' in genres_str:
+                    # Remove brackets and quotes, then split
+                    genres_str = genres_str.strip("[]'\"")
+                    genres = [g.strip().strip("'\"") for g in genres_str.split(',') if g.strip()]
+                else:
+                    # Single genre
+                    genres = [genres_str.strip()]
+
+            # Normalize genre names (title case)
+            genres = [g.title() for g in genres if g]
             for genre in genres:
                 for kw in keywords:
                     self.keywords_by_genre[genre][kw.lower()] += 1
