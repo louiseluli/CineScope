@@ -93,14 +93,24 @@ class KeywordsEnricher:
     RATE_LIMIT_DELAY = 0.25  # TMDB allows 40 requests/10 seconds
     
     def __init__(self, api_key: str = None):
+        # Use read token for Bearer auth, or API key for query param auth
+        self.read_token = settings.TMDB_READ_TOKEN
         self.api_key = api_key or settings.TMDB_API_KEY
-        if not self.api_key:
-            raise ValueError("TMDB API key required. Set TMDB_API_KEY environment variable.")
+        
+        if not self.read_token and not self.api_key:
+            raise ValueError("TMDB API key required. Set TMDB_API_KEY or TMDB_READ_TOKEN environment variable.")
         
         self.session = requests.Session()
-        self.session.headers.update({
-            'Authorization': f'Bearer {self.api_key}'
-        })
+        if self.read_token:
+            # Use Bearer token authentication (preferred)
+            self.session.headers.update({
+                'Authorization': f'Bearer {self.read_token}',
+                'Accept': 'application/json'
+            })
+            self.use_bearer = True
+        else:
+            # Fall back to API key in query params
+            self.use_bearer = False
         self._last_request_time = 0
         
         # Paths - Use watched_movies_master.csv (your ~2,300 watched films)
@@ -181,7 +191,8 @@ class KeywordsEnricher:
         
         try:
             url = f"{self.TMDB_BASE}/movie/{tmdb_id}/keywords"
-            response = self.session.get(url, timeout=10)
+            params = {} if self.use_bearer else {'api_key': self.api_key}
+            response = self.session.get(url, params=params, timeout=10)
             response.raise_for_status()
             
             data = response.json()

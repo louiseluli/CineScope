@@ -2,7 +2,7 @@
 CINESCOPE BATCH 13: EDUCATION & ORIGINS ANALYSIS
 ================================================================================
 
-Generated: 2025-12-28 16:30:11
+Generated: 2025-12-28 16:47:36
 
 Total People in Dataset: 42,630
 Total Movies in Dataset: 2,289
