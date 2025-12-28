@@ -1,0 +1,37 @@
+================================================================================
+CINESCOPE BATCH 14: FAMILY & RELATIONSHIPS ANALYSIS
+================================================================================
+
+Generated: 2025-12-28 16:52:29
+
+Total People in Dataset: 42,630
+
+================================================================================
+FAMILY DATA SUMMARY
+================================================================================
+
+People with Family Data: 7,017
+People with Spouse Data: 5,935 (13.9%)
+People with Children Data: 2,601 (6.1%)
+
+Total Marriages/Partnerships Recorded: 7,488
+Total Children: 6,272
+
+Average Children: 2.41
+Median Children: 2.0
+Maximum Children: 100
+
+Average Marriages: 1.26
+Median Marriages: 1.0
+Maximum Marriages: 8
+
+================================================================================
+CINEMA DYNASTIES
+================================================================================
+
+Potential Dynasties Found: 2205 (surnames with 3+ cinema professionals)
+Top Dynasty: Smith (130 people)
+
+================================================================================
+END OF REPORT
+================================================================================
