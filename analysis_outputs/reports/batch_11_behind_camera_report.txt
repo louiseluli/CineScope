@@ -1,0 +1,142 @@
+================================================================================
+CINESCOPE BATCH 11: BEHIND THE CAMERA ANALYSIS
+================================================================================
+
+Generated: 2025-12-28 15:17:31
+
+
+================================================================================
+OVERVIEW STATISTICS
+================================================================================
+
+Total Films in Collection: 2,289
+
+Cinematographer Coverage: 95.5%
+  • Films with Cinematographer Data: 2,186
+  • Unique Cinematographers: 1,041
+  • Average Films per Cinematographer: 2.1
+
+Composer Coverage: 93.3%
+  • Films with Composer Data: 2,135
+  • Unique Composers: 1,633
+  • Average Films per Composer: 1.3
+
+================================================================================
+TOP 10 CINEMATOGRAPHERS
+================================================================================
+
+Rank  Name                                    Films   Avg Rating  
+--------------------------------------------------------------------------------
+237   Don Burgess                             16      6.83
+44    Andrew Dunn                             15      6.59
+874   Russell Carpenter                       14      6.10
+952   Theo van de Sande                       13      5.95
+852   Roger Deakins                           12      7.55
+644   Matthew F. Leonetti                     12      6.12
+627   Mark Irwin                              11      6.47
+829   Robert Burks                            11      7.66
+224   Dean Semler                             11      5.80
+536   Julio Macat                             11      6.37
+
+================================================================================
+TOP 10 COMPOSERS
+================================================================================
+
+Rank  Name                                    Films   Avg Rating  
+--------------------------------------------------------------------------------
+275   Christophe Beck                         28      6.09
+663   James Newton Howard                     25      6.50
+25    Alan Silvestri                          22      6.69
+593   Hans Zimmer                             21      6.98
+289   Christopher Young                       20      6.12
+770   John Debney                             18      5.87
+1384  Rolfe Kent                              16      6.37
+660   James Horner                            16      6.62
+1002  Marc Shaiman                            15      6.78
+349   Danny Elfman                            15      7.00
+
+================================================================================
+TOP DIRECTOR-CINEMATOGRAPHER COLLABORATIONS
+================================================================================
+
+Director                      Cinematographer               Films   
+--------------------------------------------------------------------------------
+Alfred Hitchcock              Robert Burks                  10      
+Robert Zemeckis               Don Burgess                   5       
+James Wan                     John R. Leonetti              4       
+Cheh Chang                    Cho Wai-Kei                   3       
+
+================================================================================
+TOP DIRECTOR-COMPOSER COLLABORATIONS
+================================================================================
+
+Director                      Composer                      Films   
+--------------------------------------------------------------------------------
+Robert Zemeckis               Alan Silvestri                8       
+Rob Reiner                    Marc Shaiman                  6       
+Garry Marshall                John Debney                   5       
+Shawn Levy                    Christophe Beck               5       
+Ivan Reitman                  Randy Edelman                 4       
+Todd Phillips                 Christophe Beck               4       
+Todd Phillips                 Randall Poster                4       
+Alfred Hitchcock              Franz Waxman                  3       
+Garry Marshall                James Newton Howard           2       
+Tom Shadyac                   John Debney                   2       
+
+================================================================================
+FAMOUS DIRECTOR-CINEMATOGRAPHER-COMPOSER TRIOS
+================================================================================
+
+Alfred Hitchcock
+  DP: Robert Burks
+  Music: Bernard Herrmann
+  Collaborations: 6
+
+Robert Zemeckis
+  DP: Don Burgess
+  Music: Alan Silvestri
+  Collaborations: 5
+
+Charles Chaplin
+  DP: Roland Totheroh
+  Music: Charlie Chaplin
+  Collaborations: 5
+
+Roger Corman
+  DP: Floyd Crosby
+  Music: Les Baxter
+  Collaborations: 4
+
+Steven Soderbergh
+  DP: Steven Soderbergh
+  Music: David Holmes
+  Collaborations: 4
+
+Robert Zemeckis
+  DP: Don Burgess
+  Music: Kenneth Karman
+  Collaborations: 4
+
+Cheh Chang
+  DP: Kung Mu-To
+  Music: Frankie Chan Fan-Kei
+  Collaborations: 4
+
+Shawn Levy
+  DP: Jonathan Brown
+  Music: Christophe Beck
+  Collaborations: 4
+
+James DeMonaco
+  DP: Jacques Jouffret
+  Music: Nathan Whitehead
+  Collaborations: 3
+
+Garry Marshall
+  DP: Charles Minsky
+  Music: John Debney
+  Collaborations: 3
+
+================================================================================
+END OF REPORT
+================================================================================
