@@ -1,0 +1,103 @@
+================================================================================
+CINESCOPE BATCH 12: MORTALITY & LEGACY ANALYSIS
+================================================================================
+
+Generated: 2025-12-28 16:04:03
+
+================================================================================
+OVERVIEW STATISTICS
+================================================================================
+
+Total People in Cache: 42,630
+Deceased: 11,497 (27.0%)
+Living: 31,133 (73.0%)
+
+================================================================================
+AGE AT DEATH STATISTICS
+================================================================================
+
+People with Age Data: 11,426
+
+Mean Age: 73.9 years
+Median Age: 76.0 years
+Std Dev: 14.5 years
+Min Age: 12 years
+Max Age: 117 years
+
+Centenarians (100+): 101
+Nonagenarians (90-99): 1337
+Octogenarians (80-89): 3074
+
+================================================================================
+TOP 30 DEATH LOCATIONS
+================================================================================
+
+Rank  Location                                                    Count     
+--------------------------------------------------------------------------------
+1     Forest Lawn Memorial Park                                   498       
+2     New York City, New York, USA                                279       
+3     London, England, UK                                         174       
+4     Hollywood Forever Cemetery                                  173       
+5     Los Angeles, California, USA                                137       
+6     Chicago, Illinois, USA                                      129       
+7     Holy Cross Cemetery                                         121       
+8     Westwood Village Memorial Park Cemetery                     118       
+9     Paris, France                                               111       
+10    Valhalla Memorial Park Cemetery                             83        
+11    Rio de Janeiro, Rio de Janeiro, Brazil                      80        
+12    Berlin, Germany                                             75        
+13    San Francisco, California, USA                              63        
+14    Chapel of the Pines Crematory                               57        
+15    Philadelphia, Pennsylvania, USA                             56        
+16    São Paulo, São Paulo, Brazil                                55        
+17    Brooklyn, New York, USA                                     53        
+18    Golders Green Crematorium                                   46        
+19    Calvary Cemetery                                            46        
+20    San Fernando Mission Cemetery                               44        
+21    Brooklyn, New York City, New York, USA                      44        
+22    Hillside Memorial Park                                      42        
+23    Boston, Massachusetts, USA                                  42        
+24    Rome, Lazio, Italy                                          40        
+25    Inglewood Park Cemetery                                     39        
+26    Powązki Cemetery                                            39        
+27    Novodevichy Cemetery                                        37        
+28    Kensico Cemetery                                            35        
+29    Madrid, Madrid, Spain                                       35        
+30    Dublin, Ireland                                             34        
+
+================================================================================
+TOP 30 CAUSES OF DEATH
+================================================================================
+
+Rank  Cause                                                       Count     
+--------------------------------------------------------------------------------
+1     myocardial infarction                                       751       
+2     cancer                                                      454       
+3     disease                                                     350       
+4     pneumonia                                                   251       
+5     lung cancer                                                 209       
+6     stroke                                                      196       
+7     heart failure                                               126       
+8     natural causes                                              80        
+9     traffic collision                                           74        
+10    pancreatic cancer                                           72        
+11    pulmonary emphysema                                         65        
+12    alzheimer's disease                                         64        
+13    leukemia                                                    59        
+14    breast cancer                                               46        
+15    kidney failure                                              45        
+16    suicide                                                     44        
+17    parkinson's disease                                         43        
+18    cerebral hemorrhage                                         42        
+19    liver cancer                                                42        
+20    prostate cancer                                             41        
+21    cardiovascular disease                                      39        
+22    brain cancer                                                39        
+23    drug overdose                                               38        
+24    esophageal cancer                                           36        
+25    diabetes                                                    36        
+26    covid-19                                                    36        
+27    falling from height                                         35        
+28    cardiac arrest                                              35        
+29    respiratory failure                                         33        
+30    stomach cancer                                              33        
