@@ -383,38 +383,66 @@ class EducationOriginsAnalyzer:
         """Analyze if certain schools correlate with higher movie ratings."""
         print("\nAnalyzing school-quality correlations...")
 
-        # Get movies with cast/crew data
-        # Build person-to-movies mapping
-        person_movies = defaultdict(list)
+        # Build person ID to movies mapping using IMDb IDs
+        person_id_movies = defaultdict(list)
 
         for _, movie in self.movies_df.iterrows():
             movie_rating = movie.get('Your Rating')
             if pd.isna(movie_rating) or movie_rating == 0:
                 continue
 
-            # Get cast and crew
-            cast = str(movie.get('cast', '')).split('|') if movie.get('cast') else []
-            directors = str(movie.get('Directors', '')).split(',') if movie.get('Directors') else []
+            # Get cast IDs
+            cast_ids = []
+            imdb_cast_str = movie.get('imdb_cast_ids', '')
+            if imdb_cast_str and not pd.isna(imdb_cast_str):
+                # Parse list format like "['nm0000209', 'nm0000151']"
+                import ast
+                try:
+                    cast_ids_list = ast.literal_eval(str(imdb_cast_str))
+                    if isinstance(cast_ids_list, list):
+                        cast_ids.extend([str(id).strip() for id in cast_ids_list if id])
+                except:
+                    # Fallback to split
+                    cast_ids.extend([id.strip() for id in str(imdb_cast_str).split('|') if id.strip()])
 
-            all_people = cast + directors
-            all_people = [p.strip() for p in all_people if p.strip()]
+            # Get director IDs
+            director_ids = []
+            imdb_director_str = movie.get('imdb_director_ids', '')
+            if imdb_director_str and not pd.isna(imdb_director_str):
+                try:
+                    director_ids_list = ast.literal_eval(str(imdb_director_str))
+                    if isinstance(director_ids_list, list):
+                        director_ids.extend([str(id).strip() for id in director_ids_list if id])
+                except:
+                    director_ids.extend([id.strip() for id in str(imdb_director_str).split('|') if id.strip()])
 
-            for person_name in all_people:
-                person_movies[person_name].append(movie_rating)
+            all_person_ids = cast_ids + director_ids
 
-        # Calculate average rating per person
-        person_avg_ratings = {name: np.mean(ratings) for name, ratings in person_movies.items() if ratings}
+            for person_id in all_person_ids:
+                person_id_movies[person_id].append(movie_rating)
 
-        # Join with education data
+        # Calculate average rating per person ID
+        person_id_avg_ratings = {pid: np.mean(ratings) for pid, ratings in person_id_movies.items() if ratings}
+
+        # Build mapping from person cache ID to IMDb ID
+        cache_id_to_imdb = {}
+        for cache_id, person_data in self.people_cache.items():
+            imdb_id = person_data.get('imdb_id')
+            if imdb_id:
+                cache_id_to_imdb[cache_id] = imdb_id
+
+        # Join with education data using IDs
         education_quality = []
 
         for _, row in self.education_df.iterrows():
-            person_name = row['name']
-            if person_name in person_avg_ratings:
+            cache_person_id = row['person_id']
+            imdb_id = cache_id_to_imdb.get(cache_person_id)
+
+            if imdb_id and imdb_id in person_id_avg_ratings:
                 education_quality.append({
                     'school': row['school'],
-                    'person': person_name,
-                    'avg_rating': person_avg_ratings[person_name]
+                    'person': row['name'],
+                    'avg_rating': person_id_avg_ratings[imdb_id]
                 })
 
         if not education_quality:
@@ -436,31 +464,42 @@ class EducationOriginsAnalyzer:
         # Create visualization
         fig, ax = plt.subplots(figsize=(14, 10))
 
-        top_schools = school_ratings.head(20)
+        if len(school_ratings) > 0:
+            top_schools = school_ratings.head(20)
 
-        y_pos = np.arange(len(top_schools))
-        bars = ax.barh(y_pos, top_schools['avg_rating'],
-                       color=sns.color_palette("coolwarm", len(top_schools)))
+            y_pos = np.arange(len(top_schools))
+            bars = ax.barh(y_pos, top_schools['avg_rating'],
+                           color=sns.color_palette("coolwarm", len(top_schools)))
 
-        ax.set_yticks(y_pos)
-        ax.set_yticklabels(top_schools['school'], fontsize=9)
-        ax.invert_yaxis()
-        ax.set_xlabel('Average Movie Rating', fontsize=11, fontweight='bold')
-        ax.set_title('Top 20 Schools by Average Movie Quality (min. 3 alumni)',
-                     fontsize=13, fontweight='bold', pad=15)
-        ax.axvline(x=6.5, color='red', linestyle='--', linewidth=1, alpha=0.5, label='Dataset Average')
+            ax.set_yticks(y_pos)
+            ax.set_yticklabels(top_schools['school'], fontsize=9)
+            ax.invert_yaxis()
+            ax.set_xlabel('Average Movie Rating', fontsize=11, fontweight='bold')
+            ax.set_title('Top 20 Schools by Average Movie Quality (min. 3 alumni)',
+                         fontsize=13, fontweight='bold', pad=15)
+            ax.axvline(x=6.5, color='red', linestyle='--', linewidth=1, alpha=0.5, label='Dataset Average')
 
-        # Add value labels with count
-        for i, (rating, count) in enumerate(zip(top_schools['avg_rating'], top_schools['count'])):
-            ax.text(rating + 0.05, i, f'{rating:.2f} (n={int(count)})', va='center', fontsize=8)
+            # Add value labels with count
+            for i, (rating, count) in enumerate(zip(top_schools['avg_rating'], top_schools['count'])):
+                ax.text(rating + 0.05, i, f'{rating:.2f} (n={int(count)})', va='center', fontsize=8)
 
-        ax.legend()
+            ax.legend()
+
+            print(f"  Top school by quality: {top_schools.iloc[0]['school']} (avg: {top_schools.iloc[0]['avg_rating']:.2f})")
+            print(f"  Total people matched: {len(person_id_avg_ratings)}, Education records matched: {len(education_quality)}")
+        else:
+            # No data - create placeholder visualization
+            ax.text(0.5, 0.5, 'Insufficient data for school-quality correlation\n(minimum 3 alumni per school required)',
+                   ha='center', va='center', fontsize=14, transform=ax.transAxes)
+            ax.set_xlim(0, 1)
+            ax.set_ylim(0, 1)
+            ax.axis('off')
+            print(f"  No schools with sufficient data (min 3 alumni)")
+            print(f"  Total people matched: {len(person_id_avg_ratings)}, Education records matched: {len(education_quality)}")
+
         plt.tight_layout()
         plt.savefig(os.path.join(self.vis_dir, '05_school_quality_correlation.png'), dpi=300, bbox_inches='tight')
         plt.close()
-
-        if len(top_schools) > 0:
-            print(f"  Top school by quality: {top_schools.iloc[0]['school']} (avg: {top_schools.iloc[0]['avg_rating']:.2f})")
 
     def analyze_alumni_networks(self):
         """Analyze same-school collaborations in movies."""
