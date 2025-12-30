@@ -40,6 +40,8 @@ import networkx as nx
 from itertools import combinations
 import community as community_louvain
 import ast
+import plotly.graph_objects as go
+import plotly.express as px
 
 class CollaborationNetworkAnalyzer:
     """Analyzes collaboration networks in cinema."""
@@ -1006,6 +1008,120 @@ class CollaborationNetworkAnalyzer:
 
         print(f"✓ Saved: ego_network_top_actor.png")
 
+    def visualize_interactive_network(self):
+        """Create interactive network visualization using plotly."""
+        print("Creating interactive network visualization...")
+
+        if self.largest_component.number_of_nodes() == 0:
+            print("! No network to visualize")
+            return
+
+        # Get top 200 actors for interactive visualization
+        top_actors = sorted(
+            self.degree_centrality.items(),
+            key=lambda x: x[1],
+            reverse=True
+        )[:200]
+
+        top_actor_ids = [actor_id for actor_id, _ in top_actors]
+        subgraph = self.largest_component.subgraph(top_actor_ids)
+
+        # Create layout
+        pos = nx.spring_layout(subgraph, k=2, iterations=50, seed=42)
+
+        # Create edge trace
+        edge_x = []
+        edge_y = []
+        edge_weights = []
+
+        for edge in subgraph.edges():
+            x0, y0 = pos[edge[0]]
+            x1, y1 = pos[edge[1]]
+            edge_x.append(x0)
+            edge_x.append(x1)
+            edge_x.append(None)
+            edge_y.append(y0)
+            edge_y.append(y1)
+            edge_y.append(None)
+            edge_weights.append(subgraph[edge[0]][edge[1]]['weight'])
+
+        edge_trace = go.Scatter(
+            x=edge_x, y=edge_y,
+            line=dict(width=0.5, color='#888'),
+            hoverinfo='none',
+            mode='lines')
+
+        # Create node trace
+        node_x = []
+        node_y = []
+        node_text = []
+        node_size = []
+        node_color = []
+
+        for node in subgraph.nodes():
+            x, y = pos[node]
+            node_x.append(x)
+            node_y.append(y)
+
+            name = self.imdb_to_name.get(node, 'Unknown')
+            degree = self.degree_centrality[node]
+            community = self.communities.get(node, 0)
+
+            # Get collaborations count
+            collaborations = subgraph.degree(node)
+
+            node_text.append(f"{name}<br>Degree: {degree:.4f}<br>Collaborations: {collaborations}<br>Community: {community}")
+            node_size.append(degree * 100)
+            node_color.append(community)
+
+        node_trace = go.Scatter(
+            x=node_x, y=node_y,
+            mode='markers+text',
+            hoverinfo='text',
+            text=node_text,
+            marker=dict(
+                showscale=True,
+                colorscale='Viridis',
+                size=node_size,
+                color=node_color,
+                colorbar=dict(
+                    thickness=15,
+                    title='Community',
+                    xanchor='left',
+                    titleside='right'
+                ),
+                line=dict(width=2, color='white')))
+
+        # Create figure
+        fig = go.Figure(data=[edge_trace, node_trace],
+                       layout=go.Layout(
+                           title=dict(
+                               text='Interactive Actor Collaboration Network (Top 200 Actors)',
+                               x=0.5,
+                               xanchor='center'
+                           ),
+                           titlefont_size=16,
+                           showlegend=False,
+                           hovermode='closest',
+                           margin=dict(b=20, l=5, r=5, t=40),
+                           annotations=[dict(
+                               text="Node size = degree centrality | Color = community | Hover for details",
+                               showarrow=False,
+                               xref="paper", yref="paper",
+                               x=0.5, y=-0.05,
+                               xanchor='center',
+                               font=dict(size=10)
+                           )],
+                           xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
+                           yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
+                           width=1400,
+                           height=1000
+                       ))
+
+        # Save as HTML
+        fig.write_html(str(self.viz_dir / 'interactive_network.html'))
+        print(f"✓ Saved: interactive_network.html")
+
     def generate_report(self):
         """Generate comprehensive text report."""
         print("Generating report...")
@@ -1105,6 +1221,7 @@ class CollaborationNetworkAnalyzer:
             self.visualize_network_density_over_time()
             self.visualize_top_collaborating_pairs()
             self.visualize_ego_network()
+            self.visualize_interactive_network()
 
             print("-" * 80)
             print()

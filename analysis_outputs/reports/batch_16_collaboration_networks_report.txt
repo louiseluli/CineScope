@@ -2,7 +2,7 @@
 CINESCOPE BATCH 16: COLLABORATION NETWORKS ANALYSIS
 ================================================================================
 
-Generated: 2025-12-30 13:41:52
+Generated: 2025-12-30 13:46:14
 
 Total Movies Processed: 2,289
 Total People in Dataset: 42,630
@@ -24,7 +24,7 @@ Average Degrees of Separation: 3.74
 NETWORK STRUCTURE
 ================================================================================
 
-Number of Communities Detected: 49
+Number of Communities Detected: 51
 Average Clustering Coefficient: 0.8221
 
 ================================================================================
