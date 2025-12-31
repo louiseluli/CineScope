@@ -249,7 +249,7 @@ class RuntimePacingAnalyzer:
         print("Creating runtime vs rating visualization...")
 
         # Get rating data
-        rating_col = 'Your Rating'
+        rating_col = 'IMDb Rating'
         if rating_col not in self.df.columns:
             print("! No rating data available")
             return
@@ -400,7 +400,7 @@ class RuntimePacingAnalyzer:
         """Find optimal runtime for each genre based on ratings."""
         print("Creating optimal runtime by genre visualization...")
 
-        rating_col = 'Your Rating'
+        rating_col = 'IMDb Rating'
         if rating_col not in self.df.columns:
             print("! No rating data")
             return
@@ -565,7 +565,7 @@ class RuntimePacingAnalyzer:
         """Identify and visualize runtime outliers."""
         print("Creating runtime outliers visualization...")
 
-        rating_col = 'Your Rating'
+        rating_col = 'IMDb Rating'
 
         # Calculate z-scores
         self.df['runtime_zscore'] = np.abs(stats.zscore(self.df['runtime']))
@@ -632,7 +632,7 @@ class RuntimePacingAnalyzer:
         """Compare performance across pacing categories."""
         print("Creating pacing categories visualization...")
 
-        rating_col = 'Your Rating'
+        rating_col = 'IMDb Rating'
         if rating_col not in self.df.columns:
             print("! No rating data")
             return
@@ -727,7 +727,7 @@ class RuntimePacingAnalyzer:
         """Create 2D heatmap of runtime vs rating."""
         print("Creating runtime-rating heatmap...")
 
-        rating_col = 'Your Rating'
+        rating_col = 'IMDb Rating'
         if rating_col not in self.df.columns:
             print("! No rating data")
             return
@@ -760,7 +760,7 @@ class RuntimePacingAnalyzer:
         """Analyze rating per minute (runtime efficiency)."""
         print("Creating runtime efficiency visualization...")
 
-        rating_col = 'Your Rating'
+        rating_col = 'IMDb Rating'
         if rating_col not in self.df.columns:
             print("! No rating data")
             return

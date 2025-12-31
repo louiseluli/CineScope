@@ -26,8 +26,6 @@ wheels/
 MANIFEST
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -131,10 +129,6 @@ venv/
 .vscode/
 
 # Data files
-# By default, we ignore the entire data directory to avoid committing large files.
-# If you have small, essential data files you want to track, you can make an
-- # exception like this:
-- # !data/raw/my_small_data.csv
 /data/
 
 # Logs
@@ -142,3 +136,7 @@ venv/
 
 # MacOS
 .DS_Store
+
+# Project documentation
+COMPREHENSIVE_ANALYSIS_ROADMAP.md
+

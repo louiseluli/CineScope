@@ -387,7 +387,7 @@ class EducationOriginsAnalyzer:
         person_id_movies = defaultdict(list)
 
         for _, movie in self.movies_df.iterrows():
-            movie_rating = movie.get('Your Rating')
+            movie_rating = movie.get('IMDb Rating')
             if pd.isna(movie_rating) or movie_rating == 0:
                 continue
 

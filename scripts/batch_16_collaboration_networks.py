@@ -116,7 +116,7 @@ class CollaborationNetworkAnalyzer:
         for _, movie in self.movies_df.iterrows():
             movie_title = movie.get('Title', 'Unknown')
             movie_year = movie.get('Year', '')
-            movie_rating = movie.get('Your Rating', 0)
+            movie_rating = movie.get('IMDb Rating', 0)
 
             # Get cast IDs
             cast_ids = []

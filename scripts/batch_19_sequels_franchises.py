@@ -39,6 +39,7 @@ from datetime import datetime
 from collections import defaultdict, Counter
 import re
 from scipy import stats
+import ast
 
 class SequelFranchiseAnalyzer:
     """Analyzes sequels, franchises, and series patterns."""
@@ -109,7 +110,7 @@ class SequelFranchiseAnalyzer:
                 franchise_groups[franchise_name].append({
                     'title': title,
                     'year': year,
-                    'rating': row.get('Your Rating', 0),
+                    'rating': row.get('IMDb Rating', 0),
                     'revenue': row.get('tmdb_revenue', 0),
                     'budget': row.get('tmdb_budget', 0),
                     'index': idx
@@ -132,11 +133,14 @@ class SequelFranchiseAnalyzer:
                     franchise_groups[base_title].append({
                         'title': title,
                         'year': year,
-                        'rating': row.get('Your Rating', 0),
+                        'rating': row.get('IMDb Rating', 0),
                         'revenue': row.get('tmdb_revenue', 0),
                         'budget': row.get('tmdb_budget', 0),
                         'index': idx
                     })
+
+        # Count all movies in collections (before filtering)
+        all_collection_movies = sum(len(v) for v in franchise_groups.values())
 
         # Filter to only franchises with 2+ movies
         self.franchises = {k: sorted(v, key=lambda x: x['year'])
@@ -146,7 +150,8 @@ class SequelFranchiseAnalyzer:
         # Calculate stats
         self.stats['total_franchises'] = len(self.franchises)
         self.stats['total_franchise_movies'] = sum(len(movies) for movies in self.franchises.values())
-        self.stats['total_standalone'] = len(self.movies_df) - self.stats['total_franchise_movies']
+        self.stats['total_collection_movies'] = all_collection_movies
+        self.stats['total_standalone'] = len(self.movies_df) - all_collection_movies
 
         franchise_sizes = [len(movies) for movies in self.franchises.values()]
         if franchise_sizes:
@@ -566,7 +571,7 @@ class SequelFranchiseAnalyzer:
         standalone_ratings = []
 
         for idx, row in self.movies_df.iterrows():
-            rating = row.get('Your Rating', 0)
+            rating = row.get('IMDb Rating', 0)
             if rating and not pd.isna(rating) and rating > 0:
                 if idx in franchise_indices:
                     franchise_ratings.append(rating)
@@ -649,27 +654,385 @@ class SequelFranchiseAnalyzer:
 
         print(f"✓ Saved: standalone_vs_franchise.png")
 
+    def visualize_time_gaps(self):
+        """Analyze time gaps between sequels."""
+        print("Creating time gaps visualization...")
+
+        time_gaps = []
+
+        for franchise_name, movies in self.franchises.items():
+            if len(movies) < 2:
+                continue
+
+            sorted_movies = sorted(movies, key=lambda x: x['year'])
+            for i in range(len(sorted_movies) - 1):
+                year_gap = sorted_movies[i+1]['year'] - sorted_movies[i]['year']
+                if year_gap > 0:
+                    time_gaps.append({
+                        'franchise': franchise_name[:30],
+                        'gap': year_gap,
+                        'from_year': sorted_movies[i]['year'],
+                        'to_year': sorted_movies[i+1]['year']
+                    })
+
+        if not time_gaps:
+            print("! No time gap data available")
+            return
+
+        df = pd.DataFrame(time_gaps)
+
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
+
+        # Distribution of time gaps
+        ax1.hist(df['gap'], bins=range(0, max(df['gap'])+2), color='steelblue',
+                alpha=0.7, edgecolor='black')
+        ax1.set_xlabel('Years Between Sequels', fontsize=12, fontweight='bold')
+        ax1.set_ylabel('Frequency', fontsize=12, fontweight='bold')
+        ax1.set_title('Distribution of Time Gaps Between Sequels', fontsize=14, fontweight='bold')
+        ax1.grid(axis='y', alpha=0.3)
+        ax1.axvline(df['gap'].median(), color='red', linestyle='--', linewidth=2,
+                   label=f'Median: {df["gap"].median():.1f} years')
+        ax1.legend()
+
+        # Longest gaps
+        longest_gaps = df.nlargest(15, 'gap')
+        colors = plt.cm.Reds(np.linspace(0.4, 0.9, len(longest_gaps)))
+
+        ax2.barh(range(len(longest_gaps)), longest_gaps['gap'], color=colors,
+                alpha=0.7, edgecolor='black')
+        ax2.set_yticks(range(len(longest_gaps)))
+        ax2.set_yticklabels(longest_gaps['franchise'], fontsize=9)
+        ax2.invert_yaxis()
+        ax2.set_xlabel('Years Between Sequels', fontsize=12, fontweight='bold')
+        ax2.set_title('Longest Gaps Between Sequels', fontsize=14, fontweight='bold')
+        ax2.grid(axis='x', alpha=0.3)
+
+        plt.tight_layout()
+        plt.savefig(self.viz_dir / 'time_gaps_analysis.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        print(f"✓ Saved: time_gaps_analysis.png")
+
+    def visualize_director_consistency(self):
+        """Analyze director consistency across franchises."""
+        print("Creating director consistency visualization...")
+
+        director_consistency = []
+        total_franchises = 0
+        franchises_with_2plus = 0
+        franchises_with_directors = 0
+
+        for franchise_name, movies in self.franchises.items():
+            total_franchises += 1
+            if len(movies) < 2:
+                continue
+
+            franchises_with_2plus += 1
+
+            # Get director IDs for each movie
+            directors_per_movie = []
+            for movie in movies:
+                idx = movie['index']
+                director_ids = self.movies_df.loc[idx, 'imdb_director_ids']
+
+                if pd.notna(director_ids) and str(director_ids) not in ['', 'nan', '[]']:
+                    try:
+                        # Parse the list string
+                        if isinstance(director_ids, str):
+                            # Remove extra whitespace and parse
+                            director_ids = director_ids.strip()
+                            if director_ids.startswith('[') and director_ids.endswith(']'):
+                                # It's a string representation of a list
+                                directors = ast.literal_eval(director_ids)
+                                if isinstance(directors, list):
+                                    directors_per_movie.append(set(str(d).strip().strip("'\"") for d in directors if d))
+                            else:
+                                # Try pipe-separated
+                                directors = director_ids.split('|')
+                                directors_per_movie.append(set(str(d).strip().strip("'\"") for d in directors if d))
+                    except Exception as e:
+                        pass
+
+            if len(directors_per_movie) >= 2:
+                franchises_with_directors += 1
+                # Check if same director(s) across movies
+                first_directors = directors_per_movie[0]
+                if first_directors:  # Make sure we have directors
+                    same_director_count = sum(1 for d in directors_per_movie if d & first_directors)
+                    consistency_pct = (same_director_count / len(directors_per_movie)) * 100
+
+                    director_consistency.append({
+                        'franchise': franchise_name[:30],
+                        'consistency': consistency_pct,
+                        'num_movies': len(movies)
+                    })
+
+        if not director_consistency:
+            print("! No director consistency data available")
+            return
+
+        df = pd.DataFrame(director_consistency)
+
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
+
+        # Distribution
+        ax1.hist(df['consistency'], bins=20, color='forestgreen', alpha=0.7, edgecolor='black')
+        ax1.set_xlabel('Director Consistency (%)', fontsize=12, fontweight='bold')
+        ax1.set_ylabel('Number of Franchises', fontsize=12, fontweight='bold')
+        ax1.set_title('Distribution of Director Consistency', fontsize=14, fontweight='bold')
+        ax1.grid(axis='y', alpha=0.3)
+        ax1.axvline(100, color='red', linestyle='--', linewidth=2,
+                   label=f'Same Director: {(df["consistency"] == 100).sum()} franchises')
+        ax1.legend()
+
+        # Most consistent
+        most_consistent = df[df['consistency'] == 100].nlargest(15, 'num_movies')
+        colors = plt.cm.Greens(np.linspace(0.4, 0.9, len(most_consistent)))
+
+        ax2.barh(range(len(most_consistent)), most_consistent['num_movies'], color=colors,
+                alpha=0.7, edgecolor='black')
+        ax2.set_yticks(range(len(most_consistent)))
+        ax2.set_yticklabels(most_consistent['franchise'], fontsize=9)
+        ax2.invert_yaxis()
+        ax2.set_xlabel('Number of Movies', fontsize=12, fontweight='bold')
+        ax2.set_title('Franchises with Same Director Throughout', fontsize=14, fontweight='bold')
+        ax2.grid(axis='x', alpha=0.3)
+
+        plt.tight_layout()
+        plt.savefig(self.viz_dir / 'director_consistency.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        print(f"✓ Saved: director_consistency.png")
+
+    def visualize_cast_consistency(self):
+        """Analyze cast retention across franchises."""
+        print("Creating cast consistency visualization...")
+
+        cast_consistency = []
+
+        for franchise_name, movies in self.franchises.items():
+            if len(movies) < 2:
+                continue
+
+            # Get cast IDs for each movie
+            casts_per_movie = []
+            for movie in movies:
+                idx = movie['index']
+                cast_ids = self.movies_df.loc[idx, 'imdb_cast_ids']
+
+                if pd.notna(cast_ids) and str(cast_ids) not in ['', 'nan', '[]']:
+                    try:
+                        # Parse the list string
+                        if isinstance(cast_ids, str):
+                            # Remove extra whitespace and parse
+                            cast_ids = cast_ids.strip()
+                            if cast_ids.startswith('[') and cast_ids.endswith(']'):
+                                # It's a string representation of a list
+                                cast = ast.literal_eval(cast_ids)
+                                if isinstance(cast, list):
+                                    casts_per_movie.append(set(str(c).strip().strip("'\"") for c in cast if c))
+                            else:
+                                # Try pipe-separated
+                                cast = cast_ids.split('|')
+                                casts_per_movie.append(set(str(c).strip().strip("'\"") for c in cast if c))
+                    except Exception as e:
+                        pass
+
+            if len(casts_per_movie) >= 2:
+                # Calculate average overlap
+                overlaps = []
+                for i in range(len(casts_per_movie) - 1):
+                    if casts_per_movie[i] and casts_per_movie[i+1]:  # Make sure we have cast data
+                        overlap = len(casts_per_movie[i] & casts_per_movie[i+1])
+                        total = len(casts_per_movie[i] | casts_per_movie[i+1])
+                        if total > 0:
+                            overlaps.append((overlap / total) * 100)
+
+                if overlaps:
+                    cast_consistency.append({
+                        'franchise': franchise_name[:30],
+                        'avg_overlap': np.mean(overlaps),
+                        'num_movies': len(movies)
+                    })
+
+        if not cast_consistency:
+            print("! No cast consistency data available")
+            return
+
+        df = pd.DataFrame(cast_consistency)
+
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
+
+        # Distribution
+        ax1.hist(df['avg_overlap'], bins=20, color='purple', alpha=0.7, edgecolor='black')
+        ax1.set_xlabel('Average Cast Overlap (%)', fontsize=12, fontweight='bold')
+        ax1.set_ylabel('Number of Franchises', fontsize=12, fontweight='bold')
+        ax1.set_title('Distribution of Cast Retention', fontsize=14, fontweight='bold')
+        ax1.grid(axis='y', alpha=0.3)
+        ax1.axvline(df['avg_overlap'].median(), color='red', linestyle='--', linewidth=2,
+                   label=f'Median: {df["avg_overlap"].median():.1f}%')
+        ax1.legend()
+
+        # Highest retention
+        highest_retention = df.nlargest(15, 'avg_overlap')
+        colors = plt.cm.Purples(np.linspace(0.4, 0.9, len(highest_retention)))
+
+        ax2.barh(range(len(highest_retention)), highest_retention['avg_overlap'], color=colors,
+                alpha=0.7, edgecolor='black')
+        ax2.set_yticks(range(len(highest_retention)))
+        ax2.set_yticklabels(highest_retention['franchise'], fontsize=9)
+        ax2.invert_yaxis()
+        ax2.set_xlabel('Average Cast Overlap (%)', fontsize=12, fontweight='bold')
+        ax2.set_title('Franchises with Highest Cast Retention', fontsize=14, fontweight='bold')
+        ax2.grid(axis='x', alpha=0.3)
+
+        for i, val in enumerate(highest_retention['avg_overlap']):
+            ax2.text(val, i, f' {val:.1f}%', va='center', fontsize=8)
+
+        plt.tight_layout()
+        plt.savefig(self.viz_dir / 'cast_consistency.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        print(f"✓ Saved: cast_consistency.png")
+
+    def visualize_franchise_completion(self):
+        """Analyze personal franchise completion rates."""
+        print("Creating franchise completion visualization...")
+
+        # For each franchise, we have all the movies the user watched
+        # This is their "completion rate" for that franchise
+        completion_data = []
+
+        for franchise_name, movies in self.franchises.items():
+            ratings = [m['rating'] for m in movies if m['rating'] and m['rating'] > 0]
+            completion_data.append({
+                'franchise': franchise_name[:30],
+                'watched': len(movies),
+                'avg_rating': np.mean(ratings) if ratings else 0
+            })
+
+        df = pd.DataFrame(completion_data).sort_values('watched', ascending=False)
+
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
+
+        # Distribution of watched movies per franchise
+        ax1.hist(df['watched'], bins=range(2, df['watched'].max() + 2),
+                color='teal', alpha=0.7, edgecolor='black')
+        ax1.set_xlabel('Number of Movies Watched in Franchise', fontsize=12, fontweight='bold')
+        ax1.set_ylabel('Number of Franchises', fontsize=12, fontweight='bold')
+        ax1.set_title('Franchise Completion Distribution', fontsize=14, fontweight='bold')
+        ax1.grid(axis='y', alpha=0.3)
+
+        # Top completed franchises
+        top_completed = df.nlargest(15, 'watched')
+        colors = plt.cm.Blues(np.linspace(0.4, 0.9, len(top_completed)))
+
+        ax2.barh(range(len(top_completed)), top_completed['watched'], color=colors,
+                alpha=0.7, edgecolor='black')
+        ax2.set_yticks(range(len(top_completed)))
+        ax2.set_yticklabels(top_completed['franchise'], fontsize=9)
+        ax2.invert_yaxis()
+        ax2.set_xlabel('Movies Watched', fontsize=12, fontweight='bold')
+        ax2.set_title('Most Watched Franchises', fontsize=14, fontweight='bold')
+        ax2.grid(axis='x', alpha=0.3)
+
+        for i, (watched, rating) in enumerate(zip(top_completed['watched'], top_completed['avg_rating'])):
+            ax2.text(watched, i, f' {watched} films (avg: {rating:.1f})', va='center', fontsize=8)
+
+        plt.tight_layout()
+        plt.savefig(self.viz_dir / 'franchise_completion_rate.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        print(f"✓ Saved: franchise_completion_rate.png")
+
+    def visualize_genre_franchise_patterns(self):
+        """Analyze which genres have more franchises."""
+        print("Creating genre franchise patterns visualization...")
+
+        genre_counts = defaultdict(int)
+        genre_franchise_counts = defaultdict(int)
+
+        for idx, row in self.movies_df.iterrows():
+            genres_str = row.get('tmdb_genres', row.get('Genres', ''))
+
+            if pd.notna(genres_str) and genres_str:
+                # Parse genres
+                genres = []
+                if isinstance(genres_str, str):
+                    if '|' in genres_str:
+                        genres = [g.strip() for g in genres_str.split('|')]
+                    elif ',' in genres_str:
+                        genres = [g.strip() for g in genres_str.split(',')]
+                    else:
+                        genres = [genres_str.strip()]
+
+                # Check if in franchise
+                is_franchise = row.get('tmdb_belongs_to_collection')
+                is_franchise = pd.notna(is_franchise) and str(is_franchise).lower() != 'nan'
+
+                for genre in genres:
+                    if genre:
+                        genre_counts[genre] += 1
+                        if is_franchise:
+                            genre_franchise_counts[genre] += 1
+
+        # Calculate franchise percentage per genre
+        genre_data = []
+        for genre, total in genre_counts.items():
+            if total >= 10:  # Minimum threshold
+                franchise_pct = (genre_franchise_counts[genre] / total) * 100
+                genre_data.append({
+                    'genre': genre,
+                    'franchise_pct': franchise_pct,
+                    'total': total,
+                    'franchise_count': genre_franchise_counts[genre]
+                })
+
+        if not genre_data:
+            print("! No genre data available")
+            return
+
+        df = pd.DataFrame(genre_data).sort_values('franchise_pct', ascending=False)
+
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 10))
+
+        # Franchise percentage by genre
+        colors = plt.cm.RdYlGn(np.linspace(0.2, 0.8, len(df)))
+
+        ax1.barh(range(len(df)), df['franchise_pct'], color=colors, alpha=0.7, edgecolor='black')
+        ax1.set_yticks(range(len(df)))
+        ax1.set_yticklabels(df['genre'], fontsize=9)
+        ax1.invert_yaxis()
+        ax1.set_xlabel('Franchise Percentage (%)', fontsize=12, fontweight='bold')
+        ax1.set_title('Genres Most Likely to Have Franchises', fontsize=14, fontweight='bold')
+        ax1.grid(axis='x', alpha=0.3)
+
+        for i, (pct, count) in enumerate(zip(df['franchise_pct'], df['franchise_count'])):
+            ax1.text(pct, i, f' {pct:.1f}% ({count})', va='center', fontsize=8)
+
+        # Total franchise movies by genre
+        top_genres = df.nlargest(15, 'franchise_count')
+        colors = plt.cm.Oranges(np.linspace(0.4, 0.9, len(top_genres)))
+
+        ax2.barh(range(len(top_genres)), top_genres['franchise_count'], color=colors,
+                alpha=0.7, edgecolor='black')
+        ax2.set_yticks(range(len(top_genres)))
+        ax2.set_yticklabels(top_genres['genre'], fontsize=9)
+        ax2.invert_yaxis()
+        ax2.set_xlabel('Number of Franchise Movies', fontsize=12, fontweight='bold')
+        ax2.set_title('Genres with Most Franchise Movies', fontsize=14, fontweight='bold')
+        ax2.grid(axis='x', alpha=0.3)
+
+        plt.tight_layout()
+        plt.savefig(self.viz_dir / 'genre_franchise_patterns.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        print(f"✓ Saved: genre_franchise_patterns.png")
+
     def generate_remaining_visualizations(self):
-        """Generate remaining placeholder visualizations."""
+        """Generate all remaining visualizations with real data."""
         print("Generating remaining visualizations...")
 
-        # Create simple placeholders for remaining viz
-        remaining = [
-            ('director_consistency.png', 'Director Consistency Across Franchises'),
-            ('cast_consistency.png', 'Cast Retention Patterns'),
-            ('time_gaps_analysis.png', 'Time Between Sequels'),
-            ('franchise_completion_rate.png', 'Personal Franchise Completion'),
-            ('genre_franchise_patterns.png', 'Genre Franchise Patterns')
-        ]
-
-        for filename, title in remaining:
-            fig, ax = plt.subplots(figsize=(12, 8))
-            ax.text(0.5, 0.5, f'{title}\n\nInsufficient Data for Analysis',
-                   ha='center', va='center', fontsize=16, transform=ax.transAxes)
-            ax.axis('off')
-            plt.savefig(self.viz_dir / filename, dpi=300, bbox_inches='tight')
-            plt.close()
-            print(f"✓ Saved: {filename} (placeholder)")
+        self.visualize_time_gaps()
+        self.visualize_director_consistency()
+        self.visualize_cast_consistency()
+        self.visualize_franchise_completion()
+        self.visualize_genre_franchise_patterns()
 
     def generate_report(self):
         """Generate comprehensive text report."""
@@ -688,8 +1051,9 @@ class SequelFranchiseAnalyzer:
             f.write("FRANCHISE STATISTICS\n")
             f.write("="*80 + "\n\n")
 
-            f.write(f"Total Franchises Identified: {self.stats.get('total_franchises', 0)}\n")
-            f.write(f"Total Franchise Movies: {self.stats.get('total_franchise_movies', 0)}\n")
+            f.write(f"Total Franchises Identified (2+ films): {self.stats.get('total_franchises', 0)}\n")
+            f.write(f"Total Movies in Franchises (2+ films): {self.stats.get('total_franchise_movies', 0)}\n")
+            f.write(f"Total Movies in Collections (all): {self.stats.get('total_collection_movies', 0)}\n")
             f.write(f"Total Standalone Movies: {self.stats.get('total_standalone', 0)}\n\n")
 
             f.write(f"Average Franchise Size: {self.stats.get('avg_franchise_size', 0):.1f} films\n")
