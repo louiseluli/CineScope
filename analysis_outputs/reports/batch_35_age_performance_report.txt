@@ -1,0 +1,147 @@
+================================================================================
+CINESCOPE BATCH 35: AGE AT PERFORMANCE ANALYSIS
+================================================================================
+
+Generated: 2025-12-31 13:24:39
+
+================================================================================
+OVERALL STATISTICS
+================================================================================
+
+Total Performances Analyzed: 32,241
+Unique Actors: 18,907
+Unique Films: 2,239
+
+Average Age: 40.2 years
+Median Age: 38.0 years
+Youngest Performance: 5 years
+Oldest Performance: 99 years
+
+================================================================================
+YOUNGEST PERFORMANCES
+================================================================================
+
+ 1. Giorgio Cantarini                        - Age  5
+    'Life Is Beautiful'  (1997) - Rating: 8.6
+ 2. Sylvester Morand                         - Age  5
+    'Pride & Prejudice'  (2005) - Rating: 7.8
+ 3. Jeffrey Scaperrotta                      - Age  5
+    'You've Got Mail'  (1998) - Rating: 6.7
+ 4. Ty Simpkins                              - Age  5
+    'Little Children'  (2006) - Rating: 7.5
+ 5. Michelle Arthur                          - Age  5
+    'Fun with Dick and Jane'  (2005) - Rating: 6.2
+ 6. Judith Scott                             - Age  5
+    'Flightplan'  (2005) - Rating: 6.3
+ 7. Zachary David Cope                       - Age  5
+    'Stir of Echoes'  (1999) - Rating: 6.9
+ 8. Rory Culkin                              - Age  5
+    'Richie Rich'  (1994) - Rating: 5.5
+ 9. Brittany Ashton Holmes                   - Age  5
+    'The Little Rascals'  (1994) - Rating: 6.3
+10. Macsen Lintz                             - Age  5
+    'Hall Pass'  (2011) - Rating: 5.9
+11. Judith Scott                             - Age  5
+    'Guess Who'  (2005) - Rating: 5.9
+12. Paula Newsome                            - Age  5
+    'Guess Who'  (2005) - Rating: 5.9
+13. Donnie Dunagan                           - Age  5
+    'Son of Frankenstein'  (1939) - Rating: 7.1
+14. Iris Apatow                              - Age  5
+    'Knocked Up'  (2007) - Rating: 6.9
+15. Barry Downing                            - Age  5
+    'Libeled Lady'  (1936) - Rating: 7.8
+16. Suky Appleby                             - Age  5
+    'Bunny Lake Is Missing'  (1965) - Rating: 7.3
+17. Khamani Griffin                          - Age  5
+    'Daddy Day Care'  (2003) - Rating: 5.6
+18. Elle Fanning                             - Age  5
+    'Daddy Day Care'  (2003) - Rating: 5.6
+19. Felix Achille                            - Age  5
+    'Daddy Day Care'  (2003) - Rating: 5.6
+20. Shiloh Nelson                            - Age  5
+    'Annabelle'  (2014) - Rating: 5.5
+
+================================================================================
+OLDEST PERFORMANCES
+================================================================================
+
+ 1. John DiResta                             - Age 99
+    'Miss Congeniality' (2000) - Rating: 6.3
+ 2. Pierre Gérald                            - Age 99
+    'Russian Dolls' (2005) - Rating: 6.9
+ 3. Matt Carmody                             - Age 99
+    'Boys and Girls' (2000) - Rating: 5.4
+ 4. Theressa Railsback                       - Age 99
+    'The Significant Other' (2012) - Rating: 7.6
+ 5. Jonathan Abrahams                        - Age 99
+    'Whipped' (2000) - Rating: 4.5
+ 6. John Cassini                             - Age 99
+    'Get Carter' (2000) - Rating: 5.2
+ 7. Mae LaBorde                              - Age 98
+    'The Heartbreak Kid' (2007) - Rating: 5.9
+ 8. Aroon Seeboonruang                       - Age 98
+    'The Hangover Part II' (2011) - Rating: 6.5
+ 9. Harrison Ford                            - Age 98
+    'Blade Runner' (1982) - Rating: 8.1
+10. Fred Walton                              - Age 98
+    'The Comedy of Terrors' (1963) - Rating: 6.5
+11. John Cassini                             - Age 97
+    'Halloween H20: 20 Years Later' (1998) - Rating: 5.8
+12. Ted Sutton                               - Age 97
+    'Species II' (1998) - Rating: 4.5
+13. Dona Hardy                               - Age 97
+    'Timer' (2009) - Rating: 6.5
+14. Cicely Tyson                             - Age 96
+    'A Fall from Grace' (2020) - Rating: 5.9
+15. Roger Moore                              - Age 96
+    'The Quest' (1996) - Rating: 5.6
+16. Frank Baker                              - Age 95
+    'Hellraiser' (1987) - Rating: 6.9
+17. Barry Kivel                              - Age 95
+    'One Fine Day' (1996) - Rating: 6.5
+18. Ronald Reagan                            - Age 95
+    'An Inconvenient Truth' (2006) - Rating: 7.4
+19. Doug Bruckner                            - Age 94
+    'Casper' (1995) - Rating: 6.2
+20. Arthur Rosenberg                         - Age 94
+    'Cujo' (1983) - Rating: 6.1
+
+================================================================================
+MOST PROLIFIC ACTORS (In Collection)
+================================================================================
+
+ 1. Vincent Price                            -  31 performances (Age range: 29-79, Avg: 51.7)
+ 2. Arnold Schwarzenegger                    -  25 performances (Age range: 35-70, Avg: 48.7)
+ 3. Jean-Claude Van Damme                    -  24 performances (Age range: 28-52, Avg: 36.0)
+ 4. Sylvester Stallone                       -  24 performances (Age range: 30-72, Avg: 50.6)
+ 5. Cary Grant                               -  23 performances (Age range: 28-59, Avg: 40.3)
+ 6. Denzel Washington                        -  23 performances (Age range: 39-71, Avg: 53.1)
+ 7. Julianne Moore                           -  22 performances (Age range: 32-54, Avg: 43.5)
+ 8. Bruce Willis                             -  22 performances (Age range: 32-66, Avg: 49.8)
+ 9. Bess Flowers                             -  22 performances (Age range: 34-60, Avg: 47.5)
+10. Jason Statham                            -  21 performances (Age range: 33-58, Avg: 45.4)
+11. Keanu Reeves                             -  21 performances (Age range: 27-59, Avg: 43.3)
+12. Morgan Freeman                           -  21 performances (Age range: 43-85, Avg: 67.8)
+13. Robert De Niro                           -  19 performances (Age range: 33-76, Avg: 59.5)
+14. Humphrey Bogart                          -  19 performances (Age range: 33-56, Avg: 46.2)
+15. Sandra Bullock                           -  19 performances (Age range: 29-54, Avg: 38.4)
+16. Diane Keaton                             -  19 performances (Age range: 26-77, Avg: 57.5)
+17. Alfred Hitchcock                         -  18 performances (Age range: 35-73, Avg: 49.8)
+18. Joan Cusack                              -  18 performances (Age range: 22-50, Avg: 36.8)
+19. Ryan Reynolds                            -  17 performances (Age range: 26-46, Avg: 35.1)
+20. John Cusack                              -  17 performances (Age range: 18-48, Avg: 35.4)
+21. Will Smith                               -  17 performances (Age range: 19-48, Avg: 33.4)
+22. Rutger Hauer                             -  17 performances (Age range: 37-73, Avg: 47.5)
+23. Emma Thompson                            -  17 performances (Age range: 30-63, Avg: 43.9)
+24. Meryl Streep                             -  17 performances (Age range: 30-63, Avg: 49.0)
+25. Julia Roberts                            -  17 performances (Age range: 23-45, Avg: 35.2)
+26. Liam Neeson                              -  16 performances (Age range: 34-71, Avg: 58.3)
+27. Richard Dreyfuss                         -  16 performances (Age range: 20-72, Avg: 46.2)
+28. Mark Ruffalo                             -  16 performances (Age range: 29-55, Avg: 41.9)
+29. Jim Carrey                               -  16 performances (Age range: 23-46, Avg: 35.4)
+30. Cameron Diaz                             -  15 performances (Age range: 22-42, Avg: 33.3)
+
+================================================================================
+END OF REPORT
+================================================================================

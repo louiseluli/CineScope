@@ -1,0 +1,78 @@
+================================================================================
+CINESCOPE BATCH 37: PERSONAL VIEWING PATTERNS
+================================================================================
+
+Generated: 2025-12-31 13:25:05
+
+================================================================================
+OVERALL VIEWING STATISTICS
+================================================================================
+
+Total Films Watched: 2289
+Average Rating: 6.45
+Median Rating: 6.50
+Rating Std Dev: 0.99
+
+================================================================================
+YOUR TOP 30 RATED FILMS
+================================================================================
+
+ 1. The Shawshank Redemption                           - 9.3 (1994)
+ 2. 12 Angry Men                                       - 9.0 (1957)
+ 3. Death Note                                         - 8.9 (2006)
+ 4. Fight Club                                         - 8.8 (1999)
+ 5. Inception                                          - 8.8 (2010)
+ 6. Forrest Gump                                       - 8.8 (1994)
+ 7. Pride and Prejudice                                - 8.8 (1995)
+ 8. Six Feet Under                                     - 8.7 (2001)
+ 9. The Matrix                                         - 8.7 (1999)
+10. Interstellar                                       - 8.7 (2014)
+11. City of God                                        - 8.6 (2002)
+12. It's a Wonderful Life                              - 8.6 (1946)
+13. Saving Private Ryan                                - 8.6 (1998)
+14. Life Is Beautiful                                  - 8.6 (1997)
+15. The Silence of the Lambs                           - 8.6 (1991)
+16. Terminator 2: Judgment Day                         - 8.6 (1991)
+17. Se7en                                              - 8.6 (1995)
+18. Star Wars: Episode IV - A New Hope                 - 8.6 (1977)
+19. Human                                              - 8.6 (2015)
+20. Once Upon a Time in the West                       - 8.5 (1968)
+21. Casablanca                                         - 8.5 (1942)
+22. City Lights                                        - 8.5 (1931)
+23. Modern Times                                       - 8.5 (1936)
+24. Cinema Paradiso                                    - 8.5 (1988)
+25. The Lion King                                      - 8.5 (1994)
+26. Back to the Future                                 - 8.5 (1985)
+27. Léon: The Professional                             - 8.5 (1994)
+28. The Intouchables                                   - 8.5 (2011)
+29. Alien                                              - 8.5 (1979)
+30. Rear Window                                        - 8.5 (1954)
+
+================================================================================
+GENRE PREFERENCES
+================================================================================
+
+ 1. Drama                - 1147 films | Avg Rating: 6.73
+ 2. Comedy               - 1127 films | Avg Rating: 6.33
+ 3. Romance              -  966 films | Avg Rating: 6.44
+ 4. Thriller             -  707 films | Avg Rating: 6.34
+ 5. Action               -  391 films | Avg Rating: 6.29
+ 6. Horror               -  372 films | Avg Rating: 6.14
+ 7. Crime                -  359 films | Avg Rating: 6.62
+ 8. Mystery              -  324 films | Avg Rating: 6.47
+ 9. Sci-Fi               -  214 films | Avg Rating: 6.33
+10. Fantasy              -  212 films | Avg Rating: 6.28
+11. Adventure            -  185 films | Avg Rating: 6.44
+12. Family               -  158 films | Avg Rating: 6.06
+13. Music                -   46 films | Avg Rating: 6.60
+14. War                  -   39 films | Avg Rating: 7.23
+15. Biography            -   33 films | Avg Rating: 7.31
+16. Musical              -   29 films | Avg Rating: 7.05
+17. Film-Noir            -   27 films | Avg Rating: 7.52
+18. Sport                -   23 films | Avg Rating: 6.47
+19. History              -   14 films | Avg Rating: 7.09
+20. Western              -   13 films | Avg Rating: 7.02
+
+================================================================================
+END OF REPORT
+================================================================================

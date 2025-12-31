@@ -2,15 +2,16 @@
 CINESCOPE BATCH 19: SEQUELS, FRANCHISES & SERIES ANALYSIS
 ================================================================================
 
-Generated: 2025-12-30 13:58:18
+Generated: 2025-12-30 14:38:02
 
 ================================================================================
 FRANCHISE STATISTICS
 ================================================================================
 
-Total Franchises Identified: 105
-Total Franchise Movies: 255
-Total Standalone Movies: 2034
+Total Franchises Identified (2+ films): 105
+Total Movies in Franchises (2+ films): 255
+Total Movies in Collections (all): 485
+Total Standalone Movies: 1804
 
 Average Franchise Size: 2.4 films
 Largest Franchise: 8 films
@@ -19,12 +20,12 @@ Largest Franchise: 8 films
 STANDALONE VS FRANCHISE COMPARISON
 ================================================================================
 
-Average Standalone Rating: 7.75
-Average Franchise Rating: 10.00
-Difference: 2.25
-Statistical Significance (p-value): 0.6263
+Average Standalone Rating: 6.48
+Average Franchise Rating: 6.24
+Difference: -0.23
+Statistical Significance (p-value): 0.0004
 
-Result: No significant difference between standalone and franchise ratings
+Result: Standalone films are significantly HIGHER rated than franchise films
 
 ================================================================================
 END OF REPORT

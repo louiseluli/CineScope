@@ -1,0 +1,56 @@
+================================================================================
+CINESCOPE BATCH 30: FESTIVAL CIRCUIT ANALYSIS
+================================================================================
+
+Generated: 2025-12-31 11:58:16
+
+================================================================================
+OVERALL STATISTICS
+================================================================================
+
+Total Films: 2289
+
+Films with Festival Data: 35 (1.5%)
+
+================================================================================
+MAJOR FESTIVAL REPRESENTATION
+================================================================================
+
+Cannes: 13 (0.6%)
+Venice: 2 (0.1%)
+Berlin: 5 (0.2%)
+Sundance: 12 (0.5%)
+Toronto: 3 (0.1%)
+
+================================================================================
+FESTIVAL PARTICIPATION PATTERNS
+================================================================================
+
+1 festival(s): 35 (100.0%)
+
+Average festivals per film: 1.00
+Average prestige score: 8.94
+
+================================================================================
+HIGHEST PRESTIGE FESTIVAL FILMS
+================================================================================
+
+1. Life Is Beautiful (Score: 10) - Cannes - 8.6
+2. Cinema Paradiso (Score: 10) - Cannes - 8.5
+3. In the Mood for Love (Score: 10) - Cannes - 8.0
+4. Coming Home (Score: 10) - Cannes - 7.3
+5. Dancer in the Dark (Score: 10) - Cannes - 7.9
+6. Taste of Cherry (Score: 10) - Cannes - 7.7
+7. Taxi Driver (Score: 10) - Cannes - 8.2
+8. The Enigma of Kaspar Hauser (Score: 10) - Cannes - 7.7
+9. Wild at Heart (Score: 10) - Cannes - 7.2
+10. The Third Man (Score: 10) - Cannes - 8.1
+11. The Mission (Score: 10) - Cannes - 7.4
+12. Parasite (Score: 10) - Cannes - 8.5
+13. Oldboy (Score: 10) - Cannes - 8.3
+14. 12 Angry Men (Score: 9) - Berlin - 9.0
+15. In the Name of the Father (Score: 9) - Berlin - 8.1
+
+================================================================================
+END OF REPORT
+================================================================================

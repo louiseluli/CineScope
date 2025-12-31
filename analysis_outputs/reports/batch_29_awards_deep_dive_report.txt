@@ -1,0 +1,72 @@
+================================================================================
+CINESCOPE BATCH 29: AWARDS DEEP-DIVE
+================================================================================
+
+Generated: 2025-12-31 11:56:54
+
+================================================================================
+OVERALL STATISTICS
+================================================================================
+
+Total Films: 2289
+
+Films with Award Data: 1744 (76.2%)
+
+================================================================================
+OSCAR AWARDS
+================================================================================
+
+Oscar Winners: 162 (7.1%)
+Oscar Nominees (no wins): 226 (9.9%)
+Total Oscars Won: 384
+Total Oscar Nominations: 480
+
+Top Oscar-Winning Films:
+1. Ben-Hur - 11 Oscars (0 nominations)
+2. Titanic - 11 Oscars (0 nominations)
+3. The English Patient - 9 Oscars (0 nominations)
+4. Gone with the Wind - 8 Oscars (0 nominations)
+5. My Fair Lady - 8 Oscars (0 nominations)
+6. Doctor Zhivago - 7 Oscars (0 nominations)
+7. Out of Africa - 7 Oscars (0 nominations)
+8. Star Wars: Episode IV - A New Hope - 7 Oscars (0 nominations)
+9. The Sting - 7 Oscars (0 nominations)
+10. Forrest Gump - 6 Oscars (0 nominations)
+
+================================================================================
+OTHER MAJOR AWARDS
+================================================================================
+
+BAFTA: 40 (1.7%)
+Golden Globe: 28 (1.2%)
+Festival Awards: 35 (1.5%)
+SAG Awards: 7 (0.3%)
+
+================================================================================
+AWARD DIVERSITY
+================================================================================
+
+0 award types: 2080 (90.9%)
+1 award types: 166 (7.3%)
+2 award types: 28 (1.2%)
+3 award types: 11 (0.5%)
+4 award types: 3 (0.1%)
+5 award types: 1 (0.0%)
+
+Films with 3+ Award Types: 15
+
+Top Award Sweep Films:
+1. Parasite - 5 types - 8.5
+2. The Reader - 4 types - 7.6
+3. Lost in Translation - 4 types - 7.7
+4. Silver Linings Playbook - 4 types - 7.7
+5. Unforgiven - 3 types - 8.2
+6. Platoon - 3 types - 8.1
+7. Brokeback Mountain - 3 types - 7.7
+8. Titanic - 3 types - 7.9
+9. E.T. the Extra-Terrestrial - 3 types - 7.9
+10. The Silence of the Lambs - 3 types - 8.6
+
+================================================================================
+END OF REPORT
+================================================================================

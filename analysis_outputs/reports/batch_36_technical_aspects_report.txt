@@ -1,0 +1,144 @@
+================================================================================
+CINESCOPE BATCH 36: TECHNICAL ASPECTS ANALYSIS
+================================================================================
+
+Generated: 2025-12-31 13:24:51
+
+================================================================================
+TECHNICAL EMPHASIS OVERVIEW
+================================================================================
+
+Cinematography      : Avg 0.00 | Max 0.0 | 0 films (0.0%)
+Editing             : Avg 0.00 | Max 0.0 | 0 films (0.0%)
+Sound               : Avg 0.00 | Max 0.0 | 0 films (0.0%)
+VFX                 : Avg 0.00 | Max 0.0 | 0 films (0.0%)
+Production          : Avg 0.00 | Max 0.0 | 0 films (0.0%)
+
+================================================================================
+TOP CINEMATOGRAPHY FILMS
+================================================================================
+
+ 1. The Shawshank Redemption                           - Score: 0.00 (Rating: 9.3)
+ 2. 12 Angry Men                                       - Score: 0.00 (Rating: 9.0)
+ 3. Fight Club                                         - Score: 0.00 (Rating: 8.8)
+ 4. Inception                                          - Score: 0.00 (Rating: 8.8)
+ 5. City of God                                        - Score: 0.00 (Rating: 8.6)
+ 6. Forrest Gump                                       - Score: 0.00 (Rating: 8.8)
+ 7. Once Upon a Time in the West                       - Score: 0.00 (Rating: 8.5)
+ 8. Casablanca                                         - Score: 0.00 (Rating: 8.5)
+ 9. It's a Wonderful Life                              - Score: 0.00 (Rating: 8.6)
+10. Sunset Boulevard                                   - Score: 0.00 (Rating: 8.4)
+11. City Lights                                        - Score: 0.00 (Rating: 8.5)
+12. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb - Score: 0.00 (Rating: 8.3)
+13. Saving Private Ryan                                - Score: 0.00 (Rating: 8.6)
+14. Modern Times                                       - Score: 0.00 (Rating: 8.5)
+15. Double Indemnity                                   - Score: 0.00 (Rating: 8.3)
+
+================================================================================
+TOP EDITING FILMS
+================================================================================
+
+ 1. The Shawshank Redemption                           - Score: 0.00 (Rating: 9.3)
+ 2. 12 Angry Men                                       - Score: 0.00 (Rating: 9.0)
+ 3. Fight Club                                         - Score: 0.00 (Rating: 8.8)
+ 4. Inception                                          - Score: 0.00 (Rating: 8.8)
+ 5. City of God                                        - Score: 0.00 (Rating: 8.6)
+ 6. Forrest Gump                                       - Score: 0.00 (Rating: 8.8)
+ 7. Once Upon a Time in the West                       - Score: 0.00 (Rating: 8.5)
+ 8. Casablanca                                         - Score: 0.00 (Rating: 8.5)
+ 9. It's a Wonderful Life                              - Score: 0.00 (Rating: 8.6)
+10. Sunset Boulevard                                   - Score: 0.00 (Rating: 8.4)
+11. City Lights                                        - Score: 0.00 (Rating: 8.5)
+12. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb - Score: 0.00 (Rating: 8.3)
+13. Saving Private Ryan                                - Score: 0.00 (Rating: 8.6)
+14. Modern Times                                       - Score: 0.00 (Rating: 8.5)
+15. Double Indemnity                                   - Score: 0.00 (Rating: 8.3)
+
+================================================================================
+TOP SOUND FILMS
+================================================================================
+
+ 1. The Shawshank Redemption                           - Score: 0.00 (Rating: 9.3)
+ 2. 12 Angry Men                                       - Score: 0.00 (Rating: 9.0)
+ 3. Fight Club                                         - Score: 0.00 (Rating: 8.8)
+ 4. Inception                                          - Score: 0.00 (Rating: 8.8)
+ 5. City of God                                        - Score: 0.00 (Rating: 8.6)
+ 6. Forrest Gump                                       - Score: 0.00 (Rating: 8.8)
+ 7. Once Upon a Time in the West                       - Score: 0.00 (Rating: 8.5)
+ 8. Casablanca                                         - Score: 0.00 (Rating: 8.5)
+ 9. It's a Wonderful Life                              - Score: 0.00 (Rating: 8.6)
+10. Sunset Boulevard                                   - Score: 0.00 (Rating: 8.4)
+11. City Lights                                        - Score: 0.00 (Rating: 8.5)
+12. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb - Score: 0.00 (Rating: 8.3)
+13. Saving Private Ryan                                - Score: 0.00 (Rating: 8.6)
+14. Modern Times                                       - Score: 0.00 (Rating: 8.5)
+15. Double Indemnity                                   - Score: 0.00 (Rating: 8.3)
+
+================================================================================
+TOP VFX FILMS
+================================================================================
+
+ 1. The Shawshank Redemption                           - Score: 0.00 (Rating: 9.3)
+ 2. 12 Angry Men                                       - Score: 0.00 (Rating: 9.0)
+ 3. Fight Club                                         - Score: 0.00 (Rating: 8.8)
+ 4. Inception                                          - Score: 0.00 (Rating: 8.8)
+ 5. City of God                                        - Score: 0.00 (Rating: 8.6)
+ 6. Forrest Gump                                       - Score: 0.00 (Rating: 8.8)
+ 7. Once Upon a Time in the West                       - Score: 0.00 (Rating: 8.5)
+ 8. Casablanca                                         - Score: 0.00 (Rating: 8.5)
+ 9. It's a Wonderful Life                              - Score: 0.00 (Rating: 8.6)
+10. Sunset Boulevard                                   - Score: 0.00 (Rating: 8.4)
+11. City Lights                                        - Score: 0.00 (Rating: 8.5)
+12. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb - Score: 0.00 (Rating: 8.3)
+13. Saving Private Ryan                                - Score: 0.00 (Rating: 8.6)
+14. Modern Times                                       - Score: 0.00 (Rating: 8.5)
+15. Double Indemnity                                   - Score: 0.00 (Rating: 8.3)
+
+================================================================================
+TOP PRODUCTION FILMS
+================================================================================
+
+ 1. The Shawshank Redemption                           - Score: 0.00 (Rating: 9.3)
+ 2. 12 Angry Men                                       - Score: 0.00 (Rating: 9.0)
+ 3. Fight Club                                         - Score: 0.00 (Rating: 8.8)
+ 4. Inception                                          - Score: 0.00 (Rating: 8.8)
+ 5. City of God                                        - Score: 0.00 (Rating: 8.6)
+ 6. Forrest Gump                                       - Score: 0.00 (Rating: 8.8)
+ 7. Once Upon a Time in the West                       - Score: 0.00 (Rating: 8.5)
+ 8. Casablanca                                         - Score: 0.00 (Rating: 8.5)
+ 9. It's a Wonderful Life                              - Score: 0.00 (Rating: 8.6)
+10. Sunset Boulevard                                   - Score: 0.00 (Rating: 8.4)
+11. City Lights                                        - Score: 0.00 (Rating: 8.5)
+12. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb - Score: 0.00 (Rating: 8.3)
+13. Saving Private Ryan                                - Score: 0.00 (Rating: 8.6)
+14. Modern Times                                       - Score: 0.00 (Rating: 8.5)
+15. Double Indemnity                                   - Score: 0.00 (Rating: 8.3)
+
+================================================================================
+OVERALL TECHNICAL EXCELLENCE
+================================================================================
+
+ 1. The Shawshank Redemption                           - Total: 0.00 (Rating: 9.3)
+ 2. 12 Angry Men                                       - Total: 0.00 (Rating: 9.0)
+ 3. Fight Club                                         - Total: 0.00 (Rating: 8.8)
+ 4. Inception                                          - Total: 0.00 (Rating: 8.8)
+ 5. City of God                                        - Total: 0.00 (Rating: 8.6)
+ 6. Forrest Gump                                       - Total: 0.00 (Rating: 8.8)
+ 7. Once Upon a Time in the West                       - Total: 0.00 (Rating: 8.5)
+ 8. Casablanca                                         - Total: 0.00 (Rating: 8.5)
+ 9. It's a Wonderful Life                              - Total: 0.00 (Rating: 8.6)
+10. Sunset Boulevard                                   - Total: 0.00 (Rating: 8.4)
+11. City Lights                                        - Total: 0.00 (Rating: 8.5)
+12. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb - Total: 0.00 (Rating: 8.3)
+13. Saving Private Ryan                                - Total: 0.00 (Rating: 8.6)
+14. Modern Times                                       - Total: 0.00 (Rating: 8.5)
+15. Double Indemnity                                   - Total: 0.00 (Rating: 8.3)
+16. Life Is Beautiful                                  - Total: 0.00 (Rating: 8.6)
+17. Cinema Paradiso                                    - Total: 0.00 (Rating: 8.5)
+18. The Treasure of the Sierra Madre                   - Total: 0.00 (Rating: 8.2)
+19. The Avengers                                       - Total: 0.00 (Rating: 8.0)
+20. Reservoir Dogs                                     - Total: 0.00 (Rating: 8.3)
+
+================================================================================
+END OF REPORT
+================================================================================

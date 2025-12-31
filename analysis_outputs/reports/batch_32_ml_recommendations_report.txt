@@ -1,0 +1,160 @@
+================================================================================
+CINESCOPE BATCH 32: MACHINE LEARNING RECOMMENDATIONS
+================================================================================
+
+Generated: 2025-12-31 13:09:16
+
+================================================================================
+DATASET STATISTICS
+================================================================================
+
+Watched Films: 2289
+Unwatched Films: 1617
+Total Catalog: 3906
+TF-IDF Features: 500
+
+Watched Avg Rating: 6.45
+Unwatched Avg Rating: 5.91
+
+================================================================================
+SAMPLE RECOMMENDATIONS (UNWATCHED FILMS ONLY)
+================================================================================
+
+
+SOURCE FILM: The Shawshank Redemption (9.3/10)
+Genre: Drama
+Director: Frank Darabont
+--------------------------------------------------------------------------------
+
+CONTENT-BASED RECOMMENDATIONS:
+  1. Possessed (Sim: 0.401, Rating: 6.9)
+  2. Romance (Sim: 0.401, Rating: 5.7)
+  3. The Lady (Sim: 0.359, Rating: 6.6)
+  4. Parents (Sim: 0.335, Rating: 6.1)
+  5. Dance Hall (Sim: 0.322, Rating: 5.1)
+
+RATING + GENRE RECOMMENDATIONS:
+  1. Robert und Elisabeth (Score: 0.940, Rating: 8.7)
+  2. The Devil (Score: 0.910, Rating: 8.4)
+  3. The Given Word (Score: 0.900, Rating: 8.3)
+  4. The Hunt (Score: 0.900, Rating: 8.3)
+  5. Legacy (Score: 0.900, Rating: 8.3)
+
+
+SOURCE FILM: 12 Angry Men (9.0/10)
+Genre: Crime, Drama
+Director: Sidney Lumet
+--------------------------------------------------------------------------------
+
+CONTENT-BASED RECOMMENDATIONS:
+  1. The Lone Wolf Meets a Lady (Sim: 0.503, Rating: 6.4)
+  2. The Lone Wolf Keeps a Date (Sim: 0.503, Rating: 6.1)
+  3. Hit! (Sim: 0.480, Rating: 6.1)
+  4. Night of the Eagle (Sim: 0.435, Rating: 6.9)
+  5. Ladies Love Brutes (Sim: 0.422, Rating: 5.8)
+
+RATING + GENRE RECOMMENDATIONS:
+  1. A Short Film About Killing (Score: 0.900, Rating: 8.0)
+  2. Five Star Final (Score: 0.830, Rating: 7.3)
+  3. República dos Assassinos (Score: 0.800, Rating: 7.0)
+  4. A Grande Cidade ou As Aventuras e Desventuras de Luzia e Seus 3 Amigos Chegados de Longe (Score: 0.800, Rating: 7.0)
+  5. The Hustlers (Score: 0.800, Rating: 7.0)
+
+
+SOURCE FILM: Death Note (8.9/10)
+Genre: Animation, Crime, Drama, Fantasy, Mystery, Thriller
+Director: nan
+--------------------------------------------------------------------------------
+
+CONTENT-BASED RECOMMENDATIONS:
+  1. The Dynamite Brothers (Sim: 0.729, Rating: 6.5)
+  2. Marquis (Sim: 0.700, Rating: 6.7)
+  3. The Killer with a Thousand Eyes (Sim: 0.531, Rating: 5.5)
+  4. M (Sim: 0.531, Rating: 8.3)
+  5. Murder by Music (Sim: 0.531, Rating: 5.4)
+
+RATING + GENRE RECOMMENDATIONS:
+  1. A Dog's Will (Score: 0.613, Rating: 8.6)
+  2. M (Score: 0.583, Rating: 8.3)
+  3. Elevator to the Gallows (Score: 0.543, Rating: 7.9)
+  4. Homewrecker (Score: 0.541, Rating: 9.2)
+  5. Deep Red (Score: 0.503, Rating: 7.5)
+
+
+SOURCE FILM: Fight Club (8.8/10)
+Genre: Crime, Drama, Thriller
+Director: David Fincher
+--------------------------------------------------------------------------------
+
+CONTENT-BASED RECOMMENDATIONS:
+  1. Afraid to Talk (Sim: 0.469, Rating: 7.0)
+  2. Rituals (Sim: 0.434, Rating: 6.2)
+  3. The Naughty Flirt (Sim: 0.409, Rating: 5.7)
+  4. Honor Thy Mother (Sim: 0.396, Rating: 3.5)
+  5. Cafe Society (Sim: 0.385, Rating: 6.3)
+
+RATING + GENRE RECOMMENDATIONS:
+  1. Elevator to the Gallows (Score: 0.910, Rating: 7.9)
+  2. Pájaros de ciudad (Score: 0.800, Rating: 6.8)
+  3. Solo (Score: 0.760, Rating: 6.4)
+  4. A Short Film About Killing (Score: 0.753, Rating: 8.0)
+  5. I Mobster (Score: 0.740, Rating: 6.2)
+
+
+SOURCE FILM: Inception (8.8/10)
+Genre: Action, Adventure, Sci-Fi, Thriller
+Director: Christopher Nolan
+--------------------------------------------------------------------------------
+
+CONTENT-BASED RECOMMENDATIONS:
+  1. War of the Colossal Beast (Sim: 0.488, Rating: 3.9)
+  2. Invasion of Astro-Monster (Sim: 0.483, Rating: 6.2)
+  3. The War of the Worlds (Sim: 0.443, Rating: 7.0)
+  4. Escape from the Bronx (Sim: 0.443, Rating: 4.7)
+  5. The Hitter (Sim: 0.441, Rating: 5.5)
+
+RATING + GENRE RECOMMENDATIONS:
+  1. The War of the Worlds (Score: 0.695, Rating: 7.0)
+  2. Aliens (Score: 0.660, Rating: 8.4)
+  3. Invasion of Astro-Monster (Score: 0.615, Rating: 6.2)
+  4. Fair Game (Score: 0.585, Rating: 5.9)
+  5. The Tale of Zatoichi (Score: 0.580, Rating: 7.6)
+
+================================================================================
+TOP TF-IDF FEATURES
+================================================================================
+
+ 1. comedy                         - 0.076109
+ 2. romance                        - 0.072655
+ 3. drama                          - 0.069878
+ 4. thriller                       - 0.055915
+ 5. action                         - 0.034877
+ 6. horror                         - 0.033297
+ 7. crime                          - 0.032382
+ 8. mystery                        - 0.032052
+ 9. john                           - 0.029242
+10. michael                        - 0.025113
+11. fantasy                        - 0.023820
+12. fi                             - 0.022836
+13. sci                            - 0.022836
+14. david                          - 0.022756
+15. robert                         - 0.021648
+16. james                          - 0.021258
+17. family                         - 0.020055
+18. adventure                      - 0.019966
+19. peter                          - 0.016941
+20. paul                           - 0.015802
+21. richard                        - 0.014237
+22. lee                            - 0.014213
+23. jason                          - 0.013951
+24. tom                            - 0.013388
+25. william                        - 0.013217
+26. chris                          - 0.012804
+27. mark                           - 0.012408
+28. jennifer                       - 0.012338
+29. scott                          - 0.011775
+30. kevin                          - 0.011065
+
+================================================================================
+END OF REPORT
+================================================================================

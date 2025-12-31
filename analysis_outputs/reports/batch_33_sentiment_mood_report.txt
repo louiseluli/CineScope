@@ -1,0 +1,93 @@
+================================================================================
+CINESCOPE BATCH 33: SENTIMENT & MOOD CLUSTERING
+================================================================================
+
+Generated: 2025-12-31 13:06:59
+
+================================================================================
+OVERALL MOOD STATISTICS
+================================================================================
+
+Total Films: 2289
+
+DOMINANT MOOD DISTRIBUTION:
+--------------------------------------------------------------------------------
+Humorous            :  881 films ( 38.5%)
+Romantic            :  629 films ( 27.5%)
+Neutral             :  585 films ( 25.6%)
+Dark                :   79 films (  3.5%)
+Suspenseful         :   44 films (  1.9%)
+Tragic              :   37 films (  1.6%)
+Action-Packed       :   28 films (  1.2%)
+Uplifting           :    5 films (  0.2%)
+Contemplative       :    1 films (  0.0%)
+
+================================================================================
+EMOTIONAL COMPLEXITY
+================================================================================
+
+Average mood categories per film: 1.07
+Median: 1
+Max: 4
+
+MOST EMOTIONALLY COMPLEX FILMS:
+--------------------------------------------------------------------------------
+ 1. Prime                                              - 4 moods (Rating: 6.2)
+ 2. The 40-Year-Old Virgin                             - 4 moods (Rating: 7.1)
+ 3. Message in a Bottle                                - 4 moods (Rating: 6.3)
+ 4. Manhattan                                          - 4 moods (Rating: 7.8)
+ 5. Breakout                                           - 4 moods (Rating: 4.2)
+ 6. Sierra Burgess Is a Loser                          - 4 moods (Rating: 5.7)
+ 7. Death Wish                                         - 4 moods (Rating: 6.3)
+ 8. Inception                                          - 3 moods (Rating: 8.8)
+ 9. Sunset Boulevard                                   - 3 moods (Rating: 8.4)
+10. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb - 3 moods (Rating: 8.3)
+
+================================================================================
+TOP-RATED FILMS BY MOOD
+================================================================================
+
+
+HUMOROUS:
+--------------------------------------------------------------------------------
+1. The Shawshank Redemption                           - 9.3/10
+2. Death Note                                         - 8.9/10
+3. Six Feet Under                                     - 8.7/10
+4. City of God                                        - 8.6/10
+5. Saving Private Ryan                                - 8.6/10
+
+ROMANTIC:
+--------------------------------------------------------------------------------
+1. Fight Club                                         - 8.8/10
+2. Inception                                          - 8.8/10
+3. Forrest Gump                                       - 8.8/10
+4. Pride and Prejudice                                - 8.8/10
+5. It's a Wonderful Life                              - 8.6/10
+
+DARK:
+--------------------------------------------------------------------------------
+1. Se7en                                              - 8.6/10
+2. The Dark Knight Rises                              - 8.4/10
+3. Eternal Sunshine of the Spotless Mind              - 8.3/10
+4. Shutter Island                                     - 8.2/10
+5. Trainspotting                                      - 8.1/10
+
+SUSPENSEFUL:
+--------------------------------------------------------------------------------
+1. The Thing                                          - 8.2/10
+2. Autumn Sonata                                      - 8.1/10
+3. Searching                                          - 7.6/10
+4. Collateral                                         - 7.5/10
+5. Limitless                                          - 7.4/10
+
+TRAGIC:
+--------------------------------------------------------------------------------
+1. La Strada                                          - 8.0/10
+2. The Day the Earth Stood Still                      - 7.7/10
+3. House of Sand and Fog                              - 7.5/10
+4. Riders of Justice                                  - 7.5/10
+5. Baby Driver                                        - 7.5/10
+
+================================================================================
+END OF REPORT
+================================================================================

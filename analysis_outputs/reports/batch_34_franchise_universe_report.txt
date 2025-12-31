@@ -1,0 +1,72 @@
+================================================================================
+CINESCOPE BATCH 34: FRANCHISE & UNIVERSE ANALYSIS
+================================================================================
+
+Generated: 2025-12-31 12:50:43
+
+================================================================================
+OVERALL STATISTICS
+================================================================================
+
+Total Films: 2289
+Standalone Films: 2192
+Sequels: 76
+Universe Films: 21
+
+================================================================================
+CINEMATIC UNIVERSES
+================================================================================
+
+Marvel                   :   7 films (Avg: 6.96)
+Fast & Furious           :   5 films (Avg: 6.98)
+Terminator               :   3 films (Avg: 7.67)
+DC                       :   2 films (Avg: 7.70)
+Jurassic                 :   1 films (Avg: 6.60)
+Alien                    :   1 films (Avg: 8.50)
+Star Wars                :   1 films (Avg: 8.60)
+Rocky                    :   1 films (Avg: 8.10)
+
+================================================================================
+LARGEST FRANCHISES
+================================================================================
+
+Puppet Master                                     : 3 films (Avg: 5.10)
+Scary Movie                                       : 3 films (Avg: 5.37)
+Scream                                            : 2 films (Avg: 6.00)
+Death Wish                                        : 2 films (Avg: 5.90)
+The Twilight Saga: Breaking Dawn - Part           : 2 films (Avg: 5.30)
+RoboCop                                           : 2 films (Avg: 5.00)
+John Wick: Chapter                                : 2 films (Avg: 7.50)
+The Equalizer                                     : 2 films (Avg: 6.75)
+Kill Bill: Vol.                                   : 2 films (Avg: 8.10)
+Final Destination                                 : 2 films (Avg: 6.05)
+Child's Play                                      : 2 films (Avg: 5.60)
+The Expendables                                   : 2 films (Avg: 6.35)
+Deadpool                                          : 1 films (Avg: 7.60)
+Sinister                                          : 1 films (Avg: 5.30)
+Dr. Dolittle                                      : 1 films (Avg: 4.80)
+
+================================================================================
+SEQUEL QUALITY ANALYSIS
+================================================================================
+
+Average Standalone Rating: 6.47
+Average Sequel Rating: 5.95
+Difference: +0.52
+
+HIGHEST-RATED SEQUELS:
+--------------------------------------------------------------------------------
+ 1. Kill Bill: Vol. 1                                  - 8.2/10
+ 2. Kill Bill: Vol. 2                                  - 8.0/10
+ 3. Back to the Future Part II                         - 7.8/10
+ 4. Deadpool 2                                         - 7.6/10
+ 5. John Wick: Chapter 4                               - 7.6/10
+ 6. Henry V                                            - 7.5/10
+ 7. The King and I                                     - 7.4/10
+ 8. John Wick: Chapter 2                               - 7.4/10
+ 9. John Wick: Chapter 3 - Parabellum                  - 7.4/10
+10. The Conjuring 2                                    - 7.3/10
+
+================================================================================
+END OF REPORT
+================================================================================
