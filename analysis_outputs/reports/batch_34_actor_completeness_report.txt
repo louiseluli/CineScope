@@ -1,0 +1,187 @@
+================================================================================
+ACTOR FILMOGRAPHY COMPLETENESS ANALYSIS
+(Your Watched Movies vs Full IMDB Filmographies)
+================================================================================
+
+OVERALL STATISTICS
+--------------------------------------------------------------------------------
+Total Actors Analyzed: 337
+Average Completeness: 24.3%
+Median Completeness: 19.0%
+
+100% Complete: 2
+70-99% Complete: 10
+
+
+COMPLETED ACTORS (100%)
+--------------------------------------------------------------------------------
+1. Siobhan Fallon Hogan
+   Quality Films Watched: 9
+   Films: Forrest Gump, Men in Black, Only You, New in Town, Dancer in the Dark
+
+2. Holt McCallany
+   Quality Films Watched: 6
+   Films: Fight Club, The Perfect Guy, Run All Night, Blackhat, Bullet to the Head
+
+
+QUICK WINS (1-3 Films from Complete)
+--------------------------------------------------------------------------------
+1. Mila Kunis - 88.9%
+   Watched: 8/9
+   Missing 3 films:
+   - Family Guy 100th Episode Special (2007) - 7.3
+   - Four Good Days (2020) - 6.6
+   - Blood Ties (2013) - 6.5
+
+2. Audrey Hepburn - 87.5%
+   Watched: 14/16
+   Missing 3 films:
+   - Two for the Road (1967) - 7.4
+   - War and Peace (1956) - 6.7
+   - The Unforgiven (1960) - 6.6
+
+3. Corey Feldman - 83.3%
+   Watched: 5/6
+   Missing 2 films:
+   - The 'Burbs (1989) - 6.8
+   - Teenage Mutant Ninja Turtles (1990) - 6.8
+
+4. Henry Bergman - 83.3%
+   Watched: 5/6
+   Missing 1 film:
+   - A Woman of Paris: A Drama of Fate (1923) - 6.9
+
+5. Robert Guillaume - 80.0%
+   Watched: 4/5
+   Missing 3 films:
+   - Big Fish (2003) - 8.0
+   - The Secrets of Jonathan Sperry (2008) - 6.9
+   - Seems Like Old Times (1980) - 6.7
+
+6. Marshall Bell - 71.4%
+   Watched: 5/7
+   Missing 3 films:
+   - Rescue Dawn (2006) - 7.3
+   - Beneath Clouds (2002) - 7.0
+   - Puncture (2011) - 6.8
+
+7. Adam Goldberg - 71.4%
+   Watched: 5/7
+   Missing 2 films:
+   - A Beautiful Mind (2001) - 8.2
+   - The Salton Sea (2002) - 7.0
+
+8. Edward Burns - 60.0%
+   Watched: 3/5
+   Missing 3 films:
+   - The Brothers McMullen (1995) - 6.6
+   - The Brothers McMullen (1995) - 6.6
+   - Confidence (2003) - 6.6
+
+9. Edith Evanson - 60.0%
+   Watched: 3/5
+   Missing 3 films:
+   - The Damned Don't Cry (1950) - 7.1
+   - Marnie (1964) - 7.1
+   - Toby Tyler or Ten Weeks with a Circus (1960) - 6.8
+
+10. Peter Bull - 40.0%
+   Watched: 2/5
+   Missing 3 films:
+   - Sabotage (1936) - 7.0
+   - The Captain's Paradise (1953) - 6.8
+   - The Scapegoat (1959) - 6.8
+
+
+TOP MISSING FILMS (Highest Rated)
+--------------------------------------------------------------------------------
+1. The Godfather (1972) - 9.2
+   Actor: Sterling Hayden
+
+2. The Dark Knight (2008) - 9.0
+   Actor: Morgan Freeman
+
+3. The Dark Knight (2008) - 9.0
+   Actor: Maggie Gyllenhaal
+
+4. The Godfather Part II (1974) - 9.0
+   Actor: Robert De Niro
+
+5. The Dark Knight (2008) - 9.0
+   Actor: Cillian Murphy
+
+6. Pulp Fiction (1994) - 8.9
+   Actor: Tim Roth
+
+7. The Good, the Bad and the Ugly (1966) - 8.8
+   Actor: Clint Eastwood
+
+8. Kill Bill: The Whole Bloody Affair (2006) - 8.7
+   Actor: Michael Madsen
+
+9. Goodfellas (1990) - 8.7
+   Actor: Robert De Niro
+
+10. Goodfellas (1990) - 8.7
+   Actor: Joe Pesci
+
+11. The Green Mile (1999) - 8.6
+   Actor: Barry Pepper
+
+12. The Green Mile (1999) - 8.6
+   Actor: Tom Hanks
+
+13. A Dog's Will (2000) - 8.6
+   Actor: Matheus Nachtergaele
+
+14. Lewis & Clark: The Journey of the Corps of Discovery (1997) - 8.5
+   Actor: Matthew Broderick
+
+15. National Theatre Live: Frankenstein (2011) - 8.5
+   Actor: Jonny Lee Miller
+
+16. National Theatre Live: Frankenstein (2011) - 8.5
+   Actor: Jonny Lee Miller
+
+17. Dune: Part Two (2024) - 8.5
+   Actor: Josh Brolin
+
+18. The Prestige (2006) - 8.5
+   Actor: Scarlett Johansson
+
+19. 9/11 (2002) - 8.5
+   Actor: Steve Buscemi
+
+20. Dune: Part Two (2024) - 8.5
+   Actor: Javier Bardem
+
+21. The Departed (2006) - 8.5
+   Actor: Leonardo DiCaprio
+
+22. Django Unchained (2012) - 8.5
+   Actor: Leonardo DiCaprio
+
+23. The Departed (2006) - 8.5
+   Actor: Matt Damon
+
+24. American History X (1998) - 8.5
+   Actor: Edward Norton
+
+25. Gladiator (2000) - 8.5
+   Actor: Richard Harris
+
+26. Lewis & Clark: The Journey of the Corps of Discovery (1997) - 8.5
+   Actor: Hal Holbrook
+
+27. Gladiator (2000) - 8.5
+   Actor: Derek Jacobi
+
+28. Avengers: Infinity War (2018) - 8.4
+   Actor: Mark Ruffalo
+
+29. Avengers: Infinity War (2018) - 8.4
+   Actor: Mark Ruffalo
+
+30. Avengers: Endgame (2019) - 8.4
+   Actor: Mark Ruffalo
+

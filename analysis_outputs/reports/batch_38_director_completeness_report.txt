@@ -1,0 +1,422 @@
+================================================================================
+DIRECTOR FILMOGRAPHY COMPLETENESS ANALYSIS
+================================================================================
+
+OVERALL STATISTICS
+--------------------------------------------------------------------------------
+Total Directors Analyzed: 116
+Average Completeness: 97.3%
+Median Completeness: 100.0%
+Completed Directors (100%): 50
+Nearly Complete (70-99%): 7
+In Progress (30-69%): 25
+Just Started (<30%): 3
+
+COMPLETED DIRECTORS (100%)
+--------------------------------------------------------------------------------
+1. George Cukor
+   Notable Films Completed: 10
+   Average Rating: 7.53
+   Genres: Adventure, Comedy, Crime, Drama, Family
+
+2. Billy Wilder
+   Notable Films Completed: 9
+   Average Rating: 7.88
+   Genres: Comedy, Crime, Drama, Film-Noir, Music
+
+3. Robert Zemeckis
+   Notable Films Completed: 8
+   Average Rating: 7.62
+   Genres: Adventure, Comedy, Drama, Fantasy, Horror
+
+4. Howard Hawks
+   Notable Films Completed: 7
+   Average Rating: 7.69
+   Genres: Adventure, Comedy, Crime, Drama, Film-Noir
+
+5. Charles Chaplin
+   Notable Films Completed: 7
+   Average Rating: 8.26
+   Genres: Adventure, Comedy, Drama, Family, Music
+
+6. Frank Capra
+   Notable Films Completed: 7
+   Average Rating: 7.66
+   Genres: Comedy, Crime, Drama, Family, Fantasy
+
+7. Nancy Meyers
+   Notable Films Completed: 6
+   Average Rating: 6.77
+   Genres: Adventure, Comedy, Drama, Family, Fantasy
+
+8. David Fincher
+   Notable Films Completed: 6
+   Average Rating: 7.98
+   Genres: Crime, Drama, Fantasy, Mystery, Romance
+
+9. Richard Linklater
+   Notable Films Completed: 6
+   Average Rating: 7.65
+   Genres: Animation, Comedy, Crime, Drama, Music
+
+10. Tim Burton
+   Notable Films Completed: 6
+   Average Rating: 7.35
+   Genres: Action, Adventure, Biography, Comedy, Crime
+
+11. Lasse Hallström
+   Notable Films Completed: 5
+   Average Rating: 7.08
+   Genres: Comedy, Drama, Romance
+
+12. Christopher Nolan
+   Notable Films Completed: 5
+   Average Rating: 8.32
+   Genres: Action, Adventure, Crime, Drama, Mystery
+
+13. Joseph L. Mankiewicz
+   Notable Films Completed: 5
+   Average Rating: 7.62
+   Genres: Comedy, Crime, Drama, Film-Noir, Mystery
+
+14. Joel Schumacher
+   Notable Films Completed: 5
+   Average Rating: 7.32
+   Genres: Comedy, Crime, Drama, Horror, Musical
+
+15. Chad Stahelski
+   Notable Films Completed: 4
+   Average Rating: 7.47
+   Genres: Action, Crime, Drama, Thriller
+
+16. Paul Feig
+   Notable Films Completed: 4
+   Average Rating: 6.72
+   Genres: Action, Comedy, Crime, Drama, Fantasy
+
+17. Sam Raimi
+   Notable Films Completed: 4
+   Average Rating: 7.03
+   Genres: Action, Adventure, Drama, Fantasy, Horror
+
+18. Antoine Fuqua
+   Notable Films Completed: 4
+   Average Rating: 7.15
+   Genres: Action, Crime, Drama, Mystery, Thriller
+
+19. David Lynch
+   Notable Films Completed: 4
+   Average Rating: 7.75
+   Genres: Biography, Crime, Drama, Mystery, Thriller
+
+20. Eric Darnell
+   Notable Films Completed: 4
+   Average Rating: 6.72
+   Genres: Adventure, Animation, Comedy, Family
+
+21. Cameron Crowe
+   Notable Films Completed: 4
+   Average Rating: 7.30
+   Genres: Adventure, Comedy, Drama, Music, Romance
+
+22. George Stevens
+   Notable Films Completed: 4
+   Average Rating: 7.45
+   Genres: Comedy, Drama, Romance, Sport, Thriller
+
+23. Stanley Kubrick
+   Notable Films Completed: 4
+   Average Rating: 8.10
+   Genres: Comedy, Crime, Drama, Horror, Mystery
+
+24. Michael Curtiz
+   Notable Films Completed: 4
+   Average Rating: 7.40
+   Genres: Comedy, Crime, Drama, Film-Noir, Romance
+
+25. Leo McCarey
+   Notable Films Completed: 4
+   Average Rating: 7.20
+   Genres: Comedy, Drama, Romance
+
+26. John Hughes
+   Notable Films Completed: 4
+   Average Rating: 7.30
+   Genres: Comedy, Drama, Romance, Sci-Fi
+
+27. Ridley Scott
+   Notable Films Completed: 4
+   Average Rating: 7.75
+   Genres: Action, Adventure, Crime, Drama, Horror
+
+28. Preston Sturges
+   Notable Films Completed: 4
+   Average Rating: 7.62
+   Genres: Adventure, Comedy, Drama, Romance, War
+
+29. Otto Preminger
+   Notable Films Completed: 3
+   Average Rating: 7.30
+   Genres: Drama, Film-Noir, Musical, Mystery, Romance
+
+30. Luc Besson
+   Notable Films Completed: 3
+   Average Rating: 7.27
+   Genres: Action, Crime, Drama, Sci-Fi, Thriller
+
+
+NEARLY COMPLETE DIRECTORS (70-99%)
+--------------------------------------------------------------------------------
+1. Chia-Liang Liu - 90.0%
+   Progress: 9/10 films
+   Missing: 2 films
+   Catalog Avg Rating: 7.00
+   Top Missing Film: Tiger on Beat (1988.0) - 6.9
+
+2. John Huston - 83.3%
+   Progress: 5/6 films
+   Missing: 1 films
+   Catalog Avg Rating: 7.58
+   Top Missing Film: The Dead (1987.0) - 7.2
+
+3. James Cameron - 80.0%
+   Progress: 4/5 films
+   Missing: 1 films
+   Catalog Avg Rating: 8.06
+   Top Missing Film: Aliens (1986.0) - 8.4
+
+4. King Vidor - 75.0%
+   Progress: 3/4 films
+   Missing: 1 films
+   Catalog Avg Rating: 7.12
+   Top Missing Film: The Stranger's Return (1933.0) - 6.9
+
+5. Darren Aronofsky - 75.0%
+   Progress: 3/4 films
+   Missing: 1 films
+   Catalog Avg Rating: 7.25
+   Top Missing Film: Pi (1998.0) - 7.3
+
+6. William Wyler - 75.0%
+   Progress: 9/12 films
+   Missing: 3 films
+   Catalog Avg Rating: 7.54
+   Top Missing Film: Counsellor at Law (1933.0) - 7.5
+
+7. Lars von Trier - 75.0%
+   Progress: 3/4 films
+   Missing: 1 films
+   Catalog Avg Rating: 7.38
+   Top Missing Film: Antichrist (2009.0) - 6.5
+
+
+QUICK WINS (1-3 Films from Completion)
+--------------------------------------------------------------------------------
+1. Luc Besson - 100.0%
+   Only 1 film left!
+   Missing Films:
+   - Atlantis (1991.0) - 6.6
+
+2. Peter Weir - 100.0%
+   Only 1 film left!
+   Missing Films:
+   - Fearless (1993.0) - 7.0
+
+3. Jim Sheridan - 100.0%
+   Only 1 film left!
+   Missing Films:
+   - In America (2002.0) - 7.7
+
+4. George Cukor - 100.0%
+   Only 1 film left!
+   Missing Films:
+   - Girls About Town (1931.0) - 6.9
+
+5. Michael Curtiz - 100.0%
+   Only 1 film left!
+   Missing Films:
+   - Mandalay (1934.0) - 6.6
+
+6. Leo McCarey - 100.0%
+   Only 1 film left!
+   Missing Films:
+   - The Kid from Spain (1932.0) - 6.5
+
+7. Richard Linklater - 100.0%
+   Only 1 film left!
+   Missing Films:
+   - Before Midnight (2013.0) - 7.9
+
+8. Chia-Liang Liu - 90.0%
+   Only 2 films left!
+   Missing Films:
+   - Tiger on Beat (1988.0) - 6.9
+   - Mad Monkey Kung Fu (1979.0) - 6.7
+
+9. John Huston - 83.3%
+   Only 1 film left!
+   Missing Films:
+   - The Dead (1987.0) - 7.2
+
+10. James Cameron - 80.0%
+   Only 1 film left!
+   Missing Films:
+   - Aliens (1986.0) - 8.4
+
+11. King Vidor - 75.0%
+   Only 1 film left!
+   Missing Films:
+   - The Stranger's Return (1933.0) - 6.9
+
+12. Darren Aronofsky - 75.0%
+   Only 1 film left!
+   Missing Films:
+   - Pi (1998.0) - 7.3
+
+13. William Wyler - 75.0%
+   Only 3 films left!
+   Missing Films:
+   - Counsellor at Law (1933.0) - 7.5
+   - Hell's Heroes (1929.0) - 7.2
+   - The Liberation of L.B. Jones (1970.0) - 6.8
+
+14. Lars von Trier - 75.0%
+   Only 1 film left!
+   Missing Films:
+   - Antichrist (2009.0) - 6.5
+
+15. Tom Tykwer - 66.7%
+   Only 1 film left!
+   Missing Films:
+   - Heaven (2002.0) - 6.9
+
+16. Tod Browning - 66.7%
+   Only 1 film left!
+   Missing Films:
+   - Revenge (1918.0) - 7.8
+
+17. George A. Romero - 66.7%
+   Only 1 film left!
+   Missing Films:
+   - Creepshow (1982.0) - 6.8
+
+18. Garson Kanin - 66.7%
+   Only 1 film left!
+   Missing Films:
+   - The Great Man Votes (1939.0) - 6.7
+
+19. Wong Kar-Wai - 66.7%
+   Only 1 film left!
+   Missing Films:
+   - The Hand (2004.0) - 7.4
+
+20. Andrzej Wajda - 66.7%
+   Only 1 film left!
+   Missing Films:
+   - Man of Iron (1981.0) - 7.3
+
+
+HIDDEN GEMS (High-Quality Directors to Explore)
+--------------------------------------------------------------------------------
+1. Krzysztof Kieslowski - 7.60 avg rating
+   Explored: 1/9 films (11.1%)
+   Top Missing Films:
+   - A Short Film About Love (1988.0) - 8.1
+   - Three Colors: Red (1994.0) - 8.1
+   - A Short Film About Killing (1988.0) - 8.0
+   - Camera Buff (1979.0) - 7.8
+   - Three Colors: Blue (1993.0) - 7.8
+
+
+TOP MISSING FILMS (Highest Rated)
+--------------------------------------------------------------------------------
+1. Aliens (1986.0) - 8.4
+   Director: James Cameron
+
+2. A Short Film About Love (1988.0) - 8.1
+   Director: Krzysztof Kieslowski
+
+3. Three Colors: Red (1994.0) - 8.1
+   Director: Krzysztof Kieslowski
+
+4. The Virgin Spring (1960.0) - 8.0
+   Director: Ingmar Bergman
+
+5. A Short Film About Killing (1988.0) - 8.0
+   Director: Krzysztof Kieslowski
+
+6. Before Midnight (2013.0) - 7.9
+   Director: Richard Linklater
+
+7. Revenge (1918.0) - 7.8
+   Director: Tod Browning
+
+8. Midnight (1939.0) - 7.8
+   Director: Mitchell Leisen
+
+9. Camera Buff (1979.0) - 7.8
+   Director: Krzysztof Kieslowski
+
+10. Three Colors: Blue (1993.0) - 7.8
+   Director: Krzysztof Kieslowski
+
+11. In America (2002.0) - 7.7
+   Director: Jim Sheridan
+
+12. Fatal Vision (1984.0) - 7.7
+   Director: David Greene
+
+13. The Blue Angel (1930.0) - 7.6
+   Director: Josef von Sternberg
+
+14. Counsellor at Law (1933.0) - 7.5
+   Director: William Wyler
+
+15. Broken Lullaby (1932.0) - 7.5
+   Director: Ernst Lubitsch
+
+16. Summer with Monika (1953.0) - 7.5
+   Director: Ingmar Bergman
+
+17. A Touch of Zen (1971.0) - 7.5
+   Director: King Hu
+
+18. Deep Red (1975.0) - 7.5
+   Director: Dario Argento
+
+19. The Hand (2004.0) - 7.4
+   Director: Wong Kar-Wai
+
+20. Autumn Tale (1998.0) - 7.4
+   Director: Éric Rohmer
+
+21. Pierrot le Fou (1965.0) - 7.4
+   Director: Jean-Luc Godard
+
+22. No End (1985.0) - 7.4
+   Director: Krzysztof Kieslowski
+
+23. Pi (1998.0) - 7.3
+   Director: Darren Aronofsky
+
+24. Man of Iron (1981.0) - 7.3
+   Director: Andrzej Wajda
+
+25. Five Elements Ninjas (1982.0) - 7.2
+   Director: Cheh Chang
+
+26. The Dead (1987.0) - 7.2
+   Director: John Huston
+
+27. Hell's Heroes (1929.0) - 7.2
+   Director: William Wyler
+
+28. The Oyster Princess (1919.0) - 7.2
+   Director: Ernst Lubitsch
+
+29. Angel (1937.0) - 7.2
+   Director: Ernst Lubitsch
+
+30. The Valiant Ones (1974.0) - 7.2
+   Director: King Hu
+
