@@ -606,7 +606,7 @@ Living: {self.stats['living']:,}
   Percentage: {living_pct:.1f}%
 
 This represents people from films
-in your watched collection who have
+in my watched collection who have
 comprehensive biographical data.
 """
         ax.text(0.1, 0.7, stats_text, fontsize=12, verticalalignment='top',
@@ -704,7 +704,7 @@ Recent Deaths (2010s-2020s):
   {death_decades.get(2010, 0) + death_decades.get(2020, 0):,} people
 
 These metrics reflect people from
-films in your watched collection.
+films in my watched collection.
 """
         ax.text(0.1, 0.9, stats_text, fontsize=11, verticalalignment='top',
                 fontfamily='monospace', bbox=dict(boxstyle='round', facecolor='lightgreen', alpha=0.3))
