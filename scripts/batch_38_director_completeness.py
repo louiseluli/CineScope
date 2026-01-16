@@ -127,12 +127,12 @@ class DirectorCompletenessAnalyzer:
         x = np.arange(len(directors_sample))
         width = 0.35
         ax4.bar(x - width/2, directors_sample['watched_avg_rating'], width,
-               label='Your Watched Avg', color=self.colors['watched'], alpha=0.7)
+               label='My Watched Avg', color=self.colors['watched'], alpha=0.7)
         ax4.bar(x + width/2, directors_sample['catalog_avg_rating'], width,
                label='Complete Filmography Avg', color=self.colors['primary'], alpha=0.7)
         ax4.set_xticks(x)
         ax4.set_xticklabels(directors_sample['director_name'], rotation=45, ha='right', fontsize=8)
-        ax4.set_title('Rating Comparison: Your Selections vs Complete Filmography',
+        ax4.set_title('Rating Comparison: My Selections vs Complete Filmography',
                      fontsize=14, fontweight='bold')
         ax4.set_ylabel('Average IMDb Rating')
         ax4.legend()
@@ -194,10 +194,10 @@ class DirectorCompletenessAnalyzer:
         • Total Missing Films Identified: {self.director_df['missing_count'].sum():,.0f}
 
         Quality Insights:
-        • Your Average Rating: {self.director_df['watched_avg_rating'].mean():.2f}
+        • My Average Rating: {self.director_df['watched_avg_rating'].mean():.2f}
         • Complete Filmography Average: {self.director_df['catalog_avg_rating'].mean():.2f}
         • Rating Difference: {(self.director_df['watched_avg_rating'].mean() - self.director_df['catalog_avg_rating'].mean()):.2f}
-          {"(You watch higher quality!)" if self.director_df['watched_avg_rating'].mean() > self.director_df['catalog_avg_rating'].mean() else "(Room to explore more!)"}
+          {"(I watch higher quality!)" if self.director_df['watched_avg_rating'].mean() > self.director_df['catalog_avg_rating'].mean() else "(Room to explore more!)"}
         """
 
         ax7.text(0.05, 0.95, stats_text, transform=ax7.transAxes,
