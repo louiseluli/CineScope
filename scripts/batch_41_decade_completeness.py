@@ -1,7 +1,7 @@
 """
 Batch 41: Decade/Era Completeness Analysis
-Analyzes which decades and cinema eras you've explored thoroughly.
-Shows what notable films you're missing from each era.
+Analyzes which decades and cinema eras I've explored thoroughly.
+Shows what notable films I'm missing from each era.
 """
 
 import pandas as pd
@@ -17,7 +17,7 @@ class DecadeCompletenessAnalyzer:
                  catalog_path='data/processed/master_cinema_data.csv'):
         """Initialize with watched movies and catalog data."""
 
-        print("Loading your watched movies...")
+        print("Loading my watched movies...")
         self.watched_df = pd.read_csv(watched_path)
         print(f"Loaded {len(self.watched_df)} watched films")
 
@@ -233,7 +233,7 @@ class DecadeCompletenessAnalyzer:
         width = 0.35
 
         axes[1, 1].bar([i - width/2 for i in x], self.decade_df['watched_avg_rating'],
-                      width, label='Your Avg Rating', color='gold', alpha=0.7)
+                      width, label='My Avg Rating', color='gold', alpha=0.7)
         axes[1, 1].bar([i + width/2 for i in x], self.decade_df['catalog_avg_rating'],
                       width, label='Catalog Avg', color='silver', alpha=0.7)
 
