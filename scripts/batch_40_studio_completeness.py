@@ -1,7 +1,7 @@
 """
 Batch 40: Studio/Production Company Completeness Analysis
-Extracts production companies from YOUR WATCHED movies, finds their complete filmographies from TMDB,
-and shows what you've watched vs what you're missing from each studio.
+Extracts production companies from my WATCHED movies, finds their complete filmographies from TMDB,
+and shows what I've watched vs what I'm missing from each studio.
 """
 
 import pandas as pd
@@ -18,7 +18,7 @@ class StudioCompletenessAnalyzer:
                  catalog_path='data/processed/master_cinema_data.csv'):
         """Initialize with watched movies and catalog data."""
 
-        print("Loading your watched movies...")
+        print("Loading my watched movies...")
         self.watched_df = pd.read_csv(watched_path)
         print(f"Loaded {len(self.watched_df)} watched films")
 
@@ -237,7 +237,7 @@ class StudioCompletenessAnalyzer:
     def visualize_missing_films(self):
         """Visualization 5-8: Missing films analysis."""
         fig, axes = plt.subplots(2, 2, figsize=(16, 12))
-        fig.suptitle('Missing Films Analysis (What You Haven\'t Watched)', fontsize=16, fontweight='bold')
+        fig.suptitle('Missing Films Analysis (What I Haven\'t Watched)', fontsize=16, fontweight='bold')
 
         # 1. Top missing films
         all_missing = []
@@ -315,7 +315,7 @@ class StudioCompletenessAnalyzer:
         axes[1, 1].axis('off')
 
         top_studios = self.completeness_df.nlargest(5, 'watched')
-        sample_text = "SAMPLE: Top Studios - What You've Watched\n" + "="*50 + "\n\n"
+        sample_text = "SAMPLE: Top Studios - What I've Watched\n" + "="*50 + "\n\n"
 
         for _, row in top_studios.iterrows():
             sample_text += f"{row['studio'][:30]} ({row['watched']}/{row['total_quality_films']})\n"
@@ -442,7 +442,7 @@ class StudioCompletenessAnalyzer:
         with open(report_path, 'w', encoding='utf-8') as f:
             f.write("=" * 80 + "\n")
             f.write("STUDIO/PRODUCTION COMPANY COMPLETENESS ANALYSIS\n")
-            f.write("(Your Watched Movies vs Catalog)\n")
+            f.write("(My Watched Movies vs Catalog)\n")
             f.write("=" * 80 + "\n\n")
 
             f.write("OVERALL STATISTICS\n")
