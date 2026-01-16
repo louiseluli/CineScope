@@ -334,7 +334,7 @@ def _imdb_cast_fallback(df: pd.DataFrame, cache_dir: Optional[Path] = None) -> p
         principals = principals[principals["tconst"].isin(wanted)]
 
         if principals.empty:
-            log_message("IMDb fallback: no principals matched your title set.", level="WARNING")
+            log_message("IMDb fallback: no principals matched to title set.", level="WARNING")
             return pd.DataFrame(columns=["const", "actor", "character", "gender", "source_col"])
 
         # Join to names to get display names
@@ -612,19 +612,44 @@ def build_imdb_cast(df_titles: pd.DataFrame) -> pd.DataFrame:
     
     # Load gender mappings from people_cache (by nconst and name)
     name_to_gender, nconst_to_gender = _load_gender_mappings(df_titles)
-    
+
     # First, try to match by nconst (IMDB ID) - most reliable
     cast["gender"] = cast["nconst"].map(nconst_to_gender)
-    
+
     # For rows still without gender, fallback to name matching
     missing_gender_mask = cast["gender"].isna()
     if missing_gender_mask.any():
         cast.loc[missing_gender_mask, "gender"] = cast.loc[missing_gender_mask, "actor"].map(name_to_gender)
-    
+
+    # FINAL FALLBACK: Infer gender from IMDb principals category field
+    # For people with "self" in current row, check if they have "actor"/"actress" in OTHER films
+    missing_gender_mask = cast["gender"].isna()
+    if missing_gender_mask.any():
+        # Get all nconsts that need gender
+        missing_nconsts = cast.loc[missing_gender_mask, "nconst"].unique()
+
+        # Look up their categories across ALL films (not just watched)
+        all_categories = principals[principals["nconst"].isin(missing_nconsts)]
+
+        # For each nconst, determine gender from any "actor"/"actress" appearance
+        nconst_inferred_gender = {}
+        for nconst in missing_nconsts:
+            person_categories = all_categories[all_categories["nconst"] == nconst]["category"]
+            if "actress" in person_categories.values:
+                nconst_inferred_gender[nconst] = 1  # Female
+            elif "actor" in person_categories.values:
+                nconst_inferred_gender[nconst] = 2  # Male
+            # If only "self", "archive_footage", etc., leave as unknown (not in dict)
+
+        # Apply inferred gender
+        cast.loc[missing_gender_mask, "gender"] = cast.loc[missing_gender_mask, "nconst"].map(nconst_inferred_gender)
+
     matched_by_nconst = cast["nconst"].isin(nconst_to_gender).sum()
+    matched_by_name = (cast["actor"].isin(name_to_gender)) & (~cast["nconst"].isin(nconst_to_gender))
+    matched_by_category = cast["gender"].notna() & (~cast["nconst"].isin(nconst_to_gender)) & (~cast["actor"].isin(name_to_gender))
     total_with_gender = cast["gender"].notna().sum()
-    log_message(f"  Gender matching: {matched_by_nconst:,} by IMDB ID, {total_with_gender - matched_by_nconst:,} by name, "
-                f"{cast['gender'].isna().sum():,} unknown")
+    log_message(f"  Gender matching: {matched_by_nconst:,} by IMDB ID, {matched_by_name.sum():,} by name, "
+                f"{matched_by_category.sum():,} by category (from all films), {cast['gender'].isna().sum():,} unknown")
     
     cast = cast[["const","nconst","actor","gender","ordering"]].drop_duplicates()
     return cast.reset_index(drop=True)
@@ -731,7 +756,7 @@ def _clean_actor_series(s: pd.Series) -> pd.Series:
 
 
 def _barh_pairs(fig_title: str, pairs: list, outfile: str, label_tpl: str = "{a} ↔ {b}", 
-                color: str = "#b2df8a", batch_number: int = 2):
+                color: str = "#F5B041", batch_number: int = 2):
     """Generic horizontal bar chart for pairs (director–actor, writer–actor, etc.)."""
     from collections import Counter as C
     top = C(pairs).most_common(30)
@@ -746,7 +771,8 @@ def _barh_pairs(fig_title: str, pairs: list, outfile: str, label_tpl: str = "{a}
     labels = [label_tpl.format(a=a, b=b) for (a, b), _ in top]
     vals = [c for _, c in top]
     fig, ax = plt.subplots(figsize=(16, 12))
-    ax.barh(labels[::-1], vals[::-1], color=color, edgecolor="black")
+    bars = ax.barh(labels[::-1], vals[::-1], color=color, edgecolor="black")
+    ax.bar_label(bars, padding=3, fontsize=9)
     ax.set_title(fig_title, fontweight="bold", fontsize=16, pad=20)
     ax.set_xlabel("Number of Films Together", fontsize=12)
     ax.grid(axis="x", alpha=0.3)
@@ -872,11 +898,11 @@ class ContentGenomeAnalysis:
                       .head(30))
 
         fig, ax = plt.subplots(figsize=(16, 10))
-        ax.barh(stats["actor"][::-1], stats["Count"][::-1], color="#6ab7ff", edgecolor="black")
+        bars = ax.barh(stats["actor"][::-1], stats["Count"][::-1], color="#5DADE2", edgecolor="black")
         for y, (cnt, r) in enumerate(zip(stats["Count"][::-1], stats["Avg_Rating"][::-1])):
             ax.text(cnt + 0.3, y, f"{cnt} • {r:.2f}", va="center", fontsize=10)
         ax.set_xlabel("Number of Films")
-        ax.set_title("Top 30 Actors You Watch Most (with Avg IMDb Rating)", fontweight="bold")
+        ax.set_title("Top 30 Actors I Watch Most (with Avg IMDb Rating)", fontweight="bold")
         plt.tight_layout()
         save_figure(fig, '01_top_actors_leaderboard.png', batch_number=2)
         plt.close()
@@ -911,11 +937,11 @@ class ContentGenomeAnalysis:
                       .head(30))
 
         fig, ax = plt.subplots(figsize=(16, 10))
-        ax.barh(stats["actor"][::-1], stats["Count"][::-1], color="#ff6b9d", edgecolor="black")
+        bars = ax.barh(stats["actor"][::-1], stats["Count"][::-1], color="#F1948A", edgecolor="black")
         for y, (cnt, r) in enumerate(zip(stats["Count"][::-1], stats["Avg_Rating"][::-1])):
             ax.text(cnt + 0.3, y, f"{cnt} • {r:.2f}", va="center", fontsize=10)
         ax.set_xlabel("Number of Films")
-        ax.set_title("Top 30 Actresses You Watch Most (with Avg IMDb Rating)", fontweight="bold")
+        ax.set_title("Top 30 Actresses I Watch Most (with Avg IMDb Rating)", fontweight="bold")
         plt.tight_layout()
         save_figure(fig, '02_top_actresses_leaderboard.png', batch_number=2)
         plt.close()
@@ -956,11 +982,11 @@ class ContentGenomeAnalysis:
                       .head(30))
 
         fig, ax = plt.subplots(figsize=(16, 10))
-        ax.barh(stats["actor"][::-1], stats["Count"][::-1], color="#9E9E9E", edgecolor="black")
+        bars = ax.barh(stats["actor"][::-1], stats["Count"][::-1], color="#BB8FCE", edgecolor="black")
         for y, (cnt, r) in enumerate(zip(stats["Count"][::-1], stats["Avg_Rating"][::-1])):
             ax.text(cnt + 0.3, y, f"{cnt} • {r:.2f}", va="center", fontsize=10)
         ax.set_xlabel("Number of Films")
-        ax.set_title("Top 30 Unknown Gender Performers You Watch Most (with Avg IMDb Rating)", fontweight="bold")
+        ax.set_title("Top 30 Unknown Gender Performers I Watch Most (with Avg IMDb Rating)", fontweight="bold")
         plt.tight_layout()
         save_figure(fig, '02b_top_unknown_gender_leaderboard.png', batch_number=2)
         plt.close()
@@ -1037,8 +1063,10 @@ class ContentGenomeAnalysis:
             plt.close()
             return self
 
+        # Deduplicate actors per film first, then count co-appearances
+        actors_deduped = self.actors_df[["const", "actor"]].drop_duplicates()
         pairs = Counter()
-        for _, grp in self.actors_df.groupby("const"):
+        for _, grp in actors_deduped.groupby("const"):
             actors = sorted(grp["actor"].unique())
             for i in range(len(actors)):
                 for j in range(i+1, len(actors)):
@@ -1049,7 +1077,8 @@ class ContentGenomeAnalysis:
         values = [w for _, w in top30]
 
         fig, ax = plt.subplots(figsize=(16, 12))
-        ax.barh(labels[::-1], values[::-1], color="#c5e1a5", edgecolor="black")
+        bars = ax.barh(labels[::-1], values[::-1], color="#76D7C4", edgecolor="black")
+        ax.bar_label(bars, padding=3, fontsize=9)
         ax.set_title("Top Co-Star Pairs (by Co-appearances)", fontweight="bold")
         ax.set_xlabel("Co-appearances")
         plt.tight_layout()
@@ -1374,7 +1403,9 @@ class ContentGenomeAnalysis:
         # Join on const, use resolved names
         left = (self.directors_df.merge(self.actors_df[["const", "nconst", "actor"]], on="const", how="inner")
                                 .rename(columns={"nconst_x": "dir_id", "nconst_y": "act_id"}))
-        pairs = [(r["director"], r["actor"]) for _, r in left.iterrows()]
+        # Deduplicate: count unique films per director-actor pair
+        unique_collabs = left[["director", "actor", "const"]].drop_duplicates()
+        pairs = [(r["director"], r["actor"]) for _, r in unique_collabs.iterrows()]
         _barh_pairs("Top Director–Actor Collaborations (IMDb-strict)", pairs, '10_director_actor_collaboration.png')
         return self
 
@@ -1385,9 +1416,11 @@ class ContentGenomeAnalysis:
             return self
         left = (self.writers_df.merge(self.actors_df[["const", "nconst", "actor"]], on="const", how="inner")
                               .rename(columns={"nconst_x": "wri_id", "nconst_y": "act_id"}))
-        pairs = [(r["writer"], r["actor"]) for _, r in left.iterrows()]
+        # Deduplicate: count unique films per writer-actor pair
+        unique_collabs = left[["writer", "actor", "const"]].drop_duplicates()
+        pairs = [(r["writer"], r["actor"]) for _, r in unique_collabs.iterrows()]
         _barh_pairs("Top Writer–Actor Collaborations (IMDb-strict)", pairs, '10b_writer_actor_collaboration.png',
-                    color="#a5d6a7")
+                    color="#82E0AA")
         return self
 
 
@@ -1714,7 +1747,8 @@ class ContentGenomeAnalysis:
         labels = titles.get("display_title",
                  titles.get("Title", pd.Series(index=sizes.index, dtype=str))).fillna("Untitled").tolist()
 
-        ax.barh(labels[::-1], sizes.values[::-1], color="#90caf9", edgecolor="black")
+        bars = ax.barh(labels[::-1], sizes.values[::-1], color="#AED6F1", edgecolor="black")
+        ax.bar_label(bars, padding=3, fontsize=9)
         ax.set_title("Films with the Largest Casts (Top 20)", fontweight="bold")
         ax.set_xlabel("Unique Actors Detected")
         plt.tight_layout()
