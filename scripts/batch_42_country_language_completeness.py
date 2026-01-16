@@ -1,7 +1,7 @@
 """
 Batch 42: Country/Language Completeness Analysis
-Analyzes which countries and languages you've explored in your film collection.
-Shows what notable films you're missing from different world cinemas.
+Analyzes which countries and languages I've explored in my film collection.
+Shows what notable films I'm missing from different world cinemas.
 """
 
 import pandas as pd
@@ -18,7 +18,7 @@ class CountryLanguageCompletenessAnalyzer:
                  catalog_path='data/processed/master_cinema_data.csv'):
         """Initialize with watched movies and catalog data."""
 
-        print("Loading your watched movies...")
+        print("Loading my watched movies...")
         self.watched_df = pd.read_csv(watched_path)
         print(f"Loaded {len(self.watched_df)} watched films")
 
