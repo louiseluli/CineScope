@@ -264,7 +264,7 @@ class KeywordsAnalyzer:
             logger.warning("Please run the keywords enrichment script first:")
             logger.warning("  python scripts/enrich/08_enrich_keywords.py")
             logger.warning("")
-            logger.warning("This will fetch keywords from TMDB for your watched movies.")
+            logger.warning("This will fetch keywords from TMDB for my watched movies.")
             return False
         
         return True
