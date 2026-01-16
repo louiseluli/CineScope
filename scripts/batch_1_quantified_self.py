@@ -17,7 +17,7 @@ Visualizations:
 4. Genre Distribution (breakdown of preferences)
 5. Runtime Sweet Spot (preferred film lengths)
 6. Interactive Rating vs Runtime (HTML with hover details)
-7. Decade Distribution (which decades you watch most)
+7. Decade Distribution (which decades I watch most)
 8. Popularity vs Rating (hidden gems vs popular hits)
 """
 
@@ -503,7 +503,7 @@ class QuantifiedSelfAnalysis:
         return self
     
     def viz_7_decade_distribution(self):
-        """Viz 7: Decade Distribution - which decades you watch most."""
+        """Viz 7: Decade Distribution - which decades I watch most."""
         log_message("📊 Creating Visualization 7: Decade Distribution")
         
         df_decades = self.df[self.df['decade'].notna()].copy()
@@ -556,7 +556,7 @@ class QuantifiedSelfAnalysis:
         return self
     
     def viz_8_popularity_vs_rating(self):
-        """Viz 8: Popularity vs Rating - are you drawn to hits or hidden gems?"""
+        """Viz 8: Popularity vs Rating - am I drawn to hits or hidden gems?"""
         log_message("📊 Creating Visualization 8: Popularity vs Rating (Hidden Gems)")
         
         # Use num_votes as popularity metric
@@ -605,7 +605,7 @@ class QuantifiedSelfAnalysis:
         ax1.set_xscale('log')
         ax1.set_xlabel('Number of Votes (Popularity)', fontsize=14, fontweight='bold')
         ax1.set_ylabel('IMDB Rating', fontsize=14, fontweight='bold')
-        ax1.set_title('Popularity vs Rating\nAre You Drawn to Hits or Hidden Gems?',
+        ax1.set_title('Popularity vs Rating\nAm I Drawn to Hits or Hidden Gems?',
                      fontsize=16, fontweight='bold', pad=20)
         ax1.legend(fontsize=11, loc='best')
         ax1.grid(True, alpha=0.3)
