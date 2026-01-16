@@ -5,7 +5,7 @@ CineScope Batch 18: INTERNATIONAL CINEMA
 Comprehensive International & Multicultural Cinema Analysis
 
 Analyzes language distribution, production countries, regional cinema patterns,
-and global perspectives in your film collection.
+and global perspectives in my film collection.
 
 Coverage:
 - Original Language: 99.9% of films (2,287 films)
@@ -247,7 +247,7 @@ class InternationalCinemaAnalyzer:
 
         # Create figure
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 10))
-        fig.suptitle('Language Distribution in Your Collection',
+        fig.suptitle('Language Distribution in My Collection',
                      fontsize=20, fontweight='bold', y=0.98)
 
         # Left: Top 20 languages bar chart
@@ -317,7 +317,7 @@ class InternationalCinemaAnalyzer:
         ax.set_yticklabels(top_countries.index, fontsize=10)
         ax.invert_yaxis()
         ax.set_xlabel('Number of Films', fontsize=12, fontweight='bold')
-        ax.set_title('Top 25 Production Countries in Your Collection',
+        ax.set_title('Top 25 Production Countries in My Collection',
                     fontsize=16, fontweight='bold', pad=20)
         ax.grid(axis='x', alpha=0.3, linestyle='--')
 
@@ -890,7 +890,7 @@ class InternationalCinemaAnalyzer:
     def _interpret_diversity(self, shannon, gini):
         """Interpret diversity scores."""
         if shannon > 60 and gini < 40:
-            return "HIGH diversity, LOW concentration\nYou watch films from many languages!"
+            return "HIGH diversity, LOW concentration\nI watch films from many languages!"
         elif shannon > 40 and gini < 60:
             return "MODERATE diversity\nGood mix with some concentration"
         else:
@@ -984,7 +984,7 @@ class InternationalCinemaAnalyzer:
         • Top Country: {top_country[0][:30]}
           ({top_country[1]} films)
 
-        Your collection spans {self.stats['unique_languages']} languages
+        My collection spans {self.stats['unique_languages']} languages
         from {unique_counts[1]} countries - a truly global
         cinematic journey!
         """
@@ -1071,7 +1071,7 @@ class InternationalCinemaAnalyzer:
             insight1 = f"× Limited international cinema ({non_eng_pct:.1f}% non-English)"
 
         report.append(f"\n{insight1}")
-        report.append(f"\n✓ Your collection spans {self.stats['unique_languages']} languages")
+        report.append(f"\n✓ My collection spans {self.stats['unique_languages']} languages")
         report.append(f"✓ Represents cinema from multiple continents")
 
         report.append("\n" + "="*80)
