@@ -1,7 +1,7 @@
 """
 Batch 39: Genre Completeness Analysis
-Uses full IMDB data to analyze genre collection completeness against your watchlist.
-Shows which genres you've explored thoroughly and what notable films you're missing per genre.
+Uses full IMDB data to analyze genre collection completeness against my watchlist.
+Shows which genres I've explored thoroughly and what notable films I'm missing per genre.
 """
 
 import pandas as pd
@@ -16,12 +16,12 @@ class GenreCompletenessAnalyzer:
                  watchlist_path='data/raw/Watchlist_IMDB.csv',
                  title_basics_path='data/raw/title.basics.tsv',
                  title_ratings_path='data/raw/title.ratings.tsv'):
-        """Initialize with IMDB raw data and your watchlist."""
+        """Initialize with IMDB raw data and my watchlist."""
 
         self.watchlist_path = watchlist_path
-        print("Loading your watchlist...")
+        print("Loading my watchlist...")
         self.watchlist_df = pd.read_csv(watchlist_path)
-        print(f"Loaded {len(self.watchlist_df)} films from your watchlist")
+        print(f"Loaded {len(self.watchlist_df)} films from my watchlist")
 
         # Get watchlist title IDs
         self.watchlist_ids = set(self.watchlist_df['Const'].str.replace('tt', ''))
