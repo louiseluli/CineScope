@@ -4,8 +4,8 @@ CineScope - Filter to Watched Movies Only
 Creates a dataset containing ONLY watched movies based on Watched-Dec.csv
 This will be used for all analysis batches.
 
-The master_cinema_data.csv includes your entire collection (watched + unwatched).
-This script filters to ONLY the films you've actually watched.
+The master_cinema_data.csv includes my entire collection (watched + unwatched).
+This script filters to ONLY the films I've actually watched.
 """
 
 import pandas as pd
