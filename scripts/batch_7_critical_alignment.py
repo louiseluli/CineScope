@@ -2,7 +2,7 @@
 CineScope Batch 7: CRITICAL ALIGNMENT
 ======================================
 
-Analysis of how different critical sources rate your collection
+Analysis of how different critical sources rate my collection
 covering Questions 221-250:
 
 CRITICAL CONSENSUS (Q221-230):
@@ -15,7 +15,7 @@ QUALITY PATTERNS (Q231-240):
 - Q236-240: Source agreement and divergence patterns
 
 COLLECTION PROFILE (Q241-250):
-- Q241-250: What your collection reveals about quality preferences
+- Q241-250: What my collection reveals about quality preferences
 
 10 Professional Visualizations
 """
