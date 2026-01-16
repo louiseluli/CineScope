@@ -616,7 +616,7 @@ def viz_6_recommendations_similar_films(analyzer: PatternAnalyzer):
                                    transform=ax.transAxes, 
                                    fill=False, edgecolor='#ddd', linewidth=1.5))
     
-    plt.suptitle('Film Similarity Analysis: What Films Are Similar in Your Collection?',
+    plt.suptitle('Film Similarity Analysis: What Films Are Similar in My Collection?',
                 fontsize=14, fontweight='bold', y=0.98)
     
     plt.tight_layout()
@@ -865,7 +865,7 @@ def viz_10_genre_decade_deep_dive(analyzer: PatternAnalyzer):
 
 
 def viz_11_recommendation_engine_output(analyzer: PatternAnalyzer):
-    """Gap analysis - what patterns should you explore more?"""
+    """Gap analysis - what patterns should I explore more?"""
     logger.info("Creating Viz 11: Collection Gaps & Expansion Opportunities...")
     
     combos = analyzer.get_feature_combinations()
@@ -899,7 +899,7 @@ def viz_11_recommendation_engine_output(analyzer: PatternAnalyzer):
     ax1.set_yticks(y_pos)
     ax1.set_yticklabels(labels, fontsize=9)
     ax1.set_xlabel('Average Rating', fontsize=11, fontweight='bold')
-    ax1.set_title('HIGH-QUALITY GAPS\n(Great patterns you barely explore)',
+    ax1.set_title('HIGH-QUALITY GAPS\n(Great patterns I barely explore)',
                  fontsize=12, fontweight='bold', pad=15)
     ax1.set_xlim(0, 10)
     ax1.axvline(x=7.5, color='red', linestyle='--', alpha=0.5)
@@ -910,7 +910,7 @@ def viz_11_recommendation_engine_output(analyzer: PatternAnalyzer):
     top_genres = genre_decade.sum().nlargest(8).index
     genre_decade = genre_decade[top_genres]
     
-    # Find sparse cells (genres you don't explore in certain decades)
+    # Find sparse cells (genres I don't explore in certain decades)
     missing = []
     for genre in top_genres:
         for decade in genre_decade.index:
@@ -934,11 +934,11 @@ def viz_11_recommendation_engine_output(analyzer: PatternAnalyzer):
     ax2.set_yticks(y_pos)
     ax2.set_yticklabels(labels, fontsize=9)
     ax2.set_xlabel('Current Count', fontsize=11, fontweight='bold')
-    ax2.set_title('ERA GAPS\n(Decades you underexplore by genre)',
+    ax2.set_title('ERA GAPS\n(Decades I underexplore by genre)',
                  fontsize=12, fontweight='bold', pad=15)
     ax2.grid(axis='x', alpha=0.3)
     
-    # 3. Directors you should explore more
+    # 3. Directors I should explore more
     director_counts = Counter()
     for _, film in analyzer.df.iterrows():
         directors_str = film.get('directors', '')
@@ -1002,7 +1002,7 @@ def viz_11_recommendation_engine_output(analyzer: PatternAnalyzer):
                  fontsize=12, fontweight='bold', pad=15)
     ax4.grid(axis='x', alpha=0.3)
     
-    plt.suptitle('Collection Gap Analysis: Where to Expand Your Horizons',
+    plt.suptitle('Collection Gap Analysis: Where to Expand My Horizons',
                 fontsize=15, fontweight='bold', y=0.98)
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / "11_collection_gaps_analysis.png", dpi=300, bbox_inches='tight')
