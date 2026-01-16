@@ -3,7 +3,7 @@
 CineScope Batch 37: Personal Viewing Patterns
 ==============================================
 
-Analyzes your personal viewing patterns, habits, preferences evolution,
+Analyzes my personal viewing patterns, habits, preferences evolution,
 and rating tendencies over time.
 
 Author: CineScope Analytics
@@ -69,21 +69,21 @@ class ViewingPatternsAnalyzer:
         print(f"  Has watch dates: {self.has_watch_dates}")
 
     def visualize_rating_patterns(self):
-        """Visualization 1-4: Your rating patterns."""
+        """Visualization 1-4: My rating patterns."""
         fig, axes = plt.subplots(2, 2, figsize=(16, 12))
-        fig.suptitle('Your Rating Patterns', fontsize=16, fontweight='bold')
+        fig.suptitle('My Rating Patterns', fontsize=16, fontweight='bold')
 
         # 1. Rating distribution
         ax1 = axes[0, 0]
         ax1.hist(self.df['IMDb Rating'], bins=40, color='#3498DB',
                 edgecolor='black', alpha=0.7)
         ax1.axvline(self.df['IMDb Rating'].mean(), color='red', linestyle='--',
-                   linewidth=2, label=f"Your Mean: {self.df['IMDb Rating'].mean():.2f}")
+                   linewidth=2, label=f"My Mean: {self.df['IMDb Rating'].mean():.2f}")
         ax1.axvline(self.df['IMDb Rating'].median(), color='blue', linestyle='--',
-                   linewidth=2, label=f"Your Median: {self.df['IMDb Rating'].median():.2f}")
-        ax1.set_xlabel('Your Rating', fontsize=11, fontweight='bold')
+                   linewidth=2, label=f"My Median: {self.df['IMDb Rating'].median():.2f}")
+        ax1.set_xlabel('My Rating', fontsize=11, fontweight='bold')
         ax1.set_ylabel('Number of Films', fontsize=11, fontweight='bold')
-        ax1.set_title('Your Rating Distribution', fontsize=12, fontweight='bold')
+        ax1.set_title('My Rating Distribution', fontsize=12, fontweight='bold')
         ax1.legend()
         ax1.grid(axis='y', alpha=0.3)
 
@@ -101,7 +101,7 @@ class ViewingPatternsAnalyzer:
         ax3 = axes[1, 0]
         ax3.axis('off')
 
-        stats_text = "YOUR RATING STATISTICS\n" + "="*50 + "\n\n"
+        stats_text = "MY RATING STATISTICS\n" + "="*50 + "\n\n"
         stats_text += f"Total Films Watched: {len(self.df)}\n\n"
 
         stats_text += f"Mean Rating: {self.df['IMDb Rating'].mean():.2f}\n"
@@ -140,7 +140,7 @@ class ViewingPatternsAnalyzer:
         ax4.set_xticklabels([f"{int(d)}s" for d in decade_ratings.index], rotation=45)
         ax4.set_ylabel('Average Rating', fontsize=11, fontweight='bold')
         ax4.set_xlabel('Decade', fontsize=11, fontweight='bold')
-        ax4.set_title('Your Average Rating by Decade', fontsize=12, fontweight='bold')
+        ax4.set_title('My Average Rating by Decade', fontsize=12, fontweight='bold')
         ax4.grid(axis='y', alpha=0.3)
         ax4.set_ylim(0, 10)
 
@@ -160,7 +160,7 @@ class ViewingPatternsAnalyzer:
     def visualize_genre_preferences(self):
         """Visualization 5-6: Genre preferences analysis."""
         fig, axes = plt.subplots(2, 2, figsize=(16, 12))
-        fig.suptitle('Your Genre Preferences', fontsize=16, fontweight='bold')
+        fig.suptitle('My Genre Preferences', fontsize=16, fontweight='bold')
 
         # Extract all genres
         all_genres = []
@@ -184,7 +184,7 @@ class ViewingPatternsAnalyzer:
         ax1.set_yticks(range(len(genres)))
         ax1.set_yticklabels(genres, fontsize=9)
         ax1.set_xlabel('Number of Films Watched', fontsize=11, fontweight='bold')
-        ax1.set_title('Your Most Watched Genres', fontsize=12, fontweight='bold')
+        ax1.set_title('My Most Watched Genres', fontsize=12, fontweight='bold')
         ax1.invert_yaxis()
         ax1.grid(axis='x', alpha=0.3)
 
@@ -205,7 +205,7 @@ class ViewingPatternsAnalyzer:
         ax2.set_yticks(range(len(genres_avg)))
         ax2.set_yticklabels(genres_avg, fontsize=9)
         ax2.set_xlabel('Average Rating', fontsize=11, fontweight='bold')
-        ax2.set_title('Your Highest Rated Genres (5+ films)', fontsize=12, fontweight='bold')
+        ax2.set_title('My Highest Rated Genres (5+ films)', fontsize=12, fontweight='bold')
         ax2.invert_yaxis()
         ax2.grid(axis='x', alpha=0.3)
         ax2.set_xlim(0, 10)
@@ -286,7 +286,7 @@ class ViewingPatternsAnalyzer:
     def visualize_director_preferences(self):
         """Visualization 7-8: Director preferences."""
         fig, axes = plt.subplots(2, 2, figsize=(16, 12))
-        fig.suptitle('Your Director Preferences', fontsize=16, fontweight='bold')
+        fig.suptitle('My Director Preferences', fontsize=16, fontweight='bold')
 
         # Director stats
         director_films = defaultdict(list)
@@ -306,7 +306,7 @@ class ViewingPatternsAnalyzer:
         ax1.set_yticks(range(len(directors)))
         ax1.set_yticklabels([d[:30] for d in directors], fontsize=9)
         ax1.set_xlabel('Films Watched', fontsize=11, fontweight='bold')
-        ax1.set_title('Your Most Watched Directors', fontsize=12, fontweight='bold')
+        ax1.set_title('My Most Watched Directors', fontsize=12, fontweight='bold')
         ax1.invert_yaxis()
         ax1.grid(axis='x', alpha=0.3)
 
@@ -415,7 +415,7 @@ class ViewingPatternsAnalyzer:
                         alpha=0.3, color='#E74C3C')
         ax2.set_xlabel('Decade', fontsize=11, fontweight='bold')
         ax2.set_ylabel('Rating', fontsize=11, fontweight='bold')
-        ax2.set_title('Your Rating Trends by Decade', fontsize=12, fontweight='bold')
+        ax2.set_title('My Rating Trends by Decade', fontsize=12, fontweight='bold')
         ax2.legend()
         ax2.grid(True, alpha=0.3)
 
@@ -509,7 +509,7 @@ class ViewingPatternsAnalyzer:
 
         # Top rated
         report_lines.append("=" * 80)
-        report_lines.append("YOUR TOP 30 RATED FILMS")
+        report_lines.append("MY TOP 30 RATED FILMS")
         report_lines.append("=" * 80)
         report_lines.append("")
 
