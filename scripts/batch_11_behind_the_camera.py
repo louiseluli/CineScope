@@ -5,7 +5,7 @@ CineScope Batch 11: BEHIND THE CAMERA
 Comprehensive Cinematographer & Composer Analysis
 
 This batch analyzes the UNDERUTILIZED tmdb_cinematographers and tmdb_composers
-columns in your dataset. These contain rich data that has never been visualized!
+columns in my dataset. These contain rich data that has never been visualized!
 
 Coverage:
 - Cinematographers: 95.5% of films (2,186 films)
@@ -81,7 +81,7 @@ plt.rcParams['font.sans-serif'] = ['Arial', 'Helvetica', 'DejaVu Sans']
 # ============================================================================
 
 class BehindTheCameraAnalyzer:
-    """Analyze cinematographers and composers in your film collection."""
+    """Analyze cinematographers and composers in my film collection."""
 
     def __init__(self, df: pd.DataFrame):
         self.df = df.copy()
@@ -189,7 +189,7 @@ class BehindTheCameraAnalyzer:
 
         # Create figure
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 10))
-        fig.suptitle('Top 25 Cinematographers in Your Collection',
+        fig.suptitle('Top 25 Cinematographers in My Collection',
                      fontsize=20, fontweight='bold', y=0.98)
 
         # Left: Film count
@@ -252,7 +252,7 @@ class BehindTheCameraAnalyzer:
 
         # Create figure
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 10))
-        fig.suptitle('Top 25 Composers in Your Collection',
+        fig.suptitle('Top 25 Composers in My Collection',
                      fontsize=20, fontweight='bold', y=0.98)
 
         # Left: Film count
@@ -610,7 +610,7 @@ class BehindTheCameraAnalyzer:
         ax1.set_ylabel('Number of Unique Cinematographers', fontsize=12, color=COLORS['accent'])
         ax1.tick_params(axis='y', labelcolor=COLORS['accent'])
         ax1.grid(alpha=0.3)
-        ax1.set_title('Cinematographers in Your Collection', fontsize=14, fontweight='bold')
+        ax1.set_title('Cinematographers in My Collection', fontsize=14, fontweight='bold')
 
         ax1_twin = ax1.twinx()
         ax1_twin.plot(cinematographer_decades['decade'],
@@ -631,7 +631,7 @@ class BehindTheCameraAnalyzer:
         ax2.set_ylabel('Number of Unique Composers', fontsize=12, color=COLORS['success'])
         ax2.tick_params(axis='y', labelcolor=COLORS['success'])
         ax2.grid(alpha=0.3)
-        ax2.set_title('Composers in Your Collection', fontsize=14, fontweight='bold')
+        ax2.set_title('Composers in My Collection', fontsize=14, fontweight='bold')
 
         ax2_twin = ax2.twinx()
         ax2_twin.plot(composer_decades['decade'],
