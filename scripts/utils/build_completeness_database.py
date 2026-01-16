@@ -201,9 +201,17 @@ class CompletenessDBBuilder:
 
         print(f"Found {len(watched_actors)} actors in watched movies")
 
-        # Process each actor
+        # Check existing progress
         cursor = self.conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM actor_completeness")
+        existing_count = cursor.fetchone()[0]
+        if existing_count > 0:
+            print(f"  (Database has {existing_count} existing actors - will update/add to them)")
+
+        print(f"  Processing actors (commits every 50, safe to Ctrl+C and resume)...")
         processed = 0
+        updated = 0
+        added = 0
 
         for actor_name, watched_films in list(watched_actors.items()):
             actor_id = self._get_person_id_from_name(actor_name)
@@ -288,8 +296,14 @@ class CompletenessDBBuilder:
 
         print(f"Found {len(watched_directors)} directors in watched movies")
 
-        # Process each director
+        # Check existing progress
         cursor = self.conn.cursor()
+        cursor.execute("SELECT COUNT(*) FROM director_completeness")
+        existing_count = cursor.fetchone()[0]
+        if existing_count > 0:
+            print(f"  (Database has {existing_count} existing directors - will update/add to them)")
+
+        print(f"  Processing directors (commits every 50, safe to Ctrl+C and resume)...")
         processed = 0
 
         for director_name, watched_films in list(watched_directors.items()):
