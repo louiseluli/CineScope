@@ -439,7 +439,7 @@ def viz_1_studio_leaderboard(analyzer: ProductionAwardsAnalyzer):
     ax.invert_yaxis()
     
     ax.set_xlabel('Number of Films', fontsize=12, fontweight='bold')
-    ax.set_title('Top 20 Production Companies in Your Collection', 
+    ax.set_title('Top 20 Production Companies in My Collection', 
                 fontsize=14, fontweight='bold', pad=20)
     
     ax.spines['top'].set_visible(False)
@@ -490,7 +490,7 @@ def viz_2_producer_network(analyzer: ProductionAwardsAnalyzer):
     ax2.spines['right'].set_visible(False)
     ax2.grid(axis='x', alpha=0.3)
     
-    plt.suptitle('Top 15 Producers in Your Collection', 
+    plt.suptitle('Top 15 Producers in My Collection', 
                 fontsize=14, fontweight='bold', y=1.02)
     plt.tight_layout()
     plt.savefig(OUTPUT_DIR / "02_producer_network.png", dpi=300, bbox_inches='tight')
@@ -566,7 +566,7 @@ def viz_4_composer_leaderboard(analyzer: ProductionAwardsAnalyzer):
                va='center', fontsize=9, fontweight='bold')
     
     ax.set_xlabel('Number of Film Scores', fontsize=12, fontweight='bold')
-    ax.set_title('Top 15 Film Composers in Your Collection',
+    ax.set_title('Top 15 Film Composers in My Collection',
                 fontsize=14, fontweight='bold', pad=20)
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
@@ -919,7 +919,7 @@ def viz_10_top_awarded_films(analyzer: ProductionAwardsAnalyzer):
         ax.text(awards + 0.5, idx, label_text, va='center', fontsize=8)
     
     ax.set_xlabel('Number of Awards Won', fontsize=12, fontweight='bold')
-    ax.set_title('Top 20 Most Awarded Films in Your Collection',
+    ax.set_title('Top 20 Most Awarded Films in My Collection',
                 fontsize=14, fontweight='bold', pad=20)
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
