@@ -765,7 +765,7 @@ class AwardsRecognitionAnalyzer:
                 transform=ax1.transAxes, fontsize=11, fontweight='bold',
                 bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
 
-        # Films you loved but critics didn't (low awards)
+        # Films I loved but critics didn't (low awards)
         high_personal_low_awards = awarded_films[
             (awarded_films['IMDb Rating'] >= 8) &
             (awarded_films['total_awards'] < awarded_films['total_awards'].median())
